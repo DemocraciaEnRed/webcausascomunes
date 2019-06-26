@@ -16,7 +16,7 @@ def create_app():
     create_logger(app)
     create_blueprints(app)
     if app.config['USE_SCSS']:
-        create_extensions(app)
+        create_scss_watch(app)
     if app.config['USE_EXTENSIONS']:
         create_extensions(app)
     if app.config['USE_DIRECTUS']:
