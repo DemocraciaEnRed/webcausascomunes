@@ -1,6 +1,26 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #999;
-$primary-txt-col: #333;
+@font-face {
+  font-family:'Barlow';
+  src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family:'Barlow';
+  src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family:'Barlow';
+  src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
+  font-weight: 600;
+}
+
+$font-stack: 'Barlow', sans-serif;
+
+$color-principal-azul: #2a4b8c;
+$color-secundario-fucsia: #e61e68;
+$color-secundario-naranja: #f9b004;
+$color-fondo-1: #ffffff;
+$color-fondo-2: #fbfcfd;
 
 @mixin border-radius($radius: 5px) {
   -webkit-border-radius: $radius;

@@ -1,43 +1,68 @@
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #333; }
+@font-face {
+  font-family: 'Barlow';
+  src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
+  font-weight: 400; }
 
-  .no-gutters {
-    margin-right: 0;
-    margin-left: 0; }
-    .no-gutters > .col, .no-gutters > [class*="col-"] {
-      padding-right: 0;
-      padding-left: 0; }
+  @font-face {
+    font-family: 'Barlow';
+    src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
+    font-weight: 500; }
+
+    @font-face {
+      font-family: 'Barlow';
+      src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
+      font-weight: 600; }
+
+      body {
+        font: 100% 'Barlow', sans-serif;
+        color: black; }
+
+        .no-gutters {
+          margin-right: 0;
+          margin-left: 0; }
+          .no-gutters > .col, .no-gutters > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0; }
 
 .seccion:nth-child(even) {
-  background-color: #dcdcdc; }
+  background-color: #ffffff; }
   .seccion:nth-child(even) .jumbotron-fluid {
-    background-color: #dcdcdc; }
+    background-color: #ffffff; }
 
 .seccion:nth-child(odd) {
-  background-color: #aaaaaa; }
+  background-color: #fbfcfd; }
   .seccion:nth-child(odd) .jumbotron-fluid {
-    background-color: #aaaaaa; }
+    background-color: #fbfcfd; }
 
 .seccion .jumbotron-fluid {
   margin-bottom: auto; }
   .seccion .jumbotron-fluid .container > h1 {
     margin-bottom: 1.5rem; }
 
-.portada img {
-  height: 600px; }
-  .portada .carousel-caption {
-    top: 50%;
-    transform: translateY(-50%);
-    bottom: auto; }
-    .portada .carousel-caption h1 {
-      font-weight: bold; }
+.header-primario {
+  color: #2a4b8c;
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.93;
+  letter-spacing: normal;
+  text-align: left; }
+
+  .portada img {
+    height: 600px; }
+    .portada .carousel-caption {
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto; }
+      .portada .carousel-caption h1 {
+        font-weight: bold; }
 
 .propuestas .subtitulo {
   max-width: 55rem;
   margin: auto; }
 
-.candidates .display-4 {
+.candidates .header-primario {
   font-size: 3rem; }
 
 .novedades .jumbotron .row > div {

@@ -20,7 +20,10 @@ def get_index_textos():
             'titulo': 'Contactá a les candidates',
             'subtitulo': 'Activá la causa que quieras y contales por qué es tan importante.',
             'boton': 'Activá',
-            'items': get_novedades_items()}
+            'items': get_novedades_items()},
+        'eventos': {
+            'titulo': 'Enterate de los próximos eventos',
+        }
     }
 
 

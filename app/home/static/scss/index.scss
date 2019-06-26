@@ -1,5 +1,6 @@
 @import 'vars';
 
+/* machete de breakpoint de bootstrap 4 */
 /*@media(min-width:576px){XS}
 @media(min-width:768px){SM}
 @media(min-width:992px){MD}
@@ -7,9 +8,10 @@
 
 body {
   font: 100% $font-stack;
-  color: $primary-txt-col;
+  color: black;
 }
 
+/* hacksito que hay que ponerle a los .row que estén fuera de un container (ya que la página no tiene container principal) */
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -21,21 +23,33 @@ body {
   }
 }
 
+/* intercalar colores de fondo, seguro terminemos hardcodeandolo */
 .seccion:nth-child(even){
-    background-color: #dcdcdc;
-    .jumbotron-fluid {background-color: #dcdcdc;}
+    background-color: $color-fondo-1;
+    .jumbotron-fluid {background-color: $color-fondo-1;}
 }
 .seccion:nth-child(odd){
-    background-color: #aaaaaa;
-    .jumbotron-fluid {background-color: #aaaaaa;}
+    background-color: $color-fondo-2;
+    .jumbotron-fluid {background-color: $color-fondo-2;}
 }
+
 
 .seccion{
     .jumbotron-fluid{
         margin-bottom:auto;
         .container > h1 {margin-bottom:1.5rem;}
-        /*p.subtitulo"*/
     }
+}
+
+.header-primario{
+    color: $color-principal-azul;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.93;
+    letter-spacing: normal;
+    text-align: left;
 }
 
 /*#################*/
@@ -62,7 +76,7 @@ body {
 }
 
 .candidates {
-    .display-4 {font-size: 3rem;}
+    .header-primario {font-size: 3rem;}
 }
 
 .novedades .jumbotron {
