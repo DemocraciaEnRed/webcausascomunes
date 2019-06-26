@@ -1,0 +1,27 @@
+{% from '_itemnovedad.html' import create_item_novedad %}
+
+<div class="novedades seccion">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container text-center">
+        <h1 class="display-4">{{dtextos['novedades']['titulo']}}</h1>
+        <p class="subtitulo">{{dtextos['novedades']['subtitulo']}}</p>
+        {% set ns = namespace(acumcols=0) %}
+
+        {% for itm in itemsnovedades %}
+
+            {% if ns.acumcols == 0 %}
+                <div class="row">
+            {% endif %}
+
+                {{ create_item_novedad(itm['ancho_columnas'], itm['imgurl'], itm['titulo'], itm['texto'], isstatic=isstatic) }}
+
+            {% set ns.acumcols=ns.acumcols+itm['ancho_columnas'] %}
+            {% if ns.acumcols >= 12 %}
+                </div>
+                {% set ns.acumcols=0 %}
+            {% endif %}
+
+        {% endfor %}
+      </div>
+    </div>
+</div>

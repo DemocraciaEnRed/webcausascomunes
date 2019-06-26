@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+
+{% from '_imghelper.html' import create_img_src %}
+
+{% block head %}
+    <title>Causas comunes</title>
+    <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <!-- LANDING -->
+    {% include 'index_landing.html' %}
+
+    <!-- MANIFIESTO -->
+    {% include 'index_manifiesto.html' %}
+
+    <!-- PROPUESTAS -->
+    {% include 'index_propuestas.html' %}
+
+    <!-- NOVEDADES -->
+    {% include 'index_novedades.html' %}
+
+    <!-- CANDIDATES -->
+    {% include 'index_candidates.html' %}
+
+    <!-- EVENTOS -->
+    {% include 'index_eventos.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,77 @@
+@import 'vars';
+
+/*@media(min-width:576px){XS}
+@media(min-width:768px){SM}
+@media(min-width:992px){MD}
+@media(min-width:1200px){LG}*/
+
+body {
+  font: 100% $font-stack;
+  color: $primary-txt-col;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.seccion:nth-child(even){
+    background-color: #dcdcdc;
+    .jumbotron-fluid {background-color: #dcdcdc;}
+}
+.seccion:nth-child(odd){
+    background-color: #aaaaaa;
+    .jumbotron-fluid {background-color: #aaaaaa;}
+}
+
+.seccion{
+    .jumbotron-fluid{
+        margin-bottom:auto;
+        .container > h1 {margin-bottom:1.5rem;}
+        /*p.subtitulo"*/
+    }
+}
+
+/*#################*/
+/* SECCIONES */
+.portada {
+    img { height:600px }
+    .carousel-caption {
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: auto;
+        h1 {
+            font-weight: bold;
+        }
+        p {
+        }
+    }
+}
+
+.propuestas {
+    .subtitulo {
+        max-width: 55rem;
+        margin: auto;
+    }
+}
+
+.candidates {
+    .display-4 {font-size: 3rem;}
+}
+
+.novedades .jumbotron {
+    .row > div{
+        min-height:100%;
+    }
+    .card {
+        height: 100%;
+        img { height:15rem; }
+        .card-body { min-height:12rem; }
+    }
+}

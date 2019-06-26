@@ -1,0 +1,24 @@
+<!--https://www.w3schools.com/tags/tag_doctype.asp-->
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link href="{{url_for('home.static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/fontawesome-all.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/navbar.css')}}" rel="stylesheet">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% include "navbar.html"  %}
+    {% block body %}{% endblock %}
+    {% include "footer.html"  %}
+
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+    <script src="{{url_for('home.static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/bootstrap.min.js')}}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
