@@ -15,6 +15,8 @@ def create_app():
 
     create_logger(app)
     create_blueprints(app)
+    if app.config['USE_SCSS']:
+        create_extensions(app)
     if app.config['USE_EXTENSIONS']:
         create_extensions(app)
     if app.config['USE_DIRECTUS']:
@@ -33,13 +35,15 @@ def create_blueprints(app):
     app.register_blueprint(home_bp)
 
 
-def create_extensions(app):
+def create_scss_watch(app):
     from flask_scss import Scss
     Scss(
         app,
         static_dir=os.path.dirname(os.path.abspath(__file__))+'/home/static/css',
         asset_dir=os.path.dirname(os.path.abspath(__file__))+'/home/static/scss')
 
+
+def create_extensions(app):
     from .extensions import db
     db.init_app(app)
 
