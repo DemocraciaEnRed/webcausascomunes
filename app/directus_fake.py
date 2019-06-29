@@ -36,7 +36,7 @@ def get_index_imgs():
             'imagen': 'manifiesto.svg',
         },
         'candidates': {
-            'imagen': 'nove2.jpg'
+            'imagen': 'candidates.svg'
         }
     }
 
