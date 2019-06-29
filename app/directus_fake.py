@@ -3,7 +3,7 @@ def get_index_textos():
     return {
         'portada': {
             'titulo': 'Causas comunes',
-            'subtitulo': 'Todo aquello que querías saber sobre',
+            'subtitulo': 'Todo aquello que querías saber sobre les candidates y sus propuestas.',
             'boton': 'Ver más'},
         'manifiesto': {
             'titulo': 'Nuestro manifiesto',
@@ -30,7 +30,7 @@ def get_index_textos():
 def get_index_imgs():
     return {
         'portada': {
-            'fondo': 'portada.jpg',
+            'imagen': 'portada.svg',
         },
         'candidates': {
             'imagen': 'nove2.jpg'

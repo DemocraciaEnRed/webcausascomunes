@@ -86,3 +86,51 @@
                       .icon-addon .form-control:focus + .glyphicon, .icon-addon:hover .glyphicon,
                       .icon-addon .form-control:focus + .fa, .icon-addon:hover .fa {
                         color: #2580db; }
+
+                        .navbar {
+                          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+                          justify-content: space-between; }
+                          .navbar .navbar-toggler {
+                            border: none;
+                            cursor: pointer; }
+                            .navbar .navbar-toggler:focus {
+                              outline: 0; }
+                          .navbar .form-control {
+                            border-radius: 1.25rem;
+                            border-color: #ffffff;
+                            max-width: 146px; }
+                            .navbar .form-control-icon {
+                              position: absolute;
+                              z-index: 2;
+                              display: block;
+                              pointer-events: none;
+                              right: 2.5rem; }
+
+.nav-link {
+  font-size: 1.25rem;
+  color: #ffffff; }
+  .nav-link.active {
+    font-weight: 600;
+    border: none; }
+    .nav-link.active:after {
+      content: " ";
+      height: 5px;
+      border-radius: 20px;
+      display: block;
+      background: #ffffff;
+      margin-top: 10px; }
+
+.navbar-collapse {
+  flex-grow: 0; }
+
+  .navbar-brand {
+    margin-right: 0; }
+    .navbar-brand img {
+      height: 30px; }
+
+@media (min-width: 992px) {
+  .navbar {
+    box-shadow: none;   }
+    .navbar-brand img {
+      height: 54px;   }
+}

@@ -6,7 +6,7 @@
 @font-face {
   font-family:'Barlow';
   src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
-  font-weight: 500;````
+  font-weight: 500;
 }
 @font-face {
   font-family:'Barlow';
@@ -15,15 +15,30 @@
 }
 
 $font-stack: 'Barlow', sans-serif;
+$font-size-medium: 1.25rem;
+
+// Media Queries from Bootstrap
+$width-small: 576px; // Small devices (landscape phones, less than 768px)
+$width-medium: 768px; // Medium devices (tablets, less than 992px)
+$width-large: 992px; // Large devices (desktops, less than 1200px)
+$width-xlarge: 1200px;
+
+$white: #ffffff;
 
 $color-principal-azul: #2a4b8c;
 $color-secundario-fucsia: #e61e68;
 $color-secundario-naranja: #f9b004;
-$color-fondo-1: #ffffff;
+$color-fondo-1: $white;
 $color-fondo-2: #fbfcfd;
+
 
 @mixin border-radius($radius: 5px) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
           border-radius: $radius;
 }
+
+// navbar
+$logo-height-mobile: 30px;
+$logo-height-desktop: 54px;
+$navbar-icons-color: #24499a;

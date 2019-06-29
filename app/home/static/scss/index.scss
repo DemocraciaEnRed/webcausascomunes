@@ -9,6 +9,16 @@
 body {
   font: 100% $font-stack;
   color: black;
+  @media (min-width: $width-large) {
+    background-image: url('/static/img/home-background.svg');
+    background-position-x: right;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
+}
+
+img {
+    max-width: 100%;
 }
 
 /* hacksito que hay que ponerle a los .row que estén fuera de un container (ya que la página no tiene container principal) */
@@ -52,20 +62,65 @@ body {
     text-align: left;
 }
 
+.btn-primary {
+    border-radius: 2rem;
+    background-color: $color-principal-azul;
+    border-color: $color-principal-azul;
+    color: $white;
+    border-width: 3px;
+    &:hover {
+        background-color: $white;
+        color: $color-principal-azul;
+    }
+}
+
+.btn-lg {
+    padding: .75rem 3rem;
+}
+
 /*#################*/
 /* SECCIONES */
 .portada {
-    img { height:600px }
-    .carousel-caption {
-        top: 50%;
-        transform: translateY(-50%);
-        bottom: auto;
-        h1 {
-            font-weight: bold;
-        }
-        p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $white;
+    @media (min-width: $width-medium) {
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: end;
+    }
+    .container {
+        @media (min-width: $width-medium) {
+            max-width: 35%;
         }
     }
+    @media (min-width: $width-large) {
+        background-color: transparent;
+    }
+    h1 img {
+        width: 204px;
+        @media (min-width: $width-large) {
+            max-width: 525px;
+            width: 100%;
+        }
+    }
+    p {
+        @media (min-width: $width-medium) {
+            font-size: $font-size-medium;
+            max-width: 80%;
+        }
+    }
+    .portada__img {
+        max-width: 80%;
+        order: -1;
+        @media (min-width: $width-medium) {
+            order: initial;
+            max-width: 40%;
+        }
+    }
+
 }
 
 .propuestas {
