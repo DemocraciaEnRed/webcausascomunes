@@ -34,40 +34,36 @@ img {
       padding-right: 0;
       padding-left: 0; }
 
-.seccion:nth-child(even) {
+.section {
   background-color: #ffffff; }
-  .seccion:nth-child(even) .jumbotron-fluid {
-    background-color: #ffffff; }
+  .section.jumbotron-fluid {
+    margin-bottom: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem; }
+    @media (min-width: 768px) {
+      .section.jumbotron-fluid {
+        padding-top: 6rem;
+        padding-bottom: 6rem;   }
+}
 
-.seccion:nth-child(odd) {
-  background-color: #fbfcfd; }
-  .seccion:nth-child(odd) .jumbotron-fluid {
-    background-color: #fbfcfd; }
-
-.seccion .jumbotron-fluid {
-  margin-bottom: auto; }
-  .seccion .jumbotron-fluid .container > h1 {
-    margin-bottom: 1.5rem; }
-
-.header-primario {
+.section__title {
   color: #2a4b8c;
-  font-size: 2rem;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 0.93;
-  letter-spacing: normal;
-  text-align: left; }
+  font-size: 1.25rem;
+  font-weight: 600; }
+  @media (min-width: 768px) {
+    .section__title {
+      font-size: 2rem;   }
+}
 
-  .btn-primary {
-    border-radius: 2rem;
-    background-color: #2a4b8c;
-    border-color: #2a4b8c;
-    color: #ffffff;
-    border-width: 3px; }
-    .btn-primary:hover {
-      background-color: #ffffff;
-      color: #2a4b8c; }
+.btn-primary {
+  border-radius: 2rem;
+  background-color: #2a4b8c;
+  border-color: #2a4b8c;
+  color: #ffffff;
+  border-width: 3px; }
+  .btn-primary:hover {
+    background-color: #ffffff;
+    color: #2a4b8c; }
 
 .btn-lg {
   padding: 0.75rem 3rem; }
@@ -111,6 +107,41 @@ img {
         .portada .portada__img {
           order: initial;
           max-width: 40%;   }
+}
+
+.manifiesto {
+  background-image: url('/static/img/manifiesto-background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fbfcfd; }
+  .manifiesto p {
+    color: #1d1d1b;
+    font-size: 0.9rem;
+    line-height: 1.3rem; }
+    @media (min-width: 768px) {
+      .manifiesto p {
+        font-size: 1rem;
+        line-height: 1.75rem;   }
+}
+
+.section__signature {
+  color: #1d1d1b;
+  font-style: italic; }
+  @media (min-width: 768px) {
+    .section__signature {
+      font-size: 1.15rem;   }
+}
+    .section__signature:before {
+      content: " ";
+      background-color: #2a4b8c;
+      width: 55px;
+      height: 5px;
+      margin-right: 2rem;
+      display: inline-block;
+      vertical-align: middle; }
+      @media (min-width: 768px) {
+        .section__signature:before {
+          opacity: 0.5;   }
 }
 
 .propuestas .subtitulo {
