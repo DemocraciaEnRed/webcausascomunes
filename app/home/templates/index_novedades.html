@@ -1,9 +1,7 @@
 {% from '_itemnovedad.html' import create_item_novedad %}
-
-<div class="novedades seccion">
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container text-center">
-        <h1 class="header-primario">{{dtextos['novedades']['titulo']}}</h1>
+<section class="novedades section jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h2 class="section__title">{{dtextos['novedades']['titulo']}}</h2>
         <p class="subtitulo">{{dtextos['novedades']['subtitulo']}}</p>
         {% set ns = namespace(acumcols=0) %}
 
@@ -22,6 +20,5 @@
             {% endif %}
 
         {% endfor %}
-      </div>
     </div>
-</div>
+</section>

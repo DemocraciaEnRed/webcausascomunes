@@ -33,17 +33,6 @@ img {
   }
 }
 
-/* intercalar colores de fondo, seguro terminemos hardcodeandolo */
-/* .section:nth-child(even){
-    background-color: $color-fondo-1;
-    .jumbotron-fluid {background-color: $color-fondo-1;}
-}
-.section:nth-child(odd){
-    background-color: $color-fondo-2;
-    .jumbotron-fluid {background-color: $color-fondo-2;}
-} */
-
-
 .section {
     background-color: $white;
     &.jumbotron-fluid {
@@ -54,6 +43,14 @@ img {
             padding-top: 6rem;
             padding-bottom: 6rem;
         }
+    }
+
+    /* intercalar colores de fondo, seguro terminemos hardcodeandolo */
+    &:nth-child(odd){
+        background-color: $color-fondo-1;
+    }
+    &:nth-child(even){
+        background-color: $color-fondo-2;
     }
 }
 
