@@ -59,6 +59,16 @@ img {
       font-size: 2rem;   }
 }
 
+.section__subtitle {
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  margin-top: 1rem; }
+  @media (min-width: 768px) {
+    .section__subtitle {
+      font-size: 1.15rem;
+      line-height: 1.75rem;   }
+}
+
 .btn-primary {
   border-radius: 2rem;
   background-color: #2a4b8c;

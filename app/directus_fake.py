@@ -11,7 +11,7 @@ def get_index_textos():
             'firma': 'Causas Comunes'},
         'propuestas': {
             'titulo': 'Conocé las propuestas',
-            'subtitulo': 'Est nobis dolorem magni qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. Temporibus autem voluptatem sunt aliquam sit debitis et illo. Velit nostrum sit animi necessitatibus sed impedit delectus.'},
+            'subtitulo': 'Est nobis dolorem magni qui rerum delectus laborum ipsum.'},
         'novedades': {
             'titulo': 'Últimas novedades',
             'subtitulo': 'Nam libero tempore qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. Temporibus autem voluptatem sunt aliquam sit debitis et illo. Velit nostrum sit animi necessitatibus sed impedit delectus.',

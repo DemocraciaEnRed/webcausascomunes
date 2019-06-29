@@ -56,10 +56,20 @@ img {
 
 .section__title {
     color: $color-principal-azul;
-    font-size: 1.25rem;
+    font-size: $font-size-large;
     font-weight: 600;
     @media (min-width: $width-medium) {
-        font-size: 2rem;
+        font-size: $font-size-xlarge;
+    }
+}
+
+.section__subtitle {
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    margin-top: 1rem;
+    @media (min-width: $width-medium) {
+        font-size: $font-size-medium;
+        line-height: $line-height-medium;
     }
 }
 
@@ -111,7 +121,7 @@ img {
     }
     p {
         @media (min-width: $width-medium) {
-            font-size: $font-size-medium;
+            font-size: $font-size-large;
             max-width: 80%;
         }
     }
@@ -134,11 +144,11 @@ img {
     background-color: $color-fondo-2;
     p {
         color: $color-texto-light;
-        font-size: 0.9rem;
-        line-height: 1.3rem;
+        font-size: $font-size-small;
+        line-height: $line-height-small;
         @media (min-width: $width-medium) {
-            font-size: 1rem;
-            line-height: 1.75rem;
+            font-size: $font-size-base;
+            line-height: $line-height-medium;
         }
     }
 }
@@ -147,7 +157,7 @@ img {
     color: $color-texto-light;
     font-style: italic;
     @media (min-width: $width-medium) {
-        font-size: 1.15rem;
+        font-size: $font-size-medium;
     }
     &:before {
         content: " ";

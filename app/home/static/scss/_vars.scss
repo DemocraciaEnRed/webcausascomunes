@@ -15,7 +15,13 @@
 }
 
 $font-stack: 'Barlow', sans-serif;
-$font-size-medium: 1.25rem;
+$font-size-base: 1rem;
+$font-size-small: 0.9rem;
+$font-size-medium: 1.15rem;
+$font-size-large: 1.25rem;
+$font-size-xlarge: 2rem;
+$line-height-small: 1.3rem;
+$line-height-medium: 1.75rem;
 
 // Media Queries from Bootstrap
 $width-small: 576px; // Small devices (landscape phones, less than 768px)
