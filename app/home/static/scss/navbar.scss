@@ -20,9 +20,13 @@ nav {
             outline: 0;
         }
     }
+    .form-group {
+        position: relative;
+        margin: 0 auto;
+    }
     .form-control {
         border-radius: 1.25rem;
-        border-color: $white;
+        border-color: $color-principal-azul;
         max-width: 146px;
     }
     .form-control-icon {
@@ -30,24 +34,30 @@ nav {
         z-index: 2;
         display: block;
         pointer-events: none;
-        right: 2.5rem;
+        right: 1rem;
     }
 }
 
 .nav-link {
     font-size: $font-size-medium;
-    color: $white;
-    &.active {
-        font-weight: 600;
+    color: $color-principal-azul;
+    &:after {
+        content: " ";
+        margin-top: 10px;
+        height: 5px;
+        display: none;
+    }
+    &.active, 
+    &:hover {
         border: none;
         &:after {
-            content: " ";
-            height: 5px;
             border-radius: 20px;
-            display: block;
+            display: none;
             background: $white;
-            margin-top: 10px;
         }
+    }
+    &.active {
+        font-weight: 600;
     }
 }
 
@@ -66,10 +76,26 @@ nav {
 @media (min-width: $width-large) {
     .navbar {
         box-shadow: none;
+        .form-control {
+            border-color: $white;
+        }
     }
     .navbar-brand {
         img {
             height: $logo-height-desktop;
         }
     }  
+    .nav-link {
+        color: $white;
+        &:after {
+            display: block;
+        }
+        &.active,
+        &:hover {
+            color: $white;
+            &:after {
+                display: block;
+            }
+        }
+    }
 }
