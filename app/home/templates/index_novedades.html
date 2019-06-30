@@ -15,7 +15,7 @@
                 <div class="row">
             {% endif %}
 
-                {{ create_item_novedad(itm['ancho_columnas'], itm['imgurl'], itm['titulo'], itm['texto'], isstatic=isstatic) }}
+                {{ create_item_novedad(itm['ancho_columnas'], itm['imgurl'], itm['titulo'], itm['hashtag'], isstatic=isstatic) }}
 
             {% set ns.acumcols=ns.acumcols+itm['ancho_columnas'] %}
             {% if ns.acumcols >= 12 %}

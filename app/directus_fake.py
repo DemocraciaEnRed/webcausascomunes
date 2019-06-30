@@ -14,7 +14,7 @@ def get_index_textos():
             'subtitulo': 'Est nobis dolorem magni qui rerum delectus laborum ipsum.'},
         'novedades': {
             'titulo': 'Últimas novedades',
-            'subtitulo': 'Nam libero tempore qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. Temporibus autem voluptatem sunt aliquam sit debitis et illo. Velit nostrum sit animi necessitatibus sed impedit delectus.',
+            'subtitulo': 'Nam libero tempore qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed.',
             'items': get_novedades_items()},
         'candidates': {
             'titulo': 'Contactá a les candidates',
@@ -58,20 +58,18 @@ def get_index_imgs():
 
 
 class ItemNovedad:
-    def __init__(self, ancho_columnas, imgurl, titulo, texto):
+    def __init__(self, ancho_columnas, imgurl, titulo, hashtag):
         self.ancho_columnas = ancho_columnas
         self.imgurl = imgurl
         self.titulo = titulo
-        self.texto = texto
+        self.hashtag = hashtag
 
 
 def get_novedades_items():
     return [
-        ItemNovedad(4, 'nove1.jpg', 'Un titulo1', 'sad kasd kjsa jas djklasdjas  askljc asc klascjk acicuq iweuqw skj'),
-        ItemNovedad(8, 'nove2.jpg', 'Un titulo2', 'ty  jnbvn fgghd ud gfdfhfgdb   fgdjas  askljc asc klascjw askj'),
-        ItemNovedad(6, 'nove2.jpg', 'Un titulo56', 'uiopupiolasdjas  askljc asc klascjk acicuq iweuqw askj'),
-        ItemNovedad(3, 'nove1.jpg', 'Un titulo23', 'sb v a jas djklasdjas  askljc asc klascjk acicuq iweuqw askj'),
-        ItemNovedad(3, 'nove1.jpg', 'Un titulo34', 'sa24 22632352 5klasdjas  askljc asc klascjk acicuq iweuqw askj')
+        ItemNovedad(8, 'nove1.jpg', 'Título de artículo y/o tema de debate para elecciones.', '#Drogas'),
+        ItemNovedad(4, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', '#Trabajo'),
+        ItemNovedad(8, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', '#Vivienda'),
     ]
 
 class ItemAgenda:

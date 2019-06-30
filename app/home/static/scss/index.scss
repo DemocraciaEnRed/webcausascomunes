@@ -257,7 +257,38 @@ label {
     
 }
 
-.novedades .jumbotron {
+/* Novedades */
+
+.card--novedades {
+    box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
+    border-radius: 0;
+    background: $white;
+    .card-title {
+        font-size: $font-size-medium;
+        a {
+            color: $color-secundario-naranja;
+            span {
+                max-width: 80%;
+                display: inline-block;
+            }
+            .fa {
+                font-size: $font-size-large;
+            }
+        }
+    }
+}
+
+.card-hashtag {
+    font-size: $font-size-xsmall;
+    display: inline-block;
+    background-color: #eff1f4;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+/* .novedades .jumbotron {
     .row > div{
         min-height:100%;
     }
@@ -266,7 +297,7 @@ label {
         img { height:15rem; }
         .card-body { min-height:12rem; }
     }
-}
+} */
 
 
 /* Eventos */

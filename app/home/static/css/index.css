@@ -226,23 +226,37 @@ img {
         order: initial;   }
 }
 
-.novedades .jumbotron .row > div {
-  min-height: 100%; }
-  .novedades .jumbotron .card {
-    height: 100%; }
-    .novedades .jumbotron .card img {
-      height: 15rem; }
-      .novedades .jumbotron .card .card-body {
-        min-height: 12rem; }
+.card--novedades {
+  box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
+  border-radius: 0;
+  background: #ffffff; }
+  .card--novedades .card-title {
+    font-size: 1.25rem; }
+    .card--novedades .card-title a {
+      color: #f9b004; }
+      .card--novedades .card-title a span {
+        max-width: 80%;
+        display: inline-block; }
+        .card--novedades .card-title a .fa {
+          font-size: 1.5rem; }
 
-.eventos {
-  background-image: url('/static/img/manifiesto-background.svg');
-  background-repeat: no-repeat;
-  background-size: cover; }
-  .eventos .list-group {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
-    .eventos .card {
-      height: 100%; }
+.card-hashtag {
+  font-size: 0.9rem;
+  display: inline-block;
+  background-color: #eff1f4;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem; }
+
+  .eventos {
+    background-image: url('/static/img/manifiesto-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .eventos .list-group {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+      .eventos .card {
+        height: 100%; }
 
 .list-group-item--agenda {
   padding-left: 0;
