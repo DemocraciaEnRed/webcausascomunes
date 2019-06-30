@@ -1,0 +1,6 @@
+{% macro create_item_agenda(date, time, title, hashtag) -%}
+<li class="list-group-item list-group-item--agenda">
+    <h5 class="list-group-item--agenda__title">{{ date }}</h5>
+    <h6 class="list-group-item--agenda__data">{{ time }} - {{ title }} <span class="list-group-item--agenda__data--hashtag">{{hashtag}}</span></h6>
+</li>
+{%- endmacro %}

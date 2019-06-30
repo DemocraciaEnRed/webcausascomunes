@@ -107,6 +107,37 @@ img {
     }
 }
 
+.btn-md {
+    padding: .5rem 2.5rem;
+}
+
+.btn-shadow {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.card {
+    border-radius: 20px;
+    border: none;
+}
+
+.card-with-shadow {
+    box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
+}
+
+.card-title {
+    font-size: $font-size-small;
+}
+
+.form-control {
+    border-radius: 20px;
+    border: solid 1px rgba(60,60,60, 0.3);
+}
+
+label {
+    color: $color-texto-light;
+    padding-left: 1rem;
+}
+
 /*#################*/
 /* SECCIONES */
 
@@ -234,5 +265,52 @@ img {
         height: 100%;
         img { height:15rem; }
         .card-body { min-height:12rem; }
+    }
+}
+
+
+/* Eventos */
+.eventos {
+    background-image: url('/static/img/manifiesto-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .list-group {
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .card {
+        height: 100%;
+    }
+}
+
+.list-group-item--agenda {
+    padding-left: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    &:first-child {
+        border-top: 0;
+    }
+    .list-group-item--agenda__title {
+        color: $color-principal-azul;
+        font-size: $font-size-xsmall;
+        font-weight: 600;
+        @media (min-width: $width-medium) {
+            font-size: $font-size-base;
+        }
+    }
+    .list-group-item--agenda__data {
+        $color: #696969;
+        font-size: $font-size-xsmall;
+        font-weight: 400;
+        line-height: 2;
+        margin-bottom: 0;
+        @media (min-width: $width-medium) {
+            font-size: $font-size-base;
+            line-height: 1.2;
+        }
+    }
+
+    .list-group-item--agenda__data--hashtag {
+        font-weight: 600;
+        color: $color-secundario-naranja;
     }
 }

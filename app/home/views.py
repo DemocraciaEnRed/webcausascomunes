@@ -16,14 +16,17 @@ def index():
         dtextos = directus_fake.get_index_textos()
         dimgs = directus_fake.get_index_imgs()
         itemsnovedades = directus_fake.get_novedades_items()
+        itemsagenda = directus_fake.get_agenda_items()
     else:
         import app.directus as directus
         dtextos = directus.dapi.get_textos('Home')
         dimgs = directus.dapi.get_imgs('Home')
         itemsnovedades = directus.dapi.get_itemsnovedades()
+        itemsagenda = directus.dapi.get_itemsagenda()
     return render_template(
         'index.html',
         dtextos=dtextos,
         dimgs=dimgs,
         itemsnovedades=itemsnovedades,
+        itemsagenda=itemsagenda,
         isstatic=isstatic)

@@ -23,6 +23,22 @@ def get_index_textos():
             'items': get_novedades_items()},
         'eventos': {
             'titulo': 'Enterate de los próximos eventos',
+            'agenda': {
+                'titulo': 'Agenda',
+                'items': get_agenda_items()
+            },
+            'novedades': {
+                'titulo': '¡Hola! Recibí las últimas novedades en tu correo.',
+                'email': {
+                    'label':'Tu correo electrónico',
+                    'placeholder':'Ej: hola@tuemail.com'
+                },
+                'ubicacion': {
+                    'label':'¿En qué ciudad/provincia votás?',
+                    'placeholder':'Ingresá la ciudad o provincia.'
+                },
+                'boton' : 'Enviar'
+            } 
         }
     }
 
@@ -56,4 +72,19 @@ def get_novedades_items():
         ItemNovedad(6, 'nove2.jpg', 'Un titulo56', 'uiopupiolasdjas  askljc asc klascjk acicuq iweuqw askj'),
         ItemNovedad(3, 'nove1.jpg', 'Un titulo23', 'sb v a jas djklasdjas  askljc asc klascjk acicuq iweuqw askj'),
         ItemNovedad(3, 'nove1.jpg', 'Un titulo34', 'sa24 22632352 5klasdjas  askljc asc klascjk acicuq iweuqw askj')
+    ]
+
+class ItemAgenda:
+    def __init__(self, fecha, hora, titulo, hashtag):
+        self.fecha = fecha
+        self.hora = hora
+        self.titulo = titulo
+        self.hashtag = hashtag
+
+def get_agenda_items():
+    return [
+        ItemAgenda('Martes 19 de junio', '17:30 hs', 'Título de la actividad que se realizará.', '#Drogas'),
+        ItemAgenda('Viernes 5 de julio', '9:00 hs', 'Título de la actividad que se realizará.', '#Trabajo'),
+        ItemAgenda('Viernes 5 de julio', '9:00 hs', 'Título de la actividad que se realizará.', '#Trabajo'),
+        ItemAgenda('Viernes 5 de julio', '9:00 hs', 'Título de la actividad que se realizará.', '#Trabajo'),
     ]
