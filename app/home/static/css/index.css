@@ -198,10 +198,6 @@ img {
           opacity: 0.5;   }
 }
 
-.propuestas .subtitulo {
-  max-width: 55rem;
-  margin: auto; }
-
 .section.candidates {
   background-color: #2a4b8c; }
   .section.candidates .section__title {
