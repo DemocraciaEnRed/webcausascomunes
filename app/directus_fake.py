@@ -1,3 +1,4 @@
+import datetime
 
 def get_index_textos():
     return {
@@ -67,17 +68,16 @@ def get_novedades_items():
 
 
 class ItemAgenda:
-    def __init__(self, fecha, hora, titulo, hashtag):
-        self.fecha = fecha
-        self.hora = hora
+    def __init__(self, fechahora, titulo, hashtag):
+        self.fechahora = fechahora
         self.titulo = titulo
         self.hashtag = hashtag
 
 
 def get_agenda_items():
     return [
-        ItemAgenda('Martes 19 de junio', '17:30 hs', 'Título de la actividad que se realizará.', '#Drogas'),
-        ItemAgenda('Viernes 5 de julio', '9:00 hs', 'Título de la actividad que se realizará.', '#Trabajo'),
-        ItemAgenda('Viernes 5 de julio', '9:00 hs', 'Título de la actividad que se realizará.', '#Trabajo'),
-        ItemAgenda('Viernes 5 de julio', '9:00 hs', 'Título de la actividad que se realizará.', '#Trabajo'),
+        ItemAgenda(datetime.datetime(2019, 5, 19, 17, 30), 'Título de la actividad que se realizará.', '#Drogas'),
+        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', '#Trabajo'),
+        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', '#Trabajo'),
+        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', '#Trabajo'),
     ]
