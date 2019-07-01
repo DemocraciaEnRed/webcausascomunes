@@ -231,12 +231,19 @@ img {
   border-radius: 0;
   background: #ffffff; }
   .card--novedades .card-title {
-    font-size: 1.25rem; }
-    .card--novedades .card-title a {
-      color: #f9b004; }
-      .card--novedades .card-title a span {
-        max-width: 80%;
-        display: inline-block; }
+    font-size: 1rem; }
+    @media (min-width: 768px) {
+      .card--novedades .card-title {
+        font-size: 1.25rem;   }
+}
+      .card--novedades .card-title a {
+        color: #f9b004; }
+        .card--novedades .card-title a span {
+          display: inline-block; }
+          @media (min-width: 768px) {
+            .card--novedades .card-title a span {
+              max-width: 80%;   }
+}
         .card--novedades .card-title a .fa {
           font-size: 1.5rem; }
 
@@ -247,7 +254,8 @@ img {
   padding: 0 1rem;
   border-radius: 1rem;
   line-height: 1.8;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  color: #f9b004; }
 
   .eventos {
     background-image: url('/static/img/manifiesto-background.svg');

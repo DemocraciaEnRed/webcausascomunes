@@ -222,13 +222,8 @@ label {
     }
 }
 
+/* Propuestas */
 
-.propuestas {
-    .subtitulo {
-        max-width: 55rem;
-        margin: auto;
-    }
-}
 
 /* Candidates */
 .section.candidates {
@@ -264,12 +259,17 @@ label {
     border-radius: 0;
     background: $white;
     .card-title {
-        font-size: $font-size-medium;
+        font-size: $font-size-base;
+        @media(min-width: $width-medium) {
+            font-size: $font-size-medium;
+        }
         a {
             color: $color-secundario-naranja;
             span {
-                max-width: 80%;
                 display: inline-block;
+                @media(min-width: $width-medium) {
+                    max-width: 80%;
+                }
             }
             .fa {
                 font-size: $font-size-large;
@@ -286,6 +286,7 @@ label {
     border-radius: 1rem;
     line-height: 1.8;
     margin-bottom: 0.5rem;
+    color: $color-secundario-naranja;
 }
 
 /* .novedades .jumbotron {
