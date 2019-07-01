@@ -19,26 +19,19 @@ def get_index_textos():
         'candidates': {
             'titulo': 'Contactá a les candidates',
             'subtitulo': 'Activá la causa que quieras y contales por qué es tan importante.',
-            'boton': 'Activá',
-            'items': get_novedades_items()},
-        'eventos': {
+            'boton': 'Activá'},
+        'agenda': {
             'titulo': 'Enterate de los próximos eventos',
-            'agenda': {
-                'titulo': 'Agenda',
-                'items': get_agenda_items()
-            },
-            'novedades': {
-                'titulo': '¡Hola! Recibí las últimas novedades en tu correo.',
-                'email': {
-                    'label':'Tu correo electrónico',
-                    'placeholder':'Ej: hola@tuemail.com'
-                },
-                'ubicacion': {
-                    'label':'¿En qué ciudad/provincia votás?',
-                    'placeholder':'Ingresá la ciudad o provincia.'
-                },
-                'boton' : 'Enviar'
-            } 
+            'subtitulo': 'Agenda',
+            'items': get_agenda_items()
+        },
+        'correo': {
+            'titulo': '¡Hola! Recibí las últimas novedades en tu correo.',
+            'email': 'Tu correo electrónico',
+            'emailsub': 'Ej: hola@tuemail.com',
+            'ubicacion': '¿En qué ciudad/provincia votás?',
+            'ubicacionsub': 'Ingresá la ciudad o provincia.',
+            'boton': 'Enviar'
         }
     }
 
@@ -72,12 +65,14 @@ def get_novedades_items():
         ItemNovedad(8, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', '#Vivienda'),
     ]
 
+
 class ItemAgenda:
     def __init__(self, fecha, hora, titulo, hashtag):
         self.fecha = fecha
         self.hora = hora
         self.titulo = titulo
         self.hashtag = hashtag
+
 
 def get_agenda_items():
     return [

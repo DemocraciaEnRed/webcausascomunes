@@ -2,15 +2,15 @@
 
 <section class="eventos section jumbotron jumbotron-fluid">
     <div class="container">
-        <h2 class="section__title text-center">{{dtextos['eventos']['titulo']}}</h2>
+        <h2 class="section__title text-center">{{dtextos['agenda']['titulo']}}</h2>
         <div class="row mt-5">
             <div class="col-md-7">
                 <div class="card card-with-shadow">
                     <div class="card-body p-4 p-md-5">
-                        <h5 class="card-title">{{dtextos['eventos']['agenda']['titulo']}}</h5>
+                        <h5 class="card-title">{{dtextos['agenda']['subtitulo']}}</h5>
                         <ul class="list-group list-group-flush my-4">
                             {% for itm in itemsagenda %}
-                                {{ create_item_agenda(itm['fecha'], itm['hora'], itm['titulo'], itm['hashtag']) }}
+                                {{ create_item_agenda(itm['fechahora'], itm['titulo'], itm['hashtag']) }}
                             {% endfor %}
                         </ul>
                     </div>
@@ -19,17 +19,17 @@
             <div class="col-md-5 mt-5 mt-md-0">
                 <div class="card card-with-shadow text-center">
                     <div class="card-body p-4 p-md-5">
-                        <h5 class="card-title">{{dtextos['eventos']['novedades']['titulo']}}</h5>
+                        <h5 class="card-title">{{dtextos['correo']['titulo']}}</h5>
                         <form class="mt-5 px-md-4"> <!--  TODO Agregar funcionalidad -->
                             <div class="form-group text-left mb-5">
-                                <label for="email">{{dtextos['eventos']['novedades']['email']['label']}}</label>
-                                <input type="email" class="form-control" id="email" placeholder="{{dtextos['eventos']['novedades']['email']['placeholder']}}">
+                                <label for="email">{{dtextos['correo']['email']}}</label>
+                                <input type="email" class="form-control" id="email" placeholder="{{dtextos['correo']['emailsub']}}">
                             </div>
                             <div class="form-group text-left mb-5">
-                                <label for="ubicacion">{{dtextos['eventos']['novedades']['ubicacion']['label']}}</label>
-                                <input type="text" class="form-control" id="ubicacion" placeholder="{{dtextos['eventos']['novedades']['ubicacion']['placeholder']}}">
+                                <label for="ubicacion">{{dtextos['correo']['ubicacion']}}</label>
+                                <input type="text" class="form-control" id="ubicacion" placeholder="{{dtextos['correo']['ubicacionsub']}}">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-shadow btn-md">{{dtextos['eventos']['novedades']['boton']}}</button>
+                            <button type="submit" class="btn btn-primary btn-shadow btn-md">{{dtextos['correo']['boton']}}</button>
                         </form>
                     </div>
                 </div>

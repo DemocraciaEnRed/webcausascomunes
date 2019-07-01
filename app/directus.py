@@ -5,6 +5,7 @@
 # https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/endpoints.md
 import requests
 import re
+import datetime
 
 
 # api endpoints - https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/endpoints.md
@@ -129,6 +130,18 @@ class DirectusApi:
                 'titulo': row['titulo'],
                 'texto': row['texto'],
                 'imgurl': self.ser_url + imgurl
+            }
+            items.append(item)
+        return items
+
+    def get_itemsagenda(self):
+        rows = self.get_table_rows('items_agenda')
+        items = []
+        for row in rows:
+            item = {
+                'fechahora': datetime.datetime.strptime(row['fecha'], "%Y-%m-%d %H:%M:%S"),
+                'titulo': row['titulo'],
+                'hashtag': row['hashtag']
             }
             items.append(item)
         return items

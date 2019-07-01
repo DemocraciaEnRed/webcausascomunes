@@ -17,8 +17,8 @@ def create_app():
     create_blueprints(app)
     if app.config['USE_SCSS']:
         create_scss_watch(app)
-    if app.config['USE_EXTENSIONS']:
-        create_extensions(app)
+    # if app.config['USE_EXTENSIONS']:
+    #     create_extensions(app)
     if app.config['USE_DIRECTUS']:
         import app.directus as directus
         directus.init_flask_app(app.config['DIRECTUS_URL'], app.config['DIRECTUS_API_PATH'], app.config['DIRECTUS_TOKEN'])
