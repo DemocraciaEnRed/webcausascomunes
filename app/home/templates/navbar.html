@@ -1,30 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg py-3 px-4">
+    <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="{{ create_img_src('menu.svg', isstatic=isstatic) }}" alt="Menu"/>
     </button>
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">
+        <img src="{{ create_img_src('logo.svg', isstatic=isstatic) }}" alt="Causas Comunes"/>
+    </a>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav nav-pills ml-auto mt-2 mt-lg-0">
+    <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search bar">
+        <img src="{{ create_img_src('search.svg', isstatic=isstatic) }}" alt="Buscar"/>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-md-5">
             <li class="nav-item">
-                <a class="nav-link px-5" href="#">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link px-4 active" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link px-5 active" href="#">Propuestas</a>
+                <a class="nav-link px-4" href="#">Propuestas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link px-5" href="#">Agenda</a>
+                <a class="nav-link px-4" href="#">Agenda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link px-5" href="#">Contacto</a>
+                <a class="nav-link px-4" href="#">Contacto</a>
             </li>
         </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSearch">
         <form class="form-inline my-2 my-lg-0">
             <div class="form-group">
-                <div class="icon-addon addon-md">
-                    <input type="text" placeholder="Buscar..." class="form-control" id="buscar">
-                    <label for="buscar" class="fa fa-search" rel="tooltip" title="email"></label>
-                </div>
+                <input class="form-control pr-4" type="text" placeholder="Buscar">
+                <span class="fa fa-search form-control-icon"></span>
             </div>
         </form>
     </div>

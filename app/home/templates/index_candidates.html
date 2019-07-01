@@ -1,16 +1,14 @@
-<div class="candidates seccion">
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container text-left">
+<section class="candidates section jumbotron jumbotron-fluid">
+    <div class="container text-center text-md-left">
         <div class="row">
-            <div class="col-md-8">
-                <h1 class="header-primario mb-3">{{dtextos['candidates']['titulo']}}</h1>
-                <p class="subtitulo">{{dtextos['candidates']['subtitulo']}}</p>
-                <button type="button" class="btn btn-secondary px-5">{{dtextos['candidates']['boton']}}</button>
+            <div class="col-md-5">
+                <h2 class="section__title mb-3">{{dtextos['candidates']['titulo']}}</h2>
+                <p class="section__subtitle">{{dtextos['candidates']['subtitulo']}}</p>
+                <button type="button" class="btn btn-primary btn-primary-inverted btn-bold btn-lg">{{dtextos['candidates']['boton']}}</button>
             </div>
-            <div class="col-md-4">
-                <img src="{{ create_img_src(dimgs['candidates']['imagen'], isstatic=isstatic) }}" class="img-fluid">
+            <div class="col-md-7">
+                <img src="{{ create_img_src(dimgs['candidates']['imagen'], isstatic=isstatic) }}" class="img-fluid mt-3 mt-md-0">
             </div>
         </div>
-      </div>
     </div>
-</div>
+</section>
