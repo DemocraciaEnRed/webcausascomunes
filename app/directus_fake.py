@@ -61,9 +61,9 @@ class ItemNovedad:
 
 def get_novedades_items():
     return [
-        ItemNovedad(8, 'nove1.jpg', 'Título de artículo y/o tema de debate para elecciones.', '#Drogas'),
-        ItemNovedad(4, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', '#Trabajo'),
-        ItemNovedad(8, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', '#Vivienda'),
+        ItemNovedad(8, 'nove1.jpg', 'Título de artículo y/o tema de debate para elecciones.', 'drogas'),
+        ItemNovedad(4, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', 'trabajo'),
+        ItemNovedad(8, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', 'vivienda'),
     ]
 
 
@@ -76,8 +76,8 @@ class ItemAgenda:
 
 def get_agenda_items():
     return [
-        ItemAgenda(datetime.datetime(2019, 5, 19, 17, 30), 'Título de la actividad que se realizará.', '#Drogas'),
-        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', '#Trabajo'),
-        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', '#Trabajo'),
-        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', '#Trabajo'),
+        ItemAgenda(datetime.datetime(2019, 5, 19, 17, 30), 'Título de la actividad que se realizará.', 'drogas'),
+        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', 'trabajo'),
+        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', 'vivienda'),
+        ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', 'genero'),
     ]

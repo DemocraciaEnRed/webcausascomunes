@@ -51,3 +51,30 @@ $color-texto-light: #1d1d1b;
 $logo-height-mobile: 30px;
 $logo-height-desktop: 54px;
 $navbar-icons-color: #24499a;
+
+// causas
+$color-vivienda: #194a9a;
+$color-transparencia: #e61937;
+$color-trabajo: #e71869;
+$color-genero: #774997;
+$color-drogas: #f9b112;
+
+.text-color-vivienda {
+  color: $color-vivienda;
+}
+
+.text-color-transparencia {
+  color: $color-transparencia;
+}
+
+.text-color-trabajo {
+  color: $color-trabajo;
+}
+
+.text-color-genero {
+  color: $color-genero;
+}
+
+.text-color-drogas {
+  color: $color-drogas;
+}

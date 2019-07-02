@@ -13,15 +13,30 @@
       src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
       font-weight: 600; }
 
-      body {
-        font: 100% 'Barlow', sans-serif;
-        color: black; }
-        @media (min-width: 992px) {
-          body {
-            background-image: url('/static/img/home-background.svg');
-            background-position-x: right;
-            background-size: 80%;
-            background-repeat: no-repeat;   }
+      .text-color-vivienda {
+        color: #194a9a; }
+
+        .text-color-transparencia {
+          color: #e61937; }
+
+          .text-color-trabajo {
+            color: #e71869; }
+
+            .text-color-genero {
+              color: #774997; }
+
+              .text-color-drogas {
+                color: #f9b112; }
+
+                body {
+                  font: 100% 'Barlow', sans-serif;
+                  color: black; }
+                  @media (min-width: 992px) {
+                    body {
+                      background-image: url('/static/img/home-background.svg');
+                      background-position-x: right;
+                      background-size: 80%;
+                      background-repeat: no-repeat;   }
 }
 
 img {
@@ -232,16 +247,14 @@ img {
       .card--novedades .card-title {
         font-size: 1.25rem;   }
 }
-      .card--novedades .card-title a {
-        color: #f9b004; }
-        .card--novedades .card-title a span {
-          display: inline-block; }
-          @media (min-width: 768px) {
-            .card--novedades .card-title a span {
-              max-width: 80%;   }
+      .card--novedades .card-title a span {
+        display: inline-block; }
+        @media (min-width: 768px) {
+          .card--novedades .card-title a span {
+            max-width: 80%;   }
 }
-        .card--novedades .card-title a .fa {
-          font-size: 1.5rem; }
+      .card--novedades .card-title a .fa {
+        font-size: 1.5rem; }
 
 .card-hashtag {
   font-size: 0.9rem;
@@ -251,7 +264,7 @@ img {
   border-radius: 1rem;
   line-height: 1.8;
   margin-bottom: 0.5rem;
-  color: #f9b004; }
+  text-transform: capitalize; }
 
   .eventos {
     background-image: url('/static/img/manifiesto-background.svg');
@@ -288,4 +301,4 @@ img {
 }
   .list-group-item--agenda .list-group-item--agenda__data--hashtag {
     font-weight: 600;
-    color: #f9b004; }
+    text-transform: capitalize; }

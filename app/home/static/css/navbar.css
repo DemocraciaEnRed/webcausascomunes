@@ -13,14 +13,29 @@
       src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
       font-weight: 600; }
 
-      nav a.nav-link.active {
-        -webkit-border-radius: 2rem;
-        -moz-border-radius: 2rem;
-        border-radius: 2rem; }
-        nav form input.form-control {
-          -webkit-border-radius: 2rem;
-          -moz-border-radius: 2rem;
-          border-radius: 2rem; }
+      .text-color-vivienda {
+        color: #194a9a; }
+
+        .text-color-transparencia {
+          color: #e61937; }
+
+          .text-color-trabajo {
+            color: #e71869; }
+
+            .text-color-genero {
+              color: #774997; }
+
+              .text-color-drogas {
+                color: #f9b112; }
+
+                nav a.nav-link.active {
+                  -webkit-border-radius: 2rem;
+                  -moz-border-radius: 2rem;
+                  border-radius: 2rem; }
+                  nav form input.form-control {
+                    -webkit-border-radius: 2rem;
+                    -moz-border-radius: 2rem;
+                    border-radius: 2rem; }
 
 .navbar {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
