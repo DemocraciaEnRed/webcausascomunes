@@ -85,3 +85,21 @@ def get_agenda_items():
         ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', 'vivienda'),
         ItemAgenda(datetime.datetime(2019, 6, 5, 9), 'Título de la actividad que se realizará.', 'genero'),
     ]
+
+
+class ItemPropuesta:
+    def __init__(self, bgimg, icon, title, text):
+        self.bgimg = bgimg
+        self.icon = icon
+        self.title = title
+        self.text = text
+
+
+def get_propuesta_items():
+    return [
+        ItemPropuesta('propuesta1.png', '', 'Género', 'Cada vez ocupa un lugar más importante en el debate público, sin embargo todavía no está asimilada en las plataformas políticas. '),
+        ItemPropuesta('propuesta1.png', '', 'Ambiente', 'Las temáticas ambientales suelen quedar en un segundo plano en las discusiones de desarrollo productivo, se las trata...'),
+        ItemPropuesta('propuesta1.png', '', 'Ciencias', 'La situación de los ámbitos científicos en el país es alarmante. Las universidades y escuelas públicas cada vez tienen...'),
+        ItemPropuesta('propuesta1.png', '', 'Trabajo', ''),
+        ItemPropuesta('propuesta1.png', '', 'Vivienda', '')
+    ]

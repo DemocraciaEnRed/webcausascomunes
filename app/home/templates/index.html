@@ -5,6 +5,7 @@
 {% block head %}
     <title>Causas comunes</title>
     <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -25,8 +26,10 @@
 
     <!-- EVENTOS -->
     {% include 'index_eventos.html' %}
+
 {% endblock %}
 
 {% block scripts %}
     <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
 {% endblock %}

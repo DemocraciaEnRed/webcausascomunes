@@ -1,0 +1,9 @@
+{% from '_imghelper.html' import create_img_src %}
+
+{% macro create_item_propuesta(bgimg, icon, title, text, isstatic=True) -%}
+<div class="carousel-cell" style="background-image:url({{ create_img_src(bgimg, isstatic) }});">
+    <img src="" />
+    <h1>{{ title }}</h1>
+    <p>{{ text }}</p>
+</div>
+{%- endmacro %}

@@ -1,292 +1,354 @@
+
+
 @import 'vars';
 
 /* machete de breakpoint de bootstrap 4 */
+
+
 /*@media(min-width:576px){XS}
 @media(min-width:768px){SM}
 @media(min-width:992px){MD}
 @media(min-width:1200px){LG}*/
 
 body {
-  font: 100% $font-stack;
-  color: black;
-  @media (min-width: $width-large) {
-    background-image: url('/static/img/home-background.svg');
-    background-position-x: right;
-    background-size: 80%;
-    background-repeat: no-repeat;
-  }
+	font: 100% $font-stack;
+	color: black;
+	@media (min-width: $width-large) {
+		background-image: url('/static/img/home-background.svg');
+		background-position-x: right;
+		background-size: 80%;
+		background-repeat: no-repeat;
+	}
 }
 
 img {
-    max-width: 100%;
+	max-width: 100%;
 }
 
-/* hacksito que hay que ponerle a los .row que estén fuera de un container (ya que la página no tiene container principal) */
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
 
-  > .col,
-  > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
+/* hacksito que hay que ponerle a los .row que estén fuera de un container (ya que la página no tiene container principal) */
+
+.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+	>.col,
+	>[class*="col-"] {
+		padding-right: 0;
+		padding-left: 0;
+	}
 }
 
 .section {
-    background-color: $white;
-    &.jumbotron-fluid {
-        margin-bottom: auto;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        @media (min-width: $width-medium) {
-            padding-top: 6rem;
-            padding-bottom: 6rem;
-        }
-    }
-
-    /* intercalar colores de fondo, seguro terminemos hardcodeandolo */
-    &:nth-child(odd){
-        background-color: $color-fondo-1;
-    }
-    &:nth-child(even){
-        background-color: $color-fondo-2;
-    }
+	background-color: $white;
+	&.jumbotron-fluid {
+		margin-bottom: auto;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		@media (min-width: $width-medium) {
+			padding-top: 6rem;
+			padding-bottom: 6rem;
+		}
+	}
+	/* intercalar colores de fondo, seguro terminemos hardcodeandolo */
+	&:nth-child(odd) {
+		background-color: $color-fondo-1;
+	}
+	&:nth-child(even) {
+		background-color: $color-fondo-2;
+	}
 }
 
 .section__title {
-    color: $color-principal-azul;
-    font-size: $font-size-medium;
-    font-weight: 600;
-    @media (min-width: $width-medium) {
-        font-size: $font-size-xlarge;
-    }
+	color: $color-principal-azul;
+	font-size: $font-size-medium;
+	font-weight: 600;
+	@media (min-width: $width-medium) {
+		font-size: $font-size-xlarge;
+	}
 }
 
 .section__subtitle {
-    font-size: $font-size-xsmall;
-    line-height: $line-height-small;
-    margin-top: 1rem;
-    @media (min-width: $width-medium) {
-        font-size: $font-size-small;
-        line-height: $line-height-medium;
-    }
+	font-size: $font-size-xsmall;
+	line-height: $line-height-small;
+	margin-top: 1rem;
+	@media (min-width: $width-medium) {
+		font-size: $font-size-small;
+		line-height: $line-height-medium;
+	}
 }
 
 .btn-primary {
-    border-radius: 2rem;
-    background-color: $color-principal-azul;
-    border-color: $color-principal-azul;
-    color: $white;
-    border-width: 3px;
-    &:hover {
-        background-color: $white;
-        color: $color-principal-azul;
-    }
+	border-radius: 2rem;
+	background-color: $color-principal-azul;
+	border-color: $color-principal-azul;
+	color: $white;
+	border-width: 3px;
+	&:hover {
+		background-color: $white;
+		color: $color-principal-azul;
+	}
 }
 
 .btn-primary-inverted {
-    background-color: $white;
-    border-color: $white;
-    color: $color-principal-azul;
-    &:hover {
-        background-color: $color-principal-azul;
-        border-color: $white;
-        color: $white;
-    }
+	background-color: $white;
+	border-color: $white;
+	color: $color-principal-azul;
+	&:hover {
+		background-color: $color-principal-azul;
+		border-color: $white;
+		color: $white;
+	}
 }
 
 .btn-bold {
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .btn-lg {
-    padding: .75rem 3rem;
-    @media (max-width: $width-medium) {
-        font-size: $font-size-base;
-    }
+	padding: .75rem 3rem;
+	@media (max-width: $width-medium) {
+		font-size: $font-size-base;
+	}
 }
 
 .btn-md {
-    padding: .5rem 2.5rem;
+	padding: .5rem 2.5rem;
 }
 
 .btn-shadow {
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
 .card {
-    border-radius: 20px;
-    border: none;
+	border-radius: 20px;
+	border: none;
 }
 
 .card-with-shadow {
-    box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
+	box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
 }
 
 .card-title {
-    font-size: $font-size-small;
+	font-size: $font-size-small;
 }
 
 .form-control {
-    border-radius: 20px;
-    border: solid 1px rgba(60,60,60, 0.3);
+	border-radius: 20px;
+	border: solid 1px rgba(60, 60, 60, 0.3);
 }
 
 label {
-    color: $color-texto-light;
-    padding-left: 1rem;
+	color: $color-texto-light;
+	padding-left: 1rem;
 }
+
 
 /*#################*/
+
+
 /* SECCIONES */
 
-/* Portada */
-.portada {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    background-color: $white;
-    @media (min-width: $width-medium) {
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: end;
-    }
-    .container {
-        @media (min-width: $width-medium) {
-            max-width: 35%;
-        }
-    }
-    @media (min-width: $width-large) {
-        background-color: transparent;
-    }
-    h1 img {
-        width: 204px;
-        @media (min-width: $width-large) {
-            max-width: 525px;
-            width: 100%;
-        }
-    }
-    p {
-        @media (min-width: $width-medium) {
-            font-size: $font-size-medium;
-            max-width: 80%;
-        }
-    }
-    .portada__img {
-        max-width: 80%;
-        order: -1;
-        @media (min-width: $width-medium) {
-            order: initial;
-            max-width: 40%;
-        }
-    }
 
+/* Portada */
+
+.portada {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	background-color: $white;
+	@media (min-width: $width-medium) {
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: end;
+	}
+	.container {
+		@media (min-width: $width-medium) {
+			max-width: 35%;
+		}
+	}
+	@media (min-width: $width-large) {
+		background-color: transparent;
+	}
+	h1 img {
+		width: 204px;
+		@media (min-width: $width-large) {
+			max-width: 525px;
+			width: 100%;
+		}
+	}
+	p {
+		@media (min-width: $width-medium) {
+			font-size: $font-size-medium;
+			max-width: 80%;
+		}
+	}
+	.portada__img {
+		max-width: 80%;
+		order: -1;
+		@media (min-width: $width-medium) {
+			order: initial;
+			max-width: 40%;
+		}
+	}
 }
 
+
 /* Manifiesto */
+
 .manifiesto {
-    background-image: url('/static/img/manifiesto-background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: $color-fondo-2;
-    p {
-        color: $color-texto-light;
-        font-size: $font-size-xsmall;
-        line-height: $line-height-small;
-        @media (min-width: $width-medium) {
-            font-size: $font-size-base;
-            line-height: $line-height-medium;
-        }
-    }
+	background-image: url('/static/img/manifiesto-background.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: $color-fondo-2;
+	p {
+		color: $color-texto-light;
+		font-size: $font-size-xsmall;
+		line-height: $line-height-small;
+		@media (min-width: $width-medium) {
+			font-size: $font-size-base;
+			line-height: $line-height-medium;
+		}
+	}
 }
 
 .section__signature {
-    color: $color-texto-light;
-    font-style: italic;
-    @media (min-width: $width-medium) {
-        font-size: $font-size-small;
-    }
-    &:before {
-        content: " ";
-        background-color: $color-principal-azul;
-        width: 55px;
-        height: 5px;
-        margin-right: 2rem;
-        display: inline-block;
-        vertical-align: middle;
-        @media (min-width: $width-medium) {
-            opacity: 0.5;
-        }
-    }
+	color: $color-texto-light;
+	font-style: italic;
+	@media (min-width: $width-medium) {
+		font-size: $font-size-small;
+	}
+	&:before {
+		content: " ";
+		background-color: $color-principal-azul;
+		width: 55px;
+		height: 5px;
+		margin-right: 2rem;
+		display: inline-block;
+		vertical-align: middle;
+		@media (min-width: $width-medium) {
+			opacity: 0.5;
+		}
+	}
 }
+
 
 /* Propuestas */
 
+.carousel {
+	background: $color-fondo-1;
+}
+
+.carousel-cell {
+	width: 30%;
+	height: 400px;
+	margin-right: 30px;
+	background: #8C8;
+	border-radius: 20px;
+	counter-increment: carousel-cell;
+	color: white;
+}
+
+.carousel-cell.is-selected {
+	background: #ED2;
+}
+
+.flickity-button{
+	box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
+}
+
+.flickity-button[disabled]{
+    visibility: hidden;
+}
+
+button.flickity-prev-next-button.previous{
+    left: -50px;
+}
+
+button.flickity-prev-next-button.next{
+    right: -50px;
+}
+
+.flickity-page-dots{
+    visibility: hidden;
+}
+
+/* cell number */
+
+.carousel-cell:before {
+	display: block;
+	text-align: center;
+	content: counter(carousel-cell);
+	line-height: 200px;
+	font-size: 80px;
+	color: white;
+}
+
 
 /* Candidates */
+
 .section.candidates {
-    background-color: $color-principal-azul;
-    .section__title {
-        color: $white;
-        font-size: $font-size-large;
-        @media (min-width :$width-medium){
-            font-size: $font-size-xxlarge;
-        }
-    }
-    .section__subtitle {
-        font-size: $font-size-xsmall;
-        color: $white;
-        margin-bottom: 1.5rem;
-        @media (min-width: $width-medium) {
-            font-size: $font-size-medium;
-        }
-    }
-    .btn {
-        order: 1;
-        @media (min-width: $width-medium) {
-            order: initial;
-        }
-    }
-    
+	background-color: $color-principal-azul;
+	.section__title {
+		color: $white;
+		font-size: $font-size-large;
+		@media (min-width: $width-medium) {
+			font-size: $font-size-xxlarge;
+		}
+	}
+	.section__subtitle {
+		font-size: $font-size-xsmall;
+		color: $white;
+		margin-bottom: 1.5rem;
+		@media (min-width: $width-medium) {
+			font-size: $font-size-medium;
+		}
+	}
+	.btn {
+		order: 1;
+		@media (min-width: $width-medium) {
+			order: initial;
+		}
+	}
 }
+
 
 /* Novedades */
 
 .card--novedades {
-    box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
-    border-radius: 0;
-    background: $white;
-    .card-title {
-        font-size: $font-size-base;
-        @media(min-width: $width-medium) {
-            font-size: $font-size-medium;
-        }
-        a {
-            span {
-                display: inline-block;
-                @media(min-width: $width-medium) {
-                    max-width: 80%;
-                }
-            }
-            .fa {
-                font-size: $font-size-large;
-            }
-        }
-    }
+	box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
+	border-radius: 0;
+	background: $white;
+	.card-title {
+		font-size: $font-size-base;
+		@media(min-width: $width-medium) {
+			font-size: $font-size-medium;
+		}
+		a {
+			span {
+				display: inline-block;
+				@media(min-width: $width-medium) {
+					max-width: 80%;
+				}
+			}
+			.fa {
+				font-size: $font-size-large;
+			}
+		}
+	}
 }
 
 .card-hashtag {
-    font-size: $font-size-xsmall;
-    display: inline-block;
-    background-color: #eff1f4;
-    padding: 0 1rem;
-    border-radius: 1rem;
-    line-height: 1.8;
-    margin-bottom: 0.5rem;
-    text-transform: capitalize;
+	font-size: $font-size-xsmall;
+	display: inline-block;
+	background-color: #eff1f4;
+	padding: 0 1rem;
+	border-radius: 1rem;
+	line-height: 1.8;
+	margin-bottom: 0.5rem;
+	text-transform: capitalize;
 }
+
 
 /* .novedades .jumbotron {
     .row > div{
@@ -301,50 +363,50 @@ label {
 
 
 /* Eventos */
-.eventos {
-    background-image: url('/static/img/manifiesto-background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    .list-group {
-        border-bottom: 1px solid rgba(0,0,0,.125);
-    }
-    .card {
-        height: 100%;
-    }
-}
 
+.eventos {
+	background-image: url('/static/img/manifiesto-background.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	.list-group {
+		border-bottom: 1px solid rgba(0, 0, 0, .125);
+	}
+	.card {
+		height: 100%;
+	}
+}
 
 .agenda {
-    .list-group-item {
-        padding-left: 0;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        &:first-child {
-            border-top: 0;
-        }
-
-        .date {
-            color: $color-principal-azul;
-            font-size: $font-size-xsmall;
-            font-weight: 600;
-            @media (min-width: $width-medium) {
-                font-size: $font-size-base;
-            }
-        }
-        .text {
-            $color: #696969;
-            font-size: $font-size-xsmall;
-            font-weight: 400;
-            line-height: 2;
-            margin-bottom: 0;
-            @media (min-width: $width-medium) {
-                font-size: $font-size-base;
-                line-height: 1.2;
-            }
-        }
-        .hashtag {
-            font-weight: 600;
-            text-transform: capitalize;
-        }
-    }
+	.list-group-item {
+		padding-left: 0;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		&:first-child {
+			border-top: 0;
+		}
+		.date {
+			color: $color-principal-azul;
+			font-size: $font-size-xsmall;
+			font-weight: 600;
+			@media (min-width: $width-medium) {
+				font-size: $font-size-base;
+			}
+		}
+		.text {
+			$color: #696969;
+			font-size: $font-size-xsmall;
+			font-weight: 400;
+			line-height: 2;
+			margin-bottom: 0;
+			@media (min-width: $width-medium) {
+				font-size: $font-size-base;
+				line-height: 1.2;
+			}
+		}
+		.hashtag {
+			font-weight: 600;
+			text-transform: capitalize;
+		}
+	}
 }
+
