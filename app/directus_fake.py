@@ -13,7 +13,7 @@ def get_index_textos():
             'firma': 'Causas Comunes'},
         'propuestas': {
             'titulo': 'Conocé las propuestas',
-            'subtitulo': 'Est nobis dolorem magni qui rerum delectus laborum ipsum.'},
+            'subtitulo': 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.'},
         'novedades': {
             'titulo': 'Últimas novedades',
             'subtitulo': 'Nam libero tempore qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed.',
@@ -42,6 +42,9 @@ def get_index_imgs():
     return {
         'portada': {
             'imagen': 'portada.svg',
+            'menu': 'menu.svg',
+            'logo': 'logo.svg',
+            'search': 'search.svg',
         },
         'manifiesto': {
             'imagen': 'manifiesto.svg',
@@ -62,9 +65,9 @@ class ItemNovedad:
 
 def get_novedades_items():
     return [
-        ItemNovedad(8, 'nove1.jpg', 'Título de artículo y/o tema de debate para elecciones.', 'drogas'),
-        ItemNovedad(4, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', 'trabajo'),
-        ItemNovedad(8, 'nove2.jpg', 'Título de artículo y/o tema de debate para elecciones.', 'vivienda'),
+        ItemNovedad(8, 'novedades1.png', 'Título de artículo y/o tema de debate para elecciones.', 'drogas'),
+        ItemNovedad(4, 'novedades2.png', 'Título de artículo y/o tema de debate para elecciones.', 'trabajo'),
+        ItemNovedad(8, 'novedades3.png', 'Título de artículo y/o tema de debate para elecciones.', 'vivienda'),
     ]
 
 

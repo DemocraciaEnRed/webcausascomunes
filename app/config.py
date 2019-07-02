@@ -8,7 +8,7 @@ class BaseConfig(object):
     DIRECTUS_URL = 'http://192.168.88.20:9090/'
     DIRECTUS_API_PATH = 'api/1.1/'
     DIRECTUS_TOKEN = '8sUdXIM5dd01rbeS7Z1H1mCJMILSTM26'
-    USE_DIRECTUS = True
+    USE_DIRECTUS = False
     USE_SCSS = True
     USE_EXTENSIONS = True
     SERVER_HOST = '192.168.88.20'
