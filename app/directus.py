@@ -128,7 +128,7 @@ class DirectusApi:
             item = {
                 'ancho_columnas': row['ancho_columnas'],
                 'titulo': row['titulo'],
-                'texto': row['texto'],
+                'hashtag': row['hashtag'],
                 'imgurl': self.ser_url + imgurl
             }
             items.append(item)

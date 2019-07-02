@@ -1,5 +1,6 @@
 import datetime
 
+
 def get_index_textos():
     return {
         'portada': {

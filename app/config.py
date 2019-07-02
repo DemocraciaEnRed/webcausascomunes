@@ -5,14 +5,14 @@ class BaseConfig(object):
     # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + INSTANCE_FOLDER_PATH + '/db.sqlite'
     # SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://flask@127.0.0.1:3306/flaskdb?charset=utf8'
     SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://root:123@127.0.0.1:3300/flaskdb?charset=utf8'
-    DIRECTUS_URL = 'http://localhost:8080/'
+    DIRECTUS_URL = 'http://192.168.88.20:9090/'
     DIRECTUS_API_PATH = 'api/1.1/'
     DIRECTUS_TOKEN = '8sUdXIM5dd01rbeS7Z1H1mCJMILSTM26'
-    USE_DIRECTUS = False
+    USE_DIRECTUS = True
     USE_SCSS = True
     USE_EXTENSIONS = True
-    # SERVER_HOST = '192.168.88.20'
-    SERVER_HOST = 'localhost'
+    SERVER_HOST = '192.168.88.20'
+    # SERVER_HOST = 'localhost'
     SERVER_PORT = 5000
 
 
