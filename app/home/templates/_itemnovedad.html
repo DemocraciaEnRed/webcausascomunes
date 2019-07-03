@@ -5,9 +5,9 @@
     <div class="card card--novedades text-left">
         <img src="{{ create_img_src(imgpath, isstatic) }}" alt="{{ title }}">
         <div class="card-body px-md-5">
-            <span class="card-hashtag text-color-{{hashtag}}">#{{ hashtag }}</span>
+            <span class="card-hashtag text-color-{{hashtag.lower()}}">#{{ hashtag }}</span>
             <h5 class="card-title">
-                <a href="#" class="text-color-{{hashtag}}">
+                <a href="#" class="text-color-{{hashtag.lower()}}">
                     <span>{{ title }}</span>
                     <i class="d-none d-md-inline-block fa fa-arrow-right float-right"></i>
                 </a>

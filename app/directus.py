@@ -19,10 +19,10 @@ class DirectusApi:
         self.textosregx = re.compile('^[^<>&]*$')
 
     def init_api(self, ser_url, api_path, token):
-        if not ser_url[-1] == '/':
-            ser_url += '/'
-        if api_path[0] == '/':
-            api_path = api_path[1:]
+        if ser_url[-1] == '/':
+            ser_url = ser_url[:-1]
+        if not api_path[0] == '/':
+            api_path = '/' + api_path
         self.ser_url = ser_url
         self.api_url = ser_url + api_path
         self.token = token
@@ -35,7 +35,7 @@ class DirectusApi:
             kwargs['headers'] = self.auth_header
         r = requests.get(self.api_url + api_cmd, **kwargs)
         if r.status_code >= 400:
-            raise Exception('El servidor directus devolvió {} al comando {}'.format(r.status_code, api_cmd))
+            raise Exception('Mala autenticación al servidor directus'.format(r.status_code, api_cmd))
         if r.text == 'You must be logged in to access the API':
             raise Exception('Mala autenticación al servidor directus')
         try:
@@ -45,7 +45,7 @@ class DirectusApi:
         return rj
 
     def test_conn(self):
-        r = requests.get(self.ser_url + 'server/ping')
+        r = requests.get(self.ser_url + '/server/ping')
         if r.status_code != 200:
             raise Exception('El servidor directus devolvió un error al hacerle ping')
         if r.text != 'pong':
@@ -142,6 +142,25 @@ class DirectusApi:
                 'fechahora': datetime.datetime.strptime(row['fecha'], "%Y-%m-%d %H:%M:%S"),
                 'titulo': row['titulo'],
                 'hashtag': row['hashtag']
+            }
+            items.append(item)
+        return items
+
+    def get_itemspropuestas(self):
+        rows = self.get_table_rows('items_propuestas')
+        items = []
+        for row in rows:
+            if not row['icono']:
+                raise Exception('Un item de propuestas no tiene ícono asignado')
+            iconourl = self.ser_url + row['icono']['data']['url']
+            if not row['imagen_fondo']:
+                raise Exception('Un item de propuestas no tiene imagen de fondo asignada')
+            bgimgurl = self.ser_url + row['imagen_fondo']['data']['url']
+            item = {
+                'bgimg': bgimgurl,
+                'icon': iconourl,
+                'title': row['titulo'],
+                'text': row['texto']
             }
             items.append(item)
         return items
