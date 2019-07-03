@@ -13,11 +13,20 @@
         {% for itm in itemsnovedades %}
 
             {% if ns.acumcols == 0 %}
-                <div class="row">
+                {% if loop.revindex == 1 %}
+                    <div class="row flex-md-row-reverse">
+                {% else %}
+                    <div class="row">
+                {% endif %}
             {% endif %}
 
                 {{ create_item_novedad(itm['ancho_columnas'], itm['imgurl'], itm['titulo'], itm['hashtag'], isstatic=isstatic) }}
-
+                {% if loop.last %}
+                <div class="col-12 col-md-4 pb-3">
+                    <h4 class="twitter-timeline__title">¡Seguinos!</h4>
+                    <a class="twitter-timeline" data-lang="es" data-height="400" href="https://twitter.com/EcoFeminita?ref_src=twsrc%5Etfw">Tweets by EcoFeminita</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>               
+                </div>
+                {% endif %}
             {% set ns.acumcols=ns.acumcols+itm['ancho_columnas'] %}
             {% if ns.acumcols >= 12 %}
                 </div>

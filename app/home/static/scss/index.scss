@@ -378,6 +378,19 @@ button.flickity-prev-next-button {
 	text-transform: capitalize;
 }
 
+.twitter-timeline__title {
+    color: $color-principal-azul;
+    font-size: $font-size-medium;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: left;
+    @media (min-width: $width-medium){
+        font-size: $font-size-large;
+    }
+
+}
+
 
 /* Eventos */
 
