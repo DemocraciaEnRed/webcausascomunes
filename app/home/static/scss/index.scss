@@ -240,44 +240,78 @@ label {
 }
 
 .carousel-cell {
-    width: 90%;
+    width: 80%;
+    height: 340px;        
+    margin-right: 1rem;
     @media (min-width: $width-medium) {
-	    width: 30%;
+        width: 30%;
+        margin-right: 2rem;
+        height: 400px;
     }
-	height: 400px;
-	margin-right: 30px;
-	background: #8C8;
 	border-radius: 20px;
 	counter-increment: carousel-cell;
-	color: white;
+    color: $white;
+    .title {
+        font-size: $font-size-small;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        @media (min-width: $width-medium) {
+            font-size: $font-size-large;
+        }
+    }
+    .text {
+        font-size: $font-size-xsmall;
+        @media (min-width: $width-medium) {
+            font-size: $font-size-base;
+        }
+    }
+    > img {
+        height:6rem;
+    }
 }
 
-.carousel-cell.is-selected {
-	background: #ED2;
+.flickity-button {
+    display: none;
+    box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
+    transition: box-shadow ease-in 0.1s;
+    &[disabled] {
+        visibility: hidden;
+    }
+    @media(min-width: $width-medium) {
+        display: block;
+    }
+    &:focus, 
+    &:hover {
+        box-shadow: 0 15px 15px 0 rgba(42,75,140, 0.5);
+    }
 }
 
-.flickity-button{
-	box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
+button.flickity-prev-next-button {
+    &.previous {
+        left: -70px;
+    }
+    &.next {
+        right: -70px;
+    }
 }
 
-.flickity-button[disabled]{
-    visibility: hidden;
+.flickity-page-dots {
+    position: relative;
+    @media (min-width: $width-medium) {
+        visibility: hidden;
+    }
+    .dot {
+        width: 19px;
+        height: 19px;
+        border: solid 1px $color-principal-azul;
+        background-color: $white;
+    }
 }
 
-button.flickity-prev-next-button.previous{
-    left: -50px;
-}
-
-button.flickity-prev-next-button.next{
-    right: -50px;
-}
-
-.flickity-page-dots{
-    visibility: hidden;
-}
-
-.carousel-cell > img{
-    height:6rem;
+.flickity-button-icon {
+    path {
+        fill: $color-principal-azul;
+    }
 }
 
 /* Candidates */
@@ -345,18 +379,6 @@ button.flickity-prev-next-button.next{
 }
 
 
-/* .novedades .jumbotron {
-    .row > div{
-        min-height:100%;
-    }
-    .card {
-        height: 100%;
-        img { height:15rem; }
-        .card-body { min-height:12rem; }
-    }
-} */
-
-
 /* Eventos */
 
 .eventos {
@@ -388,7 +410,7 @@ button.flickity-prev-next-button.next{
 			}
 		}
 		.text {
-			$color: #696969;
+			color: #696969;
 			font-size: $font-size-xsmall;
 			font-weight: 400;
 			line-height: 2;

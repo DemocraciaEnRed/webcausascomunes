@@ -10,9 +10,9 @@ class BaseConfig(object):
     DIRECTUS_TOKEN = '8sUdXIM5dd01rbeS7Z1H1mCJMILSTM26'
     USE_DIRECTUS = False
     USE_SCSS = True
-    USE_EXTENSIONS = True
-    SERVER_HOST = '192.168.88.20'
-    # SERVER_HOST = 'localhost'
+    USE_EXTENSIONS = False
+    # SERVER_HOST = '192.168.88.20'
+    SERVER_HOST = 'localhost'
     SERVER_PORT = 5000
 
 

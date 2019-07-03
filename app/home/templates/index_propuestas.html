@@ -6,14 +6,16 @@
       <div class="col-md-12">
           <h2 class="section__title">{{dtextos['propuestas']['titulo']}}</h2>
           <p class="section__subtitle mb-5">{{dtextos['propuestas']['subtitulo']}}</p>
-            <!-- Flickity HTML init -->
-            <div class="container">
-                <div class="carousel" data-flickity='{ "groupCells": true }'>
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <!-- Flickity HTML init -->
+              <div class="carousel" data-flickity='{ "groupCells": true }'>
                 {% for itm in itemspropuestas %}
                     {{ create_item_propuesta(itm['bgimg'], itm['icon'], itm['title'], itm['text'], isstatic=isstatic) }}
                 {% endfor %}
-                </div>
+              </div>
             </div>
+          </div>  
       </div>
     </div>
   </div>
