@@ -99,3 +99,13 @@ nav {
         }
     }
 }
+
+#navbarSearch {
+    color: $white;
+    input {
+        background-color: $color-principal-azul;
+    }
+    input::placeholder {
+        color: $white;
+    }
+}

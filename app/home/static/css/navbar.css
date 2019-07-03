@@ -100,3 +100,10 @@
         .nav-link.active:after, .nav-link:hover:after {
           display: block;   }
 }
+
+#navbarSearch {
+  color: #ffffff; }
+  #navbarSearch input {
+    background-color: #2a4b8c; }
+    #navbarSearch input::placeholder {
+      color: #ffffff; }
