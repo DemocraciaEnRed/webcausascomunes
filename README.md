@@ -19,3 +19,5 @@ El archivo `config.py` sirve para algunas configuraciones:
 - **USE_SCSS** *\[True|False\]* si se usa Flask-Scss para compilar en vivo los `.scss` a `.css` o no
 
 Ojo con la configuraciones *\[True|False\]* que deben tener la primer letra mayúscula, tal cual como se lee
+
+Si desean usar Flask-Scss hay que instalarlo haciendo `pip3 install flask-scss` y habilitar la configuración **USE_SCSS**. A partir de ese momento, cada vez que editen un `.scss` va a generar su `.css` en tiempo real **pisando el que ya estaba**.
