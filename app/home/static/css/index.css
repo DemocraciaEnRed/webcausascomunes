@@ -217,61 +217,90 @@ img {
   background: #ffffff; }
 
   .carousel-cell {
-    width: 90%;
-    height: 400px;
-    margin-right: 30px;
-    background: #8C8;
+    width: 80%;
+    height: 340px;
+    margin-right: 1rem;
     border-radius: 20px;
     counter-increment: carousel-cell;
-    color: white; }
+    color: #ffffff; }
     @media (min-width: 768px) {
       .carousel-cell {
-        width: 30%;   }
+        width: 30%;
+        margin-right: 2rem;
+        height: 400px;   }
 }
-
-.carousel-cell.is-selected {
-  background: #ED2; }
-
-  .flickity-button {
-    box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15); }
-
-    .flickity-button[disabled] {
-      visibility: hidden; }
-
-      button.flickity-prev-next-button.previous {
-        left: -50px; }
-
-        button.flickity-prev-next-button.next {
-          right: -50px; }
-
-          .flickity-page-dots {
-            visibility: hidden; }
-
-            .carousel-cell > img {
-              height: 6rem; }
-
-              .section.candidates {
-                background-color: #2a4b8c; }
-                .section.candidates .section__title {
-                  color: #ffffff;
-                  font-size: 1.5rem; }
-                  @media (min-width: 768px) {
-                    .section.candidates .section__title {
-                      font-size: 2.5rem;   }
+      .carousel-cell .title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 1rem; }
+        @media (min-width: 768px) {
+          .carousel-cell .title {
+            font-size: 1.5rem;   }
 }
-                .section.candidates .section__subtitle {
-                  font-size: 0.9rem;
-                  color: #ffffff;
-                  margin-bottom: 1.5rem; }
-                  @media (min-width: 768px) {
-                    .section.candidates .section__subtitle {
-                      font-size: 1.25rem;   }
+    .carousel-cell .text {
+      font-size: 0.9rem; }
+      @media (min-width: 768px) {
+        .carousel-cell .text {
+          font-size: 1rem;   }
 }
-                .section.candidates .btn {
-                  order: 1; }
-                  @media (min-width: 768px) {
-                    .section.candidates .btn {
-                      order: initial;   }
+    .carousel-cell > img {
+      height: 6rem; }
+
+.flickity-button {
+  display: none;
+  box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
+  transition: box-shadow ease-in 0.1s; }
+  .flickity-button[disabled] {
+    visibility: hidden; }
+    @media (min-width: 768px) {
+      .flickity-button {
+        display: block;   }
+}
+      .flickity-button:focus, .flickity-button:hover {
+        box-shadow: 0 15px 15px 0 rgba(42, 75, 140, 0.5); }
+
+button.flickity-prev-next-button.previous {
+  left: -70px; }
+  button.flickity-prev-next-button.next {
+    right: -70px; }
+
+.flickity-page-dots {
+  position: relative; }
+  @media (min-width: 768px) {
+    .flickity-page-dots {
+      visibility: hidden;   }
+}
+    .flickity-page-dots .dot {
+      width: 19px;
+      height: 19px;
+      border: solid 1px #2a4b8c;
+      background-color: #ffffff; }
+
+.flickity-button-icon path {
+  fill: #2a4b8c; }
+
+.section.candidates {
+  background-color: #2a4b8c; }
+  .section.candidates .section__title {
+    color: #ffffff;
+    font-size: 1.5rem; }
+    @media (min-width: 768px) {
+      .section.candidates .section__title {
+        font-size: 2.5rem;   }
+}
+  .section.candidates .section__subtitle {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem; }
+    @media (min-width: 768px) {
+      .section.candidates .section__subtitle {
+        font-size: 1.25rem;   }
+}
+  .section.candidates .btn {
+    order: 1; }
+    @media (min-width: 768px) {
+      .section.candidates .btn {
+        order: initial;   }
 }
 
 .card--novedades {
@@ -303,14 +332,26 @@ img {
   margin-bottom: 0.5rem;
   text-transform: capitalize; }
 
-  .eventos {
-    background-image: url('/static/img/manifiesto-background.svg');
-    background-repeat: no-repeat;
-    background-size: cover; }
-    .eventos .list-group {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
-      .eventos .card {
-        height: 100%; }
+  .twitter-timeline__title {
+    color: #2a4b8c;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: left; }
+    @media (min-width: 768px) {
+      .twitter-timeline__title {
+        font-size: 1.5rem;   }
+}
+
+.eventos {
+  background-image: url('/static/img/manifiesto-background.svg');
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .eventos .list-group {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+    .eventos .card {
+      height: 100%; }
 
 .agenda .list-group-item {
   padding-left: 0;
@@ -327,6 +368,7 @@ img {
           font-size: 1rem;   }
 }
   .agenda .list-group-item .text {
+    color: #696969;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 2;

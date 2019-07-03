@@ -25,8 +25,7 @@ def index():
         dimgs = directus.dapi.get_imgs('Home')
         itemsnovedades = directus.dapi.get_itemsnovedades()
         itemsagenda = directus.dapi.get_itemsagenda()
-        itemspropuestas = directus.dapi.get_itemspropuesta()
-    locale.setlocale(locale.LC_TIME, 'es_AR.UTF-8')
+        locale.setlocale(locale.LC_TIME, 'es_AR.UTF-8')
     return render_template(
         'index.html',
         dtextos=dtextos,
