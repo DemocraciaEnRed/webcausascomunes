@@ -1,5 +1,4 @@
 from flask import current_app, render_template, Blueprint
-import locale
 
 blueprint = Blueprint(
     'home',
@@ -25,7 +24,6 @@ def index():
         dimgs = directus.dapi.get_imgs('Home')
         itemsnovedades = directus.dapi.get_itemsnovedades()
         itemsagenda = directus.dapi.get_itemsagenda()
-        locale.setlocale(locale.LC_TIME, 'es_AR.UTF-8')
     return render_template(
         'index.html',
         dtextos=dtextos,

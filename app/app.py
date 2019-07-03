@@ -2,6 +2,7 @@
 from flask import Flask
 from .config import config_dict
 import os
+import locale
 
 
 def create_app():
@@ -22,6 +23,20 @@ def create_app():
     if app.config['USE_DIRECTUS']:
         import app.directus as directus
         directus.init_flask_app(app.config['DIRECTUS_URL'], app.config['DIRECTUS_API_PATH'], app.config['DIRECTUS_TOKEN'])
+
+    # chequear locale en español para que las fechas salga en español y no en inglés
+    curr_lang = locale.getlocale()[0]
+    if curr_lang[:2].lower() is not 'es':
+        try:
+            locale.setlocale(locale.LC_TIME, 'es_AR.utf8')
+        except locale.Error:
+            try:
+                locale.setlocale(locale.LC_TIME, 'es_ES.utf8')
+            except locale.Error:
+                try:
+                    locale.setlocale(locale.LC_TIME, 'es.utf8')
+                except locale.Error:
+                    raise Exception('No se encontró ningún idioma español válido en su sistema.')
 
     return app
 
