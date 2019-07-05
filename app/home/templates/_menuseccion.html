@@ -1,0 +1,13 @@
+{% macro create_menu_seccion(menuItems) -%}
+<ul id="nav-secondary" class="nav nav-secondary justify-content-center">
+
+{% for itm in menuItems %}
+<li class="nav-item">
+    <a class="nav-link scrollTo" href="#{{itm['seccion']}}">{{itm['label']}}</a>
+</li>
+{% endfor %}
+
+</ul>
+
+
+{%- endmacro %}

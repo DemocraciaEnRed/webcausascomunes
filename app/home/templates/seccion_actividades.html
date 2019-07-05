@@ -1,0 +1,48 @@
+{% from '_itemnovedad.html' import create_item_novedad %}
+{% from '_itemagenda.html' import create_item_agenda %}
+
+<section id="actividades" class="actividades section jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row text-center text-md-left">
+            <div class="col-md-12">
+                <h2 class="section__title">{{dtextos['actividades']['titulo']}}</h2>
+                <p class="section__subtitle mb-5">{{dtextos['actividades']['subtitulo']}}</p>
+            </div>
+        </div>
+        {% set ns = namespace(acumcols=0) %}
+
+        {% for itm in itemsnovedades %}
+
+            {% if ns.acumcols == 0 %}
+                {% if loop.revindex == 1 %}
+                    <div class="row flex-md-row-reverse">
+                {% else %}
+                    <div class="row">
+                {% endif %}
+            {% endif %}
+
+                {{ create_item_novedad(itm['ancho_columnas'], itm['imgurl'], itm['titulo'], itm['hashtag'], isstatic=isstatic) }}
+                {% if loop.last %}
+                <div class="col-12 col-md-4 pb-3 agenda">
+                    <h4 class="agenda__title">{{dtextos['agenda']['titulo']}}</h4>
+                    <div class="card card-with-shadow">
+                        <div class="card-body p-4 p-md-5">
+                            <h5 class="card-title">{{dtextos['agenda']['subtitulo']}}</h5>
+                            <ul class="list-group list-group-flush my-4">
+                                {% for itm in itemsagenda %}
+                                    {{ create_item_agenda(itm['fechahora'], itm['titulo'], itm['hashtag']) }}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% set ns.acumcols=ns.acumcols+itm['ancho_columnas'] %}
+            {% if ns.acumcols >= 12 %}
+                </div>
+                {% set ns.acumcols=0 %}
+            {% endif %}
+
+        {% endfor %}
+    </div>
+</section>

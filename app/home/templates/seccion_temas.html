@@ -1,0 +1,22 @@
+{% from '_itemtema.html' import create_item_tema %}
+
+<section id="temas" class="section jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row text-center text-md-left">
+            <div class="col-md-12">
+                <h2 class="section__title">{{dtextos['temas']['titulo']}}</h2>
+                <p class="section__subtitle mb-5">{{dtextos['temas']['subtitulo']}}</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for itm in itemstemas %}
+                {% if loop.index == 1 %}
+                    {% set type = 'principal' %}
+                {% else %}
+                    {% set type = 'secundario' %}
+                {% endif %}
+                {{ create_item_tema(itm['img'], itm['title'], itm['text'], type,  isstatic=isstatic) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>

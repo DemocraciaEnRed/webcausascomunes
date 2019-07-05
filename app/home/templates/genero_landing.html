@@ -1,0 +1,6 @@
+{% from '_menuseccion.html' import create_menu_seccion %}
+
+<section class="portada-seccion jumbotron mt-md-3 text-center">
+    <h1 class="my-5 py-5">{{dtextos['portada']['titulo']}}</h1>
+    {{ create_menu_seccion(dtextos['menu']) }}
+</section>

@@ -1,0 +1,34 @@
+{% extends '_base.html' %}
+
+{% from '_imghelper.html' import create_img_src %}
+
+{% block head %}
+    <title>Causas comunes</title>
+    <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/section.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <!-- LANDING -->
+    {% include 'genero_landing.html' %}
+
+    <!-- DEFINICION -->
+    {% include 'seccion_definicion.html' %}
+
+    <!-- TEMAS -->
+    {% include 'seccion_temas.html' %}
+
+    <!-- SEGUIDORES -->
+    {% include 'seccion_seguidores.html' %}
+
+    <!-- ACTIVIDADES -->
+    {% include 'seccion_actividades.html' %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/navsecondary.js')}}"></script>
+    {% endblock %}

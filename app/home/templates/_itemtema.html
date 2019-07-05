@@ -1,0 +1,14 @@
+{% from '_imghelper.html' import create_img_src %}
+
+{% macro create_item_tema(img, title, text, type, isstatic=True) -%}
+{% if type == 'principal' %}
+    {% set cols = '12' %}
+{% else %}
+    {% set cols = '6' %}
+{% endif %}
+<div class="tema-{{type}} col-md-{{cols}} mb-5">
+    <img src="{{ create_img_src(img, isstatic) }}" />
+    <h4 class="title">{{ title }}</h4>
+    <p class="text">{{text}}</p>
+</div>
+{%- endmacro %}
