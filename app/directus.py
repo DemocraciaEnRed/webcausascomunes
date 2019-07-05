@@ -65,6 +65,11 @@ class DirectusApi:
         rj = self.get('tables/' + table_name + '/rows' + ('?'+filter if filter else ''), **kwargs)
         return rj['data']
 
+    def img_row_to_url(self, imgrow, errmsg):
+        if not imgrow:
+            raise Exception(errmsg)
+        return self.ser_ext_url + imgrow['data']['url']
+
     def get_textos(self, pagina):
         pagina = str(pagina)
         if str.isnumeric(pagina):
@@ -110,10 +115,7 @@ class DirectusApi:
                 ubicfmt.append(ubi.strip().lower())
                 if not ubicfmt[-1].isalnum():
                     raise Exception('El dato de ubicacion "{}" en la tabla de textos tiene caractéres inválidos'.format(ubicfmt[-1]))
-            img = row['imagen']
-            if not img:
-                raise Exception('Hay una imagen vacía para la ubicacion "{}"'.format(row['ubicacion']))
-            imgurl = self.ser_ext_url + img['data']['url']
+            imgurl = self.img_row_to_url(row['imagen'], 'Hay una imagen vacía para la ubicacion "{}"'.format(row['ubicacion']))
             if len(ubic) == 1:
                 imgs[ubicfmt[0]] = imgurl
             else:
@@ -126,9 +128,7 @@ class DirectusApi:
         rows = self.get_table_rows('items_novedades')
         items = []
         for row in rows:
-            if not row['imagen']:
-                raise Exception('Un item de novedades no tiene imagen asignada')
-            imgurl = row['imagen']['data']['url']
+            imgurl = self.img_row_to_url(row['imagen'], 'Un item de novedades no tiene imagen asignada')
             item = {
                 'ancho_columnas': row['ancho_columnas'],
                 'titulo': row['titulo'],
@@ -154,15 +154,36 @@ class DirectusApi:
         rows = self.get_table_rows('items_propuestas')
         items = []
         for row in rows:
-            if not row['icono']:
-                raise Exception('Un item de propuestas no tiene ícono asignado')
-            iconourl = self.ser_ext_url + row['icono']['data']['url']
-            if not row['imagen_fondo']:
-                raise Exception('Un item de propuestas no tiene imagen de fondo asignada')
-            bgimgurl = self.ser_ext_url + row['imagen_fondo']['data']['url']
+            iconourl = self.img_row_to_url(row['icono'], 'Un item de propuestas no tiene ícono asignado')
+            bgimgurl = self.img_row_to_url(row['imagen_fondo'], 'Un item de propuestas no tiene imagen de fondo asignada')
             item = {
                 'bgimg': bgimgurl,
                 'icon': iconourl,
+                'title': row['titulo'],
+                'text': row['texto']
+            }
+            items.append(item)
+        return items
+
+    def get_itemsseguidor(self):
+        rows = self.get_table_rows('items_seguidor')
+        items = []
+        for row in rows:
+            imgurl = self.img_row_to_url(row['imagen'], 'Un item de seguidores no tiene imagen asignada')
+            item = {
+                'img': imgurl,
+                'title': row['titulo']
+            }
+            items.append(item)
+        return items
+
+    def get_itemstema(self):
+        rows = self.get_table_rows('items_tema')
+        items = []
+        for row in rows:
+            imgurl = self.img_row_to_url(row['imagen'], 'Un item de tema no tiene imagen asignada')
+            item = {
+                'img': imgurl,
                 'title': row['titulo'],
                 'text': row['texto']
             }

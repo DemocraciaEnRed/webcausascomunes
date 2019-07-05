@@ -51,10 +51,10 @@ def genero():
         dtextos = directus.dapi.get_textos('Genero')
         dimgs = directus.dapi.get_imgs('Home')
         dimgsgenero = directus.dapi.get_imgs('Genero')
-        itemsseguidores = directus.dapi.get_itemsseguidores()
+        itemsseguidores = directus.dapi.get_itemsseguidor()
+        itemstemas = directus.dapi.get_itemstema()
         itemsnovedades = directus.dapi.get_itemsnovedades()
         itemsagenda = directus.dapi.get_itemsagenda()
-        itemstemas = directus.dapi.get_itemstemas()
     return render_template(
         'causa.html',
         dtextos=dtextos,
