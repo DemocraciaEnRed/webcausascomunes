@@ -1,3 +1,6 @@
+import os
+print(os.environ)
+
 class BaseConfig(object):
     SECRET_KEY = 'key'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -6,9 +9,10 @@ class BaseConfig(object):
     # SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://flask@127.0.0.1:3306/flaskdb?charset=utf8'
     SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://root:123@127.0.0.1:3300/flaskdb?charset=utf8'
     DIRECTUS_URL = 'http://192.168.88.20:9090'
+    # DIRECTUS_URL = 'http://directus:8080'
     DIRECTUS_API_PATH = '/api/1.1/'
     DIRECTUS_TOKEN = 'l5mMXIMYEUpfefI8AQkRA8sSHURn5Yvs'
-    USE_DIRECTUS = True
+    USE_DIRECTUS = False
     USE_SCSS = True
     USE_EXTENSIONS = False
     # SERVER_HOST = '192.168.88.20'

@@ -11,19 +11,19 @@
 
 {% block body %}
     <!-- LANDING -->
-    {% include 'genero_landing.html' %}
+    {% include 'causa_sections/causa_landing.html' %}
 
     <!-- DEFINICION -->
-    {% include 'seccion_definicion.html' %}
+    {% include 'causa_sections/causa_definicion.html' %}
 
     <!-- TEMAS -->
-    {% include 'seccion_temas.html' %}
+    {% include 'causa_sections/causa_temas.html' %}
 
     <!-- SEGUIDORES -->
-    {% include 'seccion_seguidores.html' %}
+    {% include 'causa_sections/causa_seguidores.html' %}
 
     <!-- ACTIVIDADES -->
-    {% include 'seccion_actividades.html' %}
+    {% include 'causa_sections/causa_actividades.html' %}
 
 {% endblock %}
 
@@ -31,4 +31,4 @@
     <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/navsecondary.js')}}"></script>
-    {% endblock %}
+{% endblock %}

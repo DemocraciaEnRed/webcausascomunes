@@ -1,6 +1,6 @@
-{% from '_menuseccion.html' import create_menu_seccion %}
+{% from 'causa_sections/_menucausa.html' import create_menu_causa %}
 
 <section class="portada-seccion jumbotron mt-md-3 text-center">
     <h1 class="my-5 py-5">{{dtextos['portada']['titulo']}}</h1>
-    {{ create_menu_seccion(dtextos['menu']) }}
+    {{ create_menu_causa(dtextos['menu']) }}
 </section>

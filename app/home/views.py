@@ -56,7 +56,7 @@ def genero():
         itemsagenda = directus.dapi.get_itemsagenda()
         itemstemas = directus.dapi.get_itemstemas()
     return render_template(
-        'genero.html',
+        'causa.html',
         dtextos=dtextos,
         dimgs=dimgs,
         dimgsgenero=dimgsgenero,

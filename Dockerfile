@@ -5,4 +5,4 @@ COPY ./nginx-custom.conf /etc/nginx/conf.d
 COPY ./uwsgi.ini /app
 COPY ./app /app/app
 
-RUN pip3 install flask-scss
+RUN pip3 install flask-scss requests

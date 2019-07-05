@@ -1,0 +1,18 @@
+{% from '_imghelper.html' import create_img_src %}
+
+{% macro create_item_novedad(cols, imgpath, title, hashtag, isstatic=True) -%}
+<div class="col-12 col-md-{{ cols }} pb-3">
+    <div class="card card--novedades text-left">
+        <img src="{{ create_img_src(imgpath, isstatic) }}" alt="{{ title }}">
+        <div class="card-body px-md-5">
+            <span class="card-hashtag text-color-{{hashtag.lower()}}">#{{ hashtag }}</span>
+            <h5 class="card-title">
+                <a href="#" class="text-color-{{hashtag.lower()}}">
+                    <span>{{ title }}</span>
+                    <i class="d-none d-md-inline-block fa fa-arrow-right float-right"></i>
+                </a>
+            </h5>
+        </div>
+    </div>
+</div>
+{%- endmacro %}
