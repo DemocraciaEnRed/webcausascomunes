@@ -1,0 +1,17 @@
+{% from '_imghelper.html' import create_img_src %}
+
+<section id="definicion" class="definicion section jumbotron jumbotron-fluid">
+    <div class="container">
+        <h2 class="section__title text-center text-md-left">{{dtextos['definicion']['titulo']}}</h2>
+        <div class="row mt-3 mt-md-5">
+            <div class="d-none d-md-block col-md-5">
+                <img src="{{ create_img_src(dimgsgenero['definicion']['imagen'], isstatic) }}">
+            </div>
+            <div class="col-md-7">
+                {% for parrafo in dtextos['definicion']['parrafos'] %}
+                    <p>{{parrafo}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -103,3 +103,86 @@ def get_propuesta_items():
         ItemPropuesta('propuesta1.png', 'CausasComunes_Vivienda_Outline.png', 'Trabajo', 'Est nobis dolorem magni qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. '),
         ItemPropuesta('propuesta1.png', 'CausasComunes_Vivienda_Outline.png', 'Vivienda', 'Est nobis dolorem magni qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. ')
     ]
+
+class ItemSeguidor:
+    def __init__(self, img, title):
+        self.img = img
+        self.title = title
+
+def get_seguidor_items():
+    return [
+        ItemSeguidor('placeholder-circle.png', 'Economía Feminista'),
+        ItemSeguidor('placeholder-circle.png', 'Agencia Presentes'),
+        ItemSeguidor('placeholder-circle.png', 'FemHackARG')
+    ]
+
+class ItemTema:
+    def __init__(self, img, title, text):
+        self.img = img
+        self.title = title
+        self.text = text
+
+def get_temas_items():
+    return [
+        ItemTema('placeholder.png', 'Promoción de la participación política de las mujeres', 'Vivamus luctus nunc a libero molestie, malesuada ornare elit condimentum. Phasellus posuere est metus, non aliquam dolor aliquam in. Praesent vitae enim ipsum. Vivamus non ante odio. Pellentesque consectetur facilisis bibendum. Duis sed porta ligula, quis malesuada turpis. Vivamus lorem nulla, laoreet euismod risus non, dapibus semper dui. Sed at erat ipsum. Morbi eros ipsum, scelerisque eu urna ut, sollicitudin hendrerit tortor. Sed egestas risus magna, a lobortis dui scelerisque vitae. Nunc rhoncus mauris dapibus leo sodales porttitor. Donec magna turpis, tincidunt sed pharetra non, condimentum nec sapien. Sed congue scelerisque semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus blandit auctor mauris non rhoncus. Nam quis nulla enim. Quisque non odio elit. Proin auctor pharetra metus id commodo. Fusce sed justo augue. Proin pellentesque, nulla nec tincidunt sollicitudin, diam tortor congue justo, ac molestie urna magna eu nibh. Aenean nec purus venenatis velit euismod laoreet.'),
+        ItemTema('placeholder.png', 'Aborto legal, seguro y gratuito', 'Vivamus luctus nunc a libero molestie, malesuada ornare elit condimentum. Phasellus posuere est metus, non aliquam dolor aliquam in.'),
+        ItemTema('placeholder.png', 'Sistema de cuidados', 'Vivamus luctus nunc a libero molestie, malesuada ornare elit condimentum. Phasellus posuere est metus, non aliquam dolor aliquam in.'),
+        ItemTema('placeholder.png', 'Cupo Laboral Trans', 'Vivamus luctus nunc a libero molestie, malesuada ornare elit condimentum. Phasellus posuere est metus, non aliquam dolor aliquam in.'),
+        ItemTema('placeholder.png', 'Lucha contra la violencia de género', 'Vivamus luctus nunc a libero molestie, malesuada ornare elit condimentum. Phasellus posuere est metus, non aliquam dolor aliquam in.')
+    ]
+
+def get_genero_textos():
+    return {
+        'portada': {
+            'titulo': 'Agenda de Género'
+        },
+        'menu': [
+            {
+                'label':'De qué se trata?',
+                'seccion':'definicion'
+            },
+            {
+                'label':'Temas',
+                'seccion':'temas'
+            },
+            {
+                'label':'Quienes la siguen?',
+                'seccion':'seguidores'
+            },
+            {
+                'label':'Qué hacemos?',
+                'seccion':'actividades'
+            }
+        ], 
+        'definicion': {
+            'titulo': 'De qué se trata?',
+            'parrafos': [
+                'La agenda de género cada vez ocupa un lugar más importante en el debate público, sin embargo todavía no está asimilada en las plataformas políticas.',
+                'Las desigualdades se observan tanto en la participación política de las mujeres como en su acceso al mercado laboral donde son mayoría entre las personas desocupadas y precarizadas.',
+                'A su vez, el trabajo doméstico no remunerado recae asimétricamente sobre ellas generando obstáculos para la inserción laboral y la independencia económica. La violencia machista, la homofobia y transfobia continúan siendo un límite para el ejercicio de derechos.'
+            ]
+        },
+        'temas': {
+            'titulo': 'Temas',
+            'subtitulo': 'Conocé sobre qué se tratará en la Agenda de Género.'
+        },
+        'seguidores': {
+            'titulo': 'Quiénes siguen la Agenda de Género',
+            'subtitulo': 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.'
+        },
+        'actividades': {
+            'titulo': 'Qué hacemos',
+            'subtitulo': 'Todas las acciones, actividades y agenda sobre Género.'
+        },
+        'agenda': {
+            'titulo': 'Agenda',
+            'subtitulo': 'Seguí día a día qué hacemos'
+        }
+    }
+
+def get_genero_imgs():
+    return {
+        'definicion': {
+            'imagen': 'placeholder.png'
+        }
+    }
