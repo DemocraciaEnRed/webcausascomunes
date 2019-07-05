@@ -6,30 +6,29 @@
     <title>Causas comunes</title>
     <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
     <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/section.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
     <!-- LANDING -->
-    {% include 'index_sections/index_landing.html' %}
+    {% include 'causa_sections/causa_landing.html' %}
 
-    <!-- MANIFIESTO -->
-    {% include 'index_sections/index_manifiesto.html' %}
+    <!-- DEFINICION -->
+    {% include 'causa_sections/causa_definicion.html' %}
 
-    <!-- PROPUESTAS -->
-    {% include 'index_sections/index_propuestas.html' %}
+    <!-- TEMAS -->
+    {% include 'causa_sections/causa_temas.html' %}
 
-    <!-- NOVEDADES -->
-    {% include 'index_sections/index_novedades.html' %}
+    <!-- SEGUIDORES -->
+    {% include 'causa_sections/causa_seguidores.html' %}
 
-    <!-- CANDIDATES -->
-    {% include 'index_sections/index_candidates.html' %}
-
-    <!-- EVENTOS -->
-    {% include 'index_sections/index_eventos.html' %}
+    <!-- ACTIVIDADES -->
+    {% include 'causa_sections/causa_actividades.html' %}
 
 {% endblock %}
 
 {% block scripts %}
     <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/navsecondary.js')}}"></script>
 {% endblock %}

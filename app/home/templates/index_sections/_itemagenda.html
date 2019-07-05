@@ -1,0 +1,6 @@
+{% macro create_item_agenda(datetime, title, hashtag) -%}
+<li class="list-group-item">
+    <h5 class="date">{{ datetime.strftime('%A %-d de %B').capitalize() }}</h5>
+    <h6 class="text">{{ datetime.strftime('%-H:%M hs') }} - {{ title }} <span class="hashtag text-color-{{hashtag.lower()}}">#{{hashtag}}</span></h6>
+</li>
+{%- endmacro %}

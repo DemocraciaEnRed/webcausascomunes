@@ -1,0 +1,122 @@
+@import 'vars';
+
+h1 {
+    color: $color-principal-azul;
+    font-weight: 600;
+}
+
+.section {
+    background-color: $white;
+    &.jumbotron-fluid {
+		@media (min-width: $width-medium) {
+			padding-top: 3rem;
+		    padding-bottom: 3rem;
+		}
+	}
+	/* intercalar colores de fondo, seguro terminemos hardcodeandolo */
+	&:nth-child(even) {
+		background-color: $color-fondo-1;
+	}
+	&:nth-child(odd) {
+		background-color: $color-fondo-2;
+	}
+}
+
+.portada-seccion {
+    background-color: transparent;
+}
+
+/* Menu Seccion */
+.nav-secondary {
+    background-color: $color-fondo-2;
+    position: relative;
+    margin-left: -2rem;
+    right: -1rem;
+    z-index: 1;
+    @media(min-width: $width-medium){
+        margin-left: -4rem;
+        right: -2rem;
+    }
+    .nav-link {
+        color: $color-principal-azul;
+        &:after {
+            display: none;
+        }
+        &:hover,
+        &.active {
+            text-shadow: 0 0 .65px $color-principal-azul, 0 0 .65px $color-principal-azul;
+        }
+    }
+    &.position-fixed {
+        top: 0;
+        margin-left: -1rem;
+        left: 0;
+    }
+}
+
+/* Seguidores */
+.seguidores {
+    .carousel-cell {
+        height: auto;
+        .title {
+            color: $color-principal-azul;
+            font-size: $font-size-small;
+        }
+    }
+}
+
+/* Actividades */
+
+.agenda__title {
+    color: $color-principal-azul;
+    font-size: $font-size-medium;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: left;
+    @media (min-width: $width-medium){
+        font-size: $font-size-large;
+    }
+}
+
+
+/* TEMAS */
+
+.tema-principal {
+    img {
+        width: 100%;
+        @media (min-width: $width-medium){
+            width: 40%;
+            float: left;
+            margin-right: 3rem;
+        }
+    }
+    .title {
+        font-size: $font-size-medium;
+        margin-top: 1.5rem;
+        @media (min-width: $width-medium){
+            margin-top: 0;
+            font-size: $font-size-large;
+        }
+    }
+}
+
+.tema-secundario {
+    img {
+        width: 50%;
+        float: left;
+        margin-right: 1.5rem;
+    }
+    .title {
+        font-size: $font-size-small;
+        @media (min-width: $width-medium){
+            font-size: $font-size-medium;
+        }
+    }
+    .text {
+        font-size: $font-size-xsmall;
+        @media (min-width: $width-medium){
+            font-size: $font-size-base;
+        }
+    }
+}

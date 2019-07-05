@@ -229,13 +229,16 @@ img {
         margin-right: 2rem;
         height: 400px;   }
 }
-      .carousel-cell .title {
-        font-size: 1.15rem;
-        font-weight: 600;
-        margin-bottom: 1rem; }
-        @media (min-width: 768px) {
-          .carousel-cell .title {
-            font-size: 1.5rem;   }
+      .carousel-cell a:target, .carousel-cell a:hover, .carousel-cell a {
+        color: #ffffff;
+        text-decoration: #ffffff; }
+        .carousel-cell .title {
+          font-size: 1.15rem;
+          font-weight: 600;
+          margin-bottom: 1rem; }
+          @media (min-width: 768px) {
+            .carousel-cell .title {
+              font-size: 1.5rem;   }
 }
     .carousel-cell .text {
       font-size: 0.9rem; }
@@ -243,7 +246,7 @@ img {
         .carousel-cell .text {
           font-size: 1rem;   }
 }
-    .carousel-cell > img {
+    .carousel-cell img {
       height: 6rem; }
 
 .flickity-button {
@@ -279,28 +282,31 @@ button.flickity-prev-next-button.previous {
 .flickity-button-icon path {
   fill: #2a4b8c; }
 
-.section.candidates {
-  background-color: #2a4b8c; }
-  .section.candidates .section__title {
-    color: #ffffff;
-    font-size: 1.5rem; }
-    @media (min-width: 768px) {
-      .section.candidates .section__title {
-        font-size: 2.5rem;   }
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: auto; }
+
+  .section.candidates {
+    background-color: #2a4b8c; }
+    .section.candidates .section__title {
+      color: #ffffff;
+      font-size: 1.5rem; }
+      @media (min-width: 768px) {
+        .section.candidates .section__title {
+          font-size: 2.5rem;   }
 }
-  .section.candidates .section__subtitle {
-    font-size: 0.9rem;
-    color: #ffffff;
-    margin-bottom: 1.5rem; }
-    @media (min-width: 768px) {
-      .section.candidates .section__subtitle {
-        font-size: 1.25rem;   }
+    .section.candidates .section__subtitle {
+      font-size: 0.9rem;
+      color: #ffffff;
+      margin-bottom: 1.5rem; }
+      @media (min-width: 768px) {
+        .section.candidates .section__subtitle {
+          font-size: 1.25rem;   }
 }
-  .section.candidates .btn {
-    order: 1; }
-    @media (min-width: 768px) {
-      .section.candidates .btn {
-        order: initial;   }
+    .section.candidates .btn {
+      order: 1; }
+      @media (min-width: 768px) {
+        .section.candidates .btn {
+          order: initial;   }
 }
 
 .card--novedades {

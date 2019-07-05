@@ -1,3 +1,6 @@
+import os
+print(os.environ)
+
 class BaseConfig(object):
     SECRET_KEY = 'key'
     SQLALCHEMY_TRACK_MODIFICATIONS = False

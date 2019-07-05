@@ -251,6 +251,10 @@ label {
 	border-radius: 20px;
 	counter-increment: carousel-cell;
     color: $white;
+    a:target, a:hover, a {
+        color: $white;
+        text-decoration: $white;
+    }
     .title {
         font-size: $font-size-small;
         font-weight: 600;
@@ -265,7 +269,7 @@ label {
             font-size: $font-size-base;
         }
     }
-    > img {
+    img {
         height:6rem;
     }
 }
@@ -312,6 +316,10 @@ button.flickity-prev-next-button {
     path {
         fill: $color-principal-azul;
     }
+}
+
+.flickity-enabled.is-draggable .flickity-viewport{
+    cursor: auto;
 }
 
 /* Candidates */
