@@ -13,17 +13,21 @@ import datetime
 class DirectusApi:
     def __init__(self):
         self.ser_url = None
+        self.ser_ext_url = None
         self.api_url = None
         self.token = None
         self.auth_header = None
         self.textosregx = re.compile('^[^<>&]*$')
 
-    def init_api(self, ser_url, api_path, token):
+    def init_api(self, ser_url, ser_ext_url, api_path, token):
         if ser_url[-1] == '/':
             ser_url = ser_url[:-1]
+        if ser_ext_url[-1] == '/':
+            ser_ext_url = ser_ext_url[:-1]
         if not api_path[0] == '/':
             api_path = '/' + api_path
         self.ser_url = ser_url
+        self.ser_ext_url = ser_ext_url
         self.api_url = ser_url + api_path
         self.token = token
         self.auth_header = {'Authorization': 'Bearer ' + self.token}
@@ -109,7 +113,7 @@ class DirectusApi:
             img = row['imagen']
             if not img:
                 raise Exception('Hay una imagen vacía para la ubicacion "{}"'.format(row['ubicacion']))
-            imgurl = self.ser_url + img['data']['url']
+            imgurl = self.ser_ext_url + img['data']['url']
             if len(ubic) == 1:
                 imgs[ubicfmt[0]] = imgurl
             else:
@@ -129,7 +133,7 @@ class DirectusApi:
                 'ancho_columnas': row['ancho_columnas'],
                 'titulo': row['titulo'],
                 'hashtag': row['hashtag'],
-                'imgurl': self.ser_url + imgurl
+                'imgurl': self.ser_ext_url + imgurl
             }
             items.append(item)
         return items
@@ -152,10 +156,10 @@ class DirectusApi:
         for row in rows:
             if not row['icono']:
                 raise Exception('Un item de propuestas no tiene ícono asignado')
-            iconourl = self.ser_url + row['icono']['data']['url']
+            iconourl = self.ser_ext_url + row['icono']['data']['url']
             if not row['imagen_fondo']:
                 raise Exception('Un item de propuestas no tiene imagen de fondo asignada')
-            bgimgurl = self.ser_url + row['imagen_fondo']['data']['url']
+            bgimgurl = self.ser_ext_url + row['imagen_fondo']['data']['url']
             item = {
                 'bgimg': bgimgurl,
                 'icon': iconourl,
@@ -169,9 +173,9 @@ class DirectusApi:
 dapi = DirectusApi()
 
 
-def init_flask_app(directus_url, api_path, auth_token):
+def init_flask_app(directus_url_int, directus_url_ext, api_path, auth_token):
     global dapi
-    dapi.init_api(directus_url, api_path, auth_token)
+    dapi.init_api(directus_url_int, directus_url_ext, api_path, auth_token)
     dapi.test_conn()
     return dapi
 

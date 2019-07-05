@@ -22,7 +22,7 @@ def create_app():
     #     create_extensions(app)
     if app.config['USE_DIRECTUS']:
         import app.directus as directus
-        directus.init_flask_app(app.config['DIRECTUS_URL'], app.config['DIRECTUS_API_PATH'], app.config['DIRECTUS_TOKEN'])
+        directus.init_flask_app(app.config['DIRECTUS_URL_INTERNAL'], app.config['DIRECTUS_URL_EXTERNAL'], app.config['DIRECTUS_API_PATH'], app.config['DIRECTUS_TOKEN'])
 
     # chequear locale en español para que las fechas salga en español y no en inglés
     curr_lang = locale.getlocale()[0]

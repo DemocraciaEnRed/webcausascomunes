@@ -5,11 +5,12 @@ class BaseConfig(object):
     # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + INSTANCE_FOLDER_PATH + '/db.sqlite'
     # SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://flask@127.0.0.1:3306/flaskdb?charset=utf8'
     SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://root:123@127.0.0.1:3300/flaskdb?charset=utf8'
-    DIRECTUS_URL = 'http://192.168.88.20:9090'
+    DIRECTUS_URL_EXTERNAL = 'http://causascomunes.mooo.com/images'
+    DIRECTUS_URL_INTERNAL = 'http://192.168.0.92:9090'
     DIRECTUS_API_PATH = '/api/1.1/'
-    DIRECTUS_TOKEN = 'l5mMXIMYEUpfefI8AQkRA8sSHURn5Yvs'
+    DIRECTUS_TOKEN = '4VIinWnI5zfyoJc5y69aBVyognPX0kpp'
     USE_DIRECTUS = True
-    USE_SCSS = True
+    USE_SCSS = False
     USE_EXTENSIONS = False
     # SERVER_HOST = '192.168.88.20'
     SERVER_HOST = 'localhost'
