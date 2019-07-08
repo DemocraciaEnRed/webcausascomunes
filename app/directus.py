@@ -11,6 +11,14 @@ import datetime
 # api endpoints - https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/endpoints.md
 # filterig - https://docs.directus.io/api/reference.html#filtering
 class DirectusApi:
+    class NoImgException(Exception):
+        pass
+
+    class RowTypes:
+        TEXT = 0
+        IMG = 1
+        DATETIME = 2
+
     def __init__(self):
         self.ser_url = None
         self.ser_ext_url = None
@@ -67,7 +75,7 @@ class DirectusApi:
 
     def img_row_to_url(self, imgrow, errmsg):
         if not imgrow:
-            raise Exception(errmsg)
+            raise DirectusApi.NoImgException(errmsg)
         return self.ser_ext_url + imgrow['data']['url']
 
     def get_textos(self, pagina):
@@ -87,7 +95,7 @@ class DirectusApi:
                 ubicfmt.append(ubi.strip().lower())
                 if not ubicfmt[-1].isalnum():
                     raise Exception('El dato de ubicacion "{}" en la tabla de textos tiene caractéres inválidos'.format(ubicfmt[-1]))
-            txt = row['texto']
+            txt = row['texto'] or ''
             if self.textosregx.match(txt) is None:
                 raise Exception('El dato de texto "{}" en la tabla de textos tiene caractéres inválidos'.format(txt))
             if len(ubic) == 1:
@@ -124,6 +132,15 @@ class DirectusApi:
                 imgs[ubicfmt[0]][ubicfmt[1]] = imgurl
         return imgs
 
+    '''def get_items(self, table, ks_tys):
+        def get_itemsnovedades(self):
+            return self.get_items('items_novedades', {
+                    'ancho_columnas': DirectusApi.RowTypes.TEXT,
+                    'titulo': DirectusApi.RowTypes.TEXT,
+                    'hashtag': DirectusApi.RowTypes.TEXT,
+                    'imgurl': DirectusApi.RowTypes.IMG
+                })'''
+
     def get_itemsnovedades(self):
         rows = self.get_table_rows('items_novedades')
         items = []
@@ -133,7 +150,7 @@ class DirectusApi:
                 'ancho_columnas': row['ancho_columnas'],
                 'titulo': row['titulo'],
                 'hashtag': row['hashtag'],
-                'imgurl': self.ser_ext_url + imgurl
+                'imgurl': imgurl
             }
             items.append(item)
         return items

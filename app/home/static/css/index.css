@@ -387,3 +387,5 @@ button.flickity-prev-next-button.previous {
   .agenda .list-group-item .hashtag {
     font-weight: 600;
     text-transform: capitalize; }
+    .agenda .list-group-item img {
+      height: 3rem; }

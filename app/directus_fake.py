@@ -55,6 +55,17 @@ def get_index_imgs():
     }
 
 
+def get_footer_imgs():
+    return {
+        'logo': '',
+        'social': {
+            'facebook': '',
+            'twitter': '',
+            'instagram': ''
+        }
+    }
+
+
 class ItemNovedad:
     def __init__(self, ancho_columnas, imgurl, titulo, hashtag):
         self.ancho_columnas = ancho_columnas
@@ -97,11 +108,11 @@ class ItemPropuesta:
 
 def get_propuesta_items():
     return [
-        ItemPropuesta('propuesta1.png', 'CausasComunes_Género_Outline.png', 'Género', 'Cada vez ocupa un lugar más importante en el debate público, sin embargo todavía no está asimilada en las plataformas políticas. '),
-        ItemPropuesta('propuesta1.png', 'CausasComunes_Ambiente_Outline.png', 'Ambiente', 'Las temáticas ambientales suelen quedar en un segundo plano en las discusiones de desarrollo productivo, se las trata...'),
-        ItemPropuesta('propuesta1.png', 'CausasComunes_Ciencia_Outline.png', 'Ciencias', 'La situación de los ámbitos científicos en el país es alarmante. Las universidades y escuelas públicas cada vez tienen...'),
-        ItemPropuesta('propuesta1.png', 'CausasComunes_Vivienda_Outline.png', 'Trabajo', 'Est nobis dolorem magni qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. '),
-        ItemPropuesta('propuesta1.png', 'CausasComunes_Vivienda_Outline.png', 'Vivienda', 'Est nobis dolorem magni qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. ')
+        ItemPropuesta('propuesta1.png', 'icono_Género_Outline.png', 'Género', 'Cada vez ocupa un lugar más importante en el debate público, sin embargo todavía no está asimilada en las plataformas políticas. '),
+        ItemPropuesta('propuesta1.png', 'icono_Ambiente_Outline.png', 'Ambiente', 'Las temáticas ambientales suelen quedar en un segundo plano en las discusiones de desarrollo productivo, se las trata...'),
+        ItemPropuesta('propuesta1.png', 'icono_Ciencia_Outline.png', 'Ciencias', 'La situación de los ámbitos científicos en el país es alarmante. Las universidades y escuelas públicas cada vez tienen...'),
+        ItemPropuesta('propuesta1.png', 'icono_Vivienda_Outline.png', 'Trabajo', 'Est nobis dolorem magni qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. '),
+        ItemPropuesta('propuesta1.png', 'icono_Vivienda_Outline.png', 'Vivienda', 'Est nobis dolorem magni qui rerum delectus laborum ipsum. Totam dolores totam aspernatur sed. ')
     ]
 
 
