@@ -28,15 +28,21 @@
               .text-color-drogas {
                 color: #f9b112; }
 
-                body {
-                  font: 100% 'Barlow', sans-serif;
-                  color: black; }
-                  @media (min-width: 992px) {
+                .text-color-ciencia {
+                  color: #008daf; }
+
+                  .text-color-ambiente {
+                    color: #39a95e; }
+
                     body {
-                      background-image: url('/static/img/home-background.svg');
-                      background-position-x: right;
-                      background-size: 80%;
-                      background-repeat: no-repeat;   }
+                      font: 100% 'Barlow', sans-serif;
+                      color: black; }
+                      @media (min-width: 992px) {
+                        body {
+                          background-image: url('/static/img/home-background.svg');
+                          background-position-x: right;
+                          background-size: 80%;
+                          background-repeat: no-repeat;   }
 }
 
 img {

@@ -1,8 +1,8 @@
 {% from '_imghelper.html' import create_img_src %}
 
-{% macro create_item_agenda(datetime, title, hashtag) -%}
+{% macro create_item_agenda(datetime, title, hashtag, icono) -%}
 <li class="list-group-item">
-    <img class="float-left mr-2" src="{{ create_img_src('icono_Drogas_Outline.png', isstatic=True) }}">
+    <img class="float-left mr-2" src="{{ create_img_src(icono, isstatic) }}">
     <h5 class="date">{{ datetime.strftime('%A %-d de %B').capitalize() }}</h5>
     <h6 class="text">{{ datetime.strftime('%-H:%M hs') }} - {{ title }} <span class="hashtag text-color-{{hashtag.lower()}}">#{{hashtag}}</span></h6>
 </li>

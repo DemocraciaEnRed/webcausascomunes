@@ -28,21 +28,27 @@
               .text-color-drogas {
                 color: #f9b112; }
 
-                h1 {
-                  color: #2a4b8c;
-                  font-weight: 600; }
+                .text-color-ciencia {
+                  color: #008daf; }
 
-                  .section {
-                    background-color: #ffffff; }
-                    @media (min-width: 768px) {
-                      .section.jumbotron-fluid {
-                        padding-top: 3rem;
-                        padding-bottom: 3rem;   }
+                  .text-color-ambiente {
+                    color: #39a95e; }
+
+                    h1 {
+                      color: #2a4b8c;
+                      font-weight: 600; }
+
+                      .section {
+                        background-color: #ffffff; }
+                        @media (min-width: 768px) {
+                          .section.jumbotron-fluid {
+                            padding-top: 3rem;
+                            padding-bottom: 3rem;   }
 }
-                    .section:nth-child(even) {
-                      background-color: #ffffff; }
-                      .section:nth-child(odd) {
-                        background-color: #fbfcfd; }
+                        .section:nth-child(even) {
+                          background-color: #ffffff; }
+                          .section:nth-child(odd) {
+                            background-color: #fbfcfd; }
 
 .portada-seccion {
   background-color: transparent; }

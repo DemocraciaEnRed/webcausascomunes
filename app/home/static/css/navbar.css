@@ -28,14 +28,20 @@
               .text-color-drogas {
                 color: #f9b112; }
 
-                nav a.nav-link.active {
-                  -webkit-border-radius: 2rem;
-                  -moz-border-radius: 2rem;
-                  border-radius: 2rem; }
-                  nav form input.form-control {
-                    -webkit-border-radius: 2rem;
-                    -moz-border-radius: 2rem;
-                    border-radius: 2rem; }
+                .text-color-ciencia {
+                  color: #008daf; }
+
+                  .text-color-ambiente {
+                    color: #39a95e; }
+
+                    nav a.nav-link.active {
+                      -webkit-border-radius: 2rem;
+                      -moz-border-radius: 2rem;
+                      border-radius: 2rem; }
+                      nav form input.form-control {
+                        -webkit-border-radius: 2rem;
+                        -moz-border-radius: 2rem;
+                        border-radius: 2rem; }
 
 .navbar {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);

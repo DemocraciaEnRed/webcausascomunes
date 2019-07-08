@@ -21,12 +21,12 @@ def index():
         dimgsfooter = directus_fake.get_footer_imgs()
     else:
         import app.directus as directus
-        dtextos = directus.dapi.get_textos('Home')
-        dimgs = directus.dapi.get_imgs('Home')
-        itemsnovedades = directus.dapi.get_itemsnovedades()
-        itemsagenda = directus.dapi.get_itemsagenda()
-        itemspropuestas = directus.dapi.get_itemspropuestas()
-        dimgsfooter = directus.dapi.get_imgs('Footer')
+        dtextos = directus.dapi.get_textos_pagina('Home')
+        dimgs = directus.dapi.get_imgs_pagina('Home')
+        itemsnovedades = directus.dapi.get_items_novedades()
+        itemsagenda = directus.dapi.get_items_agenda()
+        itemspropuestas = directus.dapi.get_items_propuestas()
+        dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
     return render_template(
         'index.html',
         dtextos=dtextos,
@@ -36,6 +36,12 @@ def index():
         itemsagenda=itemsagenda,
         itemspropuestas=itemspropuestas,
         isstatic=isstatic)
+
+
+@blueprint.route("/a/<agenda>", methods=['GET'])
+def causa(agenda):
+    isstatic = not current_app.config['USE_DIRECTUS']
+
 
 @blueprint.route("/genero", methods=['GET'])
 def genero():
@@ -51,13 +57,13 @@ def genero():
         itemstemas = directus_fake.get_temas_items()
     else:
         import app.directus as directus
-        dtextos = directus.dapi.get_textos('Genero')
-        dimgs = directus.dapi.get_imgs('Home')
-        dimgsgenero = directus.dapi.get_imgs('Genero')
-        itemsseguidores = directus.dapi.get_itemsseguidor()
-        itemstemas = directus.dapi.get_itemstema()
-        itemsnovedades = directus.dapi.get_itemsnovedades()
-        itemsagenda = directus.dapi.get_itemsagenda()
+        dtextos = directus.dapi.get_textos_pagina('Genero')
+        dimgs = directus.dapi.get_imgs_pagina('Home')
+        dimgsgenero = directus.dapi.get_imgs_pagina('Genero')
+        itemsseguidores = directus.dapi.get_items_seguidor()
+        itemstemas = directus.dapi.get_items_tema()
+        itemsnovedades = directus.dapi.get_items_novedades()
+        itemsagenda = directus.dapi.get_items_agenda()
     return render_template(
         'causa.html',
         dtextos=dtextos,

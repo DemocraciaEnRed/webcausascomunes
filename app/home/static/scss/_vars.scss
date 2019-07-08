@@ -58,6 +58,8 @@ $color-transparencia: #e61937;
 $color-trabajo: #e71869;
 $color-genero: #774997;
 $color-drogas: #f9b112;
+$color-ciencia: #008daf;
+$color-ambiente: #39a95e;
 
 .text-color-vivienda {
   color: $color-vivienda;
@@ -77,4 +79,12 @@ $color-drogas: #f9b112;
 
 .text-color-drogas {
   color: $color-drogas;
+}
+
+.text-color-ciencia {
+  color: $color-ciencia;
+}
+
+.text-color-ambiente {
+  color: $color-ambiente;
 }
