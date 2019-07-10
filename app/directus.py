@@ -179,7 +179,8 @@ class DirectusApi:
     def get_items_seguidor(self, pagina):
         return self.get_items('items_seguidor', pagina, {
                 'titulo': DirectusApi.RowTypes.TEXT,
-                'imagen': DirectusApi.RowTypes.IMG
+                'imagen': DirectusApi.RowTypes.IMG,
+                'url': DirectusApi.RowTypes.TEXT
             })
 
     def get_items_tema(self, pagina):
