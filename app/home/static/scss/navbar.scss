@@ -7,9 +7,27 @@ nav {
             @include border-radius(2rem);
         }
     }
+    .ondita-azul{
+        position: absolute;
+        display:none;
+        top: 0;
+        right: 0;
+        width: 80%;
+        z-index: -1;
+        @media (min-width: $width-large) {
+            display:block;
+        }
+        @media (min-width: $width-xlarge) {
+        width: 75%;
+        }
+    }
 }
 
 .navbar {
+    background-color:$white;
+    @media (min-width: $width-large) {
+        background-color:inherit;
+    }
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     justify-content: space-between;
     // toggler menu

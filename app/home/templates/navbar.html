@@ -1,13 +1,14 @@
 <nav class="navbar navbar-expand-lg py-3 px-4">
+    <img class="ondita-azul" src="/static/img/home-background.svg">
     <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <img src="{{ create_img_src(dimgs['portada']['menu'], isstatic=isstatic) }}" alt="Menu"/>
+        <img src="{{ create_img_src(dimgsnav['menumobile'], isstatic=isstatic) }}" alt="Menu"/>
     </button>
     <a class="navbar-brand" href="{{ url_for('home.index') }}">
-        <img src="{{ create_img_src(dimgs['portada']['logo'], isstatic=isstatic) }}" alt="Causas Comunes"/>
+        <img src="{{ create_img_src(dimgsnav['logocolor'], isstatic=isstatic) }}" alt="Causas Comunes"/>
     </a>
 
     <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search bar">
-        <img src="{{ create_img_src(dimgs['portada']['search'], isstatic=isstatic) }}" alt="Buscar"/>
+        <img src="{{ create_img_src(dimgsnav['busqueda'], isstatic=isstatic) }}" alt="Buscar"/>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarMenu">

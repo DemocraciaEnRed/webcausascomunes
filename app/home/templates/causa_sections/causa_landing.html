@@ -1,6 +1,20 @@
-{% from 'causa_sections/_menucausa.html' import create_menu_causa %}
-
 <section class="portada-seccion jumbotron mt-md-3 text-center">
+    <div class="bgimg-container">
+        <img class="bgimg" src="{{ create_img_src(dimgs['fondo'], isstatic) }}">
+    </div>
     <h1 class="my-5 py-5">{{dtextos['portada']['titulo']}}</h1>
-    {{ create_menu_causa() }}
+    <ul id="nav-secondary" class="nav nav-secondary justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link scrollTo" href="#definicion">De qué se trata?</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link scrollTo" href="#temas">Temas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link scrollTo" href="#seguidores">Quienes la siguen?</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link scrollTo" href="#actividades">Qué hacemos?</a>
+        </li>
+    </ul>
 </section>

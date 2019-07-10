@@ -132,8 +132,11 @@ class DirectusApi:
                 imgs[ubicfmt[0]][ubicfmt[1]] = imgurl
         return imgs
 
-    def get_items(self, table, keys_types):
-        rows = self.get_table_rows(table)
+    def get_items(self, table, pagina, keys_types):
+        if pagina:
+            rows = self.get_table_rows(table, filter='filters[pagina.nombre][eq]={}'.format(pagina))
+        else:
+            rows = self.get_table_rows(table)
         items = []
         for row in rows:
             item = {}
@@ -149,16 +152,16 @@ class DirectusApi:
             items.append(item)
         return items
 
-    def get_items_novedades(self):
-        return self.get_items('items_novedades', {
+    def get_items_novedades(self, pagina):
+        return self.get_items('items_novedades', pagina, {
                 'ancho_columnas': DirectusApi.RowTypes.TEXT,
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'hashtag': DirectusApi.RowTypes.TEXT,
                 'imagen': DirectusApi.RowTypes.IMG
             })
 
-    def get_items_agenda(self):
-        return self.get_items('items_agenda', {
+    def get_items_agenda(self, pagina):
+        return self.get_items('items_agenda', pagina, {
                 'fechahora': DirectusApi.RowTypes.DATETIME,
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'hashtag': DirectusApi.RowTypes.TEXT,
@@ -166,21 +169,21 @@ class DirectusApi:
             })
 
     def get_items_propuestas(self):
-        return self.get_items('items_propuestas', {
+        return self.get_items('items_propuestas', None, {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
                 'icono': DirectusApi.RowTypes.IMG,
                 'imagen_fondo': DirectusApi.RowTypes.IMG
             })
 
-    def get_items_seguidor(self):
-        return self.get_items('items_seguidor', {
+    def get_items_seguidor(self, pagina):
+        return self.get_items('items_seguidor', pagina, {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'imagen': DirectusApi.RowTypes.IMG
             })
 
-    def get_items_tema(self):
-        return self.get_items('items_tema', {
+    def get_items_tema(self, pagina):
+        return self.get_items('items_tema', pagina, {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
                 'imagen': DirectusApi.RowTypes.IMG

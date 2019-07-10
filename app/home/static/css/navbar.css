@@ -42,15 +42,35 @@
                         -webkit-border-radius: 2rem;
                         -moz-border-radius: 2rem;
                         border-radius: 2rem; }
+                    nav .ondita-azul {
+                      position: absolute;
+                      display: none;
+                      top: 0;
+                      right: 0;
+                      width: 80%;
+                      z-index: -1; }
+                      @media (min-width: 992px) {
+                        nav .ondita-azul {
+                          display: block;   }
+}
+                        @media (min-width: 1200px) {
+                          nav .ondita-azul {
+                            width: 75%;   }
+}
 
 .navbar {
+  background-color: #ffffff;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   justify-content: space-between; }
-  .navbar .navbar-toggler {
-    border: none;
-    cursor: pointer; }
-    .navbar .navbar-toggler:focus {
-      outline: 0; }
+  @media (min-width: 992px) {
+    .navbar {
+      background-color: inherit;   }
+}
+    .navbar .navbar-toggler {
+      border: none;
+      cursor: pointer; }
+      .navbar .navbar-toggler:focus {
+        outline: 0; }
   .navbar .form-group {
     position: relative;
     margin: 0 auto; }

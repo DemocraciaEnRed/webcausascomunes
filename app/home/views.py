@@ -7,6 +7,7 @@ blueprint = Blueprint(
     static_folder="static",
     template_folder="templates")
 
+
 @blueprint.route("/", methods=['GET'])
 def index():
     isstatic = not current_app.config['USE_DIRECTUS']
@@ -20,24 +21,25 @@ def index():
         dimgsfooter = directus_fake.get_footer_imgs()
     else:
         import app.directus as directus
+        dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+        dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
         dtextos = directus.dapi.get_textos_pagina('Home')
         dimgs = directus.dapi.get_imgs_pagina('Home')
-        itemsnovedades = directus.dapi.get_items_novedades()
-        itemsagenda = directus.dapi.get_items_agenda()
         itemspropuestas = directus.dapi.get_items_propuestas()
-        dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+        itemsnovedades = directus.dapi.get_items_novedades('Home')
+        itemsagenda = directus.dapi.get_items_agenda('Home')
     return render_template(
         'index.html',
+        dimgsnav=dimgsnav,
+        dimgsfooter=dimgsfooter,
         dtextos=dtextos,
         dimgs=dimgs,
-        dimgsfooter=dimgsfooter,
         itemsnovedades=itemsnovedades,
         itemsagenda=itemsagenda,
         itemspropuestas=itemspropuestas,
         isstatic=isstatic)
 
 
-'''@blueprint.route("/a/<agenda>", methods=['GET'])
 def causa(agenda):
     accepted_causas = [
         'genero'
@@ -52,6 +54,7 @@ def causa(agenda):
     itemsseguidores = directus.dapi.get_items_seguidor(agenda)
     itemsnovedades = directus.dapi.get_items_novedades(agenda)
     itemsagenda = directus.dapi.get_items_agenda(agenda)
+    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
     variables = {
         'dtextos': dtextos,
@@ -65,7 +68,7 @@ def causa(agenda):
         variables['dtextosextra'] = {}
         variables['dimgsextra'] = {}
 
-    return render_template('causa.html', variables)'''
+    return render_template('causa.html', variables)
 
 
 @blueprint.route("/genero", methods=['GET'])
@@ -82,18 +85,20 @@ def genero():
         itemstemas = directus_fake.get_temas_items()
     else:
         import app.directus as directus
+        dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+        dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
         dtextos = directus.dapi.get_textos_pagina('Genero')
-        dimgs = directus.dapi.get_imgs_pagina('Home')
-        dimgsgenero = directus.dapi.get_imgs_pagina('Genero')
-        itemsseguidores = directus.dapi.get_items_seguidor()
-        itemstemas = directus.dapi.get_items_tema()
-        itemsnovedades = directus.dapi.get_items_novedades()
-        itemsagenda = directus.dapi.get_items_agenda()
+        dimgs = directus.dapi.get_imgs_pagina('Genero')
+        itemsseguidores = directus.dapi.get_items_seguidor('Genero')
+        itemstemas = directus.dapi.get_items_tema('Genero')
+        itemsnovedades = directus.dapi.get_items_novedades('Genero')
+        itemsagenda = directus.dapi.get_items_agenda('Genero')
     return render_template(
         'causa.html',
+        dimgsnav=dimgsnav,
+        dimgsfooter=dimgsfooter,
         dtextos=dtextos,
         dimgs=dimgs,
-        dimgsgenero=dimgsgenero,
         itemsseguidores=itemsseguidores,
         itemsnovedades=itemsnovedades,
         itemsagenda=itemsagenda,

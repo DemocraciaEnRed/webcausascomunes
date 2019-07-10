@@ -37,23 +37,16 @@
                     body {
                       font: 100% 'Barlow', sans-serif;
                       color: black; }
-                      @media (min-width: 992px) {
-                        body {
-                          background-image: url('/static/img/home-background.svg');
-                          background-position-x: right;
-                          background-size: 80%;
-                          background-repeat: no-repeat;   }
-}
 
-img {
-  max-width: 100%; }
+                      img {
+                        max-width: 100%; }
 
-  .no-gutters {
-    margin-right: 0;
-    margin-left: 0; }
-    .no-gutters > .col, .no-gutters > [class*="col-"] {
-      padding-right: 0;
-      padding-left: 0; }
+                        .no-gutters {
+                          margin-right: 0;
+                          margin-left: 0; }
+                          .no-gutters > .col, .no-gutters > [class*="col-"] {
+                            padding-right: 0;
+                            padding-left: 0; }
 
 .section {
   background-color: #ffffff; }
