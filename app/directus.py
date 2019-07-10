@@ -78,7 +78,7 @@ class DirectusApi:
             raise DirectusApi.NoImgException(errmsg)
         return self.ser_ext_url + imgrow['data']['url']
 
-    def get_textos(self, pagina):
+    def get_textos_pagina(self, pagina):
         pagina = str(pagina)
         if str.isnumeric(pagina):
             filter_by = 'id'
@@ -106,7 +106,7 @@ class DirectusApi:
                 textos[ubicfmt[0]][ubicfmt[1]] = txt
         return textos
 
-    def get_imgs(self, pagina):
+    def get_imgs_pagina(self, pagina):
         pagina = str(pagina)
         if str.isnumeric(pagina):
             filter_by = 'id'
@@ -132,80 +132,59 @@ class DirectusApi:
                 imgs[ubicfmt[0]][ubicfmt[1]] = imgurl
         return imgs
 
-    '''def get_items(self, table, ks_tys):
-        def get_itemsnovedades(self):
-            return self.get_items('items_novedades', {
-                    'ancho_columnas': DirectusApi.RowTypes.TEXT,
-                    'titulo': DirectusApi.RowTypes.TEXT,
-                    'hashtag': DirectusApi.RowTypes.TEXT,
-                    'imgurl': DirectusApi.RowTypes.IMG
-                })'''
-
-    def get_itemsnovedades(self):
-        rows = self.get_table_rows('items_novedades')
+    def get_items(self, table, keys_types):
+        rows = self.get_table_rows(table)
         items = []
         for row in rows:
-            imgurl = self.img_row_to_url(row['imagen'], 'Un item de novedades no tiene imagen asignada')
-            item = {
-                'ancho_columnas': row['ancho_columnas'],
-                'titulo': row['titulo'],
-                'hashtag': row['hashtag'],
-                'imgurl': imgurl
-            }
+            item = {}
+            for key, type in keys_types.items():
+                if type == DirectusApi.RowTypes.TEXT:
+                    item[key] = row[key]
+                elif type == DirectusApi.RowTypes.IMG:
+                    item[key] = self.img_row_to_url(row[key], 'Un item de {} no tiene imagen asignada'.format(table))
+                elif type == DirectusApi.RowTypes.DATETIME:
+                    item[key] = datetime.datetime.strptime(row[key], "%Y-%m-%d %H:%M:%S")
+                else:
+                    raise Exception('Tipo de dato inválido para columna {}'.format(key))
             items.append(item)
         return items
 
-    def get_itemsagenda(self):
-        rows = self.get_table_rows('items_agenda')
-        items = []
-        for row in rows:
-            item = {
-                'fechahora': datetime.datetime.strptime(row['fecha'], "%Y-%m-%d %H:%M:%S"),
-                'titulo': row['titulo'],
-                'hashtag': row['hashtag']
-            }
-            items.append(item)
-        return items
+    def get_items_novedades(self):
+        return self.get_items('items_novedades', {
+                'ancho_columnas': DirectusApi.RowTypes.TEXT,
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'hashtag': DirectusApi.RowTypes.TEXT,
+                'imagen': DirectusApi.RowTypes.IMG
+            })
 
-    def get_itemspropuestas(self):
-        rows = self.get_table_rows('items_propuestas')
-        items = []
-        for row in rows:
-            iconourl = self.img_row_to_url(row['icono'], 'Un item de propuestas no tiene ícono asignado')
-            bgimgurl = self.img_row_to_url(row['imagen_fondo'], 'Un item de propuestas no tiene imagen de fondo asignada')
-            item = {
-                'bgimg': bgimgurl,
-                'icon': iconourl,
-                'title': row['titulo'],
-                'text': row['texto']
-            }
-            items.append(item)
-        return items
+    def get_items_agenda(self):
+        return self.get_items('items_agenda', {
+                'fechahora': DirectusApi.RowTypes.DATETIME,
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'hashtag': DirectusApi.RowTypes.TEXT,
+                'icono': DirectusApi.RowTypes.IMG
+            })
 
-    def get_itemsseguidor(self):
-        rows = self.get_table_rows('items_seguidor')
-        items = []
-        for row in rows:
-            imgurl = self.img_row_to_url(row['imagen'], 'Un item de seguidores no tiene imagen asignada')
-            item = {
-                'img': imgurl,
-                'title': row['titulo']
-            }
-            items.append(item)
-        return items
+    def get_items_propuestas(self):
+        return self.get_items('items_propuestas', {
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'texto': DirectusApi.RowTypes.TEXT,
+                'icono': DirectusApi.RowTypes.IMG,
+                'imagen_fondo': DirectusApi.RowTypes.IMG
+            })
 
-    def get_itemstema(self):
-        rows = self.get_table_rows('items_tema')
-        items = []
-        for row in rows:
-            imgurl = self.img_row_to_url(row['imagen'], 'Un item de tema no tiene imagen asignada')
-            item = {
-                'img': imgurl,
-                'title': row['titulo'],
-                'text': row['texto']
-            }
-            items.append(item)
-        return items
+    def get_items_seguidor(self):
+        return self.get_items('items_seguidor', {
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'imagen': DirectusApi.RowTypes.IMG
+            })
+
+    def get_items_tema(self):
+        return self.get_items('items_tema', {
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'texto': DirectusApi.RowTypes.TEXT,
+                'imagen': DirectusApi.RowTypes.IMG
+            })
 
 
 dapi = DirectusApi()

@@ -1,4 +1,4 @@
-from flask import current_app, render_template, Blueprint
+from flask import current_app, render_template, redirect, url_for, Blueprint
 
 blueprint = Blueprint(
     'home',
@@ -6,7 +6,6 @@ blueprint = Blueprint(
     url_prefix='/',
     static_folder="static",
     template_folder="templates")
-
 
 @blueprint.route("/", methods=['GET'])
 def index():
@@ -38,9 +37,35 @@ def index():
         isstatic=isstatic)
 
 
-@blueprint.route("/a/<agenda>", methods=['GET'])
+'''@blueprint.route("/a/<agenda>", methods=['GET'])
 def causa(agenda):
-    isstatic = not current_app.config['USE_DIRECTUS']
+    accepted_causas = [
+        'genero'
+    ]
+    if agenda not in accepted_causas:
+        return redirect(url_for('home.index'))
+
+    import app.directus as directus
+    dtextos = directus.dapi.get_textos_pagina(agenda)
+    dimgs = directus.dapi.get_textos_pagina(agenda)
+    itemstemas = directus.dapi.get_items_tema(agenda)
+    itemsseguidores = directus.dapi.get_items_seguidor(agenda)
+    itemsnovedades = directus.dapi.get_items_novedades(agenda)
+    itemsagenda = directus.dapi.get_items_agenda(agenda)
+
+    variables = {
+        'dtextos': dtextos,
+        'dimgs': dimgs,
+        'itemstemas': itemstemas,
+        'itemsseguidores': itemsseguidores,
+        'itemsnovedades': itemsnovedades,
+        'itemsagenda': itemsagenda}
+
+    if agenda == 'genero':
+        variables['dtextosextra'] = {}
+        variables['dimgsextra'] = {}
+
+    return render_template('causa.html', variables)'''
 
 
 @blueprint.route("/genero", methods=['GET'])
