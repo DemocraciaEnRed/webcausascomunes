@@ -85,8 +85,8 @@ class DirectusApi:
         else:
             filter_by = 'nombre'
         rows = self.get_table_rows('textos', 'filters[pagina.{}][eq]={}'.format(filter_by, pagina))
-        if not rows:
-            raise Exception('No se han encontrado textos para la página ' + pagina)
+        # if not rows:
+        #     raise Exception('No se han encontrado textos para la página ' + pagina)
         textos = {}
         for row in rows:
             ubic = row['ubicacion'].split('-')
@@ -113,8 +113,8 @@ class DirectusApi:
         else:
             filter_by = 'nombre'
         rows = self.get_table_rows('imagenes', 'filters[pagina.{}][eq]={}'.format(filter_by, pagina))
-        if not rows:
-            raise Exception('No se han encontrado imágenes para la página ' + pagina)
+        # if not rows:
+        #     raise Exception('No se han encontrado imágenes para la página ' + pagina)
         imgs = {}
         for row in rows:
             ubic = row['ubicacion'].split('-')

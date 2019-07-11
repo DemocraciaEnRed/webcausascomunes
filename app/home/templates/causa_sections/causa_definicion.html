@@ -2,15 +2,15 @@
 
 <section id="definicion" class="definicion section jumbotron jumbotron-fluid">
     <div class="container">
-        <h2 class="section__title text-center text-md-left">{{dtextos['definicion']['titulo']}}</h2>
+        <h2 class="section__title text-center text-md-left">{{dtextos.get('definicion')['titulo']}}</h2>
         <div class="row mt-3 mt-md-5">
             <div class="d-none d-md-block col-md-5">
                 <img src="{{ create_img_src(dimgs['manifiesto'], isstatic) }}">
             </div>
             <div class="col-md-7">
-                <p>{{dtextos['definicion']['parrafo1']}}</p>
-                <p>{{dtextos['definicion']['parrafo2']}}</p>
-                <p>{{dtextos['definicion']['parrafo3']}}</p>
+                <p>{{dtextos.get('definicion')['parrafo1']}}</p>
+                <p>{{dtextos.get('definicion')['parrafo2']}}</p>
+                <p>{{dtextos.get('definicion')['parrafo3']}}</p>
             </div>
         </div>
     </div>

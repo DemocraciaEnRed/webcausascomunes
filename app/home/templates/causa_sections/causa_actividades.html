@@ -5,8 +5,8 @@
     <div class="container">
         <div class="row text-center text-md-left">
             <div class="col-md-12">
-                <h2 class="section__title">{{dtextos['actividades']['titulo']}}</h2>
-                <p class="section__subtitle mb-5">{{dtextos['actividades']['subtitulo']}}</p>
+                <h2 class="section__title">{{dtextos.get('actividades')['titulo']}}</h2>
+                <p class="section__subtitle mb-5">{{dtextos.get('actividades')['subtitulo']}}</p>
             </div>
         </div>
         {% set ns = namespace(acumcols=0) %}
@@ -24,10 +24,10 @@
                 {{ create_item_novedad(itm['ancho_columnas'], itm['imagen'], itm['titulo'], itm['hashtag'], isstatic=isstatic) }}
                 {% if loop.last %}
                 <div class="col-12 col-md-6 pb-3 agenda">
-                    <h4 class="agenda__title">{{dtextos['agenda']['titulo']}}</h4>
+                    <h4 class="agenda__title">{{dtextos.get('agenda')['titulo']}}</h4>
                     <div class="card card-with-shadow">
                         <div class="card-body p-4 p-md-5">
-                            <h5 class="card-title">{{dtextos['agenda']['subtitulo']}}</h5>
+                            <h5 class="card-title">{{dtextos.get('agenda')['subtitulo']}}</h5>
                             <ul class="list-group list-group-flush my-4">
                                 {% for itm in itemsagenda %}
                                     {{ create_item_agenda(itm['fechahora'], itm['titulo'], itm['hashtag']) }}

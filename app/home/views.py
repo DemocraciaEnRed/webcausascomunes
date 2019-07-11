@@ -42,65 +42,65 @@ def index():
 
 def causa(agenda):
     accepted_causas = [
-        'genero'
+        'genero',
+        'ambiente',
+        'ciencia',
+        'vivienda',
     ]
     if agenda not in accepted_causas:
         return redirect(url_for('home.index'))
 
+    isstatic = False
+
     import app.directus as directus
+
+    dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+
     dtextos = directus.dapi.get_textos_pagina(agenda)
-    dimgs = directus.dapi.get_textos_pagina(agenda)
+    dimgs = directus.dapi.get_imgs_pagina(agenda)
+
     itemstemas = directus.dapi.get_items_tema(agenda)
     itemsseguidores = directus.dapi.get_items_seguidor(agenda)
     itemsnovedades = directus.dapi.get_items_novedades(agenda)
     itemsagenda = directus.dapi.get_items_agenda(agenda)
-    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
     variables = {
+        'dimgsnav': dimgsnav,
+        'dimgsfooter': dimgsfooter,
+
         'dtextos': dtextos,
         'dimgs': dimgs,
+
         'itemstemas': itemstemas,
         'itemsseguidores': itemsseguidores,
         'itemsnovedades': itemsnovedades,
-        'itemsagenda': itemsagenda}
+        'itemsagenda': itemsagenda,
 
-    if agenda == 'genero':
+        'isstatic': isstatic}
+
+    if agenda == 'sasdsd':
         variables['dtextosextra'] = {}
         variables['dimgsextra'] = {}
 
-    return render_template('causa.html', variables)
+    return render_template('causa.html', **variables)
 
 
 @blueprint.route("/genero", methods=['GET'])
 def genero():
-    isstatic = not current_app.config['USE_DIRECTUS']
-    if isstatic:
-        import app.directus_fake as directus_fake
-        dtextos = directus_fake.get_genero_textos()
-        dimgs = directus_fake.get_index_imgs()
-        dimgsgenero = directus_fake.get_genero_imgs()
-        itemsseguidores = directus_fake.get_seguidor_items()
-        itemsnovedades = directus_fake.get_novedades_items()
-        itemsagenda = directus_fake.get_agenda_items()
-        itemstemas = directus_fake.get_temas_items()
-    else:
-        import app.directus as directus
-        dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-        dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
-        dtextos = directus.dapi.get_textos_pagina('Genero')
-        dimgs = directus.dapi.get_imgs_pagina('Genero')
-        itemsseguidores = directus.dapi.get_items_seguidor('Genero')
-        itemstemas = directus.dapi.get_items_tema('Genero')
-        itemsnovedades = directus.dapi.get_items_novedades('Genero')
-        itemsagenda = directus.dapi.get_items_agenda('Genero')
-    return render_template(
-        'causa.html',
-        dimgsnav=dimgsnav,
-        dimgsfooter=dimgsfooter,
-        dtextos=dtextos,
-        dimgs=dimgs,
-        itemsseguidores=itemsseguidores,
-        itemsnovedades=itemsnovedades,
-        itemsagenda=itemsagenda,
-        itemstemas=itemstemas,
-        isstatic=isstatic)
+    return causa('genero')
+
+
+@blueprint.route("/ambiente", methods=['GET'])
+def ambiente():
+    return causa('ambiente')
+
+
+@blueprint.route("/ciencia", methods=['GET'])
+def ciencia():
+    return causa('ciencia')
+
+
+@blueprint.route("/vivienda", methods=['GET'])
+def vivienda():
+    return causa('vivienda')
