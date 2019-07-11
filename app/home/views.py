@@ -46,6 +46,9 @@ def causa(agenda):
         'ambiente',
         'ciencia',
         'vivienda',
+        'transparencia',
+        'drogas',
+        'trabajo'
     ]
     if agenda not in accepted_causas:
         return redirect(url_for('home.index'))
@@ -104,3 +107,18 @@ def ciencia():
 @blueprint.route("/vivienda", methods=['GET'])
 def vivienda():
     return causa('vivienda')
+
+
+@blueprint.route("/drogas", methods=['GET'])
+def drogas():
+    return causa('drogas')
+
+
+@blueprint.route("/trabajo", methods=['GET'])
+def trabajo():
+    return causa('trabajo')
+
+
+@blueprint.route("/transparencia", methods=['GET'])
+def transparencia():
+    return causa('transparencia')

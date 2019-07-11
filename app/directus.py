@@ -18,6 +18,7 @@ class DirectusApi:
         TEXT = 0
         IMG = 1
         DATETIME = 2
+        REL_NOMBRE = 3
 
     def __init__(self):
         self.ser_url = None
@@ -147,6 +148,8 @@ class DirectusApi:
                     item[key] = self.img_row_to_url(row[key], 'Un item de {} no tiene imagen asignada'.format(table))
                 elif type == DirectusApi.RowTypes.DATETIME:
                     item[key] = datetime.datetime.strptime(row[key], "%Y-%m-%d %H:%M:%S")
+                elif type == DirectusApi.RowTypes.REL_NOMBRE:
+                    item[key] = row[key]['data']['nombre']
                 else:
                     raise Exception('Tipo de dato inválido para columna {}'.format(key))
             items.append(item)
@@ -173,7 +176,8 @@ class DirectusApi:
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
                 'icono': DirectusApi.RowTypes.IMG,
-                'imagen_fondo': DirectusApi.RowTypes.IMG
+                'imagen_fondo': DirectusApi.RowTypes.IMG,
+                'pagina': DirectusApi.RowTypes.REL_NOMBRE
             })
 
     def get_items_seguidor(self, pagina):
