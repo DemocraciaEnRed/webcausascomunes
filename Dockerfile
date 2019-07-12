@@ -1,13 +1,11 @@
-#https://hub.docker.com/r/tiangolo/uwsgi-nginx-flask
-FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.8
+FROM alpine:3.9
 
-RUN pip3 install flask-scss requests
+RUN apk add --no-cache uwsgi-python3
 
-RUN apk add uwsgi
-RUN uwsgi --version
+RUN pip3 install --no-cache-dir flask flask-scss requests
 
-COPY ./nginx-custom.conf /etc/nginx/conf.d
-COPY ./uwsgi.ini /app
-COPY ./app /app/app
+COPY . /app
 
-#ENTRYPOINT /bin/sh -c "envsubst < /etc/nginx/conf.d/nginx-custom.template > /etc/nginx/conf.d/nginx-custom.conf && nginx -g 'daemon off;'"
+WORKDIR /app
+
+ENTRYPOINT ["uwsgi","--plugins", "python3", "--http-socket", "0.0.0.0:5000", "--wsgi-file", "run.py", "--callable", "app"]
