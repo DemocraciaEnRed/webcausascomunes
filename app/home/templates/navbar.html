@@ -13,9 +13,9 @@
             {% endif %}
             <img src="{{ create_img_src(logo, isstatic=isstatic) }}" alt="Causas Comunes"/>
         </a>
-        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search bar">
+       <!--  <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search bar">
             <img src="{{ create_img_src(dimgsnav['busqueda'], isstatic=isstatic) }}" alt="Buscar"/>
-        </button>
+        </button> -->
 
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ml-md-5">
@@ -23,10 +23,18 @@
                     <a class="nav-link px-4 active" href="{{ url_for('home.index') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
+                    {% if request.endpoint in ['home.index'] %}
                     <a class="nav-link px-4 scrollTo" href="#propuestas">Causas</a>
+                    {% else %}
+                    <a class="nav-link px-4 scrollTo" href="{{ url_for('home.index') }}#propuestas">Causas</a>
+                    {% endif %}
                 </li>
                 <li class="nav-item">
+                    {% if request.endpoint in ['home.index'] %}
                     <a class="nav-link px-4 scrollTo" href="#eventos">Agenda</a>
+                    {% else %}
+                    <a class="nav-link px-4 scrollTo" href="{{ url_for('home.index') }}#eventos">Agenda</a>
+                    {% endif %}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link px-4" href="{{ url_for('home.contacto') }}">Contacto</a>
@@ -34,13 +42,13 @@
             </ul>
         </div>
 
-        <div class="collapse navbar-collapse" id="navbarSearch">
+       <!--  <div class="collapse navbar-collapse" id="navbarSearch">
             <form class="form-inline my-2 my-lg-0">
                 <div class="form-group">
                     <input class="form-control pr-4" type="text" placeholder="Buscar">
                     <span class="fa fa-search form-control-icon"></span>
                 </div>
             </form>
-        </div>
+        </div> -->
     </nav>
 </header>

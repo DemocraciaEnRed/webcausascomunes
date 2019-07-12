@@ -12,13 +12,13 @@ nav {
         display:none;
         top: 0;
         right: 0;
-        width: 80%;
+        width: 75%;
         z-index: -1;
         @media (min-width: $width-large) {
-            display:block;
+            display: block;
         }
         @media (min-width: $width-xlarge) {
-        width: 75%;
+        width: 70%;
         }
     }
 }
