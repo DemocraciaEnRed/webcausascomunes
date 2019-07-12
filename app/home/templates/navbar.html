@@ -5,8 +5,8 @@
             <img src="{{ create_img_src(dimgsnav['menumobile'], isstatic=isstatic) }}" alt="Menu"/>
         </button>
         <a class="navbar-brand" href="{{ url_for('home.index') }}">
-            {# if true #}
-            {% if request.endpoint in ['home.index', 'home.contacto'] %}
+            {# if request.endpoint in ['home.index', 'home.contacto'] #}
+            {% if true %}
                 {% set logo = dimgsnav['logocolor'] %}
             {% else %}
                 {% set logo = dimgsnav['logoblanco'] %}
