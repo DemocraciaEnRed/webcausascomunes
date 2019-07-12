@@ -76,7 +76,8 @@ class DirectusApi:
 
     def img_row_to_url(self, imgrow, errmsg):
         if not imgrow:
-            raise DirectusApi.NoImgException(errmsg)
+            # raise DirectusApi.NoImgException(errmsg)
+            return ''
         return self.ser_ext_url + imgrow['data']['url']
 
     def get_textos_pagina(self, pagina):
