@@ -88,6 +88,9 @@
         display: block;
         pointer-events: none;
         right: 1rem; }
+        .navbar .navbar-brand {
+          background-color: white;
+          border-radius: 1.25rem; }
 
 .nav-link {
   font-size: 1.15rem;
