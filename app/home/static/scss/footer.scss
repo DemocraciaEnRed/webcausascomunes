@@ -1,6 +1,14 @@
+@import 'vars';
+
 $color-copyright: #696969;
 
 .footer__copyright {
     color: $color-copyright;
     font-size: 0.9rem;
+    a {
+        color: $color-principal-azul;
+    }
+    img {
+        max-width: 100px;
+    }
 }
