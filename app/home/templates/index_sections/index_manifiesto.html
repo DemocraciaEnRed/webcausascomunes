@@ -1,9 +1,10 @@
 <section id="manifiesto" class="manifiesto section jumbotron jumbotron-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 d-none d-md-block">
-                <img src="{{ create_img_src(dimgs['manifiesto']['imagen'], isstatic=isstatic) }}" alt="{{dtextos['manifiesto']['titulo']}}"/>
-            </div>
+            <div class="video vertical-align col-md-6 mb-2 mb-md-0 pb-md-3">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="{{dtextos.get('video')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>            </div>
             <div class="col-md-6">
                 <h2 class="section__title mb-4">{{dtextos['manifiesto']['titulo']}}</h2>
                 <p>{{dtextos['manifiesto']['parrafo1']}}</p>

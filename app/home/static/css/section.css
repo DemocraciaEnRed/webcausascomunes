@@ -34,18 +34,22 @@
                   .text-color-ambiente {
                     color: #39a95e; }
 
-                    body {
-                      overflow-x: hidden; }
+                    .vertical-align {
+                      display: flex;
+                      align-items: center; }
 
-                      @media (min-width: 768px) {
-                        .section.jumbotron-fluid {
-                          padding-top: 3rem;
-                          padding-bottom: 3rem;   }
+                      body {
+                        overflow-x: hidden; }
+
+                        @media (min-width: 768px) {
+                          .section.jumbotron-fluid {
+                            padding-top: 3rem;
+                            padding-bottom: 3rem;   }
 }
-                      .section:nth-child(even) {
-                        background-color: #ffffff; }
-                        .section:nth-child(odd) {
-                          background-color: #faf2ff; }
+                        .section:nth-child(even) {
+                          background-color: #ffffff; }
+                          .section:nth-child(odd) {
+                            background-color: #faf2ff; }
 
 .portada-seccion {
   background-color: transparent;
@@ -101,26 +105,22 @@
 #definicion {
   padding-bottom: 5rem; }
 
-  .vertical-align {
-    display: flex;
-    align-items: center; }
-
-    .tema-principal img {
-      width: 100%; }
-      @media (min-width: 768px) {
-        .tema-principal img {
-          width: 40%;
-          float: left;
-          margin-right: 3rem;   }
+  .tema-principal img {
+    width: 100%; }
+    @media (min-width: 768px) {
+      .tema-principal img {
+        width: 40%;
+        float: left;
+        margin-right: 3rem;   }
 }
-    .tema-principal .title {
-      color: #2a4b8c;
-      font-size: 1.25rem;
-      margin-top: 1.5rem; }
-      @media (min-width: 768px) {
-        .tema-principal .title {
-          margin-top: 0;
-          font-size: 1.5rem;   }
+  .tema-principal .title {
+    color: #2a4b8c;
+    font-size: 1.25rem;
+    margin-top: 1.5rem; }
+    @media (min-width: 768px) {
+      .tema-principal .title {
+        margin-top: 0;
+        font-size: 1.5rem;   }
 }
 
 .tema-secundario img {

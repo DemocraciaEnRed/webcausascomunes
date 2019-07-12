@@ -34,19 +34,23 @@
                   .text-color-ambiente {
                     color: #39a95e; }
 
-                    body {
-                      font: 100% 'Barlow', sans-serif;
-                      color: black; }
+                    .vertical-align {
+                      display: flex;
+                      align-items: center; }
 
-                      img {
-                        max-width: 100%; }
+                      body {
+                        font: 100% 'Barlow', sans-serif;
+                        color: black; }
 
-                        .no-gutters {
-                          margin-right: 0;
-                          margin-left: 0; }
-                          .no-gutters > .col, .no-gutters > [class*="col-"] {
-                            padding-right: 0;
-                            padding-left: 0; }
+                        img {
+                          max-width: 100%; }
+
+                          .no-gutters {
+                            margin-right: 0;
+                            margin-left: 0; }
+                            .no-gutters > .col, .no-gutters > [class*="col-"] {
+                              padding-right: 0;
+                              padding-left: 0; }
 
 .section {
   background-color: #ffffff; }

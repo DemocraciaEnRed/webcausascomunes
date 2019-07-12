@@ -88,3 +88,9 @@ $color-ambiente: #39a95e;
 .text-color-ambiente {
   color: $color-ambiente;
 }
+
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}

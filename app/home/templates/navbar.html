@@ -5,6 +5,7 @@
             <img src="{{ create_img_src(dimgsnav['menumobile'], isstatic=isstatic) }}" alt="Menu"/>
         </button>
         <a class="navbar-brand" href="{{ url_for('home.index') }}">
+            {# if true #}
             {% if request.endpoint in ['home.index', 'home.contacto'] %}
                 {% set logo = dimgsnav['logocolor'] %}
             {% else %}
@@ -22,7 +23,7 @@
                     <a class="nav-link px-4 active" href="{{ url_for('home.index') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-4 scrollTo" href="#propuestas">Propuestas</a>
+                    <a class="nav-link px-4 scrollTo" href="#propuestas">Causas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link px-4 scrollTo" href="#eventos">Agenda</a>
