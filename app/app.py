@@ -6,11 +6,14 @@ import locale
 import pprint
 
 
-def create_app(config):
+def create_app():
     app = Flask(
         __name__,
         static_folder=None,
         template_folder=None)
+
+    # cofigs = Azure | Mooo | Local | Casa | Remote
+    config = os.environ.get('FLASK_CONFIG') or 'Remote'
 
     app.config.from_object(config_dict[config.capitalize()])
     print('Usando config "{}"'.format(config))
