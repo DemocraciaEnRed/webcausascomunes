@@ -31,7 +31,7 @@ class AzureConfig(ProductionConfig):
 
 
 class MoooConfig(ProductionConfig):
-    DIRECTUS_URL_EXTERNAL = 'http://causascomunes.mooo.com/images'
+    DIRECTUS_URL_EXTERNAL = 'http://contenido.causascomunes.mooo.com/'
     DIRECTUS_URL_INTERNAL = 'http://192.168.0.92:9090'
     DIRECTUS_TOKEN = '4VIinWnI5zfyoJc5y69aBVyognPX0kpp'
 
