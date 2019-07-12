@@ -1,43 +1,45 @@
-<nav class="navbar navbar-expand-lg py-3 px-4">
-    <img class="ondita-azul" src="/static/img/home-background.svg">
-    <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <img src="{{ create_img_src(dimgsnav['menumobile'], isstatic=isstatic) }}" alt="Menu"/>
-    </button>
-    <a class="navbar-brand" href="{{ url_for('home.index') }}">
-        {% if request.endpoint=='home.index' %}
-            {% set logo = dimgsnav['logocolor'] %}
-        {% else %}
-            {% set logo = dimgsnav['logoblanco'] %}
-        {% endif %}
-        <img src="{{ create_img_src(logo, isstatic=isstatic) }}" alt="Causas Comunes"/>
-    </a>
-    <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search bar">
-        <img src="{{ create_img_src(dimgsnav['busqueda'], isstatic=isstatic) }}" alt="Buscar"/>
-    </button>
+<header>
+    <nav class="navbar navbar-expand-lg py-3 px-4">
+        <img class="ondita-azul" src="/static/img/home-background.svg">
+        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="{{ create_img_src(dimgsnav['menumobile'], isstatic=isstatic) }}" alt="Menu"/>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('home.index') }}">
+            {% if request.endpoint in ['home.index', 'home.contacto'] %}
+                {% set logo = dimgsnav['logocolor'] %}
+            {% else %}
+                {% set logo = dimgsnav['logoblanco'] %}
+            {% endif %}
+            <img src="{{ create_img_src(logo, isstatic=isstatic) }}" alt="Causas Comunes"/>
+        </a>
+        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search bar">
+            <img src="{{ create_img_src(dimgsnav['busqueda'], isstatic=isstatic) }}" alt="Buscar"/>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ml-md-5">
-            <li class="nav-item">
-                <a class="nav-link px-4 active" href="{{ url_for('home.index') }}">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-4 scrollTo" href="#propuestas">Propuestas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-4 scrollTo" href="#eventos">Agenda</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-4" href="#">Contacto</a>
-            </li>
-        </ul>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ml-md-5">
+                <li class="nav-item">
+                    <a class="nav-link px-4 active" href="{{ url_for('home.index') }}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 scrollTo" href="#propuestas">Propuestas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 scrollTo" href="#eventos">Agenda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4" href="{{ url_for('home.contacto') }}">Contacto</a>
+                </li>
+            </ul>
+        </div>
 
-    <div class="collapse navbar-collapse" id="navbarSearch">
-        <form class="form-inline my-2 my-lg-0">
-            <div class="form-group">
-                <input class="form-control pr-4" type="text" placeholder="Buscar">
-                <span class="fa fa-search form-control-icon"></span>
-            </div>
-        </form>
-    </div>
-</nav>
+        <div class="collapse navbar-collapse" id="navbarSearch">
+            <form class="form-inline my-2 my-lg-0">
+                <div class="form-group">
+                    <input class="form-control pr-4" type="text" placeholder="Buscar">
+                    <span class="fa fa-search form-control-icon"></span>
+                </div>
+            </form>
+        </div>
+    </nav>
+</header>

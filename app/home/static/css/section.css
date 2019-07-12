@@ -101,22 +101,26 @@
 #definicion {
   padding-bottom: 5rem; }
 
-  .tema-principal img {
-    width: 100%; }
-    @media (min-width: 768px) {
-      .tema-principal img {
-        width: 40%;
-        float: left;
-        margin-right: 3rem;   }
+  .vertical-align {
+    display: flex;
+    align-items: center; }
+
+    .tema-principal img {
+      width: 100%; }
+      @media (min-width: 768px) {
+        .tema-principal img {
+          width: 40%;
+          float: left;
+          margin-right: 3rem;   }
 }
-  .tema-principal .title {
-    color: #2a4b8c;
-    font-size: 1.25rem;
-    margin-top: 1.5rem; }
-    @media (min-width: 768px) {
-      .tema-principal .title {
-        margin-top: 0;
-        font-size: 1.5rem;   }
+    .tema-principal .title {
+      color: #2a4b8c;
+      font-size: 1.25rem;
+      margin-top: 1.5rem; }
+      @media (min-width: 768px) {
+        .tema-principal .title {
+          margin-top: 0;
+          font-size: 1.5rem;   }
 }
 
 .tema-secundario img {

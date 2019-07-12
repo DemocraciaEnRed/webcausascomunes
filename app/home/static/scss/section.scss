@@ -87,7 +87,13 @@ body {overflow-x: hidden;}
     }
 }
 
-#definicion { padding-bottom: 5rem; }
+#definicion {
+    padding-bottom: 5rem;
+}
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
 
 
 /*####################################################*/

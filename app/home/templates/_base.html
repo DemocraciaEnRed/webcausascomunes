@@ -14,12 +14,12 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <header>
-        {% include "navbar.html"  %}
-    </header>
+    {% include "navbar.html"  %}
+
     <main role="main">
         {% block body %}{% endblock %}
     </main>
+
     {% include "footer.html"  %}
 
     <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
