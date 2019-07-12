@@ -221,23 +221,21 @@
     margin-right: 1rem;
     border-radius: 20px;
     counter-increment: carousel-cell;
-    color: #ffffff; }
+    color: black; }
     @media (min-width: 768px) {
       .carousel-cell {
         width: 30%;
         margin-right: 2rem;
         height: 400px;   }
 }
-      .carousel-cell a:target, .carousel-cell a:hover, .carousel-cell a {
-        color: #ffffff;
-        text-decoration: #ffffff; }
-        .carousel-cell .title {
-          font-size: 1.15rem;
-          font-weight: 600;
-          margin-bottom: 1rem; }
-          @media (min-width: 768px) {
-            .carousel-cell .title {
-              font-size: 1.5rem;   }
+      .carousel-cell .title {
+        color: #2a4b8c;
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 1rem; }
+        @media (min-width: 768px) {
+          .carousel-cell .title {
+            font-size: 1.5rem;   }
 }
     .carousel-cell .text {
       font-size: 0.9rem; }

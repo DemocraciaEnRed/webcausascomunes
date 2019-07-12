@@ -244,12 +244,14 @@ label {
     }
 	border-radius: 20px;
 	counter-increment: carousel-cell;
-    color: $white;
-    a:target, a:hover, a {
-        color: $white;
-        text-decoration: $white;
-    }
+    color: black;
+
+    /*a:target, a:hover, a {
+        color: black;
+        text-decoration: none;
+    }*/
     .title {
+        color:$color-principal-azul;
         font-size: $font-size-small;
         font-weight: 600;
         margin-bottom: 1rem;

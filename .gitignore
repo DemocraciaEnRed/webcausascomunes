@@ -1,7 +1,4 @@
-*config.py
 __pycache__/
 .idea/
 venv/
-directusconf
-*.tar.gz
 .DS_Store

@@ -3,6 +3,9 @@ FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.8
 
 RUN pip3 install flask-scss requests
 
+RUN apk add uwsgi
+RUN uwsgi --version
+
 COPY ./nginx-custom.conf /etc/nginx/conf.d
 COPY ./uwsgi.ini /app
 COPY ./app /app/app

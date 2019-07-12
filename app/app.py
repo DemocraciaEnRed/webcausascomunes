@@ -3,16 +3,18 @@ from flask import Flask
 from .config import config_dict
 import os
 import locale
+import pprint
 
 
-def create_app():
-    print('Creating flask app')
+def create_app(config):
     app = Flask(
         __name__,
         static_folder=None,
         template_folder=None)
 
-    app.config.from_object(config_dict['Debug'])
+    app.config.from_object(config_dict[config.capitalize()])
+    print('Usando config "{}"'.format(config))
+    pprint.pprint(vars(config_dict[config.capitalize()]))
 
     create_logger(app)
     create_blueprints(app)

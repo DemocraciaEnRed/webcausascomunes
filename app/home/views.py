@@ -1,4 +1,4 @@
-from flask import current_app, request, render_template, redirect, url_for, Blueprint
+from flask import current_app, render_template, redirect, url_for, Blueprint
 
 blueprint = Blueprint(
     'home',
@@ -6,6 +6,13 @@ blueprint = Blueprint(
     url_prefix='/',
     static_folder="static",
     template_folder="templates")
+
+
+@blueprint.after_request
+def after_request(response):
+    # para que el cliente pueda (solo) cargar las imágenes del dominio de directus
+    response.headers['Access-Control-Allow-Origin'] = current_app.config['DIRECTUS_URL_EXTERNAL']
+    return response
 
 
 @blueprint.route("/", methods=['GET'])
