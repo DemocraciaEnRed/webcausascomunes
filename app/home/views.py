@@ -1,4 +1,5 @@
-from flask import current_app, render_template, redirect, url_for, Blueprint
+from flask import current_app, request, render_template, redirect, url_for, Blueprint
+from pprint import pprint
 
 blueprint = Blueprint(
     'home',
@@ -6,6 +7,26 @@ blueprint = Blueprint(
     url_prefix='/',
     static_folder="static",
     template_folder="templates")
+
+accepted_causas = [
+    'genero',
+    'ambiente',
+    'ciencia',
+    'vivienda',
+    'transparencia',
+    'drogas',
+    'trabajo'
+]
+
+
+def get_menu_navs():
+    navs = {'index': '', 'causas': '', 'agenda': '', 'contacto': ''}
+    endpoint = request.endpoint.split('.')[1]
+    if endpoint in accepted_causas:
+        navs['causas'] = 'active'
+    elif endpoint in navs.keys():
+        navs[endpoint] = 'active'
+    return navs
 
 
 @blueprint.after_request
@@ -30,6 +51,7 @@ def index():
 
     return render_template(
         'index.html',
+        navs=get_menu_navs(),
         dimgsnav=dimgsnav,
         dimgsfooter=dimgsfooter,
         dtextos=dtextos,
@@ -53,6 +75,7 @@ def contacto():
 
     return render_template(
         'contacto.html',
+        navs=get_menu_navs(),
         dimgsnav=dimgsnav,
         dimgsfooter=dimgsfooter,
         dtextos=dtextos,
@@ -61,15 +84,7 @@ def contacto():
 
 
 def causa(agenda):
-    accepted_causas = [
-        'genero',
-        'ambiente',
-        'ciencia',
-        'vivienda',
-        'transparencia',
-        'drogas',
-        'trabajo'
-    ]
+    get_menu_navs()
     if agenda not in accepted_causas:
         return redirect(url_for('home.index'))
 
@@ -89,6 +104,7 @@ def causa(agenda):
     itemsagenda = directus.dapi.get_items_agenda(agenda)
 
     variables = {
+        'navs': get_menu_navs(),
         'dimgsnav': dimgsnav,
         'dimgsfooter': dimgsfooter,
 

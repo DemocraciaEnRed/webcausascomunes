@@ -20,24 +20,24 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ml-md-5">
                 <li class="nav-item">
-                    <a class="nav-link px-4 active" href="{{ url_for('home.index') }}">Inicio</a>
+                    <a class="nav-link px-4 {{navs['index']}}" href="{{ url_for('home.index') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     {% if request.endpoint in ['home.index'] %}
-                    <a class="nav-link px-4 scrollTo" href="#propuestas">Causas</a>
+                    <a class="nav-link px-4 scrollTo {{navs['causas']}}" href="#propuestas">Causas</a>
                     {% else %}
-                    <a class="nav-link px-4 scrollTo" href="{{ url_for('home.index') }}#propuestas">Causas</a>
+                    <a class="nav-link px-4 scrollTo {{navs['causas']}}" href="{{ url_for('home.index') }}#propuestas">Causas</a>
                     {% endif %}
                 </li>
                 <li class="nav-item">
                     {% if request.endpoint in ['home.index'] %}
-                    <a class="nav-link px-4 scrollTo" href="#eventos">Agenda</a>
+                    <a class="nav-link px-4 scrollTo {{navs['agenda']}}" href="#eventos">Agenda</a>
                     {% else %}
-                    <a class="nav-link px-4 scrollTo" href="{{ url_for('home.index') }}#eventos">Agenda</a>
+                    <a class="nav-link px-4 scrollTo {{navs['agenda']}}" href="{{ url_for('home.index') }}#eventos">Agenda</a>
                     {% endif %}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-4" href="{{ url_for('home.contacto') }}">Contacto</a>
+                    <a class="nav-link px-4 {{navs['contacto']}}" href="{{ url_for('home.contacto') }}">Contacto</a>
                 </li>
             </ul>
         </div>

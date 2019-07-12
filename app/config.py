@@ -61,7 +61,7 @@ class CasaConfig(DevelopmentConfig):
 
 class RemoteConfig(DevelopmentConfig):
     DIRECTUS_URL_INTERNAL = 'http://contenido.causascomunes.mooo.com/'
-    DIRECTUS_URL_EXTERNAL = 'http://causascomunes.mooo.com/images'
+    DIRECTUS_URL_EXTERNAL = 'http://contenido.causascomunes.mooo.com/'
     DIRECTUS_TOKEN = '4VIinWnI5zfyoJc5y69aBVyognPX0kpp'
 
 
