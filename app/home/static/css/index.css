@@ -145,7 +145,10 @@
                 flex-wrap: wrap;
                 align-items: center;
                 justify-content: space-around;
-                background-color: #ffffff; }
+                background-color: #ffffff;
+                background-image: url('/static/img/manifiesto-background.svg');
+                background-repeat: no-repeat;
+                background-size: cover; }
                 @media (min-width: 768px) {
                   .portada {
                     flex-wrap: nowrap;
@@ -181,19 +184,14 @@
                       max-width: 40%;   }
 }
 
-.manifiesto {
-  background-image: url('/static/img/manifiesto-background.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #fbfcfd; }
-  .manifiesto p {
-    color: #1d1d1b;
-    font-size: 0.9rem;
-    line-height: 1.3rem; }
-    @media (min-width: 768px) {
-      .manifiesto p {
-        font-size: 1rem;
-        line-height: 1.75rem;   }
+.manifiesto p {
+  color: #1d1d1b;
+  font-size: 0.9rem;
+  line-height: 1.3rem; }
+  @media (min-width: 768px) {
+    .manifiesto p {
+      font-size: 1rem;
+      line-height: 1.75rem;   }
 }
 
 .section__signature {
@@ -216,39 +214,44 @@
           opacity: 0.5;   }
 }
 
-.carousel {
-  background: #ffffff; }
+.propuestas {
+  background-image: url('/static/img/manifiesto-background.svg');
+  background-repeat: no-repeat;
+  background-size: cover; }
 
-  .carousel-cell {
-    width: 80%;
-    height: 340px;
-    margin-right: 1rem;
-    border-radius: 20px;
-    counter-increment: carousel-cell;
-    color: black; }
-    @media (min-width: 768px) {
-      .carousel-cell {
-        width: 30%;
-        margin-right: 2rem;
-        height: 400px;   }
-}
-      .carousel-cell .title {
-        color: #2a4b8c;
-        font-size: 1.15rem;
-        font-weight: 600;
-        margin-bottom: 1rem; }
-        @media (min-width: 768px) {
-          .carousel-cell .title {
-            font-size: 1.5rem;   }
-}
-    .carousel-cell .text {
-      font-size: 0.9rem; }
+  .carousel {
+    background: transparent; }
+
+    .carousel-cell {
+      width: 80%;
+      height: 340px;
+      margin-right: 1rem;
+      border-radius: 20px;
+      counter-increment: carousel-cell;
+      color: black; }
       @media (min-width: 768px) {
-        .carousel-cell .text {
-          font-size: 1rem;   }
+        .carousel-cell {
+          width: 30%;
+          margin-right: 2rem;
+          height: 400px;   }
 }
-    .carousel-cell img {
-      height: 6rem; }
+        .carousel-cell .title {
+          color: #2a4b8c;
+          font-size: 1.15rem;
+          font-weight: 600;
+          margin-bottom: 1rem; }
+          @media (min-width: 768px) {
+            .carousel-cell .title {
+              font-size: 1.5rem;   }
+}
+      .carousel-cell .text {
+        font-size: 0.9rem; }
+        @media (min-width: 768px) {
+          .carousel-cell .text {
+            font-size: 1rem;   }
+}
+      .carousel-cell img {
+        height: 6rem; }
 
 .flickity-button {
   display: none;
@@ -351,14 +354,10 @@ button.flickity-prev-next-button.previous {
         font-size: 1.5rem;   }
 }
 
-.eventos {
-  background-image: url('/static/img/manifiesto-background.svg');
-  background-repeat: no-repeat;
-  background-size: cover; }
-  .eventos .list-group {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
-    .eventos .card {
-      height: 100%; }
+.eventos .list-group {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+  .eventos .card {
+    height: 100%; }
 
 .agenda .list-group-item {
   padding-left: 0;
