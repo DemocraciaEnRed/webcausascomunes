@@ -12,8 +12,8 @@ def create_app():
         static_folder=None,
         template_folder=None)
 
-    # cofigs = Azure | Mooo | Local | Casa | Remote
-    config = os.environ.get('FLASK_CONFIG') or 'Remote'
+    # cofigs = Azure | Mooo | Local | Der
+    config = os.environ.get('FLASK_CONFIG') or 'Der'
 
     app.config.from_object(config_dict[config.capitalize()])
     print('Usando config "{}"'.format(config))

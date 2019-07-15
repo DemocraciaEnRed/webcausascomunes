@@ -55,8 +55,13 @@
   background-color: transparent;
   margin-top: 4rem;
   margin-bottom: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden; }
   .portada-seccion h1 {
+    padding: 6rem 0;
     color: black;
     font-weight: 600;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.34); }
@@ -66,10 +71,14 @@
         z-index: -2;
         position: absolute;
         max-width: none;
-        transform: translateX(-60%) translateY(-50%); }
+        transform: translateX(-60%) translateY(-10%); }
         @media (min-width: 768px) {
           .portada-seccion .bgimg {
-            transform: translateX(-50%) translateY(-50%);   }
+            transform: translateX(-50%) translateY(-20%);   }
+}
+          @media (min-width: 992px) {
+            .portada-seccion .bgimg {
+              width: 100%;   }
 }
 
 .nav-secondary {

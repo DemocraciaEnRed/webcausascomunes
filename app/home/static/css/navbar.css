@@ -38,28 +38,33 @@
                       display: flex;
                       align-items: center; }
 
-                      nav a.nav-link.active {
-                        -webkit-border-radius: 2rem;
-                        -moz-border-radius: 2rem;
-                        border-radius: 2rem; }
-                        nav form input.form-control {
+                      header {
+                        position: absolute;
+                        z-index: 2;
+                        width: 100%; }
+
+                        nav a.nav-link.active {
                           -webkit-border-radius: 2rem;
                           -moz-border-radius: 2rem;
                           border-radius: 2rem; }
-                      nav .ondita-azul {
-                        position: absolute;
-                        display: none;
-                        top: 0;
-                        right: 0;
-                        width: 75%;
-                        z-index: -1; }
-                        @media (min-width: 992px) {
-                          nav .ondita-azul {
-                            display: block;   }
-}
-                          @media (min-width: 1200px) {
+                          nav form input.form-control {
+                            -webkit-border-radius: 2rem;
+                            -moz-border-radius: 2rem;
+                            border-radius: 2rem; }
+                        nav .ondita-azul {
+                          position: absolute;
+                          display: none;
+                          top: 0;
+                          right: 0;
+                          width: 75%;
+                          z-index: -1; }
+                          @media (min-width: 992px) {
                             nav .ondita-azul {
-                              width: 70%;   }
+                              display: block;   }
+}
+                            @media (min-width: 1200px) {
+                              nav .ondita-azul {
+                                width: 70%;   }
 }
 
 .navbar {

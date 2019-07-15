@@ -148,7 +148,8 @@
                 background-color: #ffffff;
                 background-image: url('/static/img/manifiesto-background.svg');
                 background-repeat: no-repeat;
-                background-size: cover; }
+                background-size: cover;
+                padding-top: 12rem; }
                 @media (min-width: 768px) {
                   .portada {
                     flex-wrap: nowrap;

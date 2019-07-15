@@ -154,6 +154,7 @@ label {
 	background-image: url('/static/img/manifiesto-background.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
+    padding-top: 12rem;
 	@media (min-width: $width-medium) {
 		flex-wrap: nowrap;
 		justify-content: center;
