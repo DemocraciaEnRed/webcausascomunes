@@ -2,7 +2,7 @@ FROM alpine:3.9
 
 RUN apk add --no-cache uwsgi-python3
 
-RUN pip3 install --no-cache-dir flask flask-scss requests
+RUN pip3 install --no-cache-dir flask flask-scss requests markdown2
 
 COPY . /app
 
