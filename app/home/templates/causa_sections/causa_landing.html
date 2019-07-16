@@ -1,7 +1,7 @@
-<section class="portada-seccion jumbotron mt-0 text-center">
-    <div class="bgimg-container">
-        <img class="bgimg" src="{{ create_img_src(dimgs['fondo'], isstatic) }}">
-    </div>
+{% set bgimage = create_img_src(dimgs['fondo'], isstatic).strip() %}
+
+<section class="portada-seccion jumbotron mt-0 text-center" 
+    style="background-image: url('{{bgimage}}');">
     <h1 class="my-5">{{dtextos.get('portada')['titulo']}}</h1>
    <!--  <ul id="nav-secondary" class="nav nav-secondary justify-content-center">
         <li class="nav-item">
