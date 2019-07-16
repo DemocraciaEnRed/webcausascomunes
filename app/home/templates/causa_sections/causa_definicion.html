@@ -10,9 +10,9 @@
                 </div>
              </div>
             <div class="col-md-6 text-justify">
-                <p>{{dtextos.get('definicion')['parrafo1']}}</p>
-                <p>{{dtextos.get('definicion')['parrafo2']}}</p>
-                <p>{{dtextos.get('definicion')['parrafo3']}}</p>
+                {{ dtextos.get('definicion')['parrafo1'] | safe }}
+                {{ dtextos.get('definicion')['parrafo2'] | safe }}
+                {{ dtextos.get('definicion')['parrafo3'] | safe }}
             </div>
         </div>
     </div>

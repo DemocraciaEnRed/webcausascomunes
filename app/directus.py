@@ -3,9 +3,10 @@
 # https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/authentication.md
 # https://2.python-requests.org/en/master/
 # https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/endpoints.md
-import requests
 import re
 import datetime
+import requests
+from markdown2 import Markdown
 
 
 # api endpoints - https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/endpoints.md
@@ -27,6 +28,7 @@ class DirectusApi:
         self.token = None
         self.auth_header = None
         self.textosregx = re.compile('^[^<>&]*$')
+        self.markdowner = Markdown()
 
     def init_api(self, ser_url, ser_ext_url, api_path, token):
         if ser_url[-1] == '/':
@@ -100,6 +102,8 @@ class DirectusApi:
             txt = row['texto'] or ''
             if self.textosregx.match(txt) is None:
                 raise Exception('El dato de texto "{}" en la tabla de textos tiene caractéres inválidos'.format(txt))
+            if row['con_formato'] == 1:
+                txt = self.markdowner.convert(txt)
             if len(ubic) == 1:
                 textos[ubicfmt[0]] = txt
             else:
