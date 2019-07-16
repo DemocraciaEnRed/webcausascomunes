@@ -50,7 +50,7 @@ class DirectusApi:
             kwargs['headers'] = self.auth_header
         r = requests.get(self.api_url + api_cmd, **kwargs)
         if r.status_code >= 400:
-            raise Exception('Mala autenticación al servidor directus'.format(r.status_code, api_cmd))
+            raise Exception('Mala autenticación al servidor directus ({})'.format(r.status_code))
         if r.text == 'You must be logged in to access the API':
             raise Exception('Mala autenticación al servidor directus')
         try:
@@ -63,6 +63,8 @@ class DirectusApi:
         r = requests.get(self.ser_url + '/server/ping')
         if r.status_code != 200:
             raise Exception('El servidor directus devolvió un error al hacerle ping')
+        if 'login.php' in r.url:
+            raise Exception('El servidor directus pide login para esa página')
         if r.text != 'pong':
             raise Exception('El servidor directus no responde bien al ping')
         rj = self.get('tables')
