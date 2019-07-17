@@ -15,13 +15,20 @@
 <section id="galeria" class="section jumbotron jumbotron-fluid">
     <div class="container">
         <div class="row">
-            <div class="text-center col-md-12 mb-3">
-                <h2 class="section__title">Hackaton de Causas Comunes en la Facultad de Derecho</h2>
+            <div class="text-center col-md-12">
+                <h2 class="section__title">{{ dtextos['hackaton']['titulo'] }}</h2>
             </div>
         </div>
-        <div class="row mb-2 mb-md-5">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="805" height="453" src="https://www.youtube.com/embed/0mT3zQhB69E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 mb-3">
+                <p class="text-justify">{{ dtextos['hackaton']['subtitulo'] | safe }}</p>
+            </div>
+        </div>
+        <div class="row mb-2 mb-md-3">
+            <div class="col-lg-10 offset-lg-1 mb-3">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="805" height="453" src="https://www.youtube.com/embed/0mT3zQhB69E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
         <div id="links" class="row">
