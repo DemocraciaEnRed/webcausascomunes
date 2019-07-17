@@ -4,8 +4,9 @@
 
 {% block head %}
     <title>Causas comunes</title>
-    <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
     <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/blueimp-gallery.min.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -22,7 +23,10 @@
     <!-- {# include 'index_sections/index_novedades.html' #} -->
 
     <!-- CANDIDATES -->
-    <!-- {% include 'index_sections/index_candidates.html' %} -->
+    <!-- {# include 'index_sections/index_candidates.html' #} -->
+
+    <!-- GALERIA -->
+    {% include 'index_sections/index_galeria.html' %}
 
     <!-- EVENTOS -->
     {% include 'index_sections/index_eventos.html' %}
@@ -30,6 +34,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/blueimp-gallery.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
 {% endblock %}

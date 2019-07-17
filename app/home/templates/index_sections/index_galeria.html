@@ -1,0 +1,44 @@
+{% from 'index_sections/_itemgaleria.html' import create_item_galeria %}
+
+<!-- The Gallery as lightbox dialog, should be a document body child element -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <p class="description"></p>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+<section id="galeria" class="section jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-md-12 mb-3">
+                <h2 class="section__title">Hackaton de Causas Comunes en la Facultad de Derecho</h2>
+            </div>
+        </div>
+        <div id="links" class="row">
+            {% for itm in galeriahackaton %}
+                {{ create_item_galeria(itm['titulo'], itm['descripcion'], itm['imagen_archivo'], isstatic=isstatic) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- <div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
+  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg', isstatic=isstatic)}}" title="Apple" data-description="This is a banana.">
+    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg', isstatic=isstatic)}}" alt="Apple" />
+  </a>
+</div>
+<div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
+  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg', isstatic=isstatic)}}" title="Orange" data-description="This is a banana.">
+    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg', isstatic=isstatic)}}" alt="Orange" />
+  </a>
+</div>
+<div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
+  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-07-12.jpg', isstatic=isstatic)}}" title="Orange" data-description="This is a banana.">
+    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-07-12.jpg', isstatic=isstatic)}}" alt="Orange" />
+  </a>
+</div> -->

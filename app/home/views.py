@@ -46,8 +46,9 @@ def index():
     dtextos = directus.dapi.get_textos_pagina('Home')
     dimgs = directus.dapi.get_imgs_pagina('Home')
     itemspropuestas = directus.dapi.get_items_propuestas()
-    itemsnovedades = directus.dapi.get_items_novedades('Home')
+    # itemsnovedades = directus.dapi.get_items_novedades('Home')
     itemsagenda = directus.dapi.get_items_agenda('Home')
+    galeriahackaton = directus.dapi.get_galeria_hackaton()
 
     return render_template(
         'index.html',
@@ -56,9 +57,10 @@ def index():
         dimgsfooter=dimgsfooter,
         dtextos=dtextos,
         dimgs=dimgs,
-        itemsnovedades=itemsnovedades,
+        # itemsnovedades=itemsnovedades,
         itemsagenda=itemsagenda,
         itemspropuestas=itemspropuestas,
+        galeriahackaton=galeriahackaton,
         isstatic=isstatic)
 
 

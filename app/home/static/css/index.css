@@ -390,3 +390,16 @@ button.flickity-prev-next-button.previous {
     text-transform: capitalize; }
     .agenda .list-group-item img {
       height: 3rem; }
+
+#blueimp-gallery {
+  color: white; }
+
+  .blueimp-gallery > .description {
+    position: absolute;
+    top: 45px;
+    left: 15px;
+    color: #fff;
+    display: none; }
+
+    .blueimp-gallery-controls > .description {
+      display: block; }

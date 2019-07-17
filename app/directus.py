@@ -201,6 +201,13 @@ class DirectusApi:
                 'imagen': DirectusApi.RowTypes.IMG
             })
 
+    def get_galeria_hackaton(self):
+        return self.get_items('galeria_hackaton', None, {
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'descripcion': DirectusApi.RowTypes.TEXT,
+                'imagen_archivo': DirectusApi.RowTypes.TEXT
+            })
+
 
 dapi = DirectusApi()
 
