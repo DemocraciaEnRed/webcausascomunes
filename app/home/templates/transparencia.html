@@ -1,0 +1,51 @@
+{% extends '_base.html' %}
+
+{% from '_imghelper.html' import create_img_src %}
+
+{% block head %}
+    <title>Causas comunes</title>
+    <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/jquery.dataTables.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <canvas id="myChart"></canvas>
+
+    <table id="example" class="table table-striped table-bordered display compact" style="width:100%">
+        <thead>
+            <tr>
+            {% for h in presu_heads %}
+                <th>{{h}}</th>
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in presu_data %}
+            <tr>
+            {% for data in row %}
+                <td>{{data}}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+            {% for h in presu_heads %}
+                <th>{{h}}</th>
+            {% endfor %}
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <!-- Los íconos que se ven son del footer -->
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{url_for('home.static', filename='js/chart.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+    <script> _datatable_spa_json_url = "{{ url_for('home.static', filename='Spanish.json') }}" </script>
+    <script src="{{url_for('home.static', filename='js/transparencia.js')}}"></script>
+{% endblock %}

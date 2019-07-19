@@ -160,3 +160,31 @@ def trabajo():
 @blueprint.route("/transparencia", methods=['GET'])
 def transparencia():
     return causa('transparencia')
+
+
+@blueprint.route("/trans", methods=['GET'])
+def trans():
+    isstatic = False
+
+    import app.directus as directus
+    dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+
+    dtextos = directus.dapi.get_textos_pagina('Contacto')
+    dimgs = directus.dapi.get_imgs_pagina('Contacto')
+
+    import app.datos as datos
+    # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
+    presu_heads = datos.get_presu_headers()
+    presu_data = datos.get_rows_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
+
+    return render_template(
+        'transparencia.html',
+        navs=get_menu_navs(),
+        dimgsnav=dimgsnav,
+        dimgsfooter=dimgsfooter,
+        dtextos=dtextos,
+        dimgs=dimgs,
+        presu_heads=presu_heads,
+        presu_data=presu_data,
+        isstatic=isstatic)
