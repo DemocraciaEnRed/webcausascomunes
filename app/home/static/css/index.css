@@ -166,10 +166,15 @@
 }
                   .portada h1 img {
                     width: 204px; }
-                    @media (min-width: 992px) {
+                    @media (min-width: 576px) {
                       .portada h1 img {
-                        max-width: 525px;
+                        max-width: 375px;
                         width: 100%;   }
+}
+                      @media (min-width: 992px) {
+                        .portada h1 img {
+                          max-width: 525px;
+                          width: 100%;   }
 }
                 @media (min-width: 768px) {
                   .portada p {
