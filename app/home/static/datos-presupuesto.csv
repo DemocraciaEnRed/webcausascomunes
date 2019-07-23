@@ -26,7 +26,7 @@ FECHA,IMPORTE,CATEGORIA,CONCEPTO,DESCRIPCION,PROVEEDOR,TIPO DE COMPROBANTE,FORMA
 12/07/2019,40745,GESTION GENERAL,"""honorarios profesionales"" - Inti Bonomo",honorarios,Inti Bonomo,Factura C,Transferencia,https://drive.google.com/file/d/1S1ZPoFFGYkp2Jjrx2VcwkaRHv-BRAuAf/view?usp=sharing
 12/07/2019,10000,COMUNICACIÓN,Honorarios profesionales - EDICIÓN - Proyecto Causas Comunes - mes de Julio ,honorarios,Eric Damián Lakner,Factura C,Transferencia,https://drive.google.com/file/d/1zr124OlW9RO7HY6-XpvECAnA3C6CEy-a/view?usp=sharing
 12/07/2019,3000,EVENTOS,,medialunas,Angel Canete Ramirez,Factura C,Transferencia,
-12/07/2019,7000,,COMIDA,,,,,
+12/07/2019,7000,EVENTOS,COMIDA,,,,,
 12/07/2019,4235,,,,,Factura C,Transferencia,https://drive.google.com/file/d/1dpZWoK1sxI_CCSGc9U0uWqIHQpWgBqfK/view?usp=sharing
 13/07/2019,3000,,WALTER,,,,Efectivo,
 15/07/2019,244.47,"COMISIONES BANCARIAS, IMPUESTOS",IMP. LEY 25.413,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A

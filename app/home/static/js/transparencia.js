@@ -30,13 +30,21 @@ window.chartColors = {
     grey: "rgb(201, 203, 207)",
     yellow: "rgb(255, 205, 86)"
 }
+dtApi = null
 $(document).ready(function() {
     dtApi = $('#data-csv').DataTable({
         "language": {
             "url": _datatable_spa_json_url
-        }
+        },
+        "scrollX": true,
+        "order": [[ 0, 'desc' ]]
     });
+    createGraficoCatesImportes()
+    createGraficoGastosTiempo()
+} );
 
+
+function createGraficoCatesImportes(){
     cates = dtApi.column(2).data()
     importes = dtApi.column(1).data()
 
@@ -56,7 +64,7 @@ $(document).ready(function() {
 
         bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
     }
-    console.log(bgCols)
+
     var ctx = document.getElementById('chart-importe-categoria').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'doughnut',
@@ -69,10 +77,55 @@ $(document).ready(function() {
             labels: Object.keys(catesImporte)
         },
         options: {
-            animation: {
-                animateScale: true,
-                animateRotate: true
+            legend: {position:'left'}
+        }
+    });
+    return chart
+}
+
+
+function createGraficoGastosTiempo(){
+    cates = dtApi.column(2).data()
+    importes = dtApi.column(1).data()
+
+    catesImporte = {}
+    bgCols = []
+    for (i=0; i<cates.length; i++){
+        catItem=cates[i].toLowerCase()
+        impItem=parseFloat(importes[i])
+
+        if (catItem.indexOf('honorarios profesionales') != -1)
+            catItem = 'honorarios profesionales'
+
+        if (catItem in catesImporte)
+            catesImporte[catItem] += impItem
+        else
+            catesImporte[catItem] = impItem
+
+        bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
+    }
+
+    var ctx = document.getElementById('chart-bars-gastos').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: bgCols,
+                data: Object.values(catesImporte)
+            }],
+            labels: Object.keys(catesImporte)
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
             }
         }
     });
-} );
+    return chart
+}

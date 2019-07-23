@@ -1,5 +1,6 @@
 from flask import current_app, request, render_template, redirect, url_for, Blueprint
 from pprint import pprint
+from datetime import datetime
 
 blueprint = Blueprint(
     'home',
@@ -178,6 +179,12 @@ def trans():
     presu_heads = datos.get_presu_headers()
     presu_data = datos.get_rows_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
 
+    fechas_epoch = []
+    fecha_i = presu_heads.index('fecha')
+    for row in presu_data:
+        date = datetime.strptime(row[fecha_i], '%d/%m/%Y')
+        fechas_epoch.append(date.strftime('%s'))
+
     return render_template(
         'transparencia.html',
         navs=get_menu_navs(),
@@ -187,4 +194,5 @@ def trans():
         dimgs=dimgs,
         presu_heads=presu_heads,
         presu_data=presu_data,
+        fechas_epoch=fechas_epoch,
         isstatic=isstatic)

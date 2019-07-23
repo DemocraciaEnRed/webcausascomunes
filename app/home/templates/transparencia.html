@@ -10,37 +10,52 @@
 {% endblock %}
 
 {% block body %}
-    <canvas id="chart-importe-categoria"></canvas>
-    <canvas id="chart-bars-gastos"></canvas>
 
-    <table id="data-csv" class="table table-striped table-bordered display compact" style="width:100%">
-        <thead>
-            <tr>
-            {% for h in presu_heads %}
-                <th>{{h}}</th>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="section__title">Gastos por área</h2>
+                <canvas id="chart-importe-categoria"></canvas>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="section__title">Ingresos/egresos en el tiempo</h2>
+                <canvas id="chart-bars-gastos"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="table-wrapper">
+        <table id="data-csv" class="table table-striped table-bordered display compact nowrap">
+            <thead>
+                <tr>
+                {% for h in presu_heads %}
+                    <th>{{h}}</th>
+                {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for row in presu_data %}
+            {% set outer_loop = loop %}
+                <tr>
+                {% for data in row %}
+                    {# ponemos el sort como segundos desde epoch #}
+                    {% if loop.index==1 %}
+                    <td data-order="{{fechas_epoch[outer_loop.index-1]}}">{{data}}</td>
+                    {% else %}
+                    <td>{{data}}</td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
             {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-        {% for row in presu_data %}
-            <tr>
-            {% for data in row %}
-                <td>{{data}}</td>
-            {% endfor %}
-            </tr>
-        {% endfor %}
-        </tbody>
-        <tfoot>
-            <tr>
-            {% for h in presu_heads %}
-                <th>{{h}}</th>
-            {% endfor %}
-            </tr>
-        </tfoot>
-    </table>
-
-
-    <!-- Los íconos que se ven son del footer -->
+            </tbody>
+            <tfoot>
+                <tr>
+                {% for h in presu_heads %}
+                    <th>{{h}}</th>
+                {% endfor %}
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 {% endblock %}
 
 {% block scripts %}

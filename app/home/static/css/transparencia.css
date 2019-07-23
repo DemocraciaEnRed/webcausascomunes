@@ -1,5 +1,60 @@
-main {
-  padding-top: 180px; }
+@font-face {
+  font-family: 'Barlow';
+  src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
+  font-weight: 400; }
 
-  .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    background-color: none; }
+  @font-face {
+    font-family: 'Barlow';
+    src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
+    font-weight: 500; }
+
+    @font-face {
+      font-family: 'Barlow';
+      src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
+      font-weight: 600; }
+
+      .text-color-vivienda {
+        color: #194a9a; }
+
+        .text-color-transparencia {
+          color: #e61937; }
+
+          .text-color-trabajo {
+            color: #e71869; }
+
+            .text-color-genero {
+              color: #774997; }
+
+              .text-color-drogas {
+                color: #f9b112; }
+
+                .text-color-ciencia {
+                  color: #008daf; }
+
+                  .text-color-ambiente {
+                    color: #39a95e; }
+
+                    .vertical-align {
+                      display: flex;
+                      align-items: center; }
+
+                      main {
+                        padding-top: 18vw; }
+
+                        .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+                        .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+                          background: none !important;
+                          border: none !important; }
+
+                          .section__title {
+                            color: #2a4b8c;
+                            font-size: 1.25rem;
+                            font-weight: 600; }
+                            @media (min-width: 768px) {
+                              .section__title {
+                                font-size: 2rem;   }
+}
+
+#data-csv_wrapper .row {
+  margin-right: 0;
+  margin-left: 0; }
