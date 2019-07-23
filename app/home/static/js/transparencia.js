@@ -1,9 +1,10 @@
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
 
-    // The data for our dataset
+//<canvas id="chart-importe-categoria"></canvas>
+//<canvas id="chart-bars-gastos"></canvas>
+
+/*var ctx = document.getElementById('chart-importe-categoria').getContext('2d');
+var chart = new Chart(ctx, {
+    type: 'line',
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
@@ -13,24 +14,65 @@ var chart = new Chart(ctx, {
             data: [0, 10, 5, 2, 20, 30, 45]
         }]
     },
-
-    // Configuration options go here
-    options: {}
-});
-
+    options: {
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+    }
+});*/
+window.chartColors = {
+    blue: "rgb(54, 162, 235)",
+    green: "rgb(75, 192, 192)",
+    orange: "rgb(255, 159, 64)",
+    purple: "rgb(153, 102, 255)",
+    red: "rgb(255, 99, 132)",
+    grey: "rgb(201, 203, 207)",
+    yellow: "rgb(255, 205, 86)"
+}
 $(document).ready(function() {
-    $('#example').DataTable({
+    dtApi = $('#data-csv').DataTable({
         "language": {
             "url": _datatable_spa_json_url
         }
     });
-} );
 
-/*setInterval(function(){
-chart.data.datasets[0].backgroundColor="#"+((1<<24)*Math.random()|0).toString(16);
-chart.data.datasets[0].borderColor="#"+((1<<24)*Math.random()|0).toString(16);
-    data = chart.data.datasets[0].data;
-    for (d in data)
-        data[d] = Math.random()*40;
-   chart.update();
-}, 200)*/
+    cates = dtApi.column(2).data()
+    importes = dtApi.column(1).data()
+
+    catesImporte = {}
+    bgCols = []
+    for (i=0; i<cates.length; i++){
+        catItem=cates[i].toLowerCase()
+        impItem=parseFloat(importes[i])
+
+        if (catItem.indexOf('honorarios profesionales') != -1)
+            catItem = 'honorarios profesionales'
+
+        if (catItem in catesImporte)
+            catesImporte[catItem] += impItem
+        else
+            catesImporte[catItem] = impItem
+
+        bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
+    }
+    console.log(bgCols)
+    var ctx = document.getElementById('chart-importe-categoria').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: bgCols,
+                data: Object.values(catesImporte)
+            }],
+            labels: Object.keys(catesImporte)
+        },
+        options: {
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        }
+    });
+} );
