@@ -156,7 +156,7 @@ class DirectusApi:
                 elif type == DirectusApi.RowTypes.DATETIME:
                     item[key] = datetime.datetime.strptime(row[key], "%Y-%m-%d %H:%M:%S") if row[key] else datetime.datetime(1,1,1)
                 elif type == DirectusApi.RowTypes.REL_NOMBRE:
-                    item[key] = row[key]['data']['nombre'] if row and row[key] and row[key]['data'] else ''
+                    item[key] = row[key]['data']['nombre'] if row[key] and row[key]['data'] else ''
                 else:
                     raise Exception('Tipo de dato inválido para columna {}'.format(key))
             items.append(item)
