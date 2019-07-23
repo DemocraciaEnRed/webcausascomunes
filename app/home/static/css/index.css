@@ -226,15 +226,16 @@
     .carousel-cell {
       width: 80%;
       height: 340px;
-      margin-right: 1rem;
+      margin-right: 2rem;
+      margin-left: 2rem;
       border-radius: 20px;
       counter-increment: carousel-cell;
       color: black; }
       @media (min-width: 992px) {
         .carousel-cell {
           width: 30%;
-          margin-right: 2rem;
-          height: 400px;   }
+          height: 400px;
+          margin-left: 0;   }
 }
         .carousel-cell .title {
           color: #2a4b8c;
