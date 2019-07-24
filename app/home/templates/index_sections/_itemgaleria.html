@@ -2,7 +2,7 @@
 
 {% macro create_item_galeria(title, text, img_archivo, isstatic=True) -%}
 <div class="col-6 col-md-4 mb-2 px-1 px-md-4">
-  <a href="{{create_img_src('hackaton/'+img_archivo, isstatic=True)}}" title="{{ title }}" data-description="{{ text or '' }}">
+  <a href="{{create_img_src('hackaton/carousel/car-'+img_archivo|replace('JPG','png')|replace('jpg','png'), isstatic=True)}}" title="{{ title }}" data-description="{{ text or '' }}">
     <img src="{{create_img_src('hackaton/thumbs/thumb-'+img_archivo, isstatic=True)}}" alt="{{ title }}" />
   </a>
 </div>

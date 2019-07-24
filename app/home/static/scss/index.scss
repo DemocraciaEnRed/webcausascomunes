@@ -161,7 +161,7 @@ label {
 		align-items: end;
 	}
 	.container {
-		@media (min-width: $width-medium) {
+		@media (min-width: $width-large) {
 			max-width: 35%;
 		}
 	}
