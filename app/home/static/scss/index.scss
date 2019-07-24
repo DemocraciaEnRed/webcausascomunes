@@ -170,6 +170,10 @@ label {
 	}
 	h1 img {
 		width: 204px;
+		@media (min-width: $width-small) {
+			max-width: 375px;
+			width: 100%;
+		}
 		@media (min-width: $width-large) {
 			max-width: 525px;
 			width: 100%;
