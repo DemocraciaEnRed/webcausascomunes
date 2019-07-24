@@ -39,9 +39,30 @@ $(document).ready(function() {
         "scrollX": true,
         "order": [[ 0, 'desc' ]]
     });
+
     createGraficoCatesImportes()
+    createGraficoConcepsImportes()
     createGraficoGastosTiempo()
 } );
+
+
+function strToDate(s){
+    var parts = s.split('/');
+    return new Date(parts[2], parts[1] - 1, parts[0]);
+}
+
+function sortedDict(dict){
+    var items = Object.keys(dict).map(function(key) {
+      return [key, dict[key]];
+    });
+
+    // Sort the array based on the second element
+    items.sort(function(first, second) {
+      return second[1] - first[1];
+    });
+
+    return items;
+}
 
 
 function createGraficoCatesImportes(){
@@ -51,11 +72,8 @@ function createGraficoCatesImportes(){
     catesImporte = {}
     bgCols = []
     for (i=0; i<cates.length; i++){
-        catItem=cates[i].toLowerCase()
+        catItem=cates[i].toLowerCase().replace('&amp;','&')
         impItem=parseFloat(importes[i])
-
-        if (catItem.indexOf('honorarios profesionales') != -1)
-            catItem = 'honorarios profesionales'
 
         if (catItem in catesImporte)
             catesImporte[catItem] += impItem
@@ -65,12 +83,11 @@ function createGraficoCatesImportes(){
         bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
     }
 
-    var ctx = document.getElementById('chart-importe-categoria').getContext('2d');
-    var chart = new Chart(ctx, {
+    var chart = new Chart($('#chart-importe-categoria'), {
         type: 'doughnut',
         data: {
             datasets: [{
-                label: 'My First dataset',
+                label: 'Gastos por categoría',
                 backgroundColor: bgCols,
                 data: Object.values(catesImporte)
             }],
@@ -84,47 +101,96 @@ function createGraficoCatesImportes(){
 }
 
 
-function createGraficoGastosTiempo(){
-    cates = dtApi.column(2).data()
+function createGraficoConcepsImportes(){
+    conceps = dtApi.column(3).data()
     importes = dtApi.column(1).data()
 
-    catesImporte = {}
+    concepsImporte = {}
     bgCols = []
-    for (i=0; i<cates.length; i++){
-        catItem=cates[i].toLowerCase()
+    for (i=0; i<conceps.length; i++){
+        conItem=conceps[i].toLowerCase().replace('&amp;','&')
         impItem=parseFloat(importes[i])
 
-        if (catItem.indexOf('honorarios profesionales') != -1)
-            catItem = 'honorarios profesionales'
+        if (conItem.indexOf('honorarios profesionales') != -1)
+            conItem = 'honorarios profesionales'
 
-        if (catItem in catesImporte)
-            catesImporte[catItem] += impItem
+        if (conItem in concepsImporte)
+            concepsImporte[conItem] += impItem
         else
-            catesImporte[catItem] = impItem
+            concepsImporte[conItem] = impItem
+
+        bgCols.push(window.chartColors[Object.keys(window.chartColors)[(i+3)%Object.keys(window.chartColors).length]])
+    }
+
+    sortConceps = sortedDict(concepsImporte)
+    top5conceps = sortConceps.slice(0, 5)
+    for (i in top5conceps)
+        top5conceps[i] = top5conceps[i][0]
+    console.log(top5conceps)
+
+    var chart = new Chart($('#chart-importe-concepto'), {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                label: 'Gastos por concepto',
+                backgroundColor: bgCols,
+                data: Object.values(concepsImporte)
+            }],
+            labels: Object.keys(concepsImporte)
+        },
+        options: {
+            legend: {
+                position:'top',
+                labels: { filter: function(legend, dataObj){ return top5conceps.indexOf(legend.text) != -1; } }
+            }
+        }
+    });
+    return chart
+}
+
+
+function createGraficoGastosTiempo(){
+    fechas = dtApi.column(0).data()
+    importes = dtApi.column(1).data()
+
+    fechasImporte = {}
+    bgCols = []
+    for (i=0; i<fechas.length; i++){
+        fecItem=strToDate(fechas[i])
+        impItem=parseFloat(importes[i])
+
+        month=fecItem.getMonth()
+
+        if (month in fechasImporte)
+            fechasImporte[month] += impItem
+        else
+            fechasImporte[month] = impItem
 
         bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
     }
+
+    monthNums = Object.keys(fechasImporte)
+    console.log(monthNums)
+    monthNames = []
+    for (i in monthNums){
+        monthDate=new Date(1, monthNums[i], 1)
+        monthNames.push(monthDate.toLocaleString('es', { month: 'long' }))
+    }
+    console.log(monthNames)
 
     var ctx = document.getElementById('chart-bars-gastos').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'bar',
         data: {
             datasets: [{
-                label: 'My First dataset',
+                label: 'Egresos',
                 backgroundColor: bgCols,
-                data: Object.values(catesImporte)
+                data: Object.values(fechasImporte)
             }],
-            labels: Object.keys(catesImporte)
+            labels: monthNames
         },
         options: {
-            scales: {
-                xAxes: [{
-                    stacked: true,
-                }],
-                yAxes: [{
-                    stacked: true
-                }]
-            }
+            legend: {display: false}
         }
     });
     return chart

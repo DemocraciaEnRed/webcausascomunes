@@ -21,7 +21,7 @@ accepted_causas = [
 
 
 def get_menu_navs():
-    navs = {'index': '', 'causas': '', 'agenda': '', 'contacto': ''}
+    navs = {'index': '', 'causas': '', 'cuentas': '', 'agenda': '', 'contacto': ''}
     endpoint = request.endpoint.split('.')[1]
     if endpoint in accepted_causas:
         navs['causas'] = 'active'
@@ -163,8 +163,8 @@ def transparencia():
     return causa('transparencia')
 
 
-@blueprint.route("/trans", methods=['GET'])
-def trans():
+@blueprint.route("/cuentas", methods=['GET'])
+def cuentas():
     isstatic = False
 
     import app.directus as directus
