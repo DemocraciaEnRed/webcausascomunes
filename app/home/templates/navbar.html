@@ -2,16 +2,10 @@
     <nav class="navbar navbar-expand-lg py-3 px-4">
         <img class="ondita-azul" src="/static/img/home-background.svg">
         <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <img src="{{ create_img_src(dimgsnav['menumobile'], isstatic=isstatic) }}" alt="Menu"/>
+            <img class="nav-menu-mobile" src="{{ url_for('home.static', filename='img/icons/menu_mobile.svg') }}" alt="Menu"/>
         </button>
         <a class="navbar-brand" href="{{ url_for('home.index') }}">
-            {# if request.endpoint in ['home.index', 'home.contacto'] #}
-            {% if true %}
-                {% set logo = dimgsnav['logocolor'] %}
-            {% else %}
-                {% set logo = dimgsnav['logoblanco'] %}
-            {% endif %}
-            <img src="{{ create_img_src(logo, isstatic=isstatic) }}" alt="Causas Comunes"/>
+            <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor_chico.png') }}" alt="Causas Comunes"/>
         </a>
        <!--  <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search bar">
             <img src="{{ create_img_src(dimgsnav['busqueda'], isstatic=isstatic) }}" alt="Buscar"/>
