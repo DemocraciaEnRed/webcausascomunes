@@ -1,17 +1,5 @@
 {% from 'index_sections/_itemgaleria.html' import create_item_galeria %}
 
-<!-- The Gallery as lightbox dialog, should be a document body child element -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <p class="description"></p>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-</div>
-
 <section id="galeria" class="section jumbotron jumbotron-fluid">
     <div class="container">
         <div class="row">
@@ -31,10 +19,21 @@
                 </div>
             </div>
         </div>
-        <div id="links" class="row">
-            {% for itm in galeriahackaton %}
-                {{ create_item_galeria(itm['titulo'], itm['descripcion'], itm['imagen_archivo'], isstatic=isstatic) }}
-            {% endfor %}
+        <div class="row mb-2 mb-md-3">
+            <div class="col-lg-10 offset-lg-1 mb-3">
+                <!-- The Gallery as inline carousel, can be positioned anywhere on the page -->
+                <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+                    <div class="slides"></div>
+                    <h3 class="title"></h3>
+                    <a class="play-pause"></a>
+                    <ol class="indicator"></ol>
+                </div>
+                <div id="links" class="d-none">
+                    {% for itm in galeriahackaton %}
+                        {{ create_item_galeria(itm['titulo'], itm['descripcion'], itm['imagen_archivo'], isstatic=isstatic) }}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </section>
