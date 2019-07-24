@@ -9,7 +9,7 @@
 
             <!-- Grid column -->
             <div class="col-md-12 mt-3">
-                <img src="{{ create_img_src(dimgsfooter['logo'], isstatic=isstatic) }}" alt="Causas Comunes"/>
+                <img class="logo-foot-cc" src="{{ url_for('home.static', filename='img/logos/CC_LogoNegro_mediano.png') }}" alt="Causas Comunes"/>
             </div>
             <!-- Grid column -->
 
@@ -17,20 +17,16 @@
             <div class="col-md-12 my-2 py-4">
                 <!--Instagram-->
                 <a target="_blank" rel="noopener noreferrer" class="ins-ic" href="https://www.instagram.com/causascomunes/" target="_blank">
-                    <img class="md-5 mx-2" src="{{ create_img_src(dimgsfooter['social']['instagram'], isstatic=isstatic) }}">
-                </a>
+                    <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_instagram_icon.png') }}"></a>
                 <!-- Facebook -->
                 <a target="_blank" rel="noopener noreferrer" class="fb-ic" href="https://www.facebook.com/Causas-Comunes-449280685874685/" target="_blank">
-                    <img class="md-5 mx-2" src="{{ create_img_src(dimgsfooter['social']['facebook'], isstatic=isstatic) }}">
-                </a>
+                    <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_facebook_icon.png') }}"></a>
                 <!-- Twitter -->
                 <a target="_blank" rel="noopener noreferrer" class="tw-ic" href="https://twitter.com/causas_comunes" target="_blank">
-                    <img class="md-5 mx-2" src="{{ create_img_src(dimgsfooter['social']['twitter'], isstatic=isstatic) }}">
-                </a>
+                    <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_twitter_icon.png') }}"></a>
                 <!-- Email -->
                 <a class="mail-ic" href="mailto:causascomunesx@gmail.com" target="_blank">
-                    <img class="md-5 mx-2" src="{{ create_img_src(dimgsfooter['social']['email'], isstatic=isstatic) }}">
-                </a>
+                    <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_mail_icon.png') }}"></a>
             </div>
             <!-- Grid column -->
 

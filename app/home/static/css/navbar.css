@@ -80,6 +80,8 @@
       cursor: pointer; }
       .navbar .navbar-toggler:focus {
         outline: 0; }
+        .navbar .navbar-toggler .nav-menu-mobile {
+          width: 50px; }
   .navbar .form-group {
     position: relative;
     margin: 0 auto; }
