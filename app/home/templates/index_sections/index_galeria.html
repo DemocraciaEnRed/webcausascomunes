@@ -29,9 +29,9 @@
                     <ol class="indicator"></ol>
                 </div>
                 <div id="links" class="d-none">
-                    {# for itm in galeriahackaton #}
-                        {# create_item_galeria(itm['titulo'], itm['descripcion'], itm['imagen_archivo'], isstatic=isstatic) #}
-                    {# endfor #}
+                    {% for itm in galeriahackaton %}
+                        {{ create_item_galeria(itm['titulo'], itm['descripcion'], itm['imagen_archivo'], isstatic=isstatic) }}
+                    {% endfor %}
                 </div>
             </div>
         </div>
