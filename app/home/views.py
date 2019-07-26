@@ -182,8 +182,12 @@ def cuentas():
     fechas_epoch = []
     fecha_i = presu_heads.index('fecha')
     for row in presu_data:
-        date = datetime.strptime(row[fecha_i], '%d/%m/%Y')
-        fechas_epoch.append(date.strftime('%s'))
+        try:
+            date = datetime.strptime(row[fecha_i], '%d/%m/%Y')
+            date = date.strftime('%s')
+        except:
+            date = ''
+        fechas_epoch.append(date)
 
     return render_template(
         'transparencia.html',

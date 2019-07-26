@@ -61,9 +61,19 @@ function sortedDict(dict){
       return second[1] - first[1];
     });
 
-    return items;
+    retDict={}
+    for (i in items)
+        retDict[items[i][0]] = items[i][1]
+    return retDict;
 }
 
+function roundDictVals(dict){
+    for (k in dict){
+        if (typeof(dict[k]) === 'number')
+            dict[k] = Math.round(dict[k] * 100) / 100
+    }
+    return dict
+}
 
 function createGraficoCatesImportes(){
     cates = dtApi.column(2).data()
@@ -82,6 +92,8 @@ function createGraficoCatesImportes(){
 
         bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
     }
+
+    catesImporte = sortedDict(roundDictVals(catesImporte))
 
     var chart = new Chart($('#chart-importe-categoria'), {
         type: 'doughnut',
@@ -119,14 +131,10 @@ function createGraficoConcepsImportes(){
         else
             concepsImporte[conItem] = impItem
 
-        bgCols.push(window.chartColors[Object.keys(window.chartColors)[(i+3)%Object.keys(window.chartColors).length]])
+        bgCols.push(window.chartColors[Object.keys(window.chartColors)[(i+1)%Object.keys(window.chartColors).length]])
     }
 
-    sortConceps = sortedDict(concepsImporte)
-    top5conceps = sortConceps.slice(0, 5)
-    for (i in top5conceps)
-        top5conceps[i] = top5conceps[i][0]
-    console.log(top5conceps)
+    concepsImporte = sortedDict(roundDictVals(concepsImporte))
 
     var chart = new Chart($('#chart-importe-concepto'), {
         type: 'doughnut',
@@ -140,8 +148,7 @@ function createGraficoConcepsImportes(){
         },
         options: {
             legend: {
-                position:'top',
-                labels: { filter: function(legend, dataObj){ return top5conceps.indexOf(legend.text) != -1; } }
+                position:'left',
             }
         }
     });
@@ -168,6 +175,8 @@ function createGraficoGastosTiempo(){
 
         bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
     }
+
+    roundDictVals(fechasImporte)
 
     monthNums = Object.keys(fechasImporte)
     console.log(monthNums)

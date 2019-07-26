@@ -2,6 +2,7 @@ import csv
 # import json
 # import io
 
+#https://docs.google.com/spreadsheets/d/1xsr1szDVCsgl7UfJMv6mGaDiVObtd_FqFJHHs4qwDIM
 presu_headers = ('fecha', 'importe', 'categoria', 'concepto', 'descripcion', 'proveedor', 'tipo de comprobante',
            'forma de pago', 'original')
 
