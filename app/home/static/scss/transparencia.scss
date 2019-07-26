@@ -17,6 +17,14 @@ main {
 		font-size: $font-size-xlarge;
 	}
 }
+.section__subtitle {
+    font-size: $font-size-xsmall;
+    color: $color-principal-azul;
+    margin-bottom: 1.5rem;
+    @media (min-width: $width-medium) {
+        font-size: $font-size-medium;
+    }
+}
 
 #data-csv_wrapper {
     .row{

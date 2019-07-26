@@ -55,6 +55,15 @@
                                 font-size: 2rem;   }
 }
 
+.section__subtitle {
+  font-size: 0.9rem;
+  color: #2a4b8c;
+  margin-bottom: 1.5rem; }
+  @media (min-width: 768px) {
+    .section__subtitle {
+      font-size: 1.25rem;   }
+}
+
 #data-csv_wrapper .row {
   margin-right: 0;
   margin-left: 0; }

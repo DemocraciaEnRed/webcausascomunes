@@ -37,7 +37,12 @@ $(document).ready(function() {
             "url": _datatable_spa_json_url
         },
         "scrollX": true,
-        "order": [[ 0, 'desc' ]]
+        "order": [[ 0, 'desc' ]],
+        "initComplete": function(settings, json) {
+            // fix bug de que se pisan los textos del paginador con el msj de 'mostrando X registros...'
+            $('#data-csv_info').parent().removeClass('col-md-5').addClass('col-xl-5')
+            $('#data-csv_paginate').parent().removeClass('col-md-7').addClass('col-xl-7')
+        }
     });
 
     createGraficoCatesImportes()
