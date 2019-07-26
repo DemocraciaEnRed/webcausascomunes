@@ -63,6 +63,7 @@
                 </tfoot>
             </table>
         </div>
+        <div class="disclaimer mt-3">Los valores aquí expresados están en pesos argentinos. Todos los movimientos están bancarizados y los pagos efectuados por algún medio electrónico trazable.</div>
     </div>
 {% endblock %}
 
@@ -71,6 +72,7 @@
     <script src="{{url_for('home.static', filename='js/jquery.dataTables.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
     <script>
+        _datatable_headers = [ {% for h in presu_heads %} '{{h}}', {% endfor %} ]
         _datatable_spa_json_url = "{{ url_for('home.static', filename='Spanish.json') }}"
     </script>
     <script src="{{url_for('home.static', filename='js/transparencia.js')}}"></script>

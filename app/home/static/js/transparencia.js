@@ -1,26 +1,3 @@
-
-//<canvas id="chart-importe-categoria"></canvas>
-//<canvas id="chart-bars-gastos"></canvas>
-
-/*var ctx = document.getElementById('chart-importe-categoria').getContext('2d');
-var chart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-    options: {
-        animation: {
-            animateScale: true,
-            animateRotate: true
-        }
-    }
-});*/
 window.chartColors = {
     blue: "rgb(54, 162, 235)",
     green: "rgb(75, 192, 192)",
@@ -30,14 +7,47 @@ window.chartColors = {
     grey: "rgb(201, 203, 207)",
     yellow: "rgb(255, 205, 86)"
 }
+
 dtApi = null
+
 $(document).ready(function() {
+    dtHeadersArr = []
+    // cargamos headers del server
+    for (i in _datatable_headers)
+        dtHeadersArr.push( { 'name': _datatable_headers[i] } )
+
+    // setteamos renderer de la columna 'original' para que genere anchors de sus urls
+    for (i in dtHeadersArr){
+        if (dtHeadersArr[i].name == 'original')
+            dtHeadersArr[i]['render'] = function(data, type, row, meta){
+                if(type === 'display' && data && data != 'N/A'){
+                    data = '<a href="' + data + '" target="_blank">' + data + '</a>';
+                }
+                return data;
+            }
+    }
+
+    console.log(dtHeadersArr)
+
     dtApi = $('#data-csv').DataTable({
+        // cargamos nombres de columnas
+        "columns": dtHeadersArr,
+
+        // cargamos textos en español para los botones y demás
         "language": {
             "url": _datatable_spa_json_url
         },
+
+        // habilitamos es scroll horizontal
         "scrollX": true,
+
+        // que arranque ordenado por fecha, los más recientes primero
         "order": [[ 0, 'desc' ]],
+
+        // que arranque mostrando de a 25 registros
+        "pageLength": 25,
+
+        // esta función se ejecuta al terminar de cargar/renderear la DataTable
         "initComplete": function(settings, json) {
             // fix bug de que se pisan los textos del paginador con el msj de 'mostrando X registros...'
             $('#data-csv_info').parent().removeClass('col-md-5').addClass('col-xl-5')
@@ -81,8 +91,8 @@ function roundDictVals(dict){
 }
 
 function createGraficoCatesImportes(){
-    cates = dtApi.column(2).data()
-    importes = dtApi.column(1).data()
+    cates = dtApi.column('categoria:name').data()
+    importes = dtApi.column('importe:name').data()
 
     catesImporte = {}
     bgCols = []
@@ -119,8 +129,8 @@ function createGraficoCatesImportes(){
 
 
 function createGraficoConcepsImportes(){
-    conceps = dtApi.column(3).data()
-    importes = dtApi.column(1).data()
+    conceps = dtApi.column('concepto:name').data()
+    importes = dtApi.column('importe:name').data()
 
     concepsImporte = {}
     bgCols = []
@@ -162,8 +172,8 @@ function createGraficoConcepsImportes(){
 
 
 function createGraficoGastosTiempo(){
-    fechas = dtApi.column(0).data()
-    importes = dtApi.column(1).data()
+    fechas = dtApi.column('fecha:name').data()
+    importes = dtApi.column('importe:name').data()
 
     fechasImporte = {}
     bgCols = []
@@ -184,13 +194,11 @@ function createGraficoGastosTiempo(){
     roundDictVals(fechasImporte)
 
     monthNums = Object.keys(fechasImporte)
-    console.log(monthNums)
     monthNames = []
     for (i in monthNums){
         monthDate=new Date(1, monthNums[i], 1)
         monthNames.push(monthDate.toLocaleString('es', { month: 'long' }))
     }
-    console.log(monthNames)
 
     var ctx = document.getElementById('chart-bars-gastos').getContext('2d');
     var chart = new Chart(ctx, {
