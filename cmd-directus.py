@@ -96,5 +96,25 @@ elif cmd == 'txtadd':
 
     print(api_txt_add(pag_id, ubi_arg, txt_arg, fmt_arg))
 
+elif cmd == 'txtcausasadd':
+    # comentar esta línea y reescribir el código para usar este comando
+    ret_err('Este comando fue usado en el pasado, se debe reescribir darle un significado')
+    load_pags()
+    causas = [
+        'genero',
+        'ambiente',
+        'ciencia',
+        'vivienda',
+        'transparencia',
+        'drogas',
+        'trabajo']
+    for c in causas:
+        if c == 'genero':
+            link = 'https://diagnostico.causascomunes.org/index.php/Género'
+        else:
+            link = 'https://diagnostico.causascomunes.org/index.php/' + c.title()
+        print(c, api_txt_add(pags[c], 'Definicion - LinkWiki', link, 0))
+
+
 else:
-    ret_err(f'Comando "{cmd}" inválido. Solo válidos: txtlocked, txtlock, txtunlock, getpags, txtadd')
+    ret_err(f'Comando "{cmd}" inválido. Solo válidos: txtlocked, txtlock, txtunlock, getpags, txtadd, txtcausasadd')
