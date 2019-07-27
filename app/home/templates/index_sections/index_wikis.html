@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row justify-content-center ">
             <div class="text-center col-md-10">
-                <h2 class="section__title">Wiki de Causas Comunes <!-- {# {{ dtextos['wikis']['titulo'] }} #} --> </h2>
-                <p class="section__subtitle mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis eleifend sollicitudin. Nullam iaculis nisi at ex congue, sed auctor tellus imperdiet. Aenean efficitur quam ut rutrum tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <!-- {# {{ dtextos['wikis']['subtitulo'] }} #} --></p>
-                <a href="#" class="btn btn-primary btn-md">Sumate! <!-- {# {{ dtextos['wiki']['boton'] }} #} --></a>
+                <h2 class="section__title">{{ dtextos.get('wiki')['titulo'] }}</h2>
+                <span class="section__subtitle mb-5">{{ dtextos.get('wiki')['subtitulo']|safe }}</span>
+                <a href="#" class="btn btn-primary btn-md">{{ dtextos.get('wiki')['boton'] }}</a>
             </div>
         </div>
     </div>
