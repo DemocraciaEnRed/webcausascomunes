@@ -127,7 +127,8 @@
       .navbar .form-control {
         border-color: #ffffff;   }
     .navbar-brand {
-      float: none;   }
+      float: none;
+      padding: 10px;   }
       .navbar-brand img {
         height: 54px;   }
     .nav-link {
