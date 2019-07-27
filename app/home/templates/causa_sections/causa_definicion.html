@@ -9,10 +9,15 @@
                     <iframe src="{{dtextos.get('video')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
              </div>
-            <div class="col-md-6 text-justify">
-                {{ dtextos.get('definicion')['parrafo1'] | safe }}
-                {{ dtextos.get('definicion')['parrafo2'] | safe }}
-                {{ dtextos.get('definicion')['parrafo3'] | safe }}
+            <div class="col-md-6">
+                <div class="text-justify">
+                    {{ dtextos.get('definicion')['parrafo1'] | safe }}
+                    {{ dtextos.get('definicion')['parrafo2'] | safe }}
+                    {{ dtextos.get('definicion')['parrafo3'] | safe }}
+                </div>
+                <div class="text-center text-md-left">
+                    <a href="{# {{ dtextos.get('definicion')['LinkWiki'] }} #}" class="btn btn-primary btn-md mt-3">WIKI: Sumate a construir</a>
+                </div>
             </div>
         </div>
     </div>
