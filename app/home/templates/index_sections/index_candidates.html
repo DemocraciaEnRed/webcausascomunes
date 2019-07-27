@@ -7,7 +7,7 @@
                 <button type="button" class="btn btn-primary btn-primary-inverted btn-bold btn-lg">{{dtextos['candidates']['boton']}}</button>
             </div>
             <div class="col-md-7">
-                <img src="{{ create_img_src(dimgs['candidates']['imagen'], isstatic=isstatic) }}" class="img-fluid mt-3 mt-md-0">
+                <img src="{{ create_img_src(dimgs.get('candidates')['imagen'], isstatic=isstatic) }}" class="img-fluid mt-3 mt-md-0">
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
         <div class="row mt-3 mt-md-5">
             <div class="video vertical-align col-md-6 mb-2 mb-md-0 pb-md-3">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe src="{{dtextos.get('video')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="{{dtextos.get('video') or ''}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
              </div>
             <div class="col-md-6 text-justify">
