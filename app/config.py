@@ -6,7 +6,7 @@ class BaseConfig(object):
     SERVER_PORT = 5000
     USE_DIRECTUS = True
     DIRECTUS_API_PATH = '/api/1.1/'
-    DIRECTUS_TOKEN = os.environ.get('DIRECTUS_TOKEN')
+    DIRECTUS_TOKEN = os.environ.get('DIRECTUS_TOKEN') or ''
 
     # USE_EXTENSIONS = False
     # SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -26,8 +26,8 @@ class ProductionConfig(BaseConfig):
 
 
 class AzureConfig(ProductionConfig):
-    DIRECTUS_URL_INTERNAL = os.environ.get('DIRECTUS_URL_INTERNAL')
-    DIRECTUS_URL_EXTERNAL = os.environ.get('DIRECTUS_URL_EXTERNAL')
+    DIRECTUS_URL_INTERNAL = os.environ.get('DIRECTUS_URL_INTERNAL') or ''
+    DIRECTUS_URL_EXTERNAL = os.environ.get('DIRECTUS_URL_EXTERNAL') or ''
 
 
 class MoooConfig(ProductionConfig):
