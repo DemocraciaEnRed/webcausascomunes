@@ -212,9 +212,13 @@ class DirectusApi:
 dapi = DirectusApi()
 
 
-def init_flask_app(directus_url_int, directus_url_ext, api_path, auth_token):
+def init_flask_app(app):
     global dapi
-    dapi.init_api(directus_url_int, directus_url_ext, api_path, auth_token)
+    dapi.init_api(
+        app.config['DIRECTUS_URL_INTERNAL'],
+        app.config['DIRECTUS_URL_EXTERNAL'],
+        app.config['DIRECTUS_API_PATH'],
+        app.config['DIRECTUS_TOKEN'])
     dapi.test_conn()
     return dapi
 

@@ -29,6 +29,14 @@ def get_menu_navs():
     return navs
 
 
+def render_error(msg):
+    return render_template(
+        "error.html",
+        navs=get_menu_navs(),
+        msg=msg,
+        url='/')
+
+
 ########################### ERRORES/LOGIN/OUT/INDEX
 @blueprint.app_errorhandler(500)
 def server_error(e):
@@ -40,22 +48,23 @@ def server_error(e):
         msg = "¡Ups! Ha surgido un error<br>"\
                "Por favor, regrese a la <a href='/'>página principal</a> y vuelva a internarlo"
 
-    return render_template(
-        "error.html",
-        navs=get_menu_navs(),
-        msg=msg,
-        url='/')
+    return render_error(msg)
 
 
 @blueprint.app_errorhandler(404)
 def not_found(e):
     msg = "No encontramos la página que está buscando<br>"\
-          "Por favor, verifique que la dirección esté bien escrita o vuelva a la <a href='/'>página principal</a>",
-    return render_template(
-        "error.html",
-        navs=get_menu_navs(),
-        msg=msg,
-        url='/')
+          "Por favor, verifique que la dirección esté bien escrita o vuelva a la <a href='/'>página principal</a>"
+    return render_error(msg)
+
+
+@blueprint.before_request
+def before_request():
+    # si no está activo directus cancelamos la request, pero si es a un recurso estático la dejamos pasar
+    if not current_app.config['_directus_ok'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
+        msg = "La página se encuentra en mantenimiento<br>"\
+              "Por favor, vuelva más tarde"
+        return render_error(msg)
 
 
 @blueprint.after_request
