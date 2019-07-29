@@ -1,11 +1,11 @@
 <section class="portada jumbotron">
     <div class="container text-center mx-md-0">
         <h1 class="my-4">
-            <span class="sr-only">{{dtextos['portada']['titulo']}}</span>
-            <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor.png') }}" alt="{{dtextos['portada']['titulo']}}"/>
+            <span class="sr-only">{{dtextos.get('portada')['titulo']}}</span>
+            <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor.png') }}" alt="{{dtextos.get('portada')['titulo']}}"/>
         </h1>
-        <p class="pb-md-4">{{dtextos['portada']['subtitulo']}}</p>
-        <a href="#manifiesto" role="button" class="btn btn-primary d-none d-md-inline-block btn-lg mt-md-5 scrollTo">{{dtextos['portada']['boton']}}</a>
+        <p class="pb-md-4">{{dtextos.get('portada')['subtitulo']}}</p>
+        <a href="#manifiesto" role="button" class="btn btn-primary d-none d-md-inline-block btn-lg mt-md-5 scrollTo">{{dtextos.get('portada')['boton']}}</a>
     </div>
-<!--     <img class="portada__img mt-md-5" src="{{ create_img_src(dimgs['portada']['imagen'], isstatic=isstatic) }}" alt="{{dtextos['portada']['titulo']}}"/>-->
+<!--     <img class="portada__img mt-md-5" src="{{ create_img_src(dimgs['portada']['imagen'], isstatic=isstatic) }}" alt="{{dtextos.get('portada')['titulo']}}"/>-->
 </section>

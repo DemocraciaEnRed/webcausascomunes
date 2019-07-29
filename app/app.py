@@ -12,7 +12,7 @@ def create_app():
         template_folder=None)
 
     # cofigs = Azure | Mooo | Local | Der
-    config = os.environ.get('FLASK_CONFIG') or 'Der'
+    config = os.environ.get('FLASK_CONFIG') or 'Azure'
     try:
         app.config.from_object(config_dict[config.capitalize()])
         app.logger.info('Usando config ' + config)
