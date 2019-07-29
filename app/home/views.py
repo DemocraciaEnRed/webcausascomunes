@@ -1,5 +1,4 @@
 from flask import current_app, request, render_template, redirect, url_for, Blueprint
-from pprint import pprint
 
 blueprint = Blueprint(
     'home',
@@ -21,12 +20,42 @@ accepted_causas = [
 
 def get_menu_navs():
     navs = {'index': '', 'causas': '', 'agenda': '', 'contacto': ''}
-    endpoint = request.endpoint.split('.')[1]
-    if endpoint in accepted_causas:
-        navs['causas'] = 'active'
-    elif endpoint in navs.keys():
-        navs[endpoint] = 'active'
+    if request.endpoint:
+        endpoint = request.endpoint.split('.')[1] if '.' in request.endpoint else request.endpoint
+        if endpoint in accepted_causas:
+            navs['causas'] = 'active'
+        elif endpoint in navs.keys():
+            navs[endpoint] = 'active'
     return navs
+
+
+########################### ERRORES/LOGIN/OUT/INDEX
+@blueprint.app_errorhandler(500)
+def server_error(e):
+    if not request.endpoint or request.endpoint == 'home.index':
+        msg = "¡Ups! La página no está funcionando correctamente<br>"\
+               "El equipo técnico ya está trabajando para arreglarla<br>"\
+               "Por favor, vuelva más tarde"
+    else:
+        msg = "¡Ups! Ha surgido un error<br>"\
+               "Por favor, regrese a la <a href='/'>página principal</a> y vuelva a internarlo"
+
+    return render_template(
+        "error.html",
+        navs=get_menu_navs(),
+        msg=msg,
+        url='/')
+
+
+@blueprint.app_errorhandler(404)
+def not_found(e):
+    msg = "No encontramos la página que está buscando<br>"\
+          "Por favor, verifique que la dirección esté bien escrita o vuelva a la <a href='/'>página principal</a>",
+    return render_template(
+        "error.html",
+        navs=get_menu_navs(),
+        msg=msg,
+        url='/')
 
 
 @blueprint.after_request
