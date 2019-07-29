@@ -38,19 +38,22 @@
                       display: flex;
                       align-items: center; }
 
-                      body {
-                        font: 100% 'Barlow', sans-serif;
-                        color: black; }
+                      .padding-onditaazul {
+                        padding-top: 12vw; }
 
-                        img {
-                          max-width: 100%; }
+                        body {
+                          font: 100% 'Barlow', sans-serif;
+                          color: black; }
 
-                          .no-gutters {
-                            margin-right: 0;
-                            margin-left: 0; }
-                            .no-gutters > .col, .no-gutters > [class*="col-"] {
-                              padding-right: 0;
-                              padding-left: 0; }
+                          img {
+                            max-width: 100%; }
+
+                            .no-gutters {
+                              margin-right: 0;
+                              margin-left: 0; }
+                              .no-gutters > .col, .no-gutters > [class*="col-"] {
+                                padding-right: 0;
+                                padding-left: 0; }
 
 .section {
   background-color: #ffffff; }

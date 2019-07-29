@@ -1,0 +1,20 @@
+@import 'vars';
+
+.section__title {
+	color: $color-principal-azul;
+    font-size: $font-size-xlarge;
+	font-weight: 600;
+	@media (min-width: $width-medium) {
+        z-index: 2;
+        position: relative;
+	}
+}
+
+.section__subtitle, .section__subtitle p {
+    font-size: $font-size-small;
+	line-height: $line-height-small;
+	margin-top: 1rem;
+	@media (min-width: $width-medium) {
+		line-height: $line-height-medium;
+	}
+}
