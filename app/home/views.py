@@ -156,11 +156,11 @@ def causa(agenda):
         'itemsnovedades': itemsnovedades,
         'itemsagenda': itemsagenda,
 
-        'isstatic': isstatic}
+        'isstatic': isstatic,
+        'show_wiki_btn': True}
 
-    if agenda == 'sasdsd':
-        variables['dtextosextra'] = {}
-        variables['dimgsextra'] = {}
+    if agenda == 'ciencia':
+        variables['show_wiki_btn'] = False
 
     return render_template('causa.html', **variables)
 

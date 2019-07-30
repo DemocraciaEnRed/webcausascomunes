@@ -15,9 +15,11 @@
                     {{ dtextos.get('definicion')['parrafo2'] | safe }}
                     {{ dtextos.get('definicion')['parrafo3'] | safe }}
                 </div>
+                {% if show_wiki_btn %}
                 <div class="text-center text-md-left">
                     <a href="{{ dtextos.get('definicion')['linkwiki'] }}" class="btn btn-primary btn-md mt-3" target="_blank">WIKI: Sumate a construir</a>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>
