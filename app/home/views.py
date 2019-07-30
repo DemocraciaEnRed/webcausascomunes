@@ -38,7 +38,7 @@ def render_error(msg):
         url='/')
 
 
-########################### ERRORES/LOGIN/OUT/INDEX
+########################### ERRORES
 @blueprint.app_errorhandler(500)
 def server_error(e):
     log_err(current_app, 'Server error 500.', e, True)
