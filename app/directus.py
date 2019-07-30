@@ -98,10 +98,11 @@ class DirectusApi:
             return []
 
     def img_row_to_url(self, imgrow, errmsg):
-        if not imgrow:
-            # raise DirectusApi.NoImgException(errmsg)
+        if imgrow and 'data' in imgrow and 'url' in imgrow['data']:
+            return self.ser_ext_url + imgrow['data']['url']
+        else:
+            self.logger.error('{}'.format(errmsg))
             return ''
-        return self.ser_ext_url + imgrow['data']['url']
 
     def get_textos_pagina(self, pagina):
         pagina = str(pagina)
@@ -119,12 +120,13 @@ class DirectusApi:
             for ubi in ubic:
                 ubicfmt.append(ubi.strip().lower())
                 if not ubicfmt[-1].isalnum():
-                    self.logger.error('El dato de ubicacion "{}" en la tabla "textos" tiene caracteres inválidos'.format(ubicfmt[-1]))
+                    self.logger.error(
+                        'El dato ubicacion="{}" (página={}) en la tabla "textos" tiene caracteres inválidos'.format(ubicfmt[-1], pagina))
                     break
             else:
                 txt = row['texto'] or ''
                 if self.textosregx.match(txt) is None:
-                    self.logger.error('El dato de texto "{}" en la tabla "textos" tiene caracteres inválidos'.format(txt))
+                    self.logger.error('El dato texto="{}" (página={}) en la tabla "textos" tiene caracteres inválidos'.format(txt, pagina))
                     continue
                 if row['con_formato'] == 1:
                     txt = self.markdowner.convert(txt)
@@ -152,14 +154,17 @@ class DirectusApi:
             for ubi in ubic:
                 ubicfmt.append(ubi.strip().lower())
                 if not ubicfmt[-1].isalnum():
-                    raise Exception('El dato de ubicacion "{}" en la tabla de textos tiene caractéres inválidos'.format(ubicfmt[-1]))
-            imgurl = self.img_row_to_url(row['imagen'], 'Hay una imagen vacía para la ubicacion "{}"'.format(row['ubicacion']))
-            if len(ubic) == 1:
-                imgs[ubicfmt[0]] = imgurl
+                    self.logger.error(
+                        'El dato ubicacion="{}" (página={}) en la tabla "imagenes" tiene caracteres inválidos'.format(ubicfmt[-1], pagina))
+                    break
             else:
-                if ubicfmt[0] not in imgs:
-                    imgs[ubicfmt[0]] = {}
-                imgs[ubicfmt[0]][ubicfmt[1]] = imgurl
+                imgurl = self.img_row_to_url(row['imagen'], 'Hay una imagen vacía para la ubicacion "{}"'.format(row['ubicacion']))
+                if len(ubic) == 1:
+                    imgs[ubicfmt[0]] = imgurl
+                else:
+                    if ubicfmt[0] not in imgs:
+                        imgs[ubicfmt[0]] = {}
+                    imgs[ubicfmt[0]][ubicfmt[1]] = imgurl
         return imgs
 
     def get_items(self, table, pagina, keys_types):
@@ -180,7 +185,8 @@ class DirectusApi:
                 elif type == DirectusApi.RowTypes.REL_NOMBRE:
                     item[key] = row[key]['data']['nombre'] if row[key] and row[key]['data'] else ''
                 else:
-                    raise Exception('Tipo de dato inválido para columna {}'.format(key))
+                    self.logger.error('Tipo de dato inválido para columna {} (tabla={}, pagina={})'.format(key, table, pagina))
+                    continue
             items.append(item)
         return items
 
