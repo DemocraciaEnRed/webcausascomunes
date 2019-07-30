@@ -76,8 +76,6 @@ def after_request(response):
 
 @blueprint.route("/", methods=['GET'])
 def index():
-    isstatic = False
-
     import app.directus as directus
     dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
     dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
@@ -99,13 +97,11 @@ def index():
         itemsagenda=itemsagenda,
         itemspropuestas=itemspropuestas,
         galeriahackaton=galeriahackaton,
-        isstatic=isstatic)
+        isstatic=False)
 
 
 @blueprint.route("/contacto", methods=['GET'])
 def contacto():
-    isstatic = False
-
     import app.directus as directus
     dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
     dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
@@ -120,15 +116,13 @@ def contacto():
         dimgsfooter=dimgsfooter,
         dtextos=dtextos,
         dimgs=dimgs,
-        isstatic=isstatic)
+        isstatic=False)
 
 
 def causa(agenda):
     get_menu_navs()
     if agenda not in accepted_causas:
         return redirect(url_for('home.index'))
-
-    isstatic = False
 
     import app.directus as directus
 
@@ -156,7 +150,7 @@ def causa(agenda):
         'itemsnovedades': itemsnovedades,
         'itemsagenda': itemsagenda,
 
-        'isstatic': isstatic,
+        'isstatic': False,
         'show_wiki_btn': True}
 
     if agenda == 'ciencia':
