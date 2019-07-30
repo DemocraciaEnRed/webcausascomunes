@@ -6,9 +6,9 @@
 {% else %}
     {% set cols = '6' %}
 {% endif %}
-<div class="tema-{{type}} col-md-{{cols}} mb-5">
-    <img src="{{ create_img_src(img, isstatic) }}" />
-    <h4 class="title">{{ title }}</h4>
-    <p class="text">{{text}}</p>
+<div class="tema-{{type or ''}} col-md-{{cols or ''}} mb-5">
+    <img src="{{ create_img_src(img or '', isstatic) }}" />
+    <h4 class="title">{{ title or '' }}</h4>
+    <p class="text">{{text or ''}}</p>
 </div>
 {%- endmacro %}
