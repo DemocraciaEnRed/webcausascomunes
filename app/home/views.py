@@ -1,5 +1,4 @@
 from flask import current_app, request, render_template, redirect, url_for, Blueprint
-from pprint import pprint
 
 blueprint = Blueprint(
     'home',
@@ -21,12 +20,51 @@ accepted_causas = [
 
 def get_menu_navs():
     navs = {'index': '', 'causas': '', 'agenda': '', 'contacto': ''}
-    endpoint = request.endpoint.split('.')[1]
-    if endpoint in accepted_causas:
-        navs['causas'] = 'active'
-    elif endpoint in navs.keys():
-        navs[endpoint] = 'active'
+    if request.endpoint:
+        endpoint = request.endpoint.split('.')[1] if '.' in request.endpoint else request.endpoint
+        if endpoint in accepted_causas:
+            navs['causas'] = 'active'
+        elif endpoint in navs.keys():
+            navs[endpoint] = 'active'
     return navs
+
+
+def render_error(msg):
+    return render_template(
+        "error.html",
+        navs=get_menu_navs(),
+        msg=msg,
+        url='/')
+
+
+########################### ERRORES/LOGIN/OUT/INDEX
+@blueprint.app_errorhandler(500)
+def server_error(e):
+    if not request.endpoint or request.endpoint == 'home.index':
+        msg = "¡Ups! La página no está funcionando correctamente<br>"\
+               "El equipo técnico ya está trabajando para arreglarla<br>"\
+               "Por favor, vuelva más tarde"
+    else:
+        msg = "¡Ups! Ha surgido un error<br>"\
+               "Por favor, regrese a la <a href='/'>página principal</a> y vuelva a internarlo"
+
+    return render_error(msg)
+
+
+@blueprint.app_errorhandler(404)
+def not_found(e):
+    msg = "No encontramos la página que está buscando<br>"\
+          "Por favor, verifique que la dirección esté bien escrita o vuelva a la <a href='/'>página principal</a>"
+    return render_error(msg)
+
+
+@blueprint.before_request
+def before_request():
+    # si no está activo directus cancelamos la request, pero si es a un recurso estático la dejamos pasar
+    if not current_app.config['_directus_ok'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
+        msg = "La página se encuentra en mantenimiento<br>"\
+              "Por favor, vuelva más tarde"
+        return render_error(msg)
 
 
 @blueprint.after_request
@@ -118,11 +156,11 @@ def causa(agenda):
         'itemsnovedades': itemsnovedades,
         'itemsagenda': itemsagenda,
 
-        'isstatic': isstatic}
+        'isstatic': isstatic,
+        'show_wiki_btn': True}
 
-    if agenda == 'sasdsd':
-        variables['dtextosextra'] = {}
-        variables['dimgsextra'] = {}
+    if agenda == 'ciencia':
+        variables['show_wiki_btn'] = False
 
     return render_template('causa.html', **variables)
 
