@@ -4,8 +4,8 @@
     <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h2 class="section__title">{{dtextos['novedades']['titulo']}}</h2>
-                <p class="section__subtitle">{{dtextos['novedades']['subtitulo']}}</p>
+                <h2 class="section__title">{{dtextos.get('novedades')['titulo']}}</h2>
+                <p class="section__subtitle">{{dtextos.get('novedades')['subtitulo']}}</p>
             </div>   
         </div>    
         {% set ns = namespace(acumcols=0) %}
@@ -20,14 +20,14 @@
                 {% endif %}
             {% endif %}
 
-                {{ create_item_novedad(itm['ancho_columnas'], itm['imagen'], itm['titulo'], itm['hashtag'], isstatic=isstatic) }}
+                {{ create_item_novedad(itm.get('ancho_columnas'), itm.get('imagen'), itm.get('titulo'), itm.get('hashtag'), isstatic=isstatic) }}
                 {% if loop.last %}
                 <div class="col-12 col-md-6 pb-3">
                     <h4 class="twitter-timeline__title">¡Seguinos!</h4>
                     <a class="twitter-timeline" data-lang="es" data-height="400" href="https://twitter.com/causas_comunes?ref_src=twsrc%5Etfw">Tweets by causas_comunes</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 {% endif %}
-            {% set ns.acumcols=ns.acumcols+itm['ancho_columnas'] %}
+            {% set ns.acumcols=ns.acumcols+itm.get('ancho_columnas') %}
             {% if ns.acumcols >= 12 %}
                 </div>
                 {% set ns.acumcols=0 %}

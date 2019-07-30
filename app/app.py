@@ -3,7 +3,7 @@ from flask import Flask
 from .config import config_dict
 import os
 import locale
-import pprint
+from .logger import log_err
 
 
 def create_app():
@@ -13,41 +13,59 @@ def create_app():
         template_folder=None)
 
     # cofigs = Azure | Mooo | Local | Der
-    config = os.environ.get('FLASK_CONFIG') or 'Der'
+    config = os.environ.get('FLASK_CONFIG') or 'Azure'
+    try:
+        app.config.from_object(config_dict[config.capitalize()])
+        app.logger.info('Usando config ' + config)
+    except Exception as e:
+        log_err(app, f'No se pudo cargar la configuración {config}.', e, False)
 
-    app.config.from_object(config_dict[config.capitalize()])
-    print('Usando config "{}"'.format(config))
-    pprint.pprint(vars(config_dict[config.capitalize()]))
-
-    create_logger(app)
-    create_blueprints(app)
-    if app.config['USE_SCSS']:
-        create_scss_watch(app)
-    # if app.config['USE_EXTENSIONS']:
-    #     create_extensions(app)
-    if app.config['USE_DIRECTUS']:
-        import app.directus as directus
-        directus.init_flask_app(app.config['DIRECTUS_URL_INTERNAL'], app.config['DIRECTUS_URL_EXTERNAL'], app.config['DIRECTUS_API_PATH'], app.config['DIRECTUS_TOKEN'])
-
-    # chequear locale en español para que las fechas salga en español y no en inglés
-    curr_lang = locale.getlocale()[0]
-    if curr_lang[:2].lower() is not 'es':
+    # config mailer
+    if app.config.get('SMTP_SEND_ERRORS'):
+        app.config['_mailer_ok'] = False
         try:
-            locale.setlocale(locale.LC_TIME, 'es_AR.utf8')
-        except locale.Error:
+            from .mailer import Mailer
+            app._mailer = Mailer(app)
+            app.logger.info('Usando Mailer')
+            app.config['_mailer_ok'] = True
+        except Exception as e:
+            log_err(app, 'No se pudo crear el mailer.', e, False)
+
+    # config blueprints
+    create_blueprints(app)
+
+    # configurar e inicializar scss
+    if 'USE_SCSS' not in app.config:
+        app.logger.warn('No se ha detectado el campo USE_SCSS en la configuración')
+    else:
+        if app.config['USE_SCSS']:
             try:
-                locale.setlocale(locale.LC_TIME, 'es_ES.utf8')
-            except locale.Error:
-                try:
-                    locale.setlocale(locale.LC_TIME, 'es.utf8')
-                except locale.Error:
-                    raise Exception('No se encontró ningún idioma español válido en su sistema.')
+                create_scss_watch(app)
+                app.logger.info('Usando SCSS')
+            except Exception as e:
+                log_err(app, 'No se pudo activar SCSS.', e, False)
+
+    # configurar e inicializar directus
+    app.config['_directus_ok'] = False
+    if 'USE_DIRECTUS' not in app.config:
+        app.logger.warn('No se ha detectado el campo USE_DIRECTUS en la configuración')
+    else:
+        if app.config['USE_DIRECTUS']:
+            try:
+                import app.directus as directus
+                directus.init_flask_app(app)
+                app.logger.info('Usando Directus')
+                app.config['_directus_ok'] = True
+            except Exception as e:
+                log_err(app, 'No se pudo activar Directus.', e, True)
+
+    # chequear locale en español para que las fechas salgan en español y no en inglés
+    try:
+        config_locale(app)
+    except Exception as e:
+        log_err(app, 'No se pudo configurar la locale.', e, True)
 
     return app
-
-
-def create_logger(app):
-    pass
 
 
 def create_blueprints(app):
@@ -63,13 +81,21 @@ def create_scss_watch(app):
         asset_dir=os.path.dirname(os.path.abspath(__file__))+'/home/static/scss')
 
 
-def create_extensions(app):
-    from .extensions import db
-    db.init_app(app)
+def config_locale(app):
+    curr_lang = locale.getlocale()[0]
 
-    from .extensions import login_manager
-    # @login_manager.user_loader
-    # def load_user(id):
-    #     return User.query.get(id)
-    login_manager.login_view = 'frontend.login'
-    login_manager.init_app(app)
+    if curr_lang[:2].lower() is 'es':
+        loc_ok = True
+    else:
+        loc_ok = False
+        try_locales = ['es_AR.utf8', 'es_ES.utf8', 'es.utf8']
+        for loc in try_locales:
+            try:
+                locale.setlocale(locale.LC_TIME, loc)
+                loc_ok = True
+                break
+            except locale.Error:
+                continue
+
+    if not loc_ok:
+        log_err(app, 'No se encontró ningún locale en español en su sistema.', None, True)

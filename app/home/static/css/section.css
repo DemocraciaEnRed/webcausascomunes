@@ -38,18 +38,21 @@
                       display: flex;
                       align-items: center; }
 
-                      body {
-                        overflow-x: hidden; }
+                      .padding-onditaazul {
+                        padding-top: 12vw; }
 
-                        @media (min-width: 768px) {
-                          .section.jumbotron-fluid {
-                            padding-top: 3rem;
-                            padding-bottom: 3rem;   }
+                        body {
+                          overflow-x: hidden; }
+
+                          @media (min-width: 768px) {
+                            .section.jumbotron-fluid {
+                              padding-top: 3rem;
+                              padding-bottom: 3rem;   }
 }
-                        .section:nth-child(even) {
-                          background-color: #ffffff; }
-                          .section:nth-child(odd) {
-                            background-color: #faf2ff; }
+                          .section:nth-child(even) {
+                            background-color: #ffffff; }
+                            .section:nth-child(odd) {
+                              background-color: #faf2ff; }
 
 .portada-seccion {
   background-color: transparent;

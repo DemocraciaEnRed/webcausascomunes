@@ -1,16 +1,19 @@
 <header>
     <nav class="navbar navbar-expand-lg py-3 px-4">
-        <img class="ondita-azul" src="/static/img/home-background.svg">
+        <!-- Ondita azul de background -->
+        <img class="ondita-azul" src="{{ url_for('home.static', filename='img/home-background.svg') }}">
+
+        <!-- Menú hamburguesa mobile (solo en vista mobile) -->
         <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <img class="nav-menu-mobile" src="{{ url_for('home.static', filename='img/icons/menu_mobile.svg') }}" alt="Menu"/>
         </button>
+
+        <!-- Loguito de la esquina -->
         <a class="navbar-brand" href="{{ url_for('home.index') }}">
             <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor_chico.png') }}" alt="Causas Comunes"/>
         </a>
-       <!--  <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search bar">
-            <img src="{{ create_img_src(dimgsnav['busqueda'], isstatic=isstatic) }}" alt="Buscar"/>
-        </button> -->
 
+        <!-- Links  -->
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ml-md-5">
                 <li class="nav-item">
@@ -39,7 +42,9 @@
             </ul>
         </div>
 
-       <!--  <div class="collapse navbar-collapse" id="navbarSearch">
+        <!-- Buscador de la página -->
+        <!-- <img src="{# create_img_src(dimgsnav['busqueda'], isstatic=isstatic) #}" alt="Buscar"/> -->
+        <!-- <div class="collapse navbar-collapse" id="navbarSearch">
             <form class="form-inline my-2 my-lg-0">
                 <div class="form-group">
                     <input class="form-control pr-4" type="text" placeholder="Buscar">

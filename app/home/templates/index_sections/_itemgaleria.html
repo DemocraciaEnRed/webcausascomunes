@@ -1,9 +1,14 @@
 {% from '_imghelper.html' import create_img_src %}
 
 {% macro create_item_galeria(title, text, img_archivo, isstatic=True) -%}
+{% if img_archivo %}
+    {% set carou_img =  'car-' + ( img_archivo | replace('JPG','png') | replace('jpg','png') ) %}
+{% else %}
+    {% set carou_img =  '' %}
+{% endif %}
 <div class="col-6 col-md-4 mb-2 px-1 px-md-4">
-  <a href="{{create_img_src('hackaton/carousel/car-'+img_archivo|replace('JPG','png')|replace('jpg','png'), isstatic=True)}}" title="{{ title }}" data-description="{{ text or '' }}">
-    <img src="{{create_img_src('hackaton/thumbs/thumb-'+img_archivo, isstatic=True)}}" alt="{{ title }}" />
+  <a href="{{ create_img_src('hackaton/carousel/' + carou_img, isstatic=True) }}" title="{{ title or ''  }}" data-description="{{ text or '' }}">
+    <img src="{{ create_img_src('hackaton/thumbs/thumb-' + (img_archivo or ''), isstatic=True) }}" alt="{{ title or '' }}" />
   </a>
 </div>
 {%- endmacro %}

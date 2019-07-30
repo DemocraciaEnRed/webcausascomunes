@@ -7,7 +7,8 @@ import re
 import datetime
 import requests
 from markdown2 import Markdown
-
+from logging import Logger
+from .logger import log_err
 
 # api endpoints - https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/endpoints.md
 # filterig - https://docs.directus.io/api/reference.html#filtering
@@ -22,6 +23,7 @@ class DirectusApi:
         REL_NOMBRE = 3
 
     def __init__(self):
+        self.logger = None
         self.ser_url = None
         self.ser_ext_url = None
         self.api_url = None
@@ -30,13 +32,26 @@ class DirectusApi:
         self.textosregx = re.compile('^[^<>&]*$')
         self.markdowner = Markdown()
 
-    def init_api(self, ser_url, ser_ext_url, api_path, token):
+    def init_api(self, logger, ser_url, ser_ext_url, api_path, token):
+        # chequear parámetros
+        assert type(logger) == Logger, 'Se ha proporcionado un logger inválido para Directus'
+        assert ser_url, 'No se ha proporcionado una url interna de Directus'
+        assert ser_ext_url, 'No se ha proporcionado una url externa de Directus'
+        assert api_path, 'No se ha proporcionado un path para la API de Directus'
+        assert token, 'No se ha proporcionado un token para Directus'
+        assert ser_url.startswith('http'), 'La url interna de Directus debe comenzar con "http" o "https"'
+        assert ser_ext_url.startswith('http'), 'La url externa de Directus debe comenzar con "http" o "https"'
+
+        # sanear terminaciones de url
         if ser_url[-1] == '/':
             ser_url = ser_url[:-1]
         if ser_ext_url[-1] == '/':
             ser_ext_url = ser_ext_url[:-1]
         if not api_path[0] == '/':
             api_path = '/' + api_path
+
+        # almacenamos
+        self.logger = logger
         self.ser_url = ser_url
         self.ser_ext_url = ser_ext_url
         self.api_url = ser_url + api_path
@@ -50,7 +65,7 @@ class DirectusApi:
             kwargs['headers'] = self.auth_header
         r = requests.get(self.api_url + api_cmd, **kwargs)
         if r.status_code >= 400:
-            raise Exception('Mala autenticación al servidor directus ({})'.format(r.status_code))
+            raise Exception('{} Página no encontrada "{}"'.format(r.status_code, self.api_url + api_cmd))
         if r.text == 'You must be logged in to access the API':
             raise Exception('Mala autenticación al servidor directus')
         try:
@@ -75,14 +90,32 @@ class DirectusApi:
         return self.get('tables/' + table_name, **kwargs)
 
     def get_table_rows(self, table_name, filter=None, **kwargs):
-        rj = self.get('tables/' + table_name + '/rows' + ('?'+filter if filter else ''), **kwargs)
-        return rj['data']
+        try:
+            rj = self.get('tables/' + table_name + '/rows' + ('?'+filter if filter else ''), **kwargs)
+            return rj['data']
+        except Exception as e:
+            self.logger.error('No se pudieros traer las rows de la tabla "{}" (usando filtro "{}"). {}'.format(table_name, filter, e))
+            return []
 
     def img_row_to_url(self, imgrow, errmsg):
-        if not imgrow:
-            # raise DirectusApi.NoImgException(errmsg)
+        if imgrow and 'data' in imgrow and 'url' in imgrow['data']:
+            return self.ser_ext_url + imgrow['data']['url']
+        else:
+            self.logger.error('{}'.format(errmsg))
             return ''
-        return self.ser_ext_url + imgrow['data']['url']
+
+    def _parse_ubicacion(self, row_ubicacion):
+            ubicacion_arr = []
+
+            ubics = row_ubicacion.split('-')
+            for ubic in ubics:
+                ubic_parsed = ubic.strip().lower()
+                if ubic_parsed.isalnum():
+                    ubicacion_arr.append(ubic_parsed)
+                else:
+                    return
+
+            return ubicacion_arr
 
     def get_textos_pagina(self, pagina):
         pagina = str(pagina)
@@ -95,23 +128,23 @@ class DirectusApi:
         #     raise Exception('No se han encontrado textos para la página ' + pagina)
         textos = {}
         for row in rows:
-            ubic = row['ubicacion'].split('-')
-            ubicfmt = []
-            for ubi in ubic:
-                ubicfmt.append(ubi.strip().lower())
-                if not ubicfmt[-1].isalnum():
-                    raise Exception('El dato de ubicacion "{}" en la tabla de textos tiene caractéres inválidos'.format(ubicfmt[-1]))
-            txt = row['texto'] or ''
-            if self.textosregx.match(txt) is None:
-                raise Exception('El dato de texto "{}" en la tabla de textos tiene caractéres inválidos'.format(txt))
-            if row['con_formato'] == 1:
-                txt = self.markdowner.convert(txt)
-            if len(ubic) == 1:
-                textos[ubicfmt[0]] = txt
+            ubicacion_arr = self._parse_ubicacion(row['ubicacion'])
+            if not ubicacion_arr:
+                self.logger.error(f'El dato ubicacion="{row["ubicacion"]}" (página={pagina}) en la tabla "textos" tiene caracteres inválidos')
+                continue
             else:
-                if ubicfmt[0] not in textos:
-                    textos[ubicfmt[0]] = {}
-                textos[ubicfmt[0]][ubicfmt[1]] = txt
+                txt = row['texto'] or ''
+                if self.textosregx.match(txt) is None:
+                    self.logger.error('El dato texto="{}" (página={}) en la tabla "textos" tiene caracteres inválidos'.format(txt, pagina))
+                    continue
+                if row['con_formato'] == 1:
+                    txt = self.markdowner.convert(txt)
+                if len(ubicacion_arr) == 1:
+                    textos[ubicacion_arr[0]] = txt
+                else:
+                    if ubicacion_arr[0] not in textos:
+                        textos[ubicacion_arr[0]] = {}
+                    textos[ubicacion_arr[0]][ubicacion_arr[1]] = txt
         return textos
 
     def get_imgs_pagina(self, pagina):
@@ -125,19 +158,15 @@ class DirectusApi:
         #     raise Exception('No se han encontrado imágenes para la página ' + pagina)
         imgs = {}
         for row in rows:
-            ubic = row['ubicacion'].split('-')
-            ubicfmt = []
-            for ubi in ubic:
-                ubicfmt.append(ubi.strip().lower())
-                if not ubicfmt[-1].isalnum():
-                    raise Exception('El dato de ubicacion "{}" en la tabla de textos tiene caractéres inválidos'.format(ubicfmt[-1]))
-            imgurl = self.img_row_to_url(row['imagen'], 'Hay una imagen vacía para la ubicacion "{}"'.format(row['ubicacion']))
-            if len(ubic) == 1:
-                imgs[ubicfmt[0]] = imgurl
-            else:
-                if ubicfmt[0] not in imgs:
-                    imgs[ubicfmt[0]] = {}
-                imgs[ubicfmt[0]][ubicfmt[1]] = imgurl
+            ubic_arr = self._parse_ubicacion(row['ubicacion'])
+            if ubic_arr:
+                imgurl = self.img_row_to_url(row['imagen'], 'Hay una imagen vacía para la ubicacion "{}"'.format(row['ubicacion']))
+                if len(ubic_arr) == 1:
+                    imgs[ubic_arr[0]] = imgurl
+                else:
+                    if ubic_arr[0] not in imgs:
+                        imgs[ubic_arr[0]] = {}
+                    imgs[ubic_arr[0]][ubic_arr[1]] = imgurl
         return imgs
 
     def get_items(self, table, pagina, keys_types):
@@ -158,7 +187,8 @@ class DirectusApi:
                 elif type == DirectusApi.RowTypes.REL_NOMBRE:
                     item[key] = row[key]['data']['nombre'] if row[key] and row[key]['data'] else ''
                 else:
-                    raise Exception('Tipo de dato inválido para columna {}'.format(key))
+                    self.logger.error('Tipo de dato inválido para columna {} (tabla={}, pagina={})'.format(key, table, pagina))
+                    continue
             items.append(item)
         return items
 
@@ -201,7 +231,7 @@ class DirectusApi:
                 'imagen': DirectusApi.RowTypes.IMG
             })
 
-    def get_galeria_hackaton(self):
+    def get_items_hackaton(self):
         return self.get_items('galeria_hackaton', None, {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'descripcion': DirectusApi.RowTypes.TEXT,
@@ -212,9 +242,14 @@ class DirectusApi:
 dapi = DirectusApi()
 
 
-def init_flask_app(directus_url_int, directus_url_ext, api_path, auth_token):
+def init_flask_app(app):
     global dapi
-    dapi.init_api(directus_url_int, directus_url_ext, api_path, auth_token)
+    dapi.init_api(
+        app.logger,
+        app.config['DIRECTUS_URL_INTERNAL'],
+        app.config['DIRECTUS_URL_EXTERNAL'],
+        app.config['DIRECTUS_API_PATH'],
+        app.config['DIRECTUS_TOKEN'])
     dapi.test_conn()
     return dapi
 

@@ -1,0 +1,29 @@
+{% extends '_base.html' %}
+
+{% from '_imghelper.html' import create_img_src %}
+
+{% block head %}
+    <title>Causas comunes - Ups!</title>
+    <link href="{{url_for('home.static', filename='css/error.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<section class="section padding-onditaazul">
+    <div class="container mt-5 pt-lg-5">
+        <div class="row justify-content-center ">
+            <div class="text-center col-md-10">
+                <h2 class="section__title"></h2>
+                {# |safe hace que no escapee los #}
+                <span class="section__subtitle mb-5">{{ msg|safe }}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Los íconos que se ven son del footer -->
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

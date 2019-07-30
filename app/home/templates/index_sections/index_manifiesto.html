@@ -6,9 +6,9 @@
                     <iframe src="{{dtextos.get('video')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>            </div>
             <div class="col-lg-6">
-                <h2 class="section__title mb-4">{{dtextos['manifiesto']['titulo']}}</h2>
-                <p class="text-justify">{{ dtextos['manifiesto']['parrafo1'] | safe }}</p>
-                <span class="section__signature">{{dtextos['manifiesto']['firma']}}</span>
+                <h2 class="section__title mb-4">{{dtextos.get('manifiesto')['titulo']}}</h2>
+                <p class="text-justify">{{ dtextos.get('manifiesto')['parrafo1'] | safe }}</p>
+                <span class="section__signature">{{dtextos.get('manifiesto')['firma']}}</span>
             </div>
         </div>
     </div>

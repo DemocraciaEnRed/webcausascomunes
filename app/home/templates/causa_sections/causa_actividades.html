@@ -21,7 +21,7 @@
                 {% endif %}
             {% endif %}
 
-                {{ create_item_novedad(itm['ancho_columnas'], itm['imagen'], itm['titulo'], itm['hashtag'], isstatic=isstatic) }}
+                {{ create_item_novedad(itm.get('ancho_columnas'), itm.get('imagen'), itm.get('titulo'), itm.get('hashtag'), isstatic=isstatic) }}
                 {% if loop.last %}
                 <div class="col-12 col-md-6 pb-3 agenda">
                     <h4 class="agenda__title">{{dtextos.get('agenda')['titulo']}}</h4>
@@ -30,14 +30,14 @@
                             <h5 class="card-title">{{dtextos.get('agenda')['subtitulo']}}</h5>
                             <ul class="list-group list-group-flush my-4">
                                 {% for itm in itemsagenda %}
-                                    {{ create_item_agenda(itm['fechahora'], itm['titulo'], itm['hashtag']) }}
+                                    {{ create_item_agenda(itm.get('fechahora'), itm.get('titulo'), itm.get('hashtag')) }}
                                 {% endfor %}
                             </ul>
                         </div>
                     </div>
                 </div>
                 {% endif %}
-            {% set ns.acumcols=ns.acumcols+itm['ancho_columnas'] %}
+            {% set ns.acumcols=ns.acumcols+itm.get('ancho_columnas') %}
             {% if ns.acumcols >= 12 %}
                 </div>
                 {% set ns.acumcols=0 %}

@@ -38,16 +38,19 @@
                       display: flex;
                       align-items: center; }
 
-                      footer a img {
-                        height: 46px; }
+                      .padding-onditaazul {
+                        padding-top: 12vw; }
 
-                        .footer__copyright {
-                          color: #696969;
-                          font-size: 0.9rem; }
-                          .footer__copyright a {
-                            color: #2a4b8c; }
-                            .footer__copyright img {
-                              max-width: 100px; }
+                        footer a img {
+                          height: 46px; }
+
+                          .footer__copyright {
+                            color: #696969;
+                            font-size: 0.9rem; }
+                            .footer__copyright a {
+                              color: #2a4b8c; }
+                              .footer__copyright img {
+                                max-width: 100px; }
 
 .logo-foot-cc {
   height: 90px; }

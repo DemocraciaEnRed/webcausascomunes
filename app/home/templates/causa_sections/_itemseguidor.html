@@ -2,9 +2,9 @@
 
 {% macro create_item_seguidor(img, title, url, isstatic=True) -%}
 <div class="carousel-cell text-center py-5 p-lg-5">
-    <a href="{{ url }}">
-        <img class="mb-5" src="{{ create_img_src(img, isstatic) }}" />
-        <h4 class="title">{{ title }}</h4>
+    <a href="{{ url or '' }}">
+        <img class="mb-5" src="{{ create_img_src(img or '', isstatic) }}" />
+        <h4 class="title">{{ title or '' }}</h4>
     </a>
 </div>
 {%- endmacro %}
