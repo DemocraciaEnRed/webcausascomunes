@@ -4,9 +4,17 @@ import os
 class BaseConfig(object):
     SERVER_HOST = 'localhost'
     SERVER_PORT = 5000
+
     USE_DIRECTUS = True
     DIRECTUS_API_PATH = '/api/1.1/'
     DIRECTUS_TOKEN = os.environ.get('DIRECTUS_TOKEN') or ''
+
+    SMTP_SEND_ERRORS = os.environ.get('SMTP_SEND_ERRORS') or ''
+    SMTP_SERVER = os.environ.get('SMTP_SERVER') or ''
+    SMTP_PORT = os.environ.get('SMTP_PORT') or ''
+    SMTP_USER = os.environ.get('SMTP_USER') or ''
+    SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD') or ''
+    SMTP_TARGET_EMAIL = os.environ.get('SMTP_TARGET_EMAIL') or ''
 
     # USE_EXTENSIONS = False
     # SQLALCHEMY_TRACK_MODIFICATIONS = False

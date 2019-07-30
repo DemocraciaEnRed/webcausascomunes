@@ -8,7 +8,7 @@ import datetime
 import requests
 from markdown2 import Markdown
 from logging import Logger
-
+from .logger import log_err
 
 # api endpoints - https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/endpoints.md
 # filterig - https://docs.directus.io/api/reference.html#filtering
@@ -104,6 +104,19 @@ class DirectusApi:
             self.logger.error('{}'.format(errmsg))
             return ''
 
+    def _parse_ubicacion(self, row_ubicacion):
+            ubicacion_arr = []
+
+            ubics = row_ubicacion.split('-')
+            for ubic in ubics:
+                ubic_parsed = ubic.strip().lower()
+                if ubic_parsed.isalnum():
+                    ubicacion_arr.append(ubic_parsed)
+                else:
+                    return
+
+            return ubicacion_arr
+
     def get_textos_pagina(self, pagina):
         pagina = str(pagina)
         if str.isnumeric(pagina):
@@ -115,14 +128,10 @@ class DirectusApi:
         #     raise Exception('No se han encontrado textos para la página ' + pagina)
         textos = {}
         for row in rows:
-            ubic = row['ubicacion'].split('-')
-            ubicfmt = []
-            for ubi in ubic:
-                ubicfmt.append(ubi.strip().lower())
-                if not ubicfmt[-1].isalnum():
-                    self.logger.error(
-                        'El dato ubicacion="{}" (página={}) en la tabla "textos" tiene caracteres inválidos'.format(ubicfmt[-1], pagina))
-                    break
+            ubicacion_arr = self._parse_ubicacion(row['ubicacion'])
+            if not ubicacion_arr:
+                self.logger.error(f'El dato ubicacion="{row["ubicacion"]}" (página={pagina}) en la tabla "textos" tiene caracteres inválidos')
+                continue
             else:
                 txt = row['texto'] or ''
                 if self.textosregx.match(txt) is None:
@@ -130,12 +139,12 @@ class DirectusApi:
                     continue
                 if row['con_formato'] == 1:
                     txt = self.markdowner.convert(txt)
-                if len(ubic) == 1:
-                    textos[ubicfmt[0]] = txt
+                if len(ubicacion_arr) == 1:
+                    textos[ubicacion_arr[0]] = txt
                 else:
-                    if ubicfmt[0] not in textos:
-                        textos[ubicfmt[0]] = {}
-                    textos[ubicfmt[0]][ubicfmt[1]] = txt
+                    if ubicacion_arr[0] not in textos:
+                        textos[ubicacion_arr[0]] = {}
+                    textos[ubicacion_arr[0]][ubicacion_arr[1]] = txt
         return textos
 
     def get_imgs_pagina(self, pagina):
@@ -149,22 +158,15 @@ class DirectusApi:
         #     raise Exception('No se han encontrado imágenes para la página ' + pagina)
         imgs = {}
         for row in rows:
-            ubic = row['ubicacion'].split('-')
-            ubicfmt = []
-            for ubi in ubic:
-                ubicfmt.append(ubi.strip().lower())
-                if not ubicfmt[-1].isalnum():
-                    self.logger.error(
-                        'El dato ubicacion="{}" (página={}) en la tabla "imagenes" tiene caracteres inválidos'.format(ubicfmt[-1], pagina))
-                    break
-            else:
+            ubic_arr = self._parse_ubicacion(row['ubicacion'])
+            if ubic_arr:
                 imgurl = self.img_row_to_url(row['imagen'], 'Hay una imagen vacía para la ubicacion "{}"'.format(row['ubicacion']))
-                if len(ubic) == 1:
-                    imgs[ubicfmt[0]] = imgurl
+                if len(ubic_arr) == 1:
+                    imgs[ubic_arr[0]] = imgurl
                 else:
-                    if ubicfmt[0] not in imgs:
-                        imgs[ubicfmt[0]] = {}
-                    imgs[ubicfmt[0]][ubicfmt[1]] = imgurl
+                    if ubic_arr[0] not in imgs:
+                        imgs[ubic_arr[0]] = {}
+                    imgs[ubic_arr[0]][ubic_arr[1]] = imgurl
         return imgs
 
     def get_items(self, table, pagina, keys_types):

@@ -3,6 +3,7 @@ from flask import Flask
 from .config import config_dict
 import os
 import locale
+from .logger import log_err
 
 
 def create_app():
@@ -17,8 +18,20 @@ def create_app():
         app.config.from_object(config_dict[config.capitalize()])
         app.logger.info('Usando config ' + config)
     except Exception as e:
-        app.logger.error('No se pudo cargar la configuración {}. {}'.format(config, e))
+        log_err(app, f'No se pudo cargar la configuración {config}.', e, False)
 
+    # config mailer
+    if app.config.get('SMTP_SEND_ERRORS'):
+        app.config['_mailer_ok'] = False
+        try:
+            from .mailer import Mailer
+            app._mailer = Mailer(app)
+            app.logger.info('Usando Mailer')
+            app.config['_mailer_ok'] = True
+        except Exception as e:
+            log_err(app, 'No se pudo crear el mailer.', e, False)
+
+    # config blueprints
     create_blueprints(app)
 
     # configurar e inicializar scss
@@ -30,7 +43,7 @@ def create_app():
                 create_scss_watch(app)
                 app.logger.info('Usando SCSS')
             except Exception as e:
-                app.logger.error('No se pudo activar SCSS. ' + str(e))
+                log_err(app, 'No se pudo activar SCSS.', e, False)
 
     # configurar e inicializar directus
     app.config['_directus_ok'] = False
@@ -44,13 +57,13 @@ def create_app():
                 app.logger.info('Usando Directus')
                 app.config['_directus_ok'] = True
             except Exception as e:
-                app.logger.error('No se pudo activar Directus. ' + str(e))
+                log_err(app, 'No se pudo activar Directus.', e, True)
 
     # chequear locale en español para que las fechas salgan en español y no en inglés
     try:
         config_locale(app)
     except Exception as e:
-        app.logger.error('No se pudo configurar la locale. ' + str(e))
+        log_err(app, 'No se pudo configurar la locale.', e, True)
 
     return app
 
@@ -85,4 +98,4 @@ def config_locale(app):
                 continue
 
     if not loc_ok:
-        app.logger.error('No se encontró ningún locale en español en su sistema.')
+        log_err(app, 'No se encontró ningún locale en español en su sistema.', None, True)

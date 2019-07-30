@@ -1,4 +1,5 @@
 from flask import current_app, request, render_template, redirect, url_for, Blueprint
+from app.logger import log_err
 
 blueprint = Blueprint(
     'home',
@@ -40,6 +41,8 @@ def render_error(msg):
 ########################### ERRORES/LOGIN/OUT/INDEX
 @blueprint.app_errorhandler(500)
 def server_error(e):
+    log_err(current_app, 'Server error 500.', e, True)
+
     if not request.endpoint or request.endpoint == 'home.index':
         msg = "¡Ups! La página no está funcionando correctamente<br>"\
                "El equipo técnico ya está trabajando para arreglarla<br>"\
@@ -62,6 +65,8 @@ def not_found(e):
 def before_request():
     # si no está activo directus cancelamos la request, pero si es a un recurso estático la dejamos pasar
     if not current_app.config['_directus_ok'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
+        log_err(current_app, 'Directus in error state.', None, True)
+
         msg = "La página se encuentra en mantenimiento<br>"\
               "Por favor, vuelva más tarde"
         return render_error(msg)
