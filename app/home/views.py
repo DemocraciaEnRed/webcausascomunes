@@ -86,7 +86,7 @@ def index():
     itemspropuestas = directus.dapi.get_items_propuestas()
     # itemsnovedades = directus.dapi.get_items_novedades('Home')
     itemsagenda = directus.dapi.get_items_agenda('Home')
-    galeriahackaton = directus.dapi.get_galeria_hackaton()
+    galeriahackaton = directus.dapi.get_items_hackaton()
 
     return render_template(
         'index.html',
