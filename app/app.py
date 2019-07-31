@@ -1,9 +1,9 @@
 # https://github.com/xen/flask-project-template
 from flask import Flask
-from .config import config_dict
 import os
 import locale
 from .logger import log_err
+from logging import INFO
 
 
 def create_app():
@@ -11,8 +11,21 @@ def create_app():
         __name__,
         static_folder=None,
         template_folder=None)
+    app.logger.setLevel(INFO)
+
+    # configurar e inicializar env
+    if os.environ.get('LOAD_ENV'):
+        from dotenv import load_dotenv
+        from os.path import join, dirname, isfile
+        from os import environ
+        dotenv_path = join(dirname(__file__), '.env')
+        load_dotenv(dotenv_path)
+        app.logger.info('Usando .env')
+    else:
+        app.logger.info('No usando .env')
 
     # cofigs = Prod | Azure(=Prod) | Dev | Lan
+    from .config import config_dict
     config = os.environ.get('FLASK_CONFIG') or 'Prod'
     try:
         app.config.from_object(config_dict[config.capitalize()])

@@ -14,6 +14,10 @@ class BaseConfig(object):
     SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
     SMTP_TARGET_EMAIL = os.environ.get('SMTP_TARGET_EMAIL', '')
 
+    GSHEETS_CLIENT_ID = os.environ.get('GSHEETS_CLIENT_ID', '')
+    GSHEETS_PROJECT_ID = os.environ.get('GSHEETS_PROJECT_ID', '')
+    GSHEETS_CLIENT_SECRET = os.environ.get('GSHEETS_CLIENT_SECRET', '')
+
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@ PROD CONFIGS
