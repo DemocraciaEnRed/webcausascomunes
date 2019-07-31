@@ -2,71 +2,51 @@ import os
 
 
 class BaseConfig(object):
-    SERVER_HOST = 'localhost'
-    SERVER_PORT = 5000
-
     USE_DIRECTUS = True
+    DIRECTUS_URL_INTERNAL = os.environ.get('DIRECTUS_URL_INTERNAL', '')
+    DIRECTUS_URL_EXTERNAL = os.environ.get('DIRECTUS_URL_EXTERNAL', DIRECTUS_URL_INTERNAL)
     DIRECTUS_API_PATH = '/api/1.1/'
-    DIRECTUS_TOKEN = os.environ.get('DIRECTUS_TOKEN') or ''
+    DIRECTUS_TOKEN = os.environ.get('DIRECTUS_TOKEN', '')
 
-    SMTP_SEND_ERRORS = os.environ.get('SMTP_SEND_ERRORS') or ''
-    SMTP_SERVER = os.environ.get('SMTP_SERVER') or ''
-    SMTP_PORT = os.environ.get('SMTP_PORT') or ''
-    SMTP_USER = os.environ.get('SMTP_USER') or ''
-    SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD') or ''
-    SMTP_TARGET_EMAIL = os.environ.get('SMTP_TARGET_EMAIL') or ''
-
-    # USE_EXTENSIONS = False
-    # SQLALCHEMY_TRACK_MODIFICATIONS = False
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.dirname(os.path.abspath(__file__)) + '/db.sqlite'
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + INSTANCE_FOLDER_PATH + '/db.sqlite'
-    # SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://flask@127.0.0.1:3306/flaskdb?charset=utf8'
-    # SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://root:123@127.0.0.1:3300/flaskdb?charset=utf8'
+    SMTP_SERVER = os.environ.get('SMTP_SERVER', '')
+    SMTP_PORT = os.environ.get('SMTP_PORT', '')
+    SMTP_USER = os.environ.get('SMTP_USER', '')
+    SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
+    SMTP_TARGET_EMAIL = os.environ.get('SMTP_TARGET_EMAIL', '')
 
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@ PROD CONFIGS
 class ProductionConfig(BaseConfig):
-    SECRET_KEY = os.environ.get('FLASK_SECRET_KEY') or 'jKdy5629ddJk change me please'
     DEBUG = False
-    SQLALCHEMY_ECHO = False
+    SECRET_KEY = os.environ.get('FLASK_SECRET_KEY')
+
     USE_SCSS = False
-
-
-class AzureConfig(ProductionConfig):
-    DIRECTUS_URL_INTERNAL = os.environ.get('DIRECTUS_URL_INTERNAL') or ''
-    DIRECTUS_URL_EXTERNAL = os.environ.get('DIRECTUS_URL_EXTERNAL') or ''
-
-
-class MoooConfig(ProductionConfig):
-    DIRECTUS_URL_EXTERNAL = 'http://contenido.causascomunes.mooo.com/'
-    DIRECTUS_URL_INTERNAL = 'http://192.168.0.92:9090'
+    SMTP_SEND_ERRORS = os.environ.get('SMTP_SEND_ERRORS') or True
 
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@ DEBUG CONFIGS
 class DevelopmentConfig(BaseConfig):
-    SECRET_KEY = 'not a super secret key'
     DEBUG = True
-    SQLALCHEMY_ECHO = True
+    SECRET_KEY = os.environ.get('FLASK_SECRET_KEY') or 'dummy secret key'
+
     USE_SCSS = True
+    SMTP_SEND_ERRORS = os.environ.get('SMTP_SEND_ERRORS') or False
+
+    SERVER_HOST = 'localhost'
+    SERVER_PORT = 5000
 
 
-class LocalConfig(DevelopmentConfig):
-    DIRECTUS_URL_INTERNAL = 'http://localhost:9090'
-    DIRECTUS_URL_EXTERNAL = 'http://localhost:9090'
-
-
-class DerConfig(DevelopmentConfig):
-    DIRECTUS_URL_INTERNAL = 'https://directus.democraciaenred.org/'
-    DIRECTUS_URL_EXTERNAL = 'https://directus.democraciaenred.org/'
+class LanConfig(DevelopmentConfig):
+    SERVER_HOST = '192.168.88.20'
 
 
 config_dict = {
     # prod
-    'Azure': AzureConfig,
-    'Mooo': MoooConfig,
+    'Prod': ProductionConfig,
+    'Azure': ProductionConfig,
     # dev
-    'Local': LocalConfig,
-    'Der': DerConfig
+    'Dev': DevelopmentConfig,
+    'Lan': LanConfig,
 }
