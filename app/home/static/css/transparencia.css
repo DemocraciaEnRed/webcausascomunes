@@ -38,21 +38,24 @@
                       display: flex;
                       align-items: center; }
 
-                      main {
-                        padding-top: 18vw; }
+                      .padding-onditaazul {
+                        padding-top: 12vw; }
 
-                        .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
-                        .dataTables_wrapper .dataTables_paginate .paginate_button:active {
-                          background: none !important;
-                          border: none !important; }
+                        main {
+                          padding-top: 18vw; }
 
-                          .section__title {
-                            color: #2a4b8c;
-                            font-size: 1.25rem;
-                            font-weight: 600; }
-                            @media (min-width: 768px) {
-                              .section__title {
-                                font-size: 2rem;   }
+                          .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+                          .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+                            background: none !important;
+                            border: none !important; }
+
+                            .section__title {
+                              color: #2a4b8c;
+                              font-size: 1.25rem;
+                              font-weight: 600; }
+                              @media (min-width: 768px) {
+                                .section__title {
+                                  font-size: 2rem;   }
 }
 
 .section__subtitle {
