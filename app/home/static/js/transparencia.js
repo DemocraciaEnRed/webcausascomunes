@@ -32,6 +32,13 @@ $(document).ready(function() {
     dtApi = $('#data-csv').DataTable({
         // cargamos nombres de columnas
         "columns": dtHeadersArr,
+        columnDefs: [
+            {
+                // mala práctica, hardié el num de la columna importe
+                targets: 1,
+                className: 'dt-body-right'
+            }
+        ],
 
         // cargamos textos en español para los botones y demás
         "language": {
@@ -66,6 +73,10 @@ function strToDate(s){
     return new Date(parts[2], parts[1] - 1, parts[0]);
 }
 
+function floatToStr(f){
+    return (f).toLocaleString('en');
+}
+
 function sortedDict(dict){
     var items = Object.keys(dict).map(function(key) {
       return [key, dict[key]];
@@ -82,22 +93,38 @@ function sortedDict(dict){
     return retDict;
 }
 
+function roundFloat(f, nDecimals){
+    pw10 = Math.pow(10, nDecimals);
+    return Math.round(f * pw10) / pw10
+}
+
 function roundDictVals(dict){
     for (k in dict){
         if (typeof(dict[k]) === 'number')
-            dict[k] = Math.round(dict[k] * 100) / 100
+            dict[k] = roundFloat(dict[k], 2)
     }
     return dict
 }
 
+function tooltipFloat2strCb(tooltipItem, data) {
+    var label = data.labels[tooltipItem.index] || '';
+
+    if (label) {
+        label += ': ';
+    }
+    floatData = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
+    label += floatToStr(roundFloat(floatData, 2));
+    return label;
+}
+
 function createGraficoCatesImportes(){
-    cates = dtApi.column('categoria:name').data()
-    importes = dtApi.column('importe:name').data()
+    cates = dtApi.column('Categoria:name').data()
+    importes = dtApi.column('Importe:name').data()
 
     catesImporte = {}
     bgCols = []
     for (i=0; i<cates.length; i++){
-        catItem=cates[i].toLowerCase().replace('&amp;','&')
+        catItem=cates[i].replace('&amp;','&')
         impItem=parseFloat(importes[i])
 
         if (catItem in catesImporte)
@@ -108,7 +135,7 @@ function createGraficoCatesImportes(){
         bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
     }
 
-    catesImporte = sortedDict(roundDictVals(catesImporte))
+    catesImporte = sortedDict(catesImporte)
 
     var chart = new Chart($('#chart-importe-categoria'), {
         type: 'doughnut',
@@ -121,7 +148,12 @@ function createGraficoCatesImportes(){
             labels: Object.keys(catesImporte)
         },
         options: {
-            legend: {position:'left'}
+            legend: {position:'left'},
+            tooltips: {
+                callbacks: {
+                    label: tooltipFloat2strCb
+                }
+            }
         }
     });
     return chart
@@ -129,13 +161,13 @@ function createGraficoCatesImportes(){
 
 
 function createGraficoConcepsImportes(){
-    conceps = dtApi.column('concepto:name').data()
-    importes = dtApi.column('importe:name').data()
+    conceps = dtApi.column('Concepto:name').data()
+    importes = dtApi.column('Importe:name').data()
 
     concepsImporte = {}
     bgCols = []
     for (i=0; i<conceps.length; i++){
-        conItem=conceps[i].toLowerCase().replace('&amp;','&')
+        conItem=conceps[i].replace('&amp;','&')
         impItem=parseFloat(importes[i])
 
         if (conItem.indexOf('honorarios profesionales') != -1)
@@ -149,7 +181,7 @@ function createGraficoConcepsImportes(){
         bgCols.push(window.chartColors[Object.keys(window.chartColors)[(i+1)%Object.keys(window.chartColors).length]])
     }
 
-    concepsImporte = sortedDict(roundDictVals(concepsImporte))
+    concepsImporte = sortedDict(concepsImporte)
 
     var chart = new Chart($('#chart-importe-concepto'), {
         type: 'doughnut',
@@ -164,6 +196,11 @@ function createGraficoConcepsImportes(){
         options: {
             legend: {
                 position:'left',
+            },
+            tooltips: {
+                callbacks: {
+                    label: tooltipFloat2strCb
+                }
             }
         }
     });
@@ -172,8 +209,8 @@ function createGraficoConcepsImportes(){
 
 
 function createGraficoGastosTiempo(){
-    fechas = dtApi.column('fecha:name').data()
-    importes = dtApi.column('importe:name').data()
+    fechas = dtApi.column('Fecha:name').data()
+    importes = dtApi.column('Importe:name').data()
 
     fechasImporte = {}
     bgCols = []
@@ -190,8 +227,6 @@ function createGraficoGastosTiempo(){
 
         bgCols.push(window.chartColors[Object.keys(window.chartColors)[i%Object.keys(window.chartColors).length]])
     }
-
-    roundDictVals(fechasImporte)
 
     monthNums = Object.keys(fechasImporte)
     monthNames = []
@@ -212,7 +247,12 @@ function createGraficoGastosTiempo(){
             labels: monthNames
         },
         options: {
-            legend: {display: false}
+            legend: {display: false},
+            tooltips: {
+                callbacks: {
+                    label: tooltipFloat2strCb
+                }
+            }
         }
     });
     return chart

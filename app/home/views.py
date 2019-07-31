@@ -226,6 +226,8 @@ def cuentas():
             date = ''
         fechas_epoch.append(date)
 
+    presu_heads = [h.capitalize() for h in presu_heads]
+
     return render_template(
         'transparencia.html',
         navs=get_menu_navs(),

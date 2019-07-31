@@ -7,7 +7,7 @@ csv_headers = ('fecha', 'importe', 'categoria', 'concepto', 'descripcion', 'prov
                'tipo de comprobante', 'forma de pago', 'original')
 
 exclude_headers = {'proveedor', 'original'}
-exclude_headers_i = [csv_headers.index(h) for h in exclude_headers]
+exclude_headers_i = sorted([csv_headers.index(h) for h in exclude_headers], reverse=True)
 
 rendered_headers = [h for h in csv_headers if h not in exclude_headers]
 
