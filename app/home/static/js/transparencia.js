@@ -17,15 +17,22 @@ $(document).ready(function() {
         dtHeadersArr.push( { 'name': _datatable_headers[i] } )
 
     // setteamos renderer de la columna 'original' para que genere anchors de sus urls
-    /*for (i in dtHeadersArr){
-        if (dtHeadersArr[i].name == 'original')
+    for (i in dtHeadersArr){
+        /*if (dtHeadersArr[i].name == 'Original')
             dtHeadersArr[i]['render'] = function(data, type, row, meta){
                 if(type === 'display' && data && data != 'N/A'){
                     data = '<a href="' + data + '" target="_blank">' + data + '</a>';
                 }
                 return data;
+            }*/
+        if (dtHeadersArr[i].name == 'Importe')
+            dtHeadersArr[i]['render'] = function(data, type, row, meta){
+                if(type === 'display'){
+                    data = floatToStr(data);
+                }
+                return data;
             }
-    }*/
+    }
 
     console.log(dtHeadersArr)
 
@@ -73,8 +80,22 @@ function strToDate(s){
     return new Date(parts[2], parts[1] - 1, parts[0]);
 }
 
+function roundFloat(f, nDecimals){
+    pw10 = Math.pow(10, nDecimals);
+    return Math.round(f * pw10) / pw10
+}
+
+_decimalChar = ','
 function floatToStr(f){
-    return (f).toLocaleString('en');
+    fStr = (roundFloat(parseFloat(f), 2)).toLocaleString('es')
+
+    decI = fStr.indexOf(_decimalChar)
+    if (decI == -1)
+        fStr += _decimalChar + '00'
+    else if (decI == fStr.length - 2)
+        fStr += '0'
+
+    return fStr;
 }
 
 function sortedDict(dict){
@@ -93,11 +114,6 @@ function sortedDict(dict){
     return retDict;
 }
 
-function roundFloat(f, nDecimals){
-    pw10 = Math.pow(10, nDecimals);
-    return Math.round(f * pw10) / pw10
-}
-
 function roundDictVals(dict){
     for (k in dict){
         if (typeof(dict[k]) === 'number')
@@ -113,7 +129,7 @@ function tooltipFloat2strCb(tooltipItem, data) {
         label += ': ';
     }
     floatData = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
-    label += floatToStr(roundFloat(floatData, 2));
+    label += floatToStr(floatData);
     return label;
 }
 
