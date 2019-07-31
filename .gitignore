@@ -5,3 +5,4 @@ venv/
 .env
 git-branches.sh
 gsheetsapi-test.py
+credentials.json
