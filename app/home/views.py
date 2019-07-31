@@ -213,7 +213,7 @@ def cuentas():
 
     import app.datos as datos
     # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
-    presu_heads = datos.get_presu_headers()
+    presu_heads = datos.get_rendered_headers()
     presu_data = datos.get_rows_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
 
     fechas_epoch = []
