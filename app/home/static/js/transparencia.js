@@ -17,7 +17,7 @@ $(document).ready(function() {
         dtHeadersArr.push( { 'name': _datatable_headers[i] } )
 
     // setteamos renderer de la columna 'original' para que genere anchors de sus urls
-    for (i in dtHeadersArr){
+    /*for (i in dtHeadersArr){
         if (dtHeadersArr[i].name == 'original')
             dtHeadersArr[i]['render'] = function(data, type, row, meta){
                 if(type === 'display' && data && data != 'N/A'){
@@ -25,7 +25,7 @@ $(document).ready(function() {
                 }
                 return data;
             }
-    }
+    }*/
 
     console.log(dtHeadersArr)
 
