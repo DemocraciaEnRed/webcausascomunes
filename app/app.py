@@ -12,8 +12,8 @@ def create_app():
         static_folder=None,
         template_folder=None)
 
-    # cofigs = Azure | Mooo | Local | Der
-    config = os.environ.get('FLASK_CONFIG') or 'Azure'
+    # cofigs = Prod | Azure(=Prod) | Dev | Lan
+    config = os.environ.get('FLASK_CONFIG') or 'Prod'
     try:
         app.config.from_object(config_dict[config.capitalize()])
         app.logger.info('Usando config ' + config)
@@ -30,9 +30,8 @@ def create_app():
             app.config['_mailer_ok'] = True
         except Exception as e:
             log_err(app, 'No se pudo crear el mailer.', e, False)
-
-    # config blueprints
-    create_blueprints(app)
+    else:
+        app.logger.info('No usando Mailer')
 
     # configurar e inicializar scss
     if 'USE_SCSS' not in app.config:
@@ -44,6 +43,8 @@ def create_app():
                 app.logger.info('Usando SCSS')
             except Exception as e:
                 log_err(app, 'No se pudo activar SCSS.', e, False)
+        else:
+            app.logger.info('No usando SCSS')
 
     # configurar e inicializar directus
     app.config['_directus_ok'] = False
@@ -58,12 +59,17 @@ def create_app():
                 app.config['_directus_ok'] = True
             except Exception as e:
                 log_err(app, 'No se pudo activar Directus.', e, True)
+        else:
+            app.logger.info('No usando Directus')
 
     # chequear locale en español para que las fechas salgan en español y no en inglés
     try:
         config_locale(app)
     except Exception as e:
         log_err(app, 'No se pudo configurar la locale.', e, True)
+
+    # config blueprints
+    create_blueprints(app)
 
     return app
 
