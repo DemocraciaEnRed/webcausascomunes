@@ -65,7 +65,7 @@ def not_found(e):
 @blueprint.before_request
 def before_request():
     # si no está activo directus cancelamos la request, pero si es a un recurso estático la dejamos pasar
-    if not current_app.config['_directus_ok'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
+    if not current_app.config['_using_directus'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
         log_err(current_app, 'Directus in error state.', None, True)
 
         msg = "La página se encuentra en mantenimiento<br>"\
@@ -212,9 +212,13 @@ def cuentas():
     dimgs = directus.dapi.get_imgs_pagina('Contacto')
 
     import app.datos as datos
-    # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
     presu_heads = datos.get_rendered_headers()
-    presu_data = datos.get_rows_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
+
+    if current_app._gsheetapi:
+        presu_data = datos.get_rows_from_gsheet(current_app._gsheetapi)
+    else:
+        # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
+        presu_data = datos.get_rows_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
 
     fechas_epoch = []
     fecha_i = presu_heads.index('fecha')

@@ -1,6 +1,4 @@
 import csv
-# import json
-# import io
 
 # csv original - https://docs.google.com/spreadsheets/d/1xsr1szDVCsgl7UfJMv6mGaDiVObtd_FqFJHHs4qwDIM
 csv_headers = ('fecha', 'importe', 'categoria', 'concepto', 'descripcion', 'proveedor',
@@ -16,6 +14,8 @@ def get_rendered_headers():
     return rendered_headers
 
 
+'''# import json
+# import io
 def get_cols_from_csv(csv_path):
     # jsonfile = io.StringIO('')
 
@@ -32,7 +32,19 @@ def get_cols_from_csv(csv_path):
         # jsonfile.write('\n')
     # jsonfile.seek(0)
 
-    return cols
+    return cols'''
+
+
+def _exclude_columns(rows_iterable):
+    rows = []
+
+    for row in rows_iterable:
+        for ex_h_i in exclude_headers_i:
+            if ex_h_i < len(row):
+                del row[ex_h_i]
+        rows.append(row)
+
+    return rows
 
 
 def get_rows_from_csv(csv_path):
@@ -42,10 +54,13 @@ def get_rows_from_csv(csv_path):
     # saltear encabezados
     next(reader)
 
-    rows = []
-    for row in reader:
-        for ex_h_i in exclude_headers_i:
-            del row[ex_h_i]
-        rows.append(row)
+    return _exclude_columns(reader)
 
-    return rows
+
+def get_rows_from_gsheet(gsheet_api):
+    if not gsheet_api.authenticated:
+        gsheet_api.authenticate()
+
+    raw_rows = gsheet_api.get_rows()
+
+    return _exclude_columns(raw_rows)

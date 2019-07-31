@@ -6,6 +6,14 @@ from .logger import log_err
 from logging import INFO
 
 
+def _check_config_field(app, field):
+    if field not in app.config:
+        app.logger.warn(f'No se ha detectado el campo {field} en la configuración')
+        return False
+    else:
+        return True
+
+
 def create_app():
     app = Flask(
         __name__,
@@ -33,47 +41,56 @@ def create_app():
     except Exception as e:
         log_err(app, f'No se pudo cargar la configuración {config}.', e, False)
 
-    # config mailer
-    if app.config.get('SMTP_SEND_ERRORS'):
-        app.config['_mailer_ok'] = False
-        try:
-            from .mailer import Mailer
-            app._mailer = Mailer(app)
-            app.logger.info('Usando Mailer')
-            app.config['_mailer_ok'] = True
-        except Exception as e:
-            log_err(app, 'No se pudo crear el mailer.', e, False)
-    else:
-        app.logger.info('No usando Mailer')
+    def _extension_loader(config_field, extension_name, flag_name=None):
+        def real_decorator(extension_loader):
+            def wrapper(*args, **kwargs):
+                if flag_name:
+                    app.config[flag_name] = False
+                if config_field not in app.config:
+                    log_err(app, f'No se ha detectado el campo {config_field} en la configuración. Extensión {extension_name} desactivada.', None, False)
+                else:
+                    config_val = str(app.config.get(config_field, '')).lower()
+                    if config_val and config_val not in ['no', 'false', '0']:
+                        try:
+                            extension_loader(*args, **kwargs)
+                            app.logger.info(f'Extensión {extension_name} cargada')
+                            if flag_name:
+                                app.config[flag_name] = True
+                        except Exception as e:
+                            log_err(app, f'No se pudo activar la extensión {extension_name}.', e, False)
+                    else:
+                        app.logger.info(f'Extensión {extension_name} desactivada')
 
-    # configurar e inicializar scss
-    if 'USE_SCSS' not in app.config:
-        app.logger.warn('No se ha detectado el campo USE_SCSS en la configuración')
-    else:
-        if app.config['USE_SCSS']:
-            try:
-                create_scss_watch(app)
-                app.logger.info('Usando SCSS')
-            except Exception as e:
-                log_err(app, 'No se pudo activar SCSS.', e, False)
-        else:
-            app.logger.info('No usando SCSS')
+            return wrapper
+        return real_decorator
 
-    # configurar e inicializar directus
-    app.config['_directus_ok'] = False
-    if 'USE_DIRECTUS' not in app.config:
-        app.logger.warn('No se ha detectado el campo USE_DIRECTUS en la configuración')
-    else:
-        if app.config['USE_DIRECTUS']:
-            try:
-                import app.directus as directus
-                directus.init_flask_app(app)
-                app.logger.info('Usando Directus')
-                app.config['_directus_ok'] = True
-            except Exception as e:
-                log_err(app, 'No se pudo activar Directus.', e, True)
-        else:
-            app.logger.info('No usando Directus')
+    @_extension_loader("USE_SMTP", "Mailer", "_using_mailer")
+    def load_mailer():
+        from app.mailer import Mailer
+        app._mailer = Mailer(app)
+
+    @_extension_loader("USE_SCSS", "SCSS")
+    def load_scss():
+        from flask_scss import Scss
+        Scss(
+            app,
+            static_dir=os.path.dirname(os.path.abspath(__file__))+'/home/static/css',
+            asset_dir=os.path.dirname(os.path.abspath(__file__))+'/home/static/scss')
+
+    @_extension_loader("USE_DIRECTUS", "Directus", "_using_directus")
+    def load_directus():
+        import app.directus as directus
+        directus.init_flask_app(app)
+
+    @_extension_loader("USE_GSHEETS", "Google Sheets", "_using_gsheets")
+    def load_google_sheets():
+        from app.google_sheets import GSheetApi
+        app._gsheetapi = GSheetApi(app)
+
+    load_mailer()
+    load_scss()
+    load_directus()
+    load_google_sheets()
 
     # chequear locale en español para que las fechas salgan en español y no en inglés
     try:
@@ -90,14 +107,6 @@ def create_app():
 def create_blueprints(app):
     from .home import blueprint as home_bp
     app.register_blueprint(home_bp)
-
-
-def create_scss_watch(app):
-    from flask_scss import Scss
-    Scss(
-        app,
-        static_dir=os.path.dirname(os.path.abspath(__file__))+'/home/static/css',
-        asset_dir=os.path.dirname(os.path.abspath(__file__))+'/home/static/scss')
 
 
 def config_locale(app):

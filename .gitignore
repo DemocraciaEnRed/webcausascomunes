@@ -3,6 +3,9 @@ __pycache__/
 venv/
 .DS_Store
 .env
+
 git-branches.sh
+
 gsheetsapi-test.py
 credentials.json
+token.pickle
