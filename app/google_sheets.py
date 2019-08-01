@@ -32,7 +32,7 @@ class GSheetApi:
                 creds.refresh(Request())
             else:
                 import json
-                json_config = json.loads(f'''{{"web":
+                json_config = json.loads(f'''{{"installed":
                   {{"client_id":"{self.client_id}",
                     "project_id":"{self.project_id}",
                     "auth_uri":"https://accounts.google.com/o/oauth2/auth",

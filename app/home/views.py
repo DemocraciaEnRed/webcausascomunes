@@ -214,7 +214,8 @@ def cuentas():
     import app.datos as datos
     presu_heads = datos.get_rendered_headers()
 
-    if current_app._gsheetapi:
+    # if current_app._gsheetapi:
+    if False:
         presu_data = datos.get_rows_from_gsheet(current_app._gsheetapi)
     else:
         # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
