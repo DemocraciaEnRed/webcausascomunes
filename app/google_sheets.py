@@ -31,9 +31,8 @@ class GSheetApi:
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
             else:
-                import io
-                jsonfile = io.StringIO('')
-                jsonfile.write(f'''{{"installed":
+                import json
+                json_config = json.loads(f'''{{"web":
                   {{"client_id":"{self.client_id}",
                     "project_id":"{self.project_id}",
                     "auth_uri":"https://accounts.google.com/o/oauth2/auth",
@@ -43,11 +42,12 @@ class GSheetApi:
                     "redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]
                   }}
                 }}''')
-                jsonfile.seek(0)
 
                 # If modifying these scopes, delete the file token.pickle.
                 scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-                flow = InstalledAppFlow.from_client_secrets_file(jsonfile, scopes)
+                flow = InstalledAppFlow.from_client_config(json_config, scopes)
+                # flow = InstalledAppFlow.from_client_secrets_file(jsonfile, scopes)
+
                 creds = flow.run_local_server(port=0)
 
             # Save the credentials for the next run
