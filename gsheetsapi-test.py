@@ -28,8 +28,26 @@ def main():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
+            GSHEETS_CLIENT_ID = "501759720483-gn6a26gprv3tkk73qk5admsrt1l1pkr7.apps.googleusercontent.com"
+            GSHEETS_PROJECT_ID = "quickstart-1563997715100"
+            GSHEETS_CLIENT_SECRET = "RckfIm91JvE38evQGBI5mNAL"
+            GSHEETS_SHEET_ID = "1ln55tuBltKipY5LDTEjRO6Fv79xLLK6COzfVu8ItX8I"
+            import io
+            jsonfile = io.StringIO('')
+            jsonfile.write(f'''{{"installed":
+              {{"client_id":"{GSHEETS_CLIENT_ID}",
+                "project_id":"{GSHEETS_PROJECT_ID}",
+                "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+                "token_uri":"https://oauth2.googleapis.com/token",
+                "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+                "client_secret":"{GSHEETS_CLIENT_SECRET}",
+                "redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]
+              }}
+            }}''')
+            jsonfile.seek(0)
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                jsonfile, SCOPES)
+            # esta línea te pide validación
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
@@ -49,7 +67,7 @@ def main():
         print('Name, Major:')
         for row in values:
             # Print columns A and E, which correspond to indices 0 and 4.
-            print('%s, %s' % (row[0], row[4]))
+            print(row)
 
 if __name__ == '__main__':
     main()
