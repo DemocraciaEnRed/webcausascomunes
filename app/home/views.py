@@ -64,7 +64,7 @@ def not_found(e):
 @blueprint.before_request
 def before_request():
     # si no está activo directus cancelamos la request, pero si es a un recurso estático la dejamos pasar
-    if not current_app.config['_directus_ok'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
+    if not current_app.config['_using_directus'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
         log_err(current_app, 'Directus in error state.', None, True)
 
         msg = "La página se encuentra en mantenimiento<br>"\
@@ -75,7 +75,8 @@ def before_request():
 @blueprint.after_request
 def after_request(response):
     # para que el cliente pueda (solo) cargar las imágenes del dominio de directus
-    response.headers['Access-Control-Allow-Origin'] = current_app.config['DIRECTUS_URL_EXTERNAL']
+    if current_app.config['_using_directus']:
+        response.headers['Access-Control-Allow-Origin'] = current_app.config['DIRECTUS_URL_EXTERNAL']
     return response
 
 

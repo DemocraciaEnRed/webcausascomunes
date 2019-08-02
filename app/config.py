@@ -29,7 +29,6 @@ class ProductionConfig(BaseConfig):
     SECRET_KEY = os.environ.get('FLASK_SECRET_KEY')
 
     USE_SCSS = False
-    SMTP_SEND_ERRORS = os.environ.get('SMTP_SEND_ERRORS') or True
 
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -39,7 +38,6 @@ class DevelopmentConfig(BaseConfig):
     SECRET_KEY = os.environ.get('FLASK_SECRET_KEY') or 'dummy secret key'
 
     USE_SCSS = True
-    SMTP_SEND_ERRORS = os.environ.get('SMTP_SEND_ERRORS') or False
 
     SERVER_HOST = 'localhost'
     SERVER_PORT = 5000
