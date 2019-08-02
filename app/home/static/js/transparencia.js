@@ -122,6 +122,14 @@ function roundDictVals(dict){
     return dict
 }
 
+function strArrToTitle(arr){
+    for (i=0; i<arr.length; i++){
+        allLower = arr[i].toLowerCase();
+        arr[i] = allLower[0].toUpperCase() + allLower.slice(1);
+    }
+    return arr;
+}
+
 function tooltipFloat2strCb(tooltipItem, data) {
     var label = data.labels[tooltipItem.index] || '';
 
@@ -152,6 +160,14 @@ function createGraficoCatesImportes(){
     }
 
     catesImporte = sortedDict(catesImporte)
+    catesLabels = Object.keys(catesImporte)
+    for (i=0; i<catesLabels.length; i++){
+        if (catesLabels[i]=='LEGAL CONTABLE FINANCIERO ADMINISTRATIVO')
+            catesLabels[i]='ADMINISTRATIVO'
+        else if (catesLabels[i]=='COMISIONES BANCARIAS, IMPUESTOS')
+            catesLabels[i]='COMISIONES BANCARIAS'
+    }
+    strArrToTitle(catesLabels)
 
     var chart = new Chart($('#chart-importe-categoria'), {
         type: 'doughnut',
@@ -161,7 +177,7 @@ function createGraficoCatesImportes(){
                 backgroundColor: bgCols,
                 data: Object.values(catesImporte)
             }],
-            labels: Object.keys(catesImporte)
+            labels: catesLabels
         },
         options: {
             legend: {position:'left'},
