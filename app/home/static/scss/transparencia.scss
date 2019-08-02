@@ -1,7 +1,10 @@
 @import 'vars';
 
 main {
-    padding-top: 18vw;
+    padding-top: 6rem;
+    @media (min-width: $width-medium) {
+        padding-top: 18vw;
+    }
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:active {

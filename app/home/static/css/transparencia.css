@@ -42,20 +42,24 @@
                         padding-top: 12vw; }
 
                         main {
-                          padding-top: 18vw; }
+                          padding-top: 6rem; }
+                          @media (min-width: 768px) {
+                            main {
+                              padding-top: 18vw;   }
+}
 
-                          .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
-                          .dataTables_wrapper .dataTables_paginate .paginate_button:active {
-                            background: none !important;
-                            border: none !important; }
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+  background: none !important;
+  border: none !important; }
 
-                            .section__title {
-                              color: #2a4b8c;
-                              font-size: 1.25rem;
-                              font-weight: 600; }
-                              @media (min-width: 768px) {
-                                .section__title {
-                                  font-size: 2rem;   }
+  .section__title {
+    color: #2a4b8c;
+    font-size: 1.25rem;
+    font-weight: 600; }
+    @media (min-width: 768px) {
+      .section__title {
+        font-size: 2rem;   }
 }
 
 .section__subtitle {
