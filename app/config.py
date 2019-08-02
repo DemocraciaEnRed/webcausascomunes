@@ -8,11 +8,18 @@ class BaseConfig(object):
     DIRECTUS_API_PATH = '/api/1.1/'
     DIRECTUS_TOKEN = os.environ.get('DIRECTUS_TOKEN', '')
 
+    USE_SMTP = os.environ.get('USE_SMTP', '')
     SMTP_SERVER = os.environ.get('SMTP_SERVER', '')
     SMTP_PORT = os.environ.get('SMTP_PORT', '')
     SMTP_USER = os.environ.get('SMTP_USER', '')
     SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
     SMTP_TARGET_EMAIL = os.environ.get('SMTP_TARGET_EMAIL', '')
+
+    USE_GSHEETS = os.environ.get('USE_GSHEETS', '')
+    GSHEETS_CLIENT_ID = os.environ.get('GSHEETS_CLIENT_ID', '')
+    GSHEETS_PROJECT_ID = os.environ.get('GSHEETS_PROJECT_ID', '')
+    GSHEETS_CLIENT_SECRET = os.environ.get('GSHEETS_CLIENT_SECRET', '')
+    GSHEETS_SHEET_ID = os.environ.get('GSHEETS_SHEET_ID', '')
 
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@
