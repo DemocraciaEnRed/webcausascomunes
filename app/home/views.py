@@ -82,8 +82,8 @@ def after_request(response):
 @blueprint.route("/", methods=['GET'])
 def index():
     import app.directus as directus
-    dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+    # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+    # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
     dtextos = directus.dapi.get_textos_pagina('Home')
     dimgs = directus.dapi.get_imgs_pagina('Home')
     itemspropuestas = directus.dapi.get_items_propuestas()
@@ -94,8 +94,8 @@ def index():
     return render_template(
         'index.html',
         navs=get_menu_navs(),
-        dimgsnav=dimgsnav,
-        dimgsfooter=dimgsfooter,
+        # dimgsnav=dimgsnav,
+        # dimgsfooter=dimgsfooter,
         dtextos=dtextos,
         dimgs=dimgs,
         # itemsnovedades=itemsnovedades,
@@ -108,8 +108,8 @@ def index():
 @blueprint.route("/contacto", methods=['GET'])
 def contacto():
     import app.directus as directus
-    dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+    # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+    # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
     dtextos = directus.dapi.get_textos_pagina('Contacto')
     dimgs = directus.dapi.get_imgs_pagina('Contacto')
@@ -117,8 +117,8 @@ def contacto():
     return render_template(
         'contacto.html',
         navs=get_menu_navs(),
-        dimgsnav=dimgsnav,
-        dimgsfooter=dimgsfooter,
+        # dimgsnav=dimgsnav,
+        # dimgsfooter=dimgsfooter,
         dtextos=dtextos,
         dimgs=dimgs,
         isstatic=False)
@@ -131,8 +131,8 @@ def causa(agenda):
 
     import app.directus as directus
 
-    dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+    # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+    # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
     dtextos = directus.dapi.get_textos_pagina(agenda)
     dimgs = directus.dapi.get_imgs_pagina(agenda)
@@ -144,8 +144,8 @@ def causa(agenda):
 
     variables = {
         'navs': get_menu_navs(),
-        'dimgsnav': dimgsnav,
-        'dimgsfooter': dimgsfooter,
+        # 'dimgsnav': dimgsnav,
+        # 'dimgsfooter': dimgsfooter,
 
         'dtextos': dtextos,
         'dimgs': dimgs,
