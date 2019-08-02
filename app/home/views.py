@@ -208,8 +208,7 @@ def cuentas():
     dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
     dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
-    dtextos = directus.dapi.get_textos_pagina('Contacto')
-    dimgs = directus.dapi.get_imgs_pagina('Contacto')
+    dtextos = directus.dapi.get_textos_pagina('Cuentas')
 
     import app.datos as datos
     presu_heads = datos.get_rendered_headers()
@@ -239,7 +238,6 @@ def cuentas():
         dimgsnav=dimgsnav,
         dimgsfooter=dimgsfooter,
         dtextos=dtextos,
-        dimgs=dimgs,
         presu_heads=presu_heads,
         presu_data=presu_data,
         fechas_epoch=fechas_epoch,
