@@ -136,6 +136,7 @@ def causa(agenda):
 
     dtextos = directus.dapi.get_textos_pagina(agenda)
     dimgs = directus.dapi.get_imgs_pagina(agenda)
+    dtextoscausas = directus.dapi.get_textos_pagina('Causas')
 
     itemstemas = directus.dapi.get_items_tema(agenda)
     itemsseguidores = directus.dapi.get_items_seguidor(agenda)
@@ -149,6 +150,7 @@ def causa(agenda):
 
         'dtextos': dtextos,
         'dimgs': dimgs,
+        'dtextoscausas': dtextoscausas,
 
         'itemstemas': itemstemas,
         'itemsseguidores': itemsseguidores,
