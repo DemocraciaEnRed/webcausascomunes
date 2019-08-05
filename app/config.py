@@ -14,6 +14,7 @@ class BaseConfig(object):
     SMTP_USER = os.environ.get('SMTP_USER', '')
     SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
     SMTP_TARGET_EMAIL = os.environ.get('SMTP_TARGET_EMAIL', '')
+    SMTP_TEST_ON_START = os.environ.get('SMTP_TEST_ON_START', '')
 
     USE_GSHEETS = os.environ.get('USE_GSHEETS', '')
     GSHEETS_CLIENT_ID = os.environ.get('GSHEETS_CLIENT_ID', '')
