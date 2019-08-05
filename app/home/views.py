@@ -8,22 +8,22 @@ blueprint = Blueprint(
     static_folder="static",
     template_folder="templates")
 
-accepted_causas = [
-    'genero',
-    'ambiente',
-    'ciencia',
-    'vivienda',
-    'transparencia',
-    'drogas',
-    'trabajo'
-]
+accepted_causas = {
+    'genero': 'Género',
+    'ambiente': 'Ambiente',
+    'ciencia': 'Ciencia',
+    'vivienda': 'Vivienda',
+    'transparencia': 'Transparencia',
+    'drogas': 'Drogas',
+    'trabajo': 'Trabajo'
+}
 
 
 def get_menu_navs():
     navs = {'index': '', 'causas': '', 'agenda': '', 'contacto': ''}
     if request.endpoint:
         endpoint = request.endpoint.split('.')[1] if '.' in request.endpoint else request.endpoint
-        if endpoint in accepted_causas:
+        if endpoint in accepted_causas.keys():
             navs['causas'] = 'active'
         elif endpoint in navs.keys():
             navs[endpoint] = 'active'
@@ -126,7 +126,7 @@ def contacto():
 
 def causa(agenda):
     get_menu_navs()
-    if agenda not in accepted_causas:
+    if agenda not in accepted_causas.keys():
         return redirect(url_for('home.index'))
 
     import app.directus as directus
@@ -134,9 +134,9 @@ def causa(agenda):
     dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
     dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
+    dtextoscausas = directus.dapi.get_textos_pagina('Causas')
     dtextos = directus.dapi.get_textos_pagina(agenda)
     dimgs = directus.dapi.get_imgs_pagina(agenda)
-    dtextoscausas = directus.dapi.get_textos_pagina('Causas')
 
     itemstemas = directus.dapi.get_items_tema(agenda)
     itemsseguidores = directus.dapi.get_items_seguidor(agenda)
@@ -148,9 +148,9 @@ def causa(agenda):
         'dimgsnav': dimgsnav,
         'dimgsfooter': dimgsfooter,
 
+        'dtextoscausas': dtextoscausas,
         'dtextos': dtextos,
         'dimgs': dimgs,
-        'dtextoscausas': dtextoscausas,
 
         'itemstemas': itemstemas,
         'itemsseguidores': itemsseguidores,
@@ -158,7 +158,8 @@ def causa(agenda):
         'itemsagenda': itemsagenda,
 
         'isstatic': False,
-        'show_wiki_btn': True}
+        'show_wiki_btn': True,
+        'nombre_causa': accepted_causas[agenda]}
 
     if agenda == 'ciencia':
         variables['show_wiki_btn'] = False
