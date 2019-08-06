@@ -14,6 +14,10 @@ def _check_config_field(app, field):
         return True
 
 
+def _config_is_true(env):
+    return str(env).lower() not in ['no', 'false', '0']
+
+
 def create_app():
     app = Flask(
         __name__,
@@ -50,8 +54,7 @@ def create_app():
                     log_err(app, f'No se ha detectado el campo {config_field} en la configuración.'
                             f'Extensión {extension_name} desactivada.', None, False)
                 else:
-                    config_val = str(app.config.get(config_field, '')).lower()
-                    if config_val and config_val not in ['no', 'false', '0']:
+                    if _config_is_true(app.config.get(config_field, '')):
                         try:
                             extension_loader(*args, **kwargs)
                         except Exception as e:
@@ -70,6 +73,9 @@ def create_app():
     def load_mailer():
         from app.mailer import Mailer
         app._mailer = Mailer(app)
+        if _config_is_true(app.config.get('SMTP_TEST_ON_START', '')):
+            app._mailer.send_mail('Mail de prueba de web de causas comunes', 'Hola 123')
+            app.logger.info(f'Mail de prueba enviado')
 
     @_extension_loader("USE_SCSS", "SCSS")
     def load_scss():
