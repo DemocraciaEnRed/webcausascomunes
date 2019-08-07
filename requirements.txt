@@ -1,0 +1,5 @@
+flask
+flask-scss
+requests
+markdown2
+python-dotenv
