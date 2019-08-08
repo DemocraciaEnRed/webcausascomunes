@@ -199,7 +199,7 @@ function createGraficoConcepsImportes(){
     concepsImporte = {}
     bgCols = []
     for (i=0; i<conceps.length; i++){
-        conItem=conceps[i].replace('&amp;','&')
+        conItem=conceps[i].replace('&amp;','&').toLowerCase()
         impItem=parseFloat(importes[i])
 
         if (conItem.indexOf('honorarios profesionales') != -1)
@@ -223,7 +223,7 @@ function createGraficoConcepsImportes(){
                 backgroundColor: bgCols,
                 data: Object.values(concepsImporte)
             }],
-            labels: Object.keys(concepsImporte)
+            labels: strArrToTitle(Object.keys(concepsImporte))
         },
         options: {
             legend: {
