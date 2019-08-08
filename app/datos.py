@@ -1,6 +1,6 @@
 import csv
 
-# csv original - https://docs.google.com/spreadsheets/d/1xsr1szDVCsgl7UfJMv6mGaDiVObtd_FqFJHHs4qwDIM
+# csv original - https://docs.google.com/spreadsheets/d/1ln55tuBltKipY5LDTEjRO6Fv79xLLK6COzfVu8ItX8I/edit#gid=0
 csv_headers = ('fecha', 'importe', 'categoria', 'concepto', 'descripcion', 'proveedor',
                'tipo de comprobante', 'forma de pago', 'original')
 
