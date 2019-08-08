@@ -1,45 +1,53 @@
 FECHA,IMPORTE,CATEGORIA,CONCEPTO,DESCRIPCION,PROVEEDOR,TIPO DE COMPROBANTE,FORMA DE PAGO,Original
-27/05/2019,1660,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP.LEY 25413, IVA CAJA AHORRO, MANT.Y EXTRACTO,HSBC,Extracto
-04/06/2019,270,COMUNICACION & SOCIAL MEDIA,Producos & Servicios,"dominio ""causascomunes.org/com"" ",nic.ar,Factura C,Tarjeta de crédito ,https://drive.google.com/file/d/1BH29mfaObZM-wPvG5MbW9I7DxByXIV29/view?usp=sharing
-04/06/2019,954.68,COMUNICACION & SOCIAL MEDIA,Productos & Servicios,"dominio ""causascomunes.com.ar"" ",GoDaddy.com,recibo,Tarjeta de crédito ,https://drive.google.com/file/d/1gCEiCCz_1sGoRxmUwtLpBbQxo8dadRkL/view?usp=sharing
+27/05/2019,1660,"LEGAL, CONTABLE, FINANCIERO",Comisión bancaria, MANT.Y EXTRACTO, MANT.Y EXTRACTO,HSBC,Extracto,Debito
+04/06/2019,270,COMUNICACION / SOCIAL MEDIA,Productos / Servicios,"dominio ""causascomunes.org/com"" ",nic.ar,Factura C,Tarjeta de crédito ,https://drive.google.com/file/d/1BH29mfaObZM-wPvG5MbW9I7DxByXIV29/view?usp=sharing
+04/06/2019,954.68,COMUNICACION / SOCIAL MEDIA,Productos / Servicios,"dominio ""causascomunes.com.ar"" ",GoDaddy.com,recibo,Tarjeta de crédito ,https://drive.google.com/file/d/1gCEiCCz_1sGoRxmUwtLpBbQxo8dadRkL/view?usp=sharing
 25/06/2019,43500,GESTION GENERAL,Honorarios,"""honorarios profesionales"" - Inti Bonomo",Inti Bonomo,Factura C,Transferencia,https://drive.google.com/file/d/1GVAUzczHOhTgzoy8qdS-vxz3tVFOTu8D/view?usp=sharing
 25/06/2019,25000,EVENTOS,Honorarios,Honorarios profesionales proyesto CAUSAS COMUNES (participacion ciudadana),Don Powa,Factura C,Transferencia,https://drive.google.com/file/d/1H1afOJztpk1vVY5mo-s96UwaFRQncefa/view?usp=sharing
-25/06/2019,42000,GESTION GENERAL,Honorarios,Honorarios profesionales proyesto CAUSAS COMUNES (participacion ciudadana),Agustín Frizzera,Factura C,Transferencia,https://drive.google.com/file/d/1-SujC1WOzHMtSfsh4r1Azt0MvtP44nxH/view?usp=sharing
-26/06/2019,729,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-26/06/2019,49440,COMUNICACION & SOCIAL MEDIA,Honorarios,Honorarios profesionales - Dirección Comunicación - proyecto causas comunes,Mercedes D'Alessandro,Factura C,Transferencia,https://drive.google.com/file/d/1KoH8wvXmRLvzv6dtzbY_fbLy8LDBC2s6/view?usp=sharing
-26/06/2019,297.36,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-28/06/2019,543.53,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,Comisión???,-,Extracto,Débito,
-02/07/2019,8500,COMUNICACION & SOCIAL MEDIA,honorarios,Honorarios profesionales - Comunicación - Proyecto Causas Comunes - mes de Junio,Florencia Tundis,Factura C,Transferencia,https://drive.google.com/file/d/11amyjw-QVQOD5JO5hvOkxOU1AAe0QzXI/view?usp=sharing
-02/07/2019,25000,EVENTOS,Honorarios,honorarios,Don Powa,Factura C,Transferencia,https://drive.google.com/file/d/108bW6wf9pDixInq45Sf9KqDjkqEdzyNV/view?usp=sharing
-02/07/2019,42000,GESTION GENERAL,Honorarios,honorarios profesionales ,Agustín Frizzera,Factura C,Transferencia,https://drive.google.com/file/d/1s40mSzrM0hT8k4YQMQat-QRMCdWss96s/view?usp=sharing
-03/07/2019,25000,DESARROLLO - PROGRAMACIÓN,Honorarios,Honorarios x desarrollo de XXX,Francisco Pensa,Factura C,Transferencia,https://drive.google.com/file/d/11ikwfBZQtxFYxvse2s1DpI3__Y2mWpLs/view?usp=sharing
-04/07/2019,51,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-04/07/2019,150,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-04/07/2019,252,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-04/07/2019,150,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-10/07/2019,2678,EVENTOS,Producos & Servicios,Botones - Pins - 55 mm,PYMEDIA S.A.,Factura C,Transferencia,https://drive.google.com/file/d/1x8Jyq1L1boiRj0Rrkm4OSLgxvzLzuYKi/view?usp=sharing
-10/07/2019,2835,EVENTOS,Producos & Servicios,Portabanner DOBLE TENSOR 90x190cm con lona impresa,Palermo Gráfica,Factura C,Transferencia,https://drive.google.com/file/d/124xyip7jNEPxa1E5KqQ2xOn2QR2evU4o/view?usp=sharing
-11/07/2019,17,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-11/07/2019,17,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Producos & Servicios,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-11/07/2019,1040,EVENTOS,Producos & Servicios,B Dispenser Plastico / Bidon de 15 Litros Excedente,Tienda de Agua,Factura C,Transferencia,https://drive.google.com/file/d/1nT_BcHYYR4ZGtHcGrah1I8qi2jKiFBhZ/view?usp=sharing
-12/07/2019,6.24,"COMISIONES BANCARIAS, IMPUESTOS",Producos & Servicios,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+25/06/2019,42000,GESTION GENERAL,Honorarios,Honorarios profesionales - Coordinación General - proyecto causas comunes,Agustín Frizzera,Factura C,Transferencia,https://drive.google.com/file/d/1-SujC1WOzHMtSfsh4r1Azt0MvtP44nxH/view?usp=sharing
+26/06/2019,729,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+26/06/2019,49440,COMUNICACION / SOCIAL MEDIA,Honorarios,Honorarios profesionales - Dirección Comunicación - proyecto causas comunes,Mercedes D'Alessandro,Factura C,Transferencia,https://drive.google.com/file/d/1KoH8wvXmRLvzv6dtzbY_fbLy8LDBC2s6/view?usp=sharing
+26/06/2019,297.36,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+28/06/2019,543.53,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Débito,
+02/07/2019,8500,COMUNICACION / SOCIAL MEDIA,Honorarios,Honorarios profesionales - Comunicación - Proyecto Causas Comunes - mes de Junio,Florencia Tundis,Factura C,Transferencia,https://drive.google.com/file/d/11amyjw-QVQOD5JO5hvOkxOU1AAe0QzXI/view?usp=sharing
+02/07/2019,25000,EVENTOS,Honorarios,Honorarios profesionales proyesto CAUSAS COMUNES (participacion ciudadana),Don Powa,Factura C,Transferencia,https://drive.google.com/file/d/108bW6wf9pDixInq45Sf9KqDjkqEdzyNV/view?usp=sharing
+02/07/2019,42000,GESTION GENERAL,Honorarios,Honorarios profesionales - Coordinación General - proyecto causas comunes,Agustín Frizzera,Factura C,Transferencia,https://drive.google.com/file/d/1s40mSzrM0hT8k4YQMQat-QRMCdWss96s/view?usp=sharing
+03/07/2019,25000,DESARROLLO - PROGRAMACIÓN,Honorarios,Honorarios profesionales - Desarrollo tecnología - proyecto causas comunes,Francisco Pensa,Factura C,Transferencia,https://drive.google.com/file/d/11ikwfBZQtxFYxvse2s1DpI3__Y2mWpLs/view?usp=sharing
+04/07/2019,51,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+04/07/2019,150,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+04/07/2019,252,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+04/07/2019,150,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+10/07/2019,2678,EVENTOS,Productos / Servicios,Botones - Pins - 55 mm,PYMEDIA S.A.,Factura C,Transferencia,https://drive.google.com/file/d/1x8Jyq1L1boiRj0Rrkm4OSLgxvzLzuYKi/view?usp=sharing
+10/07/2019,2835,EVENTOS,Productos / Servicios,Portabanner DOBLE TENSOR 90x190cm con lona impresa,Palermo Gráfica,Factura C,Transferencia,https://drive.google.com/file/d/124xyip7jNEPxa1E5KqQ2xOn2QR2evU4o/view?usp=sharing
+11/07/2019,17,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+11/07/2019,17,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+11/07/2019,1040,EVENTOS,Productos / Servicios,B Dispenser Plastico / Bidon de 15 Litros Excedente,Tienda de Agua,Factura C,Transferencia,https://drive.google.com/file/d/1nT_BcHYYR4ZGtHcGrah1I8qi2jKiFBhZ/view?usp=sharing
+12/07/2019,6.24,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
 12/07/2019,40745,GESTION GENERAL,Honorarios,"""honorarios profesionales"" - Inti Bonomo",Inti Bonomo,Factura C,Transferencia,https://drive.google.com/file/d/1S1ZPoFFGYkp2Jjrx2VcwkaRHv-BRAuAf/view?usp=sharing
-12/07/2019,10000,COMUNICACIÓN,Honorarios,Honorarios profesionales - EDICIÓN - Proyecto Causas Comunes - mes de Julio ,Eric Damián Lakner,Factura C,Transferencia,https://drive.google.com/file/d/1zr124OlW9RO7HY6-XpvECAnA3C6CEy-a/view?usp=sharing
-12/07/2019,3000,EVENTOS,Producos & Servicios,"catering hackaton, 200 facturas",Angel Canete Ramirez,Factura C,Transferencia,https://drive.google.com/file/d/1JMiwzY7Wquy696NU4eD34InHQQs4hnWy/view?usp=sharing
-12/07/2019,5000,EVENTOS,Producos & Servicios,catering hackaton (100 sandwichs),Cosas de la Tierra de Ariana Reisin,Factura C,Efectivo,https://drive.google.com/file/d/19Du69-LxYHYSCnmE_o-UEMTXU-iW7R5r/view?usp=sharing
-12/07/2019,4235,EVENTOS,Producos & Servicios,hotspot wi-fi con plan de datos 15 GB,AMCHUSE S.R.L.,Factura C,Transferencia,https://drive.google.com/file/d/1dpZWoK1sxI_CCSGc9U0uWqIHQpWgBqfK/view?usp=sharing
-13/07/2019,1000,EVENTOS,Producos & Servicios,Reembolso - Caja chica - Uso de Salón Facultad de Derecho,Don Powa,Factura C,Efectivo,
-13/07/2019,5000,EVENTOS,Producos & Servicios,"Uso de salon, sonido, Facultad de Derecho",Agustín Frizzera,Factura C,Efectivo,
-15/07/2019,244.47,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-15/07/2019,60,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-15/07/2019,18,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-17/07/2019,15000,COMUNICACION & SOCIAL MEDIA,Honorarios,Honorarios profesionales - CONDUCCION EN CAMARA - Proyecto Causas Comunes - mes de JULIO,Ivana Szerman Bujan,Factura C,Transferencia,https://drive.google.com/file/d/1dmY7-bzzvd_4OESltRiRxD7fW_H0EUfR/view?usp=sharing
-17/07/2019,15000,COMUNICACION & SOCIAL MEDIA,Honorarios,Honorarios profesionales - Guion de videos - Proyecto Causas Comunes - mes de Junio,JULIAN URMAN,Factura C,Transferencia,https://drive.google.com/file/d/1N8Bw8Hy8ujdNk98JqIOfemuiF73FHhUX/view?usp=sharing
-18/07/2019,90,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-18/07/2019,90,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+12/07/2019,10000,COMUNICACION / SOCIAL MEDIA,Productos / Servicios,Honorarios profesionales - EDICIÓN - Proyecto Causas Comunes - mes de Julio ,Eric Damián Lakner,Factura C,Transferencia,https://drive.google.com/file/d/1zr124OlW9RO7HY6-XpvECAnA3C6CEy-a/view?usp=sharing
+12/07/2019,3000,EVENTOS,Productos / Servicios,200 facturas,Angel Canete Ramirez,Factura C,Transferencia,https://drive.google.com/file/d/1JMiwzY7Wquy696NU4eD34InHQQs4hnWy/view?usp=sharing
+12/07/2019,5000,EVENTOS,Productos / Servicios,100 sandwichs,Cosas de la Tierra de Ariana Reisin,Factura C,Efectivo,https://drive.google.com/file/d/19Du69-LxYHYSCnmE_o-UEMTXU-iW7R5r/view?usp=sharing
+12/07/2019,4235,EVENTOS,Productos / Servicios,Plan de Datos 15GB,AMCHUSE S.R.L.,Factura C,Transferencia,https://drive.google.com/file/d/1dpZWoK1sxI_CCSGc9U0uWqIHQpWgBqfK/view?usp=sharing
+13/07/2019,1000,EVENTOS,Productos / Servicios,Reembolso - Caja chica - Uso de Salón Facultad de Derecho,Don Powa,Factura C,Efectivo,
+13/07/2019,3000,EVENTOS,Productos / Servicios,Reembolso - Caja chica - Uso de Salón Facultad de Derecho,Agustín Frizzera,Factura C,Efectivo,https://drive.google.com/file/d/1odwbDy_BeiKyrgTY7KxxdRZCb0No5FRj/view?usp=sharing
+15/07/2019,244.47,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+15/07/2019,60,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+15/07/2019,18,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+17/07/2019,15000,COMUNICACION / SOCIAL MEDIA,Productos / Servicios,Honorarios profesionales - CONDUCCION EN CAMARA - Proyecto Causas Comunes - mes de JULIO,Ivana Szerman Bujan,Factura C,Transferencia,https://drive.google.com/file/d/1dmY7-bzzvd_4OESltRiRxD7fW_H0EUfR/view?usp=sharing
+17/07/2019,15000,COMUNICACION / SOCIAL MEDIA,Productos / Servicios,Honorarios profesionales - Guion de videos - Proyecto Causas Comunes - mes de Junio,JULIAN URMAN,Factura C,Transferencia,https://drive.google.com/file/d/1N8Bw8Hy8ujdNk98JqIOfemuiF73FHhUX/view?usp=sharing
+18/07/2019,90,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+18/07/2019,90,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
 19/07/2019,12080,DESARROLLO - PROGRAMACIÓN,Honorarios,Honorarios profesionales - Diseñadora - -Proyecto Causas Comunes - mes de Julio,Andrea Viviana Monzón,Factura C,Transferencia,https://drive.google.com/file/d/1JLdvLd15Nb8A8lmAvg-yxwpPiUCDylSM/view?usp=sharing
-19/07/2019,49800,COMUNICACION & SOCIAL MEDIA,Honorarios,Honorarios profesionales - Coordinación comunicación. Proyecto Causas Comunes. Mes de Junio.,Mercedes D'Alessandro,Factura C,Transferencia,https://drive.google.com/file/d/1bJFOlyNL3StrTjl3WsaIzAX8VFj3un_f/view?usp=sharing
-22/07/2019,72.48,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-22/07/2019,298.8,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
-22/07/2019,3000,EVENTOS,Producos & Servicios,catering hackaton: 100 sanwiches,Cosas de la Tierra de Ariana Reisin,Factura C,Transferencia,https://drive.google.com/file/d/19Du69-LxYHYSCnmE_o-UEMTXU-iW7R5r/view?usp=sharing
-23/07/2019,18,LEGAL CONTABLE FINANCIERO ADMINISTRATIVO,Impuestos y comisiones,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+19/07/2019,49800,COMUNICACION / SOCIAL MEDIA,Honorarios,Honorarios profesionales - Coordinación comunicación. Proyecto Causas Comunes. Mes de Junio.,Mercedes D'Alessandro,Factura C,Transferencia,https://drive.google.com/file/d/1bJFOlyNL3StrTjl3WsaIzAX8VFj3un_f/view?usp=sharing
+22/07/2019,72.48,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+22/07/2019,298.8,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+22/07/2019,3000,EVENTOS,Productos / Servicios,100 sandwichs,Cosas de la Tierra de Ariana Reisin,Factura C,Transferencia,https://drive.google.com/file/d/19Du69-LxYHYSCnmE_o-UEMTXU-iW7R5r/view?usp=sharing
+23/07/2019,18,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+24/07/2019,16800,DESARROLLO - PROGRAMACIÓN,Honorarios,"Honorarios profesionales - UX y Navegación - Meses mayo, junio y julio",Mariana Giselle Fuentes Zamorano,Factura C,Transferencia,https://drive.google.com/file/d/1GX_DR69uRCjrn2Z8Qhr23q01gTZVu0sx/view?usp=sharing
+25/07/2019,100.8,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+22/07/2019,6500,EVENTOS,Productos / Servicios,Reembolso por equipamiento extraviado - Evento Facultad de Derecho,Fundación Directorio Legislativo,Factura C,Transferencia,https://drive.google.com/file/d/1unnX4sV4Gug5sqzWAzZPleGVpleO3UJ2/view?usp=sharing
+25/07/2019,39,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+01/08/2019,11011,"LEGAL, CONTABLE, FINANCIERO",Honorarios,Servicios Prestados - Contador,Carlos Torres,Factura C,Transferencia,https://drive.google.com/file/d/1jdjZhQN9UHtCndldPw7TYm9VhHssj6Kq/view?usp=sharing
+01/08/2019,44000,GESTION GENERAL,Honorarios,Honorarios profesionales - Coordinación General - proyecto causas comunes,Agustín Frizzera,Factura C,Transferencia,
+02/08/2019,66,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
+02/08/2019,264,"LEGAL, CONTABLE, FINANCIERO",Impuestos,IMP. LEY 25.413,HSBC,Extracto,Debito,N/A
