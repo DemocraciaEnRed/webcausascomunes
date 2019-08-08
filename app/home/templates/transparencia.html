@@ -1,0 +1,77 @@
+{% extends '_base.html' %}
+
+{% from '_imghelper.html' import create_img_src %}
+
+{% block head %}
+    <title>Causas comunes</title>
+    <link href="{{url_for('home.static', filename='css/transparencia.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/jquery.dataTables.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h2 class="section__title mb-3 mb-lg-4">Cuentas claras</h2>
+        <div class="disclaimer mb-4">{{dtextos.get('disclaimer', '')}}</div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="section__subtitle">Gastos por categoría</h2>
+                <canvas id="chart-importe-categoria"></canvas>
+            </div>
+            <div class="col-lg-6 order-lg-last mt-4 mt-lg-0">
+                <h2 class="section__subtitle">Gastos por concepto</h2>
+                <canvas id="chart-importe-concepto"></canvas>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <h2 class="section__subtitle">Egresos por mes</h2>
+                <canvas id="chart-bars-gastos"></canvas>
+            </div>
+        </div>
+        <h2 class="section__title my-4 my-lg-5">Datos</h2>
+        <div class="table-wrapper">
+            <table id="data-csv" class="table table-striped table-bordered display compact nowrap">
+                <thead>
+                    <tr>
+                    {% for h in presu_heads %}
+                        <th>{{h}}</th>
+                    {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for row in presu_data %}
+                {% set outer_loop = loop %}
+                    <tr>
+                    {% for data in row %}
+                        {# ponemos el sort como segundos desde epoch #}
+                        {% if loop.index==1 %}
+                        <td data-order="{{fechas_epoch[outer_loop.index-1]}}">{{data}}</td>
+                        {% else %}
+                        <td>{{data}}</td>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                    {% for h in presu_heads %}
+                        <th>{{h}}</th>
+                    {% endfor %}
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{url_for('home.static', filename='js/chart.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+    <script>
+        _datatable_headers = [ {% for h in presu_heads %} '{{h}}', {% endfor %} ]
+        _datatable_spa_json_url = "{{ url_for('home.static', filename='Spanish.json') }}"
+    </script>
+    <script src="{{url_for('home.static', filename='js/transparencia.js')}}"></script>
+{% endblock %}

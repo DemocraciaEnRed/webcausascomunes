@@ -1,4 +1,5 @@
 from flask import current_app, request, render_template, redirect, url_for, Blueprint
+from datetime import datetime
 from app.logger import log_err
 
 blueprint = Blueprint(
@@ -201,3 +202,47 @@ def trabajo():
 @blueprint.route("/transparencia", methods=['GET'])
 def transparencia():
     return causa('transparencia')
+
+
+@blueprint.route("/cuentas", methods=['GET'])
+def cuentas():
+    isstatic = False
+
+    import app.directus as directus
+    dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+
+    dtextos = directus.dapi.get_textos_pagina('Cuentas')
+
+    import app.datos as datos
+    presu_heads = datos.get_rendered_headers()
+
+    # if current_app._gsheetapi:
+    if False:
+        presu_data = datos.get_rows_from_gsheet(current_app._gsheetapi)
+    else:
+        # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
+        presu_data = datos.get_rows_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
+
+    fechas_epoch = []
+    fecha_i = presu_heads.index('fecha')
+    for row in presu_data:
+        try:
+            date = datetime.strptime(row[fecha_i], '%d/%m/%Y')
+            date = date.strftime('%s')
+        except:
+            date = ''
+        fechas_epoch.append(date)
+
+    presu_heads = [h.capitalize() for h in presu_heads]
+
+    return render_template(
+        'transparencia.html',
+        navs=get_menu_navs(),
+        dimgsnav=dimgsnav,
+        dimgsfooter=dimgsfooter,
+        dtextos=dtextos,
+        presu_heads=presu_heads,
+        presu_data=presu_data,
+        fechas_epoch=fechas_epoch,
+        isstatic=isstatic)

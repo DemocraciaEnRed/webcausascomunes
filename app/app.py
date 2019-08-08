@@ -90,9 +90,15 @@ def create_app():
         import app.directus as directus
         directus.init_flask_app(app)
 
+    @_extension_loader("USE_GSHEETS", "Google Sheets", "_using_gsheets")
+    def load_google_sheets():
+        from app.google_sheets import GSheetApi
+        app._gsheetapi = GSheetApi(app)
+
     load_mailer()
     load_scss()
     load_directus()
+    load_google_sheets()
 
     # chequear locale en español para que las fechas salgan en español y no en inglés
     try:
