@@ -29,7 +29,7 @@ class DirectusApi:
         self.api_url = None
         self.token = None
         self.auth_header = None
-        self.textosregx = re.compile('^[^<>&]*$')
+        self.textosregx = re.compile('^[^<>]*$')
         self.markdowner = Markdown()
 
     def init_api(self, logger, ser_url, ser_ext_url, api_path, token):
