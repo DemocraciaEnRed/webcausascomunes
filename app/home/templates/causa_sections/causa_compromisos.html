@@ -1,5 +1,7 @@
 {% from '_imghelper.html' import create_img_src %}
 
+{# ciencia no tiene esta sección #}
+{% if dtextos.get('compromisos') %}
 <section id="compromisos" class="compromisos section jumbotron jumbotron-fluid">
     <div class="container">
         <h2 class="section__title text-center text-md-left">{{dtextoscausas.get('titulo')['compromisos']}}</h2>
@@ -15,3 +17,4 @@
         </div>
     </div>
 </section>
+{% endif %}
