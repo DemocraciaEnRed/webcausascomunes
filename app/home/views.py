@@ -103,8 +103,7 @@ def index():
         # itemsnovedades=itemsnovedades,
         itemsagenda=itemsagenda,
         itemspropuestas=itemspropuestas,
-        galeriahackaton=galeriahackaton,
-        isstatic=False)
+        galeriahackaton=galeriahackaton)
 
 
 @blueprint.route("/contacto", methods=['GET'])
@@ -122,8 +121,7 @@ def contacto():
         # dimgsnav=dimgsnav,
         # dimgsfooter=dimgsfooter,
         dtextos=dtextos,
-        dimgs=dimgs,
-        isstatic=False)
+        dimgs=dimgs)
 
 
 def causa(agenda):
@@ -159,7 +157,6 @@ def causa(agenda):
         'itemsnovedades': itemsnovedades,
         'itemsagenda': itemsagenda,
 
-        'isstatic': False,
         'show_wiki_btn': True,
         'nombre_causa': accepted_causas[agenda]}
 
@@ -206,8 +203,6 @@ def transparencia():
 
 @blueprint.route("/cuentas", methods=['GET'])
 def cuentas():
-    isstatic = False
-
     import app.directus as directus
     dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
     dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
@@ -244,5 +239,4 @@ def cuentas():
         dtextos=dtextos,
         presu_heads=presu_heads,
         presu_data=presu_data,
-        fechas_epoch=fechas_epoch,
-        isstatic=isstatic)
+        fechas_epoch=fechas_epoch)

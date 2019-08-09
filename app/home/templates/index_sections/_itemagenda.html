@@ -9,7 +9,7 @@
     {% set date_hour = '' %}
 {% endif %}
 <li class="list-group-item">
-    <img class="float-left mr-2" src="{{ create_img_src(icono or '', isstatic) }}">
+    <img class="float-left mr-2" src="{{ create_img_src(icono or '') }}">
     <h5 class="date">{{ date_header }}</h5>
     <h6 class="text">{{ date_hour }} - {{ title or '' }} <span class="hashtag text-color-{{hashtag.lower()}}">#{{hashtag or ''}}</span></h6>
 </li>

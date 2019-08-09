@@ -20,7 +20,7 @@
                 {% endif %}
             {% endif %}
 
-                {{ create_item_novedad(itm.get('ancho_columnas'), itm.get('imagen'), itm.get('titulo'), itm.get('hashtag'), isstatic=isstatic) }}
+                {{ create_item_novedad(itm.get('ancho_columnas'), itm.get('imagen'), itm.get('titulo'), itm.get('hashtag')) }}
                 {% if loop.last %}
                 <div class="col-12 col-md-6 pb-3">
                     <h4 class="twitter-timeline__title">¡Seguinos!</h4>

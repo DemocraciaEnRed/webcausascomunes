@@ -1,6 +1,6 @@
 {% from '_imghelper.html' import create_img_src %}
 
-{% macro create_item_propuesta(bgimg, icon, title, text, pagina, isstatic=True) -%}
+{% macro create_item_propuesta(bgimg, icon, title, text, pagina) -%}
 {% if pagina %}
     {% set url_anchor =  url_for('home.' + (pagina|string).lower()) %}
 {% else %}

@@ -11,7 +11,7 @@
                 <!-- Flickity HTML init -->
                 <div class="carousel" data-flickity='{ "groupCells": true }'>
                     {% for itm in itemsseguidores %}
-                        {{ create_item_seguidor(itm.get('imagen'), itm.get('titulo'), itm.get('url'), isstatic=isstatic) }}
+                        {{ create_item_seguidor(itm.get('imagen'), itm.get('titulo'), itm.get('url')) }}
                     {% endfor %}
                 </div>
             </div>

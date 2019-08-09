@@ -30,7 +30,7 @@
                 </div>
                 <div id="links" class="d-none">
                     {% for itm in galeriahackaton %}
-                        {{ create_item_galeria(itm.get('titulo'), itm.get('descripcion'), itm.get('imagen_archivo'), isstatic=isstatic) }}
+                        {{ create_item_galeria(itm.get('titulo'), itm.get('descripcion'), itm.get('imagen_archivo')) }}
                     {% endfor %}
                 </div>
             </div>
@@ -39,17 +39,17 @@
 </section>
 
 <!-- <div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
-  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg', isstatic=isstatic)}}" title="Apple" data-description="This is a banana.">
-    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg', isstatic=isstatic)}}" alt="Apple" />
+  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg')}}" title="Apple" data-description="This is a banana.">
+    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg')}}" alt="Apple" />
   </a>
 </div>
 <div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
-  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg', isstatic=isstatic)}}" title="Orange" data-description="This is a banana.">
-    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg', isstatic=isstatic)}}" alt="Orange" />
+  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg')}}" title="Orange" data-description="This is a banana.">
+    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg')}}" alt="Orange" />
   </a>
 </div>
 <div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
-  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-07-12.jpg', isstatic=isstatic)}}" title="Orange" data-description="This is a banana.">
-    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-07-12.jpg', isstatic=isstatic)}}" alt="Orange" />
+  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-07-12.jpg')}}" title="Orange" data-description="This is a banana.">
+    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-07-12.jpg')}}" alt="Orange" />
   </a>
 </div> -->
