@@ -41,19 +41,36 @@
                       .padding-onditaazul {
                         padding-top: 12vw; }
 
-                        body {
-                          font: 100% 'Barlow', sans-serif;
-                          color: black; }
+                        .backtotop {
+                          position: fixed;
+                          bottom: 2em;
+                          right: 2em;
+                          color: #ffffff;
+                          background-color: rgba(0, 0, 0, 0.3);
+                          font-size: 12px;
+                          padding: 1em;
+                          display: none; }
+                          .backtotop:hover {
+                            color: #ffffff; }
+                            @media (max-width: 576px) {
+                              .backtotop {
+                                padding: 0.5rem;
+                                font-size: 10px !important;   }
+}
 
-                          img {
-                            max-width: 100%; }
+body {
+  font: 100% 'Barlow', sans-serif;
+  color: black; }
 
-                            .no-gutters {
-                              margin-right: 0;
-                              margin-left: 0; }
-                              .no-gutters > .col, .no-gutters > [class*="col-"] {
-                                padding-right: 0;
-                                padding-left: 0; }
+  img {
+    max-width: 100%; }
+
+    .no-gutters {
+      margin-right: 0;
+      margin-left: 0; }
+      .no-gutters > .col, .no-gutters > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0; }
 
 .section {
   background-color: #ffffff; }

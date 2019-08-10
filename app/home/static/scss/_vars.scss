@@ -96,3 +96,22 @@ $color-ambiente: #39a95e;
 }
 
 .padding-onditaazul{padding-top: 12vw;}
+
+
+.backtotop {
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+	color: $white;
+	background-color: rgba(0, 0, 0, 0.3);
+	font-size: 12px;
+	padding: 1em; 
+  display: none;
+  &:hover {
+    color: $white;
+  }
+  @media (max-width: $width-small) {
+    padding: 0.5rem;
+    font-size: 10px !important;
+  }
+}
