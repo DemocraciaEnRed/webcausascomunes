@@ -65,12 +65,13 @@ def not_found(e):
 @blueprint.before_request
 def before_request():
     # si no está activo directus cancelamos la request, pero si es a un recurso estático la dejamos pasar
-    if not current_app.config['_using_directus'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
-        log_err(current_app, 'Directus in error state.', None, True)
+    if request.endpoint != 'home.index':
+        if not current_app.config['_using_directus'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
+            log_err(current_app, 'Directus in error state.', None, True)
 
-        msg = "La página se encuentra en mantenimiento<br>"\
-              "Por favor, vuelva más tarde"
-        return render_error(msg)
+            msg = "La página se encuentra en mantenimiento<br>"\
+                  "Por favor, vuelva más tarde"
+            return render_error(msg)
 
 
 @blueprint.after_request
@@ -83,15 +84,24 @@ def after_request(response):
 
 @blueprint.route("/", methods=['GET'])
 def index():
-    import app.directus as directus
-    # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-    # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
-    dtextos = directus.dapi.get_textos_pagina('Home')
-    dimgs = directus.dapi.get_imgs_pagina('Home')
-    itemspropuestas = directus.dapi.get_items_propuestas()
-    # itemsnovedades = directus.dapi.get_items_novedades('Home')
-    itemsagenda = directus.dapi.get_items_agenda('Home')
-    galeriahackaton = directus.dapi.get_items_hackaton()
+    if current_app.config['_using_directus']:
+        import app.directus as directus
+        # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+        # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+        dtextos = directus.dapi.get_textos_pagina('Home')
+        dimgs = directus.dapi.get_imgs_pagina('Home')
+        itemspropuestas = directus.dapi.get_items_propuestas()
+        # itemsnovedades = directus.dapi.get_items_novedades('Home')
+        itemsagenda = directus.dapi.get_items_agenda('Home')
+        galeriahackaton = directus.dapi.get_items_hackaton()
+    else:
+        import app.content as content
+        dtextos = content.textos_home()
+        dimgs = {}
+        itemspropuestas = content.items_propuestas()
+        itemsagenda = {}
+        galeriahackaton = content.items_hackaton()
+
 
     return render_template(
         'index.html',
