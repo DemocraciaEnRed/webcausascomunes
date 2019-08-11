@@ -1,2 +1,7 @@
-{% macro create_img_src(imgpath) -%}{{imgpath}}{%- endmacro %}
-{# comando viejo: url_for('home.static', filename='img/'+imgpath) #}
+{% macro create_img_src(imgpath, isstatic=False) -%}
+{% if not isstatic %}
+{{imgpath}}
+{% else %}
+{{url_for('home.static', filename='img/'+imgpath)}}
+{% endif %}
+{%- endmacro %}
