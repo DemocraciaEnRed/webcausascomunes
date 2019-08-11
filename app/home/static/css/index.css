@@ -412,3 +412,9 @@ button.flickity-prev-next-button.previous {
 
     .blueimp-gallery-controls > .description {
       display: block; }
+
+      #wikis .wiki-btn {
+        display: block;
+        width: 190px;
+        margin: 0 auto;
+        margin-top: 1rem; }
