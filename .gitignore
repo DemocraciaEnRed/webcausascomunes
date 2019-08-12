@@ -3,6 +3,7 @@ __pycache__/
 venv/
 .DS_Store
 .env
+.env.prod
 
 git-branches.sh
 
