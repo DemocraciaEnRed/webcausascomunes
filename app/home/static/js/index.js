@@ -29,7 +29,7 @@ function initSliderPropuestas() {
 }
 
 function scrollHandler(){
-    if ($(this).scrollTop() >= ($("#propuestas").offset().top) - 30) {
+    if ($(this).scrollTop() >= ($("#propuestas").offset().top) - 150) {
         carousel.flickity('playPlayer');
         $(window).off('scroll', scrollHandler);
     }
