@@ -9,6 +9,10 @@ blueprint = Blueprint(
     static_folder="static",
     template_folder="templates")
 
+################
+# En la última línea de este archivo se definen las rutas de las causas
+################
+
 accepted_causas = {
     'genero': 'Género',
     'ambiente': 'Ambiente',
@@ -134,9 +138,9 @@ def contacto():
         dimgs=dimgs)
 
 
-def causa(agenda):
-    get_menu_navs()
-    if agenda not in accepted_causas.keys():
+def causas_route():
+    causa = request.endpoint.split('.')[1]
+    if causa not in accepted_causas.keys():
         return redirect(url_for('home.index'))
 
     import app.directus as directus
@@ -145,13 +149,13 @@ def causa(agenda):
     # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
     dtextoscausas = directus.dapi.get_textos_pagina('Causas')
-    dtextos = directus.dapi.get_textos_pagina(agenda)
-    dimgs = directus.dapi.get_imgs_pagina(agenda)
+    dtextos = directus.dapi.get_textos_pagina(causa)
+    dimgs = directus.dapi.get_imgs_pagina(causa)
 
-    itemstemas = directus.dapi.get_items_tema(agenda)
-    itemsseguidores = directus.dapi.get_items_seguidor(agenda)
-    itemsnovedades = directus.dapi.get_items_novedades(agenda)
-    itemsagenda = directus.dapi.get_items_agenda(agenda)
+    itemstemas = directus.dapi.get_items_tema(causa)
+    itemsseguidores = directus.dapi.get_items_seguidor(causa)
+    itemsnovedades = directus.dapi.get_items_novedades(causa)
+    itemsagenda = directus.dapi.get_items_agenda(causa)
 
     variables = {
         'navs': get_menu_navs(),
@@ -168,47 +172,12 @@ def causa(agenda):
         'itemsagenda': itemsagenda,
 
         'show_wiki_btn': True,
-        'nombre_causa': accepted_causas[agenda]}
+        'nombre_causa': accepted_causas[causa]}
 
-    if agenda == 'ciencia':
+    if causa == 'ciencia':
         variables['show_wiki_btn'] = False
 
     return render_template('causa.html', **variables)
-
-
-@blueprint.route("/genero", methods=['GET'])
-def genero():
-    return causa('genero')
-
-
-@blueprint.route("/ambiente", methods=['GET'])
-def ambiente():
-    return causa('ambiente')
-
-
-@blueprint.route("/ciencia", methods=['GET'])
-def ciencia():
-    return causa('ciencia')
-
-
-@blueprint.route("/vivienda", methods=['GET'])
-def vivienda():
-    return causa('vivienda')
-
-
-@blueprint.route("/drogas", methods=['GET'])
-def drogas():
-    return causa('drogas')
-
-
-@blueprint.route("/trabajo", methods=['GET'])
-def trabajo():
-    return causa('trabajo')
-
-
-@blueprint.route("/transparencia", methods=['GET'])
-def transparencia():
-    return causa('transparencia')
 
 
 @blueprint.route("/cuentas", methods=['GET'])
@@ -250,3 +219,7 @@ def cuentas():
         presu_heads=presu_heads,
         presu_data=presu_data,
         fechas_epoch=fechas_epoch)
+
+
+for causa in accepted_causas.keys():
+    blueprint.add_url_rule(f'/{causa}', endpoint=causa, view_func=causas_route)
