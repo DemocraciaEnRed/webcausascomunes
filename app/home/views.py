@@ -152,6 +152,7 @@ def causa(agenda):
     itemsseguidores = directus.dapi.get_items_seguidor(agenda)
     itemsnovedades = directus.dapi.get_items_novedades(agenda)
     itemsagenda = directus.dapi.get_items_agenda(agenda)
+    itemscompromisos = directus.dapi.get_items_compromisos(agenda)
 
     variables = {
         'navs': get_menu_navs(),
@@ -166,6 +167,7 @@ def causa(agenda):
         'itemsseguidores': itemsseguidores,
         'itemsnovedades': itemsnovedades,
         'itemsagenda': itemsagenda,
+        'itemscompromisos': itemscompromisos,
 
         'show_wiki_btn': True,
         'nombre_causa': accepted_causas[agenda]}
