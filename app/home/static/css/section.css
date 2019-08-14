@@ -41,18 +41,35 @@
                       .padding-onditaazul {
                         padding-top: 12vw; }
 
-                        body {
-                          overflow-x: hidden; }
-
-                          @media (min-width: 768px) {
-                            .section.jumbotron-fluid {
-                              padding-top: 3rem;
-                              padding-bottom: 3rem;   }
+                        .backtotop {
+                          position: fixed;
+                          bottom: 2em;
+                          right: 2em;
+                          color: #ffffff;
+                          background-color: rgba(0, 0, 0, 0.3);
+                          font-size: 12px;
+                          padding: 1em;
+                          display: none; }
+                          .backtotop:hover {
+                            color: #ffffff; }
+                            @media (max-width: 576px) {
+                              .backtotop {
+                                padding: 0.5rem;
+                                font-size: 10px !important;   }
 }
-                          .section:nth-child(even) {
-                            background-color: #ffffff; }
-                            .section:nth-child(odd) {
-                              background-color: #faf2ff; }
+
+body {
+  overflow-x: hidden; }
+
+  @media (min-width: 768px) {
+    .section.jumbotron-fluid {
+      padding-top: 3rem;
+      padding-bottom: 3rem;   }
+}
+  .section:nth-child(even) {
+    background-color: #ffffff; }
+    .section:nth-child(odd) {
+      background-color: #faf2ff; }
 
 .portada-seccion {
   background-color: transparent;

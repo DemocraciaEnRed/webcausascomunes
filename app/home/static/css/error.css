@@ -41,14 +41,31 @@
                       .padding-onditaazul {
                         padding-top: 12vw; }
 
-                        .section__title {
-                          color: #2a4b8c;
-                          font-size: 2rem;
-                          font-weight: 600; }
-                          @media (min-width: 768px) {
-                            .section__title {
-                              z-index: 2;
-                              position: relative;   }
+                        .backtotop {
+                          position: fixed;
+                          bottom: 2em;
+                          right: 2em;
+                          color: #ffffff;
+                          background-color: rgba(0, 0, 0, 0.3);
+                          font-size: 12px;
+                          padding: 1em;
+                          display: none; }
+                          .backtotop:hover {
+                            color: #ffffff; }
+                            @media (max-width: 576px) {
+                              .backtotop {
+                                padding: 0.5rem;
+                                font-size: 10px !important;   }
+}
+
+.section__title {
+  color: #2a4b8c;
+  font-size: 2rem;
+  font-weight: 600; }
+  @media (min-width: 768px) {
+    .section__title {
+      z-index: 2;
+      position: relative;   }
 }
 
 .section__subtitle, .section__subtitle p {
