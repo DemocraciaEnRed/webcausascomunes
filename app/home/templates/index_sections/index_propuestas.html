@@ -9,7 +9,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-10">
               <!-- Flickity HTML init -->
-              <div class="carousel" data-flickity='{ "groupCells": true }'>
+              <div id="carousel" class="carousel" data-flickity='{ "groupCells": true }'>
                 {% for itm in itemspropuestas %}
                     {{ create_item_propuesta(itm.get('imagen_fondo'), itm.get('icono'), itm.get('titulo'), itm.get('texto'), itm.get('pagina')) }}
                 {% endfor %}
