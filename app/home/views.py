@@ -138,9 +138,23 @@ def contacto():
         dimgs=dimgs)
 
 
-def causas_route():
+def _get_causa_from_endpoint():
+    split = request.endpoint.split('.')
+    if len(split) < 2:
+        return None
+
     causa = request.endpoint.split('.')[1]
+    # a algunos endpoints (como el de scrollys) le ponemos "_" en el nombre, después del nombre de la causa
+    causa = causa.split('_')[0]
     if causa not in accepted_causas.keys():
+        return None
+
+    return causa
+
+
+def causas_route():
+    causa = _get_causa_from_endpoint()
+    if causa is None:
         return redirect(url_for('home.index'))
 
     import app.directus as directus
@@ -178,6 +192,14 @@ def causas_route():
         variables['show_wiki_btn'] = False
 
     return render_template('causa.html', **variables)
+
+
+def causas_scrolly_route():
+    causa = _get_causa_from_endpoint()
+    if causa is None:
+        return redirect(url_for('home.index'))
+
+    return 'Hola 123 ' + causa
 
 
 @blueprint.route("/cuentas", methods=['GET'])
@@ -223,3 +245,4 @@ def cuentas():
 
 for causa in accepted_causas.keys():
     blueprint.add_url_rule(f'/{causa}', endpoint=causa, view_func=causas_route)
+    blueprint.add_url_rule(f'/{causa}/scrolly', endpoint=f'{causa}_scrolly', view_func=causas_scrolly_route)
