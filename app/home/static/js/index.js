@@ -3,6 +3,8 @@ if ( window.location.hash ) scroll(0,0);
 // void some browsers issue
 setTimeout( function() { scroll(0,0); }, 1);
 
+var carousel;
+
 //https://github.com/blueimp/Gallery
 function initBlueimp(onopened){
     blueimp.Gallery(document.getElementById('links').getElementsByTagName('a'), {
@@ -20,8 +22,24 @@ function hashScroll() {
     }
 }
 
+function initSliderPropuestas() {
+    return $('#carousel').flickity({
+        groupCells: true
+    });
+}
+
+function scrollHandler(){
+    if ($(this).scrollTop() >= ($("#propuestas").offset().top) - 30) {
+        carousel.flickity('playPlayer');
+        $(window).off('scroll', scrollHandler);
+    }
+}
+
 $(document).ready(function(){
     initBlueimp(hashScroll);
+
+    carousel = initSliderPropuestas();
+    $( window ).scroll(scrollHandler);
 
     $('.scrollTo').click(function(e) {
         e.preventDefault();
