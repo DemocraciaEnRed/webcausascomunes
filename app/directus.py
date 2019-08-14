@@ -105,17 +105,17 @@ class DirectusApi:
             return ''
 
     def _parse_ubicacion(self, row_ubicacion):
-            ubicacion_arr = []
+        ubicacion_arr = []
 
-            ubics = row_ubicacion.split('-')
-            for ubic in ubics:
-                ubic_parsed = ubic.strip().lower()
-                if ubic_parsed.isalnum():
-                    ubicacion_arr.append(ubic_parsed)
-                else:
-                    return
+        ubics = row_ubicacion.split('-')
+        for ubic in ubics:
+            ubic_parsed = ubic.strip().lower()
+            if ubic_parsed.isalnum():
+                ubicacion_arr.append(ubic_parsed)
+            else:
+                return
 
-            return ubicacion_arr
+        return ubicacion_arr
 
     def get_textos_pagina(self, pagina):
         pagina = str(pagina)
@@ -169,9 +169,11 @@ class DirectusApi:
                     imgs[ubic_arr[0]][ubic_arr[1]] = imgurl
         return imgs
 
-    def get_items(self, table, pagina, keys_types):
+    def get_items(self, table, keys_types, pagina=None, causa=None):
         if pagina:
-            rows = self.get_table_rows(table, filter='filters[pagina.nombre][eq]={}'.format(pagina))
+            rows = self.get_table_rows(table, filter='filters[pagina.nombre][eq]={}'.format(pagina.title()))
+        elif causa:
+            rows = self.get_table_rows(table, filter='filters[causa.nombre][eq]={}'.format(causa.title()))
         else:
             rows = self.get_table_rows(table)
         items = []
@@ -193,23 +195,23 @@ class DirectusApi:
         return items
 
     def get_items_novedades(self, pagina):
-        return self.get_items('items_novedades', pagina, {
+        return self.get_items('items_novedades', {
                 'ancho_columnas': DirectusApi.RowTypes.TEXT,
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'hashtag': DirectusApi.RowTypes.TEXT,
                 'imagen': DirectusApi.RowTypes.IMG
-            })
+            }, pagina=pagina)
 
     def get_items_agenda(self, pagina):
-        return self.get_items('items_agenda', pagina, {
+        return self.get_items('items_agenda', {
                 'fechahora': DirectusApi.RowTypes.DATETIME,
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'hashtag': DirectusApi.RowTypes.TEXT,
                 'icono': DirectusApi.RowTypes.IMG
-            })
+            }, pagina=pagina)
 
     def get_items_propuestas(self):
-        return self.get_items('items_propuestas', None, {
+        return self.get_items('items_propuestas', {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
                 'icono': DirectusApi.RowTypes.IMG,
@@ -218,25 +220,31 @@ class DirectusApi:
             })
 
     def get_items_seguidor(self, pagina):
-        return self.get_items('items_seguidor', pagina, {
+        return self.get_items('items_seguidor', {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'imagen': DirectusApi.RowTypes.IMG,
                 'url': DirectusApi.RowTypes.TEXT
-            })
+            }, pagina=pagina)
 
     def get_items_tema(self, pagina):
-        return self.get_items('items_tema', pagina, {
+        return self.get_items('items_tema', {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
                 'imagen': DirectusApi.RowTypes.IMG
-            })
+            }, pagina=pagina)
 
     def get_items_hackaton(self):
-        return self.get_items('galeria_hackaton', None, {
+        return self.get_items('galeria_hackaton', {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'descripcion': DirectusApi.RowTypes.TEXT,
                 'imagen_archivo': DirectusApi.RowTypes.TEXT
             })
+
+    def get_items_compromisos(self, causa):
+        return self.get_items('imagenes_compromisos', {
+                'imagen': DirectusApi.RowTypes.TEXT,
+                'descripcion': DirectusApi.RowTypes.TEXT
+            }, causa=causa)
 
 
 dapi = DirectusApi()
