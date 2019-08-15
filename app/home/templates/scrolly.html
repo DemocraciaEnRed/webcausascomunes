@@ -4,15 +4,41 @@
 
 {% block head %}
     <title>Causas comunes</title>
-    <link href="{{url_for('home.static', filename='css/contacto.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/scrolly.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
 
 <div class="padding-onditaazul">&nbsp;</div>
 
-<!-- Los íconos que se ven son del footer -->
+<div class="container-fluid causa-{{causa}}">
+{% for itm in itemsscrolly %}
+    {% set imagen =  itm.get('imagen', '') %}
+    {% set titulo =  itm.get('titulo', '') %}
+    {% set texto =  itm.get('texto', '') %}
 
+    {# loop.index arranca en 1 #}
+    {% if loop.index % 2 == 0 %}
+        {% set col_img_order_class = 'order-last' %}
+    {% else %}
+        {% set col_img_order_class = '' %}
+    {% endif %}
+
+    <div class="row vertical-align scrolly-row">
+        <div class="col-lg-4 {{col_img_order_class}}">
+            <div>
+                <img src="{{ create_img_src(imagen) }}" class="img-fluid scrolly-img" alt="{{ titulo  }}">
+             </div>
+        </div>
+        <div class="col-lg-8">
+            <h1>{{ titulo  }}</h1>
+            <div>{{ texto | safe }}</div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+<!-- Los íconos que se ven son del footer -->
 {% endblock %}
 
 {% block scripts %}

@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Barlow';
+  src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
+  font-weight: 400; }
+
+  @font-face {
+    font-family: 'Barlow';
+    src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
+    font-weight: 500; }
+
+    @font-face {
+      font-family: 'Barlow';
+      src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
+      font-weight: 600; }
+
+      .text-color-vivienda {
+        color: #194a9a; }
+
+        .text-color-transparencia {
+          color: #e61937; }
+
+          .text-color-trabajo {
+            color: #e71869; }
+
+            .text-color-genero {
+              color: #774997; }
+
+              .text-color-drogas {
+                color: #f9b112; }
+
+                .text-color-ciencia {
+                  color: #008daf; }
+
+                  .text-color-ambiente {
+                    color: #39a95e; }
+
+                    .vertical-align {
+                      display: flex;
+                      align-items: center; }
+
+                      .padding-onditaazul {
+                        padding-top: 12vw; }
+
+                        .backtotop {
+                          position: fixed;
+                          bottom: 2em;
+                          right: 2em;
+                          color: #ffffff;
+                          background-color: rgba(0, 0, 0, 0.3);
+                          font-size: 12px;
+                          padding: 1em;
+                          display: none; }
+                          .backtotop:hover {
+                            color: #ffffff; }
+                            @media (max-width: 576px) {
+                              .backtotop {
+                                padding: 0.5rem;
+                                font-size: 10px !important;   }
+}
+
+.causa-genero .scrolly-row:nth-child(even) {
+  background-color: #d5ffe8; }
+
+.causa-ambiente .scrolly-row:nth-child(even) {
+  background-color: #d5ffe8; }
+
+.causa-ciencia .scrolly-row:nth-child(even) {
+  background-color: #d5ffe8; }
+
+.causa-vivienda .scrolly-row:nth-child(even) {
+  background-color: #d5ffe8; }
+
+.causa-transparencia .scrolly-row:nth-child(even) {
+  background-color: #d5ffe8; }
+
+.causa-drogas .scrolly-row:nth-child(even) {
+  background-color: #d5ffe8; }
+
+.causa-trabajo .scrolly-row:nth-child(even) {
+  background-color: #ffd8e7; }
+
+.scrolly-row {
+  padding: 50vh 2rem; }
+  @media (min-width: 992px) {
+    .scrolly-row {
+      padding: 0 10rem;
+      height: 100vh;   }
+}
+    .scrolly-row:nth-child(odd) {
+      background-color: #ffffff; }
+      .scrolly-row .scrolly-img {
+        max-height: 70vh; }
