@@ -199,7 +199,14 @@ def causas_scrolly_route():
     if causa is None:
         return redirect(url_for('home.index'))
 
-    return 'Hola 123 ' + causa
+    import app.directus as directus
+    itemsscrolly = directus.dapi.get_items_scrolly(causa)
+
+    return render_template(
+        'scrolly.html',
+        navs=get_menu_navs(),
+        causa=causa,
+        itemsscrolly=itemsscrolly)
 
 
 @blueprint.route("/cuentas", methods=['GET'])
