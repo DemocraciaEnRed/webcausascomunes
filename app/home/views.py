@@ -9,6 +9,10 @@ blueprint = Blueprint(
     static_folder="static",
     template_folder="templates")
 
+################
+# En la última línea de este archivo se definen las rutas de las causas
+################
+
 accepted_causas = {
     'genero': 'Género',
     'ambiente': 'Ambiente',
@@ -134,9 +138,23 @@ def contacto():
         dimgs=dimgs)
 
 
-def causa(agenda):
-    get_menu_navs()
-    if agenda not in accepted_causas.keys():
+def _get_causa_from_endpoint():
+    split = request.endpoint.split('.')
+    if len(split) < 2:
+        return None
+
+    causa = request.endpoint.split('.')[1]
+    # a algunos endpoints (como el de scrollys) le ponemos "_" en el nombre, después del nombre de la causa
+    causa = causa.split('_')[0]
+    if causa not in accepted_causas.keys():
+        return None
+
+    return causa
+
+
+def causas_route():
+    causa = _get_causa_from_endpoint()
+    if causa is None:
         return redirect(url_for('home.index'))
 
     import app.directus as directus
@@ -145,14 +163,13 @@ def causa(agenda):
     # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
     dtextoscausas = directus.dapi.get_textos_pagina('Causas')
-    dtextos = directus.dapi.get_textos_pagina(agenda)
-    dimgs = directus.dapi.get_imgs_pagina(agenda)
+    dtextos = directus.dapi.get_textos_pagina(causa)
+    dimgs = directus.dapi.get_imgs_pagina(causa)
 
-    itemstemas = directus.dapi.get_items_tema(agenda)
-    itemsseguidores = directus.dapi.get_items_seguidor(agenda)
-    itemsnovedades = directus.dapi.get_items_novedades(agenda)
-    itemsagenda = directus.dapi.get_items_agenda(agenda)
-    itemscompromisos = directus.dapi.get_items_compromisos(agenda)
+    itemstemas = directus.dapi.get_items_tema(causa)
+    itemsseguidores = directus.dapi.get_items_seguidor(causa)
+    itemsnovedades = directus.dapi.get_items_novedades(causa)
+    itemsagenda = directus.dapi.get_items_agenda(causa)
 
     variables = {
         'navs': get_menu_navs(),
@@ -167,50 +184,29 @@ def causa(agenda):
         'itemsseguidores': itemsseguidores,
         'itemsnovedades': itemsnovedades,
         'itemsagenda': itemsagenda,
-        'itemscompromisos': itemscompromisos,
 
         'show_wiki_btn': True,
-        'nombre_causa': accepted_causas[agenda]}
+        'nombre_causa': accepted_causas[causa]}
 
-    if agenda == 'ciencia':
+    if causa == 'ciencia':
         variables['show_wiki_btn'] = False
 
     return render_template('causa.html', **variables)
 
 
-@blueprint.route("/genero", methods=['GET'])
-def genero():
-    return causa('genero')
+def causas_scrolly_route():
+    causa = _get_causa_from_endpoint()
+    if causa is None:
+        return redirect(url_for('home.index'))
 
+    import app.directus as directus
+    itemsscrolly = directus.dapi.get_items_scrolly(causa)
 
-@blueprint.route("/ambiente", methods=['GET'])
-def ambiente():
-    return causa('ambiente')
-
-
-@blueprint.route("/ciencia", methods=['GET'])
-def ciencia():
-    return causa('ciencia')
-
-
-@blueprint.route("/vivienda", methods=['GET'])
-def vivienda():
-    return causa('vivienda')
-
-
-@blueprint.route("/drogas", methods=['GET'])
-def drogas():
-    return causa('drogas')
-
-
-@blueprint.route("/trabajo", methods=['GET'])
-def trabajo():
-    return causa('trabajo')
-
-
-@blueprint.route("/transparencia", methods=['GET'])
-def transparencia():
-    return causa('transparencia')
+    return render_template(
+        'scrolly.html',
+        navs=get_menu_navs(),
+        causa=causa,
+        itemsscrolly=itemsscrolly)
 
 
 @blueprint.route("/cuentas", methods=['GET'])
@@ -252,3 +248,8 @@ def cuentas():
         presu_heads=presu_heads,
         presu_data=presu_data,
         fechas_epoch=fechas_epoch)
+
+
+for causa in accepted_causas.keys():
+    blueprint.add_url_rule(f'/{causa}', endpoint=causa, view_func=causas_route)
+    blueprint.add_url_rule(f'/{causa}/scrolly', endpoint=f'{causa}_scrolly', view_func=causas_scrolly_route)
