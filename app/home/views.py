@@ -169,7 +169,8 @@ def causas_route():
     itemstemas = directus.dapi.get_items_tema(causa)
     itemsseguidores = directus.dapi.get_items_seguidor(causa)
     itemsnovedades = directus.dapi.get_items_novedades(causa)
-    itemsagenda = directus.dapi.get_items_agenda(causa)
+    itemsagenda = directus.dapi.get_items_agenda(causa)    		
+    itemscompromisos = directus.dapi.get_items_compromisos(causa)
 
     variables = {
         'navs': get_menu_navs(),
@@ -184,6 +185,7 @@ def causas_route():
         'itemsseguidores': itemsseguidores,
         'itemsnovedades': itemsnovedades,
         'itemsagenda': itemsagenda,
+        'itemscompromisos': itemscompromisos,
 
         'show_wiki_btn': True,
         'nombre_causa': accepted_causas[causa]}
