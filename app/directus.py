@@ -246,6 +246,13 @@ class DirectusApi:
                 'descripcion': DirectusApi.RowTypes.TEXT
             }, causa=causa)
 
+    def get_items_scrolly(self, causa):
+        return self.get_items('scrollytelling', {
+                'imagen': DirectusApi.RowTypes.IMG,
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'texto': DirectusApi.RowTypes.TEXT,
+            }, causa=causa)
+
 
 dapi = DirectusApi()
 
