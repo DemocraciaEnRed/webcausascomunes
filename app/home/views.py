@@ -16,7 +16,6 @@ blueprint = Blueprint(
 accepted_causas = {
     'genero': 'Género',
     'ambiente': 'Ambiente',
-    'ciencia': 'Ciencia',
     'vivienda': 'Vivienda',
     'transparencia': 'Transparencia',
     'drogas': 'Drogas',
@@ -189,9 +188,6 @@ def causas_route():
 
         'show_wiki_btn': True,
         'nombre_causa': accepted_causas[causa]}
-
-    if causa == 'ciencia':
-        variables['show_wiki_btn'] = False
 
     return render_template('causa.html', **variables)
 
