@@ -65,7 +65,8 @@ def load_pags():
 causas_nombres = ['Transparencia', 'Ambiente', 'Vivienda', 'Trabajo',
                   'Ciencia', 'Drogas', 'Genero']
 
-
+# print( api_get('tables/imagenes_compromisos/rows') )
+# sys.exit(0)
 # api endpoints - https://github.com/directus/api-docs-6-legacy/blob/1.1/overview/endpoints.md
 # pprint(api_get(''))
 
