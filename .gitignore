@@ -10,3 +10,5 @@ git-branches.sh
 gsheetsapi-test.py
 credentials.json
 token.pickle
+.pydevproject
+.project
