@@ -34,10 +34,14 @@
     <!-- EVENTOS -->
     {% include 'index_sections/index_eventos.html' %}
 
+    <!-- BG PARALLAX -->
+    {% include 'index_sections/parallax.html' %}
 {% endblock %}
 
 {% block scripts %}
     <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/blueimp-gallery.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/rellax.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/index-parallax.js')}}"></script>
 {% endblock %}
