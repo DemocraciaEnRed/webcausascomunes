@@ -212,24 +212,24 @@ label {
 	
 	/* para el parallax */
 	.video, .col-lg-6{z-index: $parallaxZIndexOnTop;}
-}
 
-.section__signature {
-	color: $color-texto-light;
-	font-style: italic;
-	@media (min-width: $width-medium) {
-		font-size: $font-size-small;
-	}
-	&:before {
-		content: " ";
-		background-color: $color-principal-azul;
-		width: 55px;
-		height: 5px;
-		margin-right: 2rem;
-		display: inline-block;
-		vertical-align: middle;
+	.section__signature {
+		color: $color-texto-light;
+		font-style: italic;
 		@media (min-width: $width-medium) {
-			opacity: 0.5;
+			font-size: $font-size-small;
+		}
+		&:before {
+			content: " ";
+			background-color: $color-principal-azul;
+			width: 55px;
+			height: 5px;
+			margin-right: 2rem;
+			display: inline-block;
+			vertical-align: middle;
+			@media (min-width: $width-medium) {
+				opacity: 0.5;
+			}
 		}
 	}
 }
@@ -241,101 +241,101 @@ label {
 	background-image: url('/static/img/manifiesto-background.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
-}
 
-.carousel {
-	background: transparent;
-}
-
-.carousel-cell {
-    width: 80%;
-    height: 340px;        
-	margin-right: 2rem;
-	margin-left: 2rem;
-    @media (min-width: $width-large) {
-        width: 30%;
-		height: 400px;
-		margin-left: 0;
-    }
-	border-radius: 20px;
-	counter-increment: carousel-cell;
-    color: black;
-
-    /*a:target, a:hover, a {
-        color: black;
-        text-decoration: none;
-    }*/
-    .title {
-        color:$color-principal-azul;
-        font-size: $font-size-small;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        @media (min-width: $width-medium) {
-            font-size: $font-size-large;
-        }
-    }
-    .text {
-        font-size: $font-size-xsmall;
-        @media (min-width: $width-medium) {
-            font-size: $font-size-base;
-        }
-    }
-    img {
-        height:6rem;
-    }
-}
-
-.flickity-button {
-    display: none;
-    box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
-    transition: box-shadow ease-in 0.1s;
-    &[disabled] {
-        visibility: hidden;
-    }
-    @media(min-width: $width-medium) {
-        display: block;
-    }
-    &:focus, 
-    &:hover {
-        box-shadow: 0 15px 15px 0 rgba(42,75,140, 0.5);
-    }
-}
-
-button.flickity-prev-next-button {
-    &.previous {
-        left: -70px;
-    }
-    &.next {
-        right: -70px;
-    }
-}
-
-.flickity-page-dots {
-    position: relative;
-    @media (min-width: $width-medium) {
-        visibility: hidden;
-    }
-    .dot {
-        width: 19px;
-        height: 19px;
-        border: solid 1px $color-principal-azul;
-        background-color: $white;
-    }
-}
-
-.flickity-button-icon {
-    path {
-        fill: $color-principal-azul;
-    }
-}
-
-.flickity-enabled.is-draggable .flickity-viewport{
-    cursor: auto;
+	.carousel {
+		background: transparent;
+	}
+	
+	.carousel-cell {
+	    width: 80%;
+	    height: 340px;        
+		margin-right: 2rem;
+		margin-left: 2rem;
+	    @media (min-width: $width-large) {
+	        width: 30%;
+			height: 400px;
+			margin-left: 0;
+	    }
+		border-radius: 20px;
+		counter-increment: carousel-cell;
+	    color: black;
+	
+	    /*a:target, a:hover, a {
+	        color: black;
+	        text-decoration: none;
+	    }*/
+	    .title {
+	        color:$color-principal-azul;
+	        font-size: $font-size-small;
+	        font-weight: 600;
+	        margin-bottom: 1rem;
+	        @media (min-width: $width-medium) {
+	            font-size: $font-size-large;
+	        }
+	    }
+	    .text {
+	        font-size: $font-size-xsmall;
+	        @media (min-width: $width-medium) {
+	            font-size: $font-size-base;
+	        }
+	    }
+	    img {
+	        height:6rem;
+	    }
+	}
+	
+	.flickity-button {
+	    display: none;
+	    box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
+	    transition: box-shadow ease-in 0.1s;
+	    &[disabled] {
+	        visibility: hidden;
+	    }
+	    @media(min-width: $width-medium) {
+	        display: block;
+	    }
+	    &:focus, 
+	    &:hover {
+	        box-shadow: 0 15px 15px 0 rgba(42,75,140, 0.5);
+	    }
+	}
+	
+	button.flickity-prev-next-button {
+	    &.previous {
+	        left: -70px;
+	    }
+	    &.next {
+	        right: -70px;
+	    }
+	}
+	
+	.flickity-page-dots {
+	    position: relative;
+	    @media (min-width: $width-medium) {
+	        visibility: hidden;
+	    }
+	    .dot {
+	        width: 19px;
+	        height: 19px;
+	        border: solid 1px $color-principal-azul;
+	        background-color: $white;
+	    }
+	}
+	
+	.flickity-button-icon {
+	    path {
+	        fill: $color-principal-azul;
+	    }
+	}
+	
+	.flickity-enabled.is-draggable .flickity-viewport{
+	    cursor: auto;
+	}
 }
 
 /* Candidates */
 
-.section.candidates {
+.candidates {
 	background-color: $color-principal-azul;
 	.section__title {
 		color: $white;
@@ -363,51 +363,40 @@ button.flickity-prev-next-button {
 
 /* Novedades */
 
-.card--novedades {
-	box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
-	border-radius: 0;
-	background: $white;
-	.card-title {
-		font-size: $font-size-base;
-		@media(min-width: $width-medium) {
-			font-size: $font-size-medium;
-		}
-		a {
-			span {
-				display: inline-block;
-				@media(min-width: $width-medium) {
-					max-width: 80%;
-				}
+.novedades {
+	.card--novedades {
+		box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
+		border-radius: 0;
+		background: $white;
+		.card-title {
+			font-size: $font-size-base;
+			@media(min-width: $width-medium) {
+				font-size: $font-size-medium;
 			}
-			.fa {
-				font-size: $font-size-large;
+			a {
+				span {
+					display: inline-block;
+					@media(min-width: $width-medium) {
+						max-width: 80%;
+					}
+				}
+				.fa {
+					font-size: $font-size-large;
+				}
 			}
 		}
 	}
-}
-
-.card-hashtag {
-	font-size: $font-size-xsmall;
-	display: inline-block;
-	background-color: #eff1f4;
-	padding: 0 1rem;
-	border-radius: 1rem;
-	line-height: 1.8;
-	margin-bottom: 0.5rem;
-	text-transform: capitalize;
-}
-
-.twitter-timeline__title {
-    color: $color-principal-azul;
-    font-size: $font-size-medium;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    text-align: left;
-    @media (min-width: $width-medium){
-        font-size: $font-size-large;
-    }
-
+	
+	.card-hashtag {
+		font-size: $font-size-xsmall;
+		display: inline-block;
+		background-color: #eff1f4;
+		padding: 0 1rem;
+		border-radius: 1rem;
+		line-height: 1.8;
+		margin-bottom: 0.5rem;
+		text-transform: capitalize;
+	}
 }
 
 
@@ -419,6 +408,19 @@ button.flickity-prev-next-button {
 	}
 	.card {
 		height: 100%;
+	}
+
+	.twitter-timeline__title {
+	    color: $color-principal-azul;
+	    font-size: $font-size-medium;
+	    margin-top: 1.5rem;
+	    margin-bottom: 1rem;
+	    font-weight: 600;
+	    text-align: left;
+	    @media (min-width: $width-medium){
+	        font-size: $font-size-large;
+	    }
+	
 	}
 }
 
@@ -460,20 +462,6 @@ button.flickity-prev-next-button {
 }
 
 /* GALERIA */
-#blueimp-gallery {
-    color:white;
-}
-.blueimp-gallery > .description {
-  position: absolute;
-  top: 45px;
-  left: 15px;
-  color: #fff;
-  display: none;
-}
-.blueimp-gallery-controls > .description {
-  display: block;
-}
-
 /* wiki */
 #wikis{
 	position: relative;
@@ -486,4 +474,18 @@ button.flickity-prev-next-button {
 	
 	/* para el parallax */
 	.text-center{z-index: $parallaxZIndexOnTop;}
+	
+	#blueimp-gallery {
+	    color:white;
+	}
+	.blueimp-gallery > .description {
+	  position: absolute;
+	  top: 45px;
+	  left: 15px;
+	  color: #fff;
+	  display: none;
+	}
+	.blueimp-gallery-controls > .description {
+	  display: block;
+	}
 }
