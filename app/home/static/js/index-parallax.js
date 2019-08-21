@@ -10,6 +10,7 @@ $(function(){
 		* @param {string} cssId - Parte del id del elemento contenedor, va a terminar siendo 'mancha-' + cssId
 		* @param {string} imgFileName - Nombre de la imagen de la mancha, sin path, con extension
 		* @param {float} topPerc - Offset top porcentual (0.0-1.0) desde el top de la section attacheada
+		* @param {int} speed - Velocidad del parallax (-10-10), negativo se mueve en contra del scroll y positivo a favor
 		*/
 		constructor(cssId, imgFileName, topPerc, speed) {			
 			this.cssId = 'mancha-' + cssId;
