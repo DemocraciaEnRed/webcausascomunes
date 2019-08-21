@@ -1,0 +1,40 @@
+@import 'vars';
+
+.manchas {
+	position: absolute;
+	$manchaTransTime: 0.05s;
+	$manchaTransAnim: linear;
+    -webkit-transition: $manchaTransTime $manchaTransAnim;
+    -moz-transition: $manchaTransTime $manchaTransAnim;
+    -o-transition: $manchaTransTime $manchaTransAnim;
+    transition: $manchaTransTime $manchaTransAnim;
+    
+	/* MANCHAS MANIFIESTO */
+    &#mancha-mani1{
+    	left:10%;
+		@media (min-width: $width-medium) { left:16%; }
+    }
+    &#mancha-mani2{
+    	right:-32%;
+		@media (min-width: $width-medium) { right:-27%; }
+		@media (min-width: $width-large) { right:-16%; }
+    }
+    &#mancha-mani3{
+    	left:4%;
+		@media (min-width: $width-medium) { left:8%; }
+    }
+    &#mancha-mani4{
+    	left:-16%;
+		@media (min-width: $width-large) { left:9%; }
+    }
+
+	/* MANCHAS WIKI */
+    &#mancha-wiki1{
+    	left:3%;
+		@media (min-width: $width-medium) { left:4%; }
+    }
+    &#mancha-wiki2{
+    	right:-10%;
+		@media (min-width: $width-medium) { right:-6%; }
+    }
+}

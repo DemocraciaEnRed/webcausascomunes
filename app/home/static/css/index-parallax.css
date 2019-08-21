@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Barlow';
+  src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
+  font-weight: 400; }
+
+  @font-face {
+    font-family: 'Barlow';
+    src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
+    font-weight: 500; }
+
+    @font-face {
+      font-family: 'Barlow';
+      src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
+      font-weight: 600; }
+
+      .text-color-vivienda {
+        color: #194a9a; }
+
+        .text-color-transparencia {
+          color: #e61937; }
+
+          .text-color-trabajo {
+            color: #e71869; }
+
+            .text-color-genero {
+              color: #774997; }
+
+              .text-color-drogas {
+                color: #f9b112; }
+
+                .text-color-ciencia {
+                  color: #008daf; }
+
+                  .text-color-ambiente {
+                    color: #39a95e; }
+
+                    .vertical-align {
+                      display: flex;
+                      align-items: center; }
+
+                      .padding-onditaazul {
+                        padding-top: 12vw; }
+
+                        .backtotop {
+                          position: fixed;
+                          bottom: 2em;
+                          right: 2em;
+                          color: #ffffff;
+                          background-color: rgba(0, 0, 0, 0.3);
+                          font-size: 12px;
+                          padding: 1em;
+                          display: none; }
+                          .backtotop:hover {
+                            color: #ffffff; }
+                            @media (max-width: 576px) {
+                              .backtotop {
+                                padding: 0.5rem;
+                                font-size: 10px !important;   }
+}
+
+.manchas {
+  position: absolute;
+  -webkit-transition: 0.05s linear;
+  -moz-transition: 0.05s linear;
+  -o-transition: 0.05s linear;
+  transition: 0.05s linear; }
+  .manchas#mancha-mani1 {
+    left: 10%; }
+    @media (min-width: 768px) {
+      .manchas#mancha-mani1 {
+        left: 16%;   }
+}
+  .manchas#mancha-mani2 {
+    right: -32%; }
+    @media (min-width: 768px) {
+      .manchas#mancha-mani2 {
+        right: -27%;   }
+}
+      @media (min-width: 992px) {
+        .manchas#mancha-mani2 {
+          right: -16%;   }
+}
+  .manchas#mancha-mani3 {
+    left: 4%; }
+    @media (min-width: 768px) {
+      .manchas#mancha-mani3 {
+        left: 8%;   }
+}
+  .manchas#mancha-mani4 {
+    left: -16%; }
+    @media (min-width: 992px) {
+      .manchas#mancha-mani4 {
+        left: 9%;   }
+}
+  .manchas#mancha-wiki1 {
+    left: 3%; }
+    @media (min-width: 768px) {
+      .manchas#mancha-wiki1 {
+        left: 4%;   }
+}
+  .manchas#mancha-wiki2 {
+    right: -10%; }
+    @media (min-width: 768px) {
+      .manchas#mancha-wiki2 {
+        right: -6%;   }
+}
