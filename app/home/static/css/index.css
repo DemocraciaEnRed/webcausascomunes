@@ -210,15 +210,19 @@ body {
                       max-width: 40%;   }
 }
 
-.manifiesto p {
-  color: #1d1d1b;
-  font-size: 0.9rem;
-  line-height: 1.3rem; }
-  @media (min-width: 768px) {
-    .manifiesto p {
-      font-size: 1rem;
-      line-height: 1.75rem;   }
+.manifiesto {
+  position: relative; }
+  .manifiesto p {
+    color: #1d1d1b;
+    font-size: 0.9rem;
+    line-height: 1.3rem; }
+    @media (min-width: 768px) {
+      .manifiesto p {
+        font-size: 1rem;
+        line-height: 1.75rem;   }
 }
+  .manifiesto .video, .manifiesto .col-lg-6 {
+    z-index: 10; }
 
 .section__signature {
   color: #1d1d1b;
@@ -430,8 +434,12 @@ button.flickity-prev-next-button.previous {
     .blueimp-gallery-controls > .description {
       display: block; }
 
-      #wikis .wiki-btn {
-        display: block;
-        width: 190px;
-        margin: 0 auto;
-        margin-top: 1rem; }
+      #wikis {
+        position: relative; }
+        #wikis .wiki-btn {
+          display: block;
+          width: 190px;
+          margin: 0 auto;
+          margin-top: 1rem; }
+          #wikis .text-center {
+            z-index: 10; }

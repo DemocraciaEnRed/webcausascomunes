@@ -199,6 +199,7 @@ label {
 /* Manifiesto */
 
 .manifiesto {
+	position: relative;
 	p {
 		color: $color-texto-light;
 		font-size: $font-size-xsmall;
@@ -208,6 +209,9 @@ label {
 			line-height: $line-height-medium;
 		}
 	}
+	
+	/* para el parallax */
+	.video, .col-lg-6{z-index: $parallaxZIndexOnTop;}
 }
 
 .section__signature {
@@ -472,10 +476,14 @@ button.flickity-prev-next-button {
 
 /* wiki */
 #wikis{
+	position: relative;
     .wiki-btn {
         display: block;
         width: 190px;
         margin: 0 auto;
         margin-top: 1rem;
     }
+	
+	/* para el parallax */
+	.text-center{z-index: $parallaxZIndexOnTop;}
 }

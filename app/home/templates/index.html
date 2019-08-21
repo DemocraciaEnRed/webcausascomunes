@@ -5,6 +5,7 @@
 {% block head %}
     <title>Causas comunes</title>
     <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/index-parallax.css')}}" rel="stylesheet">
     <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
     <link href="{{url_for('home.static', filename='css/blueimp-gallery.min.css')}}" rel="stylesheet">
 {% endblock %}
@@ -34,10 +35,15 @@
     <!-- EVENTOS -->
     {% include 'index_sections/index_eventos.html' %}
 
+    <!-- BG PARALLAX -->
+    {% include 'index_sections/parallax.html' %}
 {% endblock %}
 
 {% block scripts %}
     <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/blueimp-gallery.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/rellax.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/index-parallax.js')}}"></script>
+    <script> _data_parallax_img_path = '{{url_for('home.static', filename='img/parallax')}}'</script>
 {% endblock %}
