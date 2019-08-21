@@ -58,49 +58,57 @@
                                 font-size: 10px !important;   }
 }
 
-.manchas {
+.manchas-wrapper {
   position: absolute;
-  -webkit-transition: 0.05s linear;
-  -moz-transition: 0.05s linear;
-  -o-transition: 0.05s linear;
-  transition: 0.05s linear; }
-  .manchas#mancha-mani1 {
-    left: 10%; }
-    @media (min-width: 768px) {
-      .manchas#mancha-mani1 {
-        left: 16%;   }
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+  .manchas {
+    -webkit-transition: 0.05s linear;
+    -moz-transition: 0.05s linear;
+    -o-transition: 0.05s linear;
+    transition: 0.05s linear; }
+    .manchas img {
+      position: absolute; }
+      .manchas#mancha-mani1 img {
+        left: 75px; }
+        @media (min-width: 768px) {
+          .manchas#mancha-mani1 img {
+            left: 215px;   }
 }
-  .manchas#mancha-mani2 {
-    right: -32%; }
-    @media (min-width: 768px) {
-      .manchas#mancha-mani2 {
-        right: -27%;   }
+    .manchas#mancha-mani2 img {
+      right: -315px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-mani2 img {
+          right: -220px;   }
 }
-      @media (min-width: 992px) {
-        .manchas#mancha-mani2 {
-          right: -16%;   }
+        @media (min-width: 992px) {
+          .manchas#mancha-mani2 img {
+            right: -170px;   }
 }
-  .manchas#mancha-mani3 {
-    left: 4%; }
-    @media (min-width: 768px) {
-      .manchas#mancha-mani3 {
-        left: 8%;   }
+    .manchas#mancha-mani3 img {
+      left: 10px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-mani3 img {
+          left: 130px;   }
 }
-  .manchas#mancha-mani4 {
-    left: -16%; }
-    @media (min-width: 992px) {
-      .manchas#mancha-mani4 {
-        left: 9%;   }
+    .manchas#mancha-mani4 img {
+      left: -168px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-mani4 img {
+          left: -143px;   }
 }
-  .manchas#mancha-wiki1 {
-    left: 3%; }
-    @media (min-width: 768px) {
-      .manchas#mancha-wiki1 {
-        left: 4%;   }
+    .manchas#mancha-wiki1 img {
+      left: 0px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-wiki1 img {
+          left: 120px;   }
 }
-  .manchas#mancha-wiki2 {
-    right: -10%; }
-    @media (min-width: 768px) {
-      .manchas#mancha-wiki2 {
-        right: -6%;   }
+    .manchas#mancha-wiki2 img {
+      right: -90px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-wiki2 img {
+          right: -70px;   }
 }

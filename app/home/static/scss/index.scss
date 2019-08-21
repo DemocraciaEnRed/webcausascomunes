@@ -199,6 +199,7 @@ label {
 /* Manifiesto */
 
 .manifiesto {
+	position: relative;
 	p {
 		color: $color-texto-light;
 		font-size: $font-size-xsmall;
@@ -475,6 +476,7 @@ button.flickity-prev-next-button {
 
 /* wiki */
 #wikis{
+	position: relative;
     .wiki-btn {
         display: block;
         width: 190px;

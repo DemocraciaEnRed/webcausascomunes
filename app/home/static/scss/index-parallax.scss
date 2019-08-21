@@ -1,40 +1,49 @@
 @import 'vars';
 
-.manchas {
+.manchas-wrapper {
 	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.manchas {	
 	$manchaTransTime: 0.05s;
 	$manchaTransAnim: linear;
     -webkit-transition: $manchaTransTime $manchaTransAnim;
     -moz-transition: $manchaTransTime $manchaTransAnim;
     -o-transition: $manchaTransTime $manchaTransAnim;
     transition: $manchaTransTime $manchaTransAnim;
-    
+
+    & img { position: absolute; }
+
 	/* MANCHAS MANIFIESTO */
-    &#mancha-mani1{
-    	left:10%;
-		@media (min-width: $width-medium) { left:16%; }
+    &#mancha-mani1 img{
+    	left:75px;
+		@media (min-width: $width-medium) { left:215px; }
     }
-    &#mancha-mani2{
-    	right:-32%;
-		@media (min-width: $width-medium) { right:-27%; }
-		@media (min-width: $width-large) { right:-16%; }
+    &#mancha-mani2 img{
+    	right:-315px;
+		@media (min-width: $width-medium) { right:-220px; }
+		@media (min-width: $width-large) { right:-170px; }
     }
-    &#mancha-mani3{
-    	left:4%;
-		@media (min-width: $width-medium) { left:8%; }
+    &#mancha-mani3 img{
+    	left:10px;
+		@media (min-width: $width-medium) { left:130px; }
     }
-    &#mancha-mani4{
-    	left:-16%;
-		@media (min-width: $width-large) { left:9%; }
+    &#mancha-mani4 img{
+    	left:-168px;
+		@media (min-width: $width-medium) { left:-143px; }
     }
 
 	/* MANCHAS WIKI */
-    &#mancha-wiki1{
-    	left:3%;
-		@media (min-width: $width-medium) { left:4%; }
+    &#mancha-wiki1 img{
+    	left:-0px;
+		@media (min-width: $width-medium) { left:120px; }
     }
-    &#mancha-wiki2{
-    	right:-10%;
-		@media (min-width: $width-medium) { right:-6%; }
+    &#mancha-wiki2 img{
+    	right:-90px;
+		@media (min-width: $width-medium) { right:-70px; }
     }
 }
