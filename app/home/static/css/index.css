@@ -219,6 +219,8 @@ body {
       font-size: 1rem;
       line-height: 1.75rem;   }
 }
+.manifiesto .video, .manifiesto .col-lg-6 {
+  z-index: 10; }
 
 .section__signature {
   color: #1d1d1b;
@@ -435,3 +437,5 @@ button.flickity-prev-next-button.previous {
         width: 190px;
         margin: 0 auto;
         margin-top: 1rem; }
+        #wikis .text-center {
+          z-index: 10; }

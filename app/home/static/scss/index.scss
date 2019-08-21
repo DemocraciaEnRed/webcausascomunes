@@ -208,6 +208,9 @@ label {
 			line-height: $line-height-medium;
 		}
 	}
+	
+	/* para el parallax */
+	.video, .col-lg-6{z-index: $parallaxZIndexOnTop;}
 }
 
 .section__signature {
@@ -478,4 +481,7 @@ button.flickity-prev-next-button {
         margin: 0 auto;
         margin-top: 1rem;
     }
+	
+	/* para el parallax */
+	.text-center{z-index: $parallaxZIndexOnTop;}
 }
