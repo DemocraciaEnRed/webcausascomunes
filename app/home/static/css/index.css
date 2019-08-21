@@ -248,11 +248,9 @@ body {
   background-image: url('/static/img/manifiesto-background.svg');
   background-repeat: no-repeat;
   background-size: cover; }
-
-  .carousel {
+  .propuestas .carousel {
     background: transparent; }
-
-    .carousel-cell {
+    .propuestas .carousel-cell {
       width: 80%;
       height: 340px;
       margin-right: 2rem;
@@ -261,87 +259,82 @@ body {
       counter-increment: carousel-cell;
       color: black; }
       @media (min-width: 992px) {
-        .carousel-cell {
+        .propuestas .carousel-cell {
           width: 30%;
           height: 400px;
           margin-left: 0;   }
 }
-        .carousel-cell .title {
+        .propuestas .carousel-cell .title {
           color: #2a4b8c;
           font-size: 1.15rem;
           font-weight: 600;
           margin-bottom: 1rem; }
           @media (min-width: 768px) {
-            .carousel-cell .title {
+            .propuestas .carousel-cell .title {
               font-size: 1.5rem;   }
 }
-      .carousel-cell .text {
+      .propuestas .carousel-cell .text {
         font-size: 0.9rem; }
         @media (min-width: 768px) {
-          .carousel-cell .text {
+          .propuestas .carousel-cell .text {
             font-size: 1rem;   }
 }
-      .carousel-cell img {
+      .propuestas .carousel-cell img {
         height: 6rem; }
-
-.flickity-button {
-  display: none;
-  box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
-  transition: box-shadow ease-in 0.1s; }
-  .flickity-button[disabled] {
-    visibility: hidden; }
+  .propuestas .flickity-button {
+    display: none;
+    box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
+    transition: box-shadow ease-in 0.1s; }
+    .propuestas .flickity-button[disabled] {
+      visibility: hidden; }
+      @media (min-width: 768px) {
+        .propuestas .flickity-button {
+          display: block;   }
+}
+        .propuestas .flickity-button:focus, .propuestas .flickity-button:hover {
+          box-shadow: 0 15px 15px 0 rgba(42, 75, 140, 0.5); }
+  .propuestas button.flickity-prev-next-button.previous {
+    left: -70px; }
+    .propuestas button.flickity-prev-next-button.next {
+      right: -70px; }
+  .propuestas .flickity-page-dots {
+    position: relative; }
     @media (min-width: 768px) {
-      .flickity-button {
-        display: block;   }
+      .propuestas .flickity-page-dots {
+        visibility: hidden;   }
 }
-      .flickity-button:focus, .flickity-button:hover {
-        box-shadow: 0 15px 15px 0 rgba(42, 75, 140, 0.5); }
+      .propuestas .flickity-page-dots .dot {
+        width: 19px;
+        height: 19px;
+        border: solid 1px #2a4b8c;
+        background-color: #ffffff; }
+  .propuestas .flickity-button-icon path {
+    fill: #2a4b8c; }
+  .propuestas .flickity-enabled.is-draggable .flickity-viewport {
+    cursor: auto; }
 
-button.flickity-prev-next-button.previous {
-  left: -70px; }
-  button.flickity-prev-next-button.next {
-    right: -70px; }
-
-.flickity-page-dots {
-  position: relative; }
-  @media (min-width: 768px) {
-    .flickity-page-dots {
-      visibility: hidden;   }
+.section.candidates {
+  background-color: #2a4b8c; }
+  .section.candidates .section__title {
+    color: #ffffff;
+    font-size: 1.5rem; }
+    @media (min-width: 768px) {
+      .section.candidates .section__title {
+        font-size: 2.5rem;   }
 }
-    .flickity-page-dots .dot {
-      width: 19px;
-      height: 19px;
-      border: solid 1px #2a4b8c;
-      background-color: #ffffff; }
-
-.flickity-button-icon path {
-  fill: #2a4b8c; }
-
-.flickity-enabled.is-draggable .flickity-viewport {
-  cursor: auto; }
-
-  .section.candidates {
-    background-color: #2a4b8c; }
-    .section.candidates .section__title {
-      color: #ffffff;
-      font-size: 1.5rem; }
-      @media (min-width: 768px) {
-        .section.candidates .section__title {
-          font-size: 2.5rem;   }
+  .section.candidates .section__subtitle {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem; }
+    @media (min-width: 768px) {
+      .section.candidates .section__subtitle {
+        font-size: 1.25rem;   }
 }
-    .section.candidates .section__subtitle {
-      font-size: 0.9rem;
-      color: #ffffff;
-      margin-bottom: 1.5rem; }
-      @media (min-width: 768px) {
-        .section.candidates .section__subtitle {
-          font-size: 1.25rem;   }
-}
-    .section.candidates .btn {
-      order: 1; }
-      @media (min-width: 768px) {
-        .section.candidates .btn {
-          order: initial;   }
+  .section.candidates .btn {
+    order: 1; }
+    @media (min-width: 768px) {
+      .section.candidates .btn {
+        order: initial;   }
 }
 
 .card--novedades {
@@ -421,25 +414,22 @@ button.flickity-prev-next-button.previous {
     .agenda .list-group-item img {
       height: 3rem; }
 
-#blueimp-gallery {
-  color: white; }
-
-  .blueimp-gallery > .description {
-    position: absolute;
-    top: 45px;
-    left: 15px;
-    color: #fff;
-    display: none; }
-
-    .blueimp-gallery-controls > .description {
-      display: block; }
-
-      #wikis {
-        position: relative; }
-        #wikis .wiki-btn {
-          display: block;
-          width: 190px;
-          margin: 0 auto;
-          margin-top: 1rem; }
-          #wikis .text-center {
-            z-index: 10; }
+#wikis {
+  position: relative; }
+  #wikis .wiki-btn {
+    display: block;
+    width: 190px;
+    margin: 0 auto;
+    margin-top: 1rem; }
+    #wikis .text-center {
+      z-index: 10; }
+      #wikis #blueimp-gallery {
+        color: white; }
+        #wikis .blueimp-gallery > .description {
+          position: absolute;
+          top: 45px;
+          left: 15px;
+          color: #fff;
+          display: none; }
+          #wikis .blueimp-gallery-controls > .description {
+            display: block; }
