@@ -116,7 +116,8 @@ def index():
         # itemsnovedades=itemsnovedades,
         itemsagenda=itemsagenda,
         itemspropuestas=itemspropuestas,
-        galeriahackaton=galeriahackaton)
+        galeriahackaton=galeriahackaton,
+        index_de_testeo='indexDeTesteo' in request.endpoint)
 
 
 @blueprint.route("/contacto", methods=['GET'])
@@ -251,3 +252,5 @@ def cuentas():
 for causa in accepted_causas.keys():
     blueprint.add_url_rule(f'/{causa}', endpoint=causa, view_func=causas_route)
     blueprint.add_url_rule(f'/{causa}/scrolly', endpoint=f'{causa}_scrolly', view_func=causas_scrolly_route)
+
+blueprint.add_url_rule(f'/indexDeTesteo', endpoint='indexDeTesteo', view_func=index)

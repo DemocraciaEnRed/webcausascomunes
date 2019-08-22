@@ -5,7 +5,10 @@
 {% block head %}
     <title>Causas comunes</title>
     <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
-    <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
+	{% if index_de_testeo %}
+    <link href="{{url_for('home.static', filename='css/index-parallax.css')}}" rel="stylesheet">
+    {% endif %}
+	<link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
     <link href="{{url_for('home.static', filename='css/blueimp-gallery.min.css')}}" rel="stylesheet">
 {% endblock %}
 
@@ -33,11 +36,20 @@
 
     <!-- EVENTOS -->
     {% include 'index_sections/index_eventos.html' %}
-
+	
+	{% if index_de_testeo %}
+    <!-- BG PARALLAX -->
+    {% include 'index_sections/parallax.html' %}
+	{% endif %}
 {% endblock %}
 
 {% block scripts %}
     <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/blueimp-gallery.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
+	{% if index_de_testeo %}
+    <script src="{{url_for('home.static', filename='js/rellax.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/index-parallax.js')}}"></script>
+    <script> _data_parallax_img_path = '{{url_for('home.static', filename='img/parallax')}}'</script>
+    {% endif %}
 {% endblock %}

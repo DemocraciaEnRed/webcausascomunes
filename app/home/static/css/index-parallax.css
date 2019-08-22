@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Barlow';
+  src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
+  font-weight: 400; }
+
+  @font-face {
+    font-family: 'Barlow';
+    src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
+    font-weight: 500; }
+
+    @font-face {
+      font-family: 'Barlow';
+      src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
+      font-weight: 600; }
+
+      .text-color-vivienda {
+        color: #194a9a; }
+
+        .text-color-transparencia {
+          color: #e61937; }
+
+          .text-color-trabajo {
+            color: #e71869; }
+
+            .text-color-genero {
+              color: #774997; }
+
+              .text-color-drogas {
+                color: #f9b112; }
+
+                .text-color-ciencia {
+                  color: #008daf; }
+
+                  .text-color-ambiente {
+                    color: #39a95e; }
+
+                    .vertical-align {
+                      display: flex;
+                      align-items: center; }
+
+                      .padding-onditaazul {
+                        padding-top: 12vw; }
+
+                        .backtotop {
+                          position: fixed;
+                          bottom: 2em;
+                          right: 2em;
+                          color: #ffffff;
+                          background-color: rgba(0, 0, 0, 0.3);
+                          font-size: 12px;
+                          padding: 1em;
+                          display: none; }
+                          .backtotop:hover {
+                            color: #ffffff; }
+                            @media (max-width: 576px) {
+                              .backtotop {
+                                padding: 0.5rem;
+                                font-size: 10px !important;   }
+}
+
+.manchas-wrapper {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+  .manchas {
+    -webkit-transition: 0.05s linear;
+    -moz-transition: 0.05s linear;
+    -o-transition: 0.05s linear;
+    transition: 0.05s linear; }
+    .manchas img {
+      position: absolute; }
+      .manchas#mancha-mani1 img {
+        left: 75px; }
+        @media (min-width: 768px) {
+          .manchas#mancha-mani1 img {
+            left: 215px;   }
+}
+    .manchas#mancha-mani2 img {
+      right: -330px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-mani2 img {
+          right: -220px;   }
+}
+        @media (min-width: 992px) {
+          .manchas#mancha-mani2 img {
+            right: -170px;   }
+}
+    .manchas#mancha-mani3 img {
+      left: 10px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-mani3 img {
+          left: 130px;   }
+}
+    .manchas#mancha-mani4 img {
+      left: -185px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-mani4 img {
+          left: -143px;   }
+}
+    .manchas#mancha-wiki1 img {
+      left: 0px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-wiki1 img {
+          left: 120px;   }
+}
+    .manchas#mancha-wiki2 img {
+      right: -90px; }
+      @media (min-width: 768px) {
+        .manchas#mancha-wiki2 img {
+          right: -70px;   }
+}
