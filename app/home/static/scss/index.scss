@@ -242,6 +242,53 @@ label {
 	background-repeat: no-repeat;
 	background-size: cover;
 
+	.container-fluid{
+	    @media (min-width: $width-xlarge) {
+			padding: 0 12rem;
+	    }
+    }
+	.card{
+		float: left;
+		color:white;
+		text-align: center;
+		width: 11rem;
+		height: 18rem;
+        @media (min-width: $width-medium) {
+			width: 16rem;
+			height: 23rem;
+
+        }
+		&.card-trabajo { background-color: #e0427b; }
+		&.card-ambiente { background-color: #2eac67; }
+		&.card-genero { background-color: #764896; }
+		&.card-vivienda { background-color: #1955a6; }
+		&.card-drogas { background-color: #f0a316; }
+		&.card-transparencia { background-color: #e2404f; }
+	    .title {
+			text-align: left;
+	        font-size: $font-size-small;
+	        font-weight: 600;
+	        margin-bottom: 1rem;
+	        @media (min-width: $width-medium) {
+	            font-size: $font-size-large;
+	        }
+	    }	
+	    a:target, a:hover, a {
+	        color: white;
+	        /*text-decoration: none;*/
+	    }
+	    .text {
+			text-align: left;
+	        font-size: $font-size-xsmall;
+	        @media (min-width: $width-medium) {
+	            font-size: $font-size-base;
+	        }
+	    }
+	    img {
+	        height:6rem;
+	    }
+	}
+
 	.carousel {
 		background: transparent;
 	}
@@ -259,29 +306,6 @@ label {
 		border-radius: 20px;
 		counter-increment: carousel-cell;
 	    color: black;
-	
-	    /*a:target, a:hover, a {
-	        color: black;
-	        text-decoration: none;
-	    }*/
-	    .title {
-	        color:$color-principal-azul;
-	        font-size: $font-size-small;
-	        font-weight: 600;
-	        margin-bottom: 1rem;
-	        @media (min-width: $width-medium) {
-	            font-size: $font-size-large;
-	        }
-	    }
-	    .text {
-	        font-size: $font-size-xsmall;
-	        @media (min-width: $width-medium) {
-	            font-size: $font-size-base;
-	        }
-	    }
-	    img {
-	        height:6rem;
-	    }
 	}
 	
 	.flickity-button {
