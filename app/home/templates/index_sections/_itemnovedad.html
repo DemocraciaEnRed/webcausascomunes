@@ -6,7 +6,7 @@
 {% else %}
     {% set htag_lower =  '' %}
 {% endif %}
-<div class="col-12 col-md-{{ cols or '' }} pb-3">
+<div class="col-12 col-md-{{ cols or '' }} pb-3 mb-4">
     <div class="card card--novedades">
 		<div class="card-img-top">
         	<img src="{{ create_img_src(imgpath or '') }}" alt="{{ title or '' }}">
@@ -18,7 +18,7 @@
                     <span class="mb-2">{{ title or '' }}</span>
                 </a>
             </h5>
-			<p class="card-text text">{{texto|safe}}</p>
+			<span class="card-text text">{{texto|safe}}</span>
         </div>
     </div>
 </div>
