@@ -366,33 +366,44 @@ body {
         order: initial;   }
 }
 
-.novedades .card--novedades {
-  box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
-  border-radius: 0;
-  background: #ffffff; }
-  .novedades .card--novedades .card-title {
-    font-size: 1rem; }
+.novedades {
+  background-color: #f4f9ff; }
+  .novedades .card--novedades {
+    box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
+    border-radius: 0;
+    background: #ffffff;
+    height: 500px; }
+    .novedades .card--novedades .card-body {
+      margin-top: -40px;
+      overflow-y: hidden; }
+      .novedades .card--novedades .card-body .card-hashtag {
+        font-size: 0.9rem;
+        display: inline-block;
+        background-color: #eff1f4;
+        padding: 0 1rem;
+        border-radius: 1rem;
+        line-height: 1.8;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize; }
+        .novedades .card--novedades .card-body .card-title {
+          font-size: 1rem; }
+          @media (min-width: 768px) {
+            .novedades .card--novedades .card-body .card-title {
+              font-size: 1.25rem;   }
+}
+            .novedades .card--novedades .card-body .card-title a span {
+              display: inline-block; }
+  .novedades .twitter-timeline__title {
+    color: #2a4b8c;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: left; }
     @media (min-width: 768px) {
-      .novedades .card--novedades .card-title {
-        font-size: 1.25rem;   }
+      .novedades .twitter-timeline__title {
+        font-size: 1.5rem;   }
 }
-      .novedades .card--novedades .card-title a span {
-        display: inline-block; }
-        @media (min-width: 768px) {
-          .novedades .card--novedades .card-title a span {
-            max-width: 80%;   }
-}
-      .novedades .card--novedades .card-title a .fa {
-        font-size: 1.5rem; }
-.novedades .card-hashtag {
-  font-size: 0.9rem;
-  display: inline-block;
-  background-color: #eff1f4;
-  padding: 0 1rem;
-  border-radius: 1rem;
-  line-height: 1.8;
-  margin-bottom: 0.5rem;
-  text-transform: capitalize; }
 
 .eventos .list-group {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125); }

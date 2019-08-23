@@ -388,38 +388,55 @@ label {
 /* Novedades */
 
 .novedades {
+	background-color:$sectionBgColorWhite;
 	.card--novedades {
 		box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
 		border-radius: 0;
 		background: $white;
-		.card-title {
-			font-size: $font-size-base;
-			@media(min-width: $width-medium) {
-				font-size: $font-size-medium;
+		height: 500px;
+		
+		img {  }
+		
+		.card-body { 
+			margin-top: -40px;	
+			overflow-y: hidden;
+			
+			.card-hashtag {
+				font-size: $font-size-xsmall;
+				display: inline-block;
+				background-color: #eff1f4;
+				padding: 0 1rem;
+				border-radius: 1rem;
+				line-height: 1.8;
+				margin-bottom: 0.5rem;
+				text-transform: capitalize;
 			}
-			a {
-				span {
+			
+			.card-title {
+				font-size: $font-size-base;
+				@media(min-width: $width-medium) {
+					font-size: $font-size-medium;
+				}
+				a span {
 					display: inline-block;
-					@media(min-width: $width-medium) {
-						max-width: 80%;
-					}
-				}
-				.fa {
-					font-size: $font-size-large;
 				}
 			}
+			
+			.text { }
 		}
-	}
+	}	
+
+	.twitter-timeline__title {
+	    color: $color-principal-azul;
+	    font-size: $font-size-medium;
+	    margin-top: 1.5rem;
+	    margin-bottom: 1rem;
+	    font-weight: 600;
+	    text-align: left;
+	    @media (min-width: $width-medium){
+	        font-size: $font-size-large;
+	    }
 	
-	.card-hashtag {
-		font-size: $font-size-xsmall;
-		display: inline-block;
-		background-color: #eff1f4;
-		padding: 0 1rem;
-		border-radius: 1rem;
-		line-height: 1.8;
-		margin-bottom: 0.5rem;
-		text-transform: capitalize;
 	}
 }
 
