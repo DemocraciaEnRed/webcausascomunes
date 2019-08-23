@@ -199,7 +199,9 @@ class DirectusApi:
                 'ancho_columnas': DirectusApi.RowTypes.TEXT,
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'hashtag': DirectusApi.RowTypes.TEXT,
-                'imagen': DirectusApi.RowTypes.IMG
+                'imagen': DirectusApi.RowTypes.IMG,
+                'url': DirectusApi.RowTypes.TEXT,
+                'texto': DirectusApi.RowTypes.TEXT
             }, pagina=pagina)
 
     def get_items_agenda(self, pagina):
@@ -214,8 +216,6 @@ class DirectusApi:
         return self.get_items('items_propuestas', {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
-                'icono': DirectusApi.RowTypes.IMG,
-                'imagen_fondo': DirectusApi.RowTypes.IMG,
                 'pagina': DirectusApi.RowTypes.REL_NOMBRE
             })
 
