@@ -221,24 +221,26 @@ body {
         font-size: 1rem;
         line-height: 1.75rem;   }
 }
-  .manifiesto .section__signature {
-    color: #1d1d1b;
-    font-style: italic; }
-    @media (min-width: 768px) {
-      .manifiesto .section__signature {
-        font-size: 1.15rem;   }
+  .manifiesto .video, .manifiesto .col-lg-6 {
+    z-index: 10; }
+    .manifiesto .section__signature {
+      color: #1d1d1b;
+      font-style: italic; }
+      @media (min-width: 768px) {
+        .manifiesto .section__signature {
+          font-size: 1.15rem;   }
 }
-      .manifiesto .section__signature:before {
-        content: " ";
-        background-color: #2a4b8c;
-        width: 55px;
-        height: 5px;
-        margin-right: 2rem;
-        display: inline-block;
-        vertical-align: middle; }
-        @media (min-width: 768px) {
-          .manifiesto .section__signature:before {
-            opacity: 0.5;   }
+        .manifiesto .section__signature:before {
+          content: " ";
+          background-color: #2a4b8c;
+          width: 55px;
+          height: 5px;
+          margin-right: 2rem;
+          display: inline-block;
+          vertical-align: middle; }
+          @media (min-width: 768px) {
+            .manifiesto .section__signature:before {
+              opacity: 0.5;   }
 }
 
 .propuestas {

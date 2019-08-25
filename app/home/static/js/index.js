@@ -20,25 +20,9 @@ function hashScroll() {
     }
 }
 
-var navbar_anchor = $("#navbar").innerHeight();
-var navbar = $("#navbar");
-
-function scrollHandler(){
-/*     if ($(this).scrollTop() >= ($("#propuestas").offset().top) - 150) {
-        //$(window).off('scroll', scrollHandler);
-    } */
-    if ($(this).scrollTop() >= navbar_anchor && !navbar.hasClass('scrolling') ) {    
-        navbar.addClass('scrolling');
-    } else if ($(this).scrollTop() < navbar_anchor && navbar.hasClass('scrolling')) {   
-        navbar.removeClass('scrolling');
-    }
-}
-
 $(document).ready(function(){
     initBlueimp(hashScroll);
-
-    $( window ).scroll(scrollHandler);
-
+    
     $('.scrollTo').click(function(e) {
         e.preventDefault();
         var sectionTo = $(this).attr('href');
