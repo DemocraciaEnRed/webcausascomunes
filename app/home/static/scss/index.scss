@@ -211,7 +211,7 @@ label {
 	}
 	
 	/* para el parallax */
-	.video, .col-lg-6{z-index: $parallaxZIndexOnTop;}
+	//.video, .col-lg-6{z-index: $parallaxZIndexOnTop;}
 
 	.section__signature {
 		color: $color-texto-light;
@@ -497,7 +497,7 @@ label {
     }
 	
 	/* para el parallax */
-	.text-center{z-index: $parallaxZIndexOnTop;}
+	//.text-center{z-index: $parallaxZIndexOnTop;}
 	
 	#blueimp-gallery {
 	    color:white;

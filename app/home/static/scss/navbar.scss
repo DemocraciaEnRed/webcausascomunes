@@ -4,14 +4,6 @@ header {
     position: absolute;
     z-index: 2;
     width: 100%;
-}
-nav {
-    a.nav-link.active {@include border-radius(2rem);}
-    form {
-        input.form-control {
-            @include border-radius(2rem);
-        }
-    }
     .ondita-azul{
         position: absolute;
         display:none;
@@ -24,6 +16,14 @@ nav {
         }
         @media (min-width: $width-xlarge) {
         width: 70%;
+        }
+    }
+}
+nav {
+    a.nav-link.active {@include border-radius(2rem);}
+    form {
+        input.form-control {
+            @include border-radius(2rem);
         }
     }
 }
@@ -121,6 +121,24 @@ nav {
             color: $white;
             &:after {
                 display: block;
+            }
+        }
+    }
+}
+
+.navbar.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    &.scrolling {
+        background-color: $white;
+        .nav-link {
+            color: $color-principal-azul;
+            &.active,
+            &:hover {
+                &:after {
+                    background-color: $color-principal-azul;
+                }
             }
         }
     }

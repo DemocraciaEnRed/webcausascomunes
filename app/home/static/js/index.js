@@ -20,9 +20,17 @@ function hashScroll() {
     }
 }
 
+var navbar_anchor = $("#navbar").innerHeight();
+var navbar = $("#navbar");
+
 function scrollHandler(){
-    if ($(this).scrollTop() >= ($("#propuestas").offset().top) - 150) {
-        $(window).off('scroll', scrollHandler);
+/*     if ($(this).scrollTop() >= ($("#propuestas").offset().top) - 150) {
+        //$(window).off('scroll', scrollHandler);
+    } */
+    if ($(this).scrollTop() >= navbar_anchor && !navbar.hasClass('scrolling') ) {    
+        navbar.addClass('scrolling');
+    } else if ($(this).scrollTop() < navbar_anchor && navbar.hasClass('scrolling')) {   
+        navbar.removeClass('scrolling');
     }
 }
 
