@@ -222,7 +222,7 @@ body {
         line-height: 1.75rem;   }
 }
   .manifiesto .video, .manifiesto .col-lg-6 {
-    z-index: 10; }
+    z-index: 1; }
     .manifiesto .section__signature {
       color: #1d1d1b;
       font-style: italic; }
@@ -448,13 +448,15 @@ body {
     width: 190px;
     margin: 0 auto;
     margin-top: 1rem; }
-    #wikis #blueimp-gallery {
-      color: white; }
-      #wikis .blueimp-gallery > .description {
-        position: absolute;
-        top: 45px;
-        left: 15px;
-        color: #fff;
-        display: none; }
-        #wikis .blueimp-gallery-controls > .description {
-          display: block; }
+    #wikis .text-center {
+      z-index: 1; }
+      #wikis #blueimp-gallery {
+        color: white; }
+        #wikis .blueimp-gallery > .description {
+          position: absolute;
+          top: 45px;
+          left: 15px;
+          color: #fff;
+          display: none; }
+          #wikis .blueimp-gallery-controls > .description {
+            display: block; }
