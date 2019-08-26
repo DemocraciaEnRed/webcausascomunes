@@ -50,7 +50,12 @@ class Cuentas(Dataset):
 
 
 
-
+class Colaboraciones(Dataset):
+    def __init__(self, csv_path):
+        # csv original - https://docs.google.com/spreadsheets/d/1zVvDW0PCRWkcYpLbfqYD8O_kWklgFPvIxU5JMSoPe0k/edit#gid=0
+        self.csv_path = csv_path
+        self.csv_headers = ('',)
+        self.exclude_headers = {'',}
 
 
 
