@@ -360,9 +360,9 @@ label {
 /* Candidates */
 
 .candidates {
-	background-color: $color-principal-azul;
+    color: $color-principal-azul;
+	background-color: $sectionBgColorBlue !important;
 	.section__title {
-		color: $white;
 		font-size: $font-size-large;
 		@media (min-width: $width-medium) {
 			font-size: $font-size-xxlarge;
@@ -370,7 +370,6 @@ label {
 	}
 	.section__subtitle {
 		font-size: $font-size-xsmall;
-		color: $white;
 		margin-bottom: 1.5rem;
 		@media (min-width: $width-medium) {
 			font-size: $font-size-medium;

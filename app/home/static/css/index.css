@@ -343,9 +343,9 @@ body {
     cursor: auto; }
 
 .candidates {
-  background-color: #2a4b8c; }
+  color: #2a4b8c;
+  background-color: #e4eefa !important; }
   .candidates .section__title {
-    color: #ffffff;
     font-size: 1.5rem; }
     @media (min-width: 768px) {
       .candidates .section__title {
@@ -353,7 +353,6 @@ body {
 }
   .candidates .section__subtitle {
     font-size: 0.9rem;
-    color: #ffffff;
     margin-bottom: 1.5rem; }
     @media (min-width: 768px) {
       .candidates .section__subtitle {
