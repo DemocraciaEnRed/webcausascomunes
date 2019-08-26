@@ -20,17 +20,9 @@ function hashScroll() {
     }
 }
 
-function scrollHandler(){
-    if ($(this).scrollTop() >= ($("#propuestas").offset().top) - 150) {
-        $(window).off('scroll', scrollHandler);
-    }
-}
-
 $(document).ready(function(){
     initBlueimp(hashScroll);
-
-    $( window ).scroll(scrollHandler);
-
+    
     $('.scrollTo').click(function(e) {
         e.preventDefault();
         var sectionTo = $(this).attr('href');

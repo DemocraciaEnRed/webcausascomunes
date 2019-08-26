@@ -222,7 +222,7 @@ body {
         line-height: 1.75rem;   }
 }
   .manifiesto .video, .manifiesto .col-lg-6 {
-    z-index: 10; }
+    z-index: 1; }
     .manifiesto .section__signature {
       color: #1d1d1b;
       font-style: italic; }
