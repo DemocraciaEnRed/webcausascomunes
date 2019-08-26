@@ -216,19 +216,20 @@ def cuentas():
 
     dtextos = directus.dapi.get_textos_pagina('Cuentas')
 
-    import app.datos as datos
-    presu_heads = datos.get_rendered_headers()
+    from app.datos import Cuentas
+    dataset_cuentas = Cuentas(blueprint.static_folder + '/datos-presupuesto.csv')
+    dataset_headers = dataset_cuentas.get_rendered_headers()
 
     # if current_app._gsheetapi:
     if False:
-        presu_data = datos.get_rows_from_gsheet(current_app._gsheetapi)
+        dataset_rows = dataset_cuentas.get_rows_from_gsheet(current_app._gsheetapi)
     else:
         # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
-        presu_data = datos.get_rows_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
+        dataset_rows = dataset_cuentas.get_rows_from_csv()
 
     fechas_epoch = []
-    fecha_i = presu_heads.index('fecha')
-    for row in presu_data:
+    fecha_i = dataset_headers.index('fecha')
+    for row in dataset_rows:
         try:
             date = datetime.strptime(row[fecha_i], '%d/%m/%Y')
             date = date.strftime('%s')
@@ -236,7 +237,7 @@ def cuentas():
             date = ''
         fechas_epoch.append(date)
 
-    presu_heads = [h.capitalize() for h in presu_heads]
+    dataset_headers = [h.capitalize() for h in dataset_headers]
 
     return render_template(
         'transparencia.html',
@@ -244,8 +245,51 @@ def cuentas():
         dimgsnav=dimgsnav,
         dimgsfooter=dimgsfooter,
         dtextos=dtextos,
-        presu_heads=presu_heads,
-        presu_data=presu_data,
+        presu_heads=dataset_headers,
+        presu_data=dataset_rows,
+        fechas_epoch=fechas_epoch)
+
+
+
+@blueprint.route("/colaboraciones", methods=['GET'])
+def colaboraciones():
+    import app.directus as directus
+    dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
+    dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
+
+    dtextos = directus.dapi.get_textos_pagina('Cuentas')
+
+    from app.datos import Colaboraciones
+    dataset_colaboraciones = Colaboraciones(blueprint.static_folder + '/CC_contabilidad_tiempo - Sheet1.csv')
+    dataset_headers = dataset_colaboraciones.get_rendered_headers()
+
+    # if current_app._gsheetapi:
+    if False:
+        dataset_rows = dataset_colaboraciones.get_rows_from_gsheet(current_app._gsheetapi)
+    else:
+        # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
+        dataset_rows = dataset_colaboraciones.get_rows_from_csv()
+
+    fechas_epoch = []
+    fecha_i = dataset_headers.index('fecha')
+    for row in dataset_rows:
+        try:
+            date = datetime.strptime(row[fecha_i], '%d/%m/%Y')
+            date = date.strftime('%s')
+        except:
+            date = ''
+        fechas_epoch.append(date)
+
+    dataset_headers = [h.capitalize() for h in dataset_headers]
+
+    return render_template(
+        'colaboraciones.html',
+        navs=get_menu_navs(),
+        dimgsnav=dimgsnav,
+        dimgsfooter=dimgsfooter,
+        dtextos=dtextos,
+        presu_heads=dataset_headers,
+        presu_data=dataset_rows,
         fechas_epoch=fechas_epoch)
 
 
