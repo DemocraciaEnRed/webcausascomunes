@@ -73,6 +73,7 @@ body {
         padding-left: 0; }
 
 .section {
+  position: relative;
   background-color: #ffffff; }
   .section.jumbotron-fluid {
     margin-bottom: auto;

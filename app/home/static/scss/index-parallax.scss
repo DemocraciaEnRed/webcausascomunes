@@ -6,6 +6,9 @@
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+	display:none;
+	@media (min-width: $width-large) { display:block; }
+	
 }
 
 .manchas {	
@@ -25,8 +28,9 @@
     }
     &#mancha-mani2 img{
     	right:-330px;
-		@media (min-width: $width-medium) { right:-220px; }
-		@media (min-width: $width-large) { right:-250px; }
+		@media (min-width: $width-large) { right:-370px; }
+		@media (min-width: 1278px) { right:-310px; }
+		@media (min-width: 1464px) { right:-250px; }
     }
     &#mancha-mani3 img{
     	left:10px;
@@ -40,10 +44,22 @@
 	/* MANCHAS WIKI */
     &#mancha-wiki1 img{
     	left:-0px;
-		@media (min-width: $width-medium) { left:120px; }
+		@media (min-width: $width-medium) { left:-55px; }
+		@media (min-width: 1464px) { left:120px; }
     }
     &#mancha-wiki2 img{
     	right:-90px;
 		@media (min-width: $width-medium) { right:-70px; }
+    }
+
+	/* MANCHAS NOVEDADES */
+    &#mancha-nove1 img{
+		@media (min-width: $width-medium) { right:0px; }
+    }
+    &#mancha-nove2 img{
+		@media (min-width: $width-medium) { left:-200px; }
+    }
+    &#mancha-nove3 img{
+		@media (min-width: $width-medium) { right:-200px; }
     }
 }

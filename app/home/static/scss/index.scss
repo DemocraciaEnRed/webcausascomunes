@@ -33,6 +33,7 @@ img {
 }
 
 .section {
+	position:relative;/*necesario para que anden manchas parallax!*/
 	background-color: $white;
 	&.jumbotron-fluid {
 		margin-bottom: auto;

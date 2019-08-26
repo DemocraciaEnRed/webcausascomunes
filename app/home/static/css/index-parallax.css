@@ -63,52 +63,77 @@
   top: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  display: none; }
+  @media (min-width: 992px) {
+    .manchas-wrapper {
+      display: block;   }
+}
 
-  .manchas {
-    -webkit-transition: 0.05s linear;
-    -moz-transition: 0.05s linear;
-    -o-transition: 0.05s linear;
-    transition: 0.05s linear; }
-    .manchas img {
-      position: absolute; }
-      .manchas#mancha-mani1 img {
-        left: 75px; }
-        @media (min-width: 768px) {
-          .manchas#mancha-mani1 img {
-            left: 215px;   }
-}
-    .manchas#mancha-mani2 img {
-      right: -330px; }
+.manchas {
+  -webkit-transition: 0.05s linear;
+  -moz-transition: 0.05s linear;
+  -o-transition: 0.05s linear;
+  transition: 0.05s linear; }
+  .manchas img {
+    position: absolute; }
+    .manchas#mancha-mani1 img {
+      left: 75px; }
       @media (min-width: 768px) {
-        .manchas#mancha-mani2 img {
-          right: -220px;   }
+        .manchas#mancha-mani1 img {
+          left: 215px;   }
 }
-        @media (min-width: 992px) {
+  .manchas#mancha-mani2 img {
+    right: -330px; }
+    @media (min-width: 992px) {
+      .manchas#mancha-mani2 img {
+        right: -370px;   }
+}
+      @media (min-width: 1278px) {
+        .manchas#mancha-mani2 img {
+          right: -310px;   }
+}
+        @media (min-width: 1464px) {
           .manchas#mancha-mani2 img {
             right: -250px;   }
 }
-    .manchas#mancha-mani3 img {
-      left: 10px; }
-      @media (min-width: 768px) {
-        .manchas#mancha-mani3 img {
-          left: 130px;   }
+  .manchas#mancha-mani3 img {
+    left: 10px; }
+    @media (min-width: 768px) {
+      .manchas#mancha-mani3 img {
+        left: 130px;   }
 }
-    .manchas#mancha-mani4 img {
-      left: -185px; }
-      @media (min-width: 768px) {
-        .manchas#mancha-mani4 img {
-          left: -143px;   }
+  .manchas#mancha-mani4 img {
+    left: -185px; }
+    @media (min-width: 768px) {
+      .manchas#mancha-mani4 img {
+        left: -143px;   }
 }
-    .manchas#mancha-wiki1 img {
-      left: 0px; }
-      @media (min-width: 768px) {
+  .manchas#mancha-wiki1 img {
+    left: 0px; }
+    @media (min-width: 768px) {
+      .manchas#mancha-wiki1 img {
+        left: -55px;   }
+}
+      @media (min-width: 1464px) {
         .manchas#mancha-wiki1 img {
           left: 120px;   }
 }
-    .manchas#mancha-wiki2 img {
-      right: -90px; }
-      @media (min-width: 768px) {
-        .manchas#mancha-wiki2 img {
-          right: -70px;   }
+  .manchas#mancha-wiki2 img {
+    right: -90px; }
+    @media (min-width: 768px) {
+      .manchas#mancha-wiki2 img {
+        right: -70px;   }
+}
+  @media (min-width: 768px) {
+    .manchas#mancha-nove1 img {
+      right: 0px;   }
+}
+  @media (min-width: 768px) {
+    .manchas#mancha-nove2 img {
+      left: -200px;   }
+}
+  @media (min-width: 768px) {
+    .manchas#mancha-nove3 img {
+      right: -200px;   }
 }
