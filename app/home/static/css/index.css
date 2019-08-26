@@ -472,21 +472,23 @@ body {
       height: 3rem; }
 
 #wikis {
-  position: relative; }
-  #wikis .wiki-btn {
-    display: block;
-    width: 190px;
-    margin: 0 auto;
-    margin-top: 1rem; }
-    #wikis .text-center {
-      z-index: 10; }
-      #wikis #blueimp-gallery {
-        color: white; }
-        #wikis .blueimp-gallery > .description {
-          position: absolute;
-          top: 45px;
-          left: 15px;
-          color: #fff;
-          display: none; }
-          #wikis .blueimp-gallery-controls > .description {
-            display: block; }
+  position: relative;
+  background-color: #e4eefa; }
+  #wikis .img-wrapper {
+    padding-top: 1.5rem; }
+    #wikis .wiki-btn {
+      display: block;
+      width: 190px;
+      margin-top: 1rem; }
+      #wikis .text-center {
+        z-index: 10; }
+        #wikis #blueimp-gallery {
+          color: white; }
+          #wikis .blueimp-gallery > .description {
+            position: absolute;
+            top: 45px;
+            left: 15px;
+            color: #fff;
+            display: none; }
+            #wikis .blueimp-gallery-controls > .description {
+              display: block; }

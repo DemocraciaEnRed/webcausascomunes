@@ -525,10 +525,13 @@ label {
 /* wiki */
 #wikis{
 	position: relative;
+	background-color: $sectionBgColorBlue;
+	.img-wrapper{
+		padding-top: 1.5rem;
+	}
     .wiki-btn {
         display: block;
         width: 190px;
-        margin: 0 auto;
         margin-top: 1rem;
     }
 	
