@@ -2,15 +2,34 @@
 
 <section id="activa" class="activa section jumbotron jumbotron-fluid">
     <div class="container">
-        <h2 class="section__title text-center">{{ dtextoscausas.get('activa')['titulo']}}</h2>
-        <div class="row mt-3">
-            <div class="col-md-4">
-                <div class="img-wrapper text-center">
-					<img src="{{ url_for('home.static', filename='img/activa-num-1.png') }}" alt="" />
-                </div>
-                <span>
-					{{ dtextoscausas.get('activa')['paso1']}}
-                </span>
+        <h2 class="section__title text-center mb-4 mb-md-5">
+			{{ dtextoscausas.get('activa')['titulo']}}
+	        <div class="img-megafono-wrapper ml-2 ml-md-3">
+				<img src="{{ url_for('home.static', filename='img/activa-megafono.svg') }}" alt="" />
+			</div>
+		</h2>
+		<div class="row row-pasos mt-3">
+            {% for i in range(4) %}
+			{% set j = (i+1)|string %}
+	            <div class="col-md-3 col-paso mb-5">
+	                <div class="img-wrapper text-center mb-3">
+						<img src="{{ url_for('home.static', filename='img/activa-num-'+j+'.png') }}" alt="" />
+	                </div>
+	                <span>
+						{{ dtextoscausas.get('activa')['paso' + j]}}
+	                </span>
+	            </div>
+            {% endfor %}
+        </div>
+		<div class="row row-carita py-3 mx-1 mx-md-0">
+			<div class="carita-wrapper text-center">
+				<img class="mr-2" src="{{ url_for('home.static', filename='img/activa-carita.svg') }}" alt="" />
+				<span>{{ dtextoscausas.get('activa')['mensaje']}}</span>
+			</div>
+        </div>
+		<div class="row row-boton mt-5">
+            <div class="text-center">
+                <a href="#" class="btn btn-primary btn-md py-3">{{ dtextoscausas.get('activa')['boton']}}</a>
             </div>
         </div>
     </div>

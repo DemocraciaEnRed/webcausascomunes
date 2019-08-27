@@ -158,3 +158,64 @@ body {overflow-x: hidden;}
         font-size: $font-size-large;
     }
 }
+
+
+/*####################################################*/
+/*################## ACTIVA */
+.activa{
+    color: $color-principal-azul;
+    font-size: $font-size-small !important;
+    @media (min-width: $width-medium){
+		font-size: $font-size-medium !important;
+    }
+	
+	.img-megafono-wrapper{
+		display: inline-block;
+		img{
+			position: relative;
+			top: -2px;
+			height: 55px;
+		    @media (min-width: $width-medium){
+				height: 75px;
+		    }
+		}
+	}
+
+	.col-paso {
+		padding: 0 0.6rem;
+	    @media (min-width: $width-large){
+			padding: 0 3rem;
+	    }
+		text-align: center;
+	    @media (min-width: $width-medium){
+	        text-align: left;
+	    }
+	}
+	
+	.row-carita{
+		@include border-radius(35px);
+		background-color: #E4EDFF;
+		.carita-wrapper{
+			margin: 0 auto;
+			font-weight: bold;
+			img{
+				height: 45px;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+	
+	.row-boton > div{
+		margin: 0 auto;
+		a { 
+			font-weight: 600;			
+		    font-size: $font-size-small !important;
+		    @media (min-width: $width-medium){
+				font-size: $font-size-medium !important;
+		    }
+		}
+	}
+}
+
