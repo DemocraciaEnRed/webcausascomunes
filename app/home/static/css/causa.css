@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'Barlow';
+  src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
+  font-weight: 400; }
+
+  @font-face {
+    font-family: 'Barlow';
+    src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
+    font-weight: 500; }
+
+    @font-face {
+      font-family: 'Barlow';
+      src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
+      font-weight: 600; }
+
+      .text-color-vivienda {
+        color: #194a9a; }
+
+        .text-color-transparencia {
+          color: #e61937; }
+
+          .text-color-trabajo {
+            color: #e71869; }
+
+            .text-color-genero {
+              color: #774997; }
+
+              .text-color-drogas {
+                color: #f9b112; }
+
+                .text-color-ciencia {
+                  color: #008daf; }
+
+                  .text-color-ambiente {
+                    color: #39a95e; }
+
+                    .vertical-align {
+                      display: flex;
+                      align-items: center; }
+
+                      .padding-onditaazul {
+                        padding-top: 12vw; }
+
+                        .backtotop {
+                          position: fixed;
+                          bottom: 2em;
+                          right: 2em;
+                          color: #ffffff;
+                          background-color: rgba(0, 0, 0, 0.3);
+                          font-size: 12px;
+                          padding: 1em;
+                          display: none; }
+                          .backtotop:hover {
+                            color: #ffffff; }
+                            @media (max-width: 576px) {
+                              .backtotop {
+                                padding: 0.5rem;
+                                font-size: 10px !important;   }
+}
+
+body {
+  overflow-x: hidden; }
+
+  @media (min-width: 768px) {
+    .section.jumbotron-fluid {
+      padding-top: 3rem;
+      padding-bottom: 3rem;   }
+}
+  .section:nth-child(even) {
+    background-color: #ffffff; }
+    .section:nth-child(odd) {
+      background-color: #faf2ff; }
+
+.portada-seccion {
+  background-color: transparent;
+  margin-top: 4rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  .portada-seccion h1 {
+    padding: 6rem 0;
+    color: black;
+    font-weight: 600;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.34); }
+
+.nav-secondary {
+  background-color: #f8eeff;
+  position: relative;
+  margin-left: -2rem;
+  right: -1rem;
+  z-index: 1; }
+  @media (min-width: 768px) {
+    .nav-secondary {
+      margin-left: -4rem;
+      right: -2rem;   }
+}
+    .nav-secondary li {
+      padding-left: 0;
+      padding-right: 0; }
+      @media (min-width: 768px) {
+        .nav-secondary li {
+          padding-left: 1rem;
+          padding-right: 1rem;   }
+}
+  .nav-secondary .nav-link {
+    color: #764896; }
+    .nav-secondary .nav-link:after {
+      display: none; }
+      .nav-secondary .nav-link:hover, .nav-secondary .nav-link.active {
+        text-shadow: 0 0 0.65px #2a4b8c, 0 0 0.65px #2a4b8c; }
+  .nav-secondary.position-fixed {
+    top: 0;
+    margin-left: -1rem;
+    left: 0; }
+
+#definicion {
+  padding-bottom: 5rem; }
+
+  .tema-principal img {
+    width: 100%; }
+    @media (min-width: 768px) {
+      .tema-principal img {
+        width: 40%;
+        float: left;
+        margin-right: 3rem;   }
+}
+  .tema-principal .title {
+    color: #2a4b8c;
+    font-size: 1.25rem;
+    margin-top: 1.5rem; }
+    @media (min-width: 768px) {
+      .tema-principal .title {
+        margin-top: 0;
+        font-size: 1.5rem;   }
+}
+
+.tema-secundario img {
+  width: 50%;
+  float: left;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem; }
+  .tema-secundario .title {
+    color: #2a4b8c;
+    font-size: 1.15rem; }
+    @media (min-width: 768px) {
+      .tema-secundario .title {
+        font-size: 1.25rem;   }
+}
+.tema-secundario .text {
+  font-size: 0.9rem; }
+  @media (min-width: 768px) {
+    .tema-secundario .text {
+      font-size: 1rem;   }
+}
+
+.seguidores .carousel-cell {
+  height: auto; }
+  .seguidores .carousel-cell .title {
+    color: #2a4b8c;
+    font-size: 1.15rem; }
+
+.agenda__title {
+  color: #2a4b8c;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: left; }
+  @media (min-width: 768px) {
+    .agenda__title {
+      font-size: 1.5rem;   }
+}
