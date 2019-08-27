@@ -142,6 +142,7 @@ class Cmds:
         fmt_arg = sys.argv[5] if len(sys.argv) >= 6 else '0'
         if not fmt_arg.isnumeric():
             ret_err('El argumento de formato debe ser 0 o 1')
+        print(api_txt_add(pag_id, ubi_arg, txt_arg, fmt_arg))
 
     @staticmethod
     def txtsadd():
