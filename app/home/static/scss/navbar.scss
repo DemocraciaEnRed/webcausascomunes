@@ -100,11 +100,14 @@ nav {
 @media (min-width: $width-large) {
     .navbar {
         box-shadow: none;
+        justify-content: flex-end;
         .form-control {
             border-color: $white;
         }
     }
     .navbar-brand {
+        position: absolute;
+        left: 20px;
         float: none;
         padding: 10px;
         img {
@@ -151,5 +154,18 @@ nav {
     }
     input::placeholder {
         color: $white;
+    }
+}
+
+.dropdown-menu {
+    max-width: 200px;
+    min-width: unset;
+    left: auto;
+    right: 0;
+}
+.dropdown-item {
+    //max-width: 100px;
+    img {
+        width: 30px;
     }
 }

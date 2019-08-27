@@ -143,10 +143,13 @@ nav a.nav-link.active {
 
   @media (min-width: 992px) {
     .navbar {
-      box-shadow: none;   }
+      box-shadow: none;
+      justify-content: flex-end;   }
       .navbar .form-control {
         border-color: #ffffff;   }
     .navbar-brand {
+      position: absolute;
+      left: 20px;
       float: none;
       padding: 10px;   }
       .navbar-brand img {
@@ -179,3 +182,12 @@ nav a.nav-link.active {
     background-color: #2a4b8c; }
     #navbarSearch input::placeholder {
       color: #ffffff; }
+
+.dropdown-menu {
+  max-width: 200px;
+  min-width: unset;
+  left: auto;
+  right: 0; }
+
+  .dropdown-item img {
+    width: 30px; }
