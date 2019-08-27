@@ -223,25 +223,24 @@ body {
 }
   .manifiesto .video, .manifiesto .col-lg-6 {
     z-index: 10; }
-
-.section__signature {
-  color: #1d1d1b;
-  font-style: italic; }
-  @media (min-width: 768px) {
-    .section__signature {
-      font-size: 1.15rem;   }
-}
-    .section__signature:before {
-      content: " ";
-      background-color: #2a4b8c;
-      width: 55px;
-      height: 5px;
-      margin-right: 2rem;
-      display: inline-block;
-      vertical-align: middle; }
+    .manifiesto .section__signature {
+      color: #1d1d1b;
+      font-style: italic; }
       @media (min-width: 768px) {
-        .section__signature:before {
-          opacity: 0.5;   }
+        .manifiesto .section__signature {
+          font-size: 1.15rem;   }
+}
+        .manifiesto .section__signature:before {
+          content: " ";
+          background-color: #2a4b8c;
+          width: 55px;
+          height: 5px;
+          margin-right: 2rem;
+          display: inline-block;
+          vertical-align: middle; }
+          @media (min-width: 768px) {
+            .manifiesto .section__signature:before {
+              opacity: 0.5;   }
 }
 
 .propuestas {
@@ -313,50 +312,49 @@ body {
   .propuestas .flickity-enabled.is-draggable .flickity-viewport {
     cursor: auto; }
 
-.section.candidates {
+.candidates {
   background-color: #2a4b8c; }
-  .section.candidates .section__title {
+  .candidates .section__title {
     color: #ffffff;
     font-size: 1.5rem; }
     @media (min-width: 768px) {
-      .section.candidates .section__title {
+      .candidates .section__title {
         font-size: 2.5rem;   }
 }
-  .section.candidates .section__subtitle {
+  .candidates .section__subtitle {
     font-size: 0.9rem;
     color: #ffffff;
     margin-bottom: 1.5rem; }
     @media (min-width: 768px) {
-      .section.candidates .section__subtitle {
+      .candidates .section__subtitle {
         font-size: 1.25rem;   }
 }
-  .section.candidates .btn {
+  .candidates .btn {
     order: 1; }
     @media (min-width: 768px) {
-      .section.candidates .btn {
+      .candidates .btn {
         order: initial;   }
 }
 
-.card--novedades {
+.novedades .card--novedades {
   box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
   border-radius: 0;
   background: #ffffff; }
-  .card--novedades .card-title {
+  .novedades .card--novedades .card-title {
     font-size: 1rem; }
     @media (min-width: 768px) {
-      .card--novedades .card-title {
+      .novedades .card--novedades .card-title {
         font-size: 1.25rem;   }
 }
-      .card--novedades .card-title a span {
+      .novedades .card--novedades .card-title a span {
         display: inline-block; }
         @media (min-width: 768px) {
-          .card--novedades .card-title a span {
+          .novedades .card--novedades .card-title a span {
             max-width: 80%;   }
 }
-      .card--novedades .card-title a .fa {
+      .novedades .card--novedades .card-title a .fa {
         font-size: 1.5rem; }
-
-.card-hashtag {
+.novedades .card-hashtag {
   font-size: 0.9rem;
   display: inline-block;
   background-color: #eff1f4;
@@ -366,22 +364,21 @@ body {
   margin-bottom: 0.5rem;
   text-transform: capitalize; }
 
-  .twitter-timeline__title {
-    color: #2a4b8c;
-    font-size: 1.25rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    text-align: left; }
-    @media (min-width: 768px) {
-      .twitter-timeline__title {
-        font-size: 1.5rem;   }
-}
-
 .eventos .list-group {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
   .eventos .card {
     height: 100%; }
+    .eventos .twitter-timeline__title {
+      color: #2a4b8c;
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: left; }
+      @media (min-width: 768px) {
+        .eventos .twitter-timeline__title {
+          font-size: 1.5rem;   }
+}
 
 .agenda .list-group-item {
   padding-left: 0;

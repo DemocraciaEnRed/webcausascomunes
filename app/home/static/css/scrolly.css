@@ -79,19 +79,22 @@
             .causa-trabajo h2 {
               color: #e71869; }
 
-              h1 {
-                font-weight: 700; }
+              body {
+                font: 100% 'Barlow', sans-serif; }
 
-                .scrolly-row {
-                  padding: 30vh 2rem; }
-                  @media (min-width: 992px) {
-                    .scrolly-row {
-                      padding: 0 10rem;
-                      height: 80vh;   }
+                h1 {
+                  font-weight: 700; }
+
+                  .scrolly-row {
+                    padding: 30vh 2rem; }
+                    @media (min-width: 992px) {
+                      .scrolly-row {
+                        padding: 0 10rem;
+                        height: 80vh;   }
 }
-                    .scrolly-row:nth-child(odd) {
-                      background-color: #ffffff; }
-                      .scrolly-row:nth-child(even) {
-                        background-color: #e5e5e5; }
-                        .scrolly-row .scrolly-img {
-                          max-height: 50vh; }
+                      .scrolly-row:nth-child(odd) {
+                        background-color: #ffffff; }
+                        .scrolly-row:nth-child(even) {
+                          background-color: #e5e5e5; }
+                          .scrolly-row .scrolly-img {
+                            max-height: 50vh; }

@@ -22,6 +22,11 @@
     color: $color-trabajo;
 }
 
+
+body {
+	font: 100% $font-stack;
+}
+
 h1 {font-weight: 700;}
 
 .scrolly-row {
