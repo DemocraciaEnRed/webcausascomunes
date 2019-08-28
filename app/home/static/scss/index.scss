@@ -253,18 +253,78 @@ label {
 		color:white;
 		text-align: center;
 		width: 11rem;
-		height: 18rem;
+		height: 19rem;
         @media (min-width: $width-medium) {
 			width: 16rem;
-			height: 23rem;
+			height: 24rem;
 
         }
-		&.card-trabajo { background-color: #e0427b; }
-		&.card-ambiente { background-color: #2eac67; }
-		&.card-genero { background-color: #764896; }
-		&.card-vivienda { background-color: #1955a6; }
-		&.card-drogas { background-color: #f0a316; }
-		&.card-transparencia { background-color: #e2404f; }
+		&.card-trabajo { 
+			background-color: #e0427b; 
+			.btn {
+				color: #e0427b;
+				&:hover {
+					background-color: #e0427b;
+					color: $white;
+				}
+			}
+		}
+		&.card-ambiente { 
+			background-color: #2eac67; 
+			.btn {
+				color: #2eac67;
+				&:hover {
+					background-color: #2eac67;
+					color: $white;
+				}
+			}
+		}
+		&.card-genero { 
+			background-color: #764896; 
+			.btn {
+				color: #764896;
+				&:hover {
+					background-color: #764896;
+					color: $white;
+				}
+			}
+		}
+		&.card-vivienda { 
+			background-color: #1955a6; 
+			.btn {
+				color: #1955a6;
+				&:hover {
+					background-color: #1955a6;
+					color: $white;
+				}
+			}
+		}
+		&.card-drogas { 
+			background-color: #f0a316; 
+			.btn {
+				color: #f0a316;
+				&:hover {
+					background-color: #f0a316;
+					color: $white;
+				}
+			}
+		}
+		&.card-transparencia { 
+			background-color: #e2404f; 
+			.btn {
+				color: #e2404f;
+				&:hover {
+					background-color: #e2404f;
+					color: $white;
+				}
+			}
+		}
+		.btn {
+			background-color: $white;
+			border: 1px solid $white;
+			border-radius: 2rem;
+			cursor: pointer;
+		}
 	    .title {
 			text-align: left;
 	        font-size: $font-size-small;

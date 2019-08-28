@@ -9,11 +9,14 @@
     {% set icon_path =  '' %}
     {% set pagina =  '' %}
 {% endif %}
+{% set novedades =  true %}
+
 <div class="card card-{{pagina|lower}} px-0 py-2 m-1 px-md-2 py-md-4 m-md-2">
   <div class="card-body">
 	    <a href="{{ url_anchor }}"><img class="mb-3 mb-md-5" src="{{ icon_path }}" /></a>
 	    <a href="{{ url_anchor }}"><h4 class="title">{{ title or '' }}</h4></a>
-	    <p class="text">{{ text or '' }}</p>
+        <p class="text">{{ text or '' }}</p>
+        {% if novedades %}<a class="btn" href="{{ url_anchor }}#novedades">Ver novedades</a>{% endif %}
 	</div>
 </div>
 {%- endmacro %}

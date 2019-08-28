@@ -257,32 +257,67 @@ body {
     color: white;
     text-align: center;
     width: 11rem;
-    height: 18rem; }
+    height: 19rem; }
     @media (min-width: 768px) {
       .propuestas .card {
         width: 16rem;
-        height: 23rem;   }
+        height: 24rem;   }
 }
       .propuestas .card.card-trabajo {
         background-color: #e0427b; }
-        .propuestas .card.card-ambiente {
-          background-color: #2eac67; }
-          .propuestas .card.card-genero {
-            background-color: #764896; }
-            .propuestas .card.card-vivienda {
-              background-color: #1955a6; }
-              .propuestas .card.card-drogas {
-                background-color: #f0a316; }
-                .propuestas .card.card-transparencia {
-                  background-color: #e2404f; }
-                  .propuestas .card .title {
-                    text-align: left;
-                    font-size: 1.15rem;
-                    font-weight: 600;
-                    margin-bottom: 1rem; }
-                    @media (min-width: 768px) {
-                      .propuestas .card .title {
-                        font-size: 1.5rem;   }
+        .propuestas .card.card-trabajo .btn {
+          color: #e0427b; }
+          .propuestas .card.card-trabajo .btn:hover {
+            background-color: #e0427b;
+            color: #ffffff; }
+    .propuestas .card.card-ambiente {
+      background-color: #2eac67; }
+      .propuestas .card.card-ambiente .btn {
+        color: #2eac67; }
+        .propuestas .card.card-ambiente .btn:hover {
+          background-color: #2eac67;
+          color: #ffffff; }
+    .propuestas .card.card-genero {
+      background-color: #764896; }
+      .propuestas .card.card-genero .btn {
+        color: #764896; }
+        .propuestas .card.card-genero .btn:hover {
+          background-color: #764896;
+          color: #ffffff; }
+    .propuestas .card.card-vivienda {
+      background-color: #1955a6; }
+      .propuestas .card.card-vivienda .btn {
+        color: #1955a6; }
+        .propuestas .card.card-vivienda .btn:hover {
+          background-color: #1955a6;
+          color: #ffffff; }
+    .propuestas .card.card-drogas {
+      background-color: #f0a316; }
+      .propuestas .card.card-drogas .btn {
+        color: #f0a316; }
+        .propuestas .card.card-drogas .btn:hover {
+          background-color: #f0a316;
+          color: #ffffff; }
+    .propuestas .card.card-transparencia {
+      background-color: #e2404f; }
+      .propuestas .card.card-transparencia .btn {
+        color: #e2404f; }
+        .propuestas .card.card-transparencia .btn:hover {
+          background-color: #e2404f;
+          color: #ffffff; }
+    .propuestas .card .btn {
+      background-color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 2rem;
+      cursor: pointer; }
+      .propuestas .card .title {
+        text-align: left;
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 1rem; }
+        @media (min-width: 768px) {
+          .propuestas .card .title {
+            font-size: 1.5rem;   }
 }
     .propuestas .card a:target, .propuestas .card a:hover, .propuestas .card a {
       color: white; }

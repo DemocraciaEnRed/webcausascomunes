@@ -15,7 +15,7 @@ function initBlueimp(onopened){
 function hashScroll() {
     if(window.location.hash) {
         $('html, body').animate({
-          scrollTop: $(window.location.hash).offset().top
+          scrollTop: $(window.location.hash).offset().top - $("#navbar").innerHeight()
         }, 1000);
     }
 }
