@@ -589,12 +589,12 @@ body {
 #wikis {
   position: relative;
   background-color: #e4eefa; }
-  #wikis .img-wrapper {
-    padding-top: 1.5rem; }
-    #wikis .wiki-btn {
-      display: block;
-      width: 190px;
-      margin-top: 1rem; }
+  #wikis .wiki-btn {
+    display: block;
+    width: 190px;
+    margin-top: 1rem; }
+    #wikis .section__subtitle {
+      color: #2a4b8c; }
       #wikis .text-center {
         z-index: 1; }
         #wikis #blueimp-gallery {

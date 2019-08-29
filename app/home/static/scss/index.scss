@@ -686,17 +686,19 @@ label {
 }
 
 /* wiki */
-#wikis{
+#wikis {
 	position: relative;
 	background-color: $sectionBgColorBlue;
-	.img-wrapper{
-		padding-top: 1.5rem;
-	}
+
     .wiki-btn {
         display: block;
         width: 190px;
         margin-top: 1rem;
-    }
+	}
+	
+	.section__subtitle {
+		color: $color-principal-azul;
+	}
 	
 	/* para el parallax */
 	.text-center{z-index: $parallaxZIndexOnTop;}
