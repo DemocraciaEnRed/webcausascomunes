@@ -248,17 +248,18 @@ label {
 			padding: 0 12rem;
 	    }
     }
-	.card{
-		float: left;
+	.card {
 		color:white;
 		text-align: center;
-		width: 11rem;
-		height: 19rem;
+		height: auto;
+		flex: 1;
+		flex-basis: calc(100% / 3);
+		max-width: 11rem;
+		align-items: center;
         @media (min-width: $width-medium) {
-			width: 16rem;
-			height: 24rem;
-
-        }
+			flex-basis: calc(100% / 4);
+			max-width: 280px;
+		}
 		&.card-trabajo { 
 			background-color: #e0427b; 
 			.btn {
@@ -266,6 +267,15 @@ label {
 				&:hover {
 					background-color: #e0427b;
 					color: $white;
+				}
+			}
+			.icon-novedades {
+				border-color: #e0427b;
+				i {
+					color: #e0427b;
+				}
+				sup {
+					background-color: #e0427b;
 				}
 			}
 		}
@@ -278,6 +288,15 @@ label {
 					color: $white;
 				}
 			}
+			.icon-novedades {
+				border-color: #2eac67;
+				i {
+					color: #2eac67;
+				}
+				sup {
+					background-color: #2eac67;
+				}
+			}
 		}
 		&.card-genero { 
 			background-color: #764896; 
@@ -286,6 +305,15 @@ label {
 				&:hover {
 					background-color: #764896;
 					color: $white;
+				}
+			}
+			.icon-novedades {
+				border-color: #764896;
+				i {
+					color: #764896;
+				}
+				sup {
+					background-color: #764896;
 				}
 			}
 		}
@@ -298,6 +326,15 @@ label {
 					color: $white;
 				}
 			}
+			.icon-novedades {
+				border-color: #1955a6;
+				i {
+					color: #1955a6;
+				}
+				sup {
+					background-color: #1955a6;
+				}
+			}
 		}
 		&.card-drogas { 
 			background-color: #f0a316; 
@@ -308,6 +345,15 @@ label {
 					color: $white;
 				}
 			}
+			.icon-novedades {
+				border-color: #f0a316;
+				i {
+					color: #f0a316;
+				}
+				sup {
+					background-color: #f0a316;
+				}
+			}
 		}
 		&.card-transparencia { 
 			background-color: #e2404f; 
@@ -316,6 +362,15 @@ label {
 				&:hover {
 					background-color: #e2404f;
 					color: $white;
+				}
+			}
+			.icon-novedades {
+				border-color: #e2404f;
+				i {
+					color: #e2404f;
+				}
+				sup {
+					background-color: #e2404f;
 				}
 			}
 		}
@@ -347,7 +402,38 @@ label {
 	    }
 	    img {
 	        height:6rem;
-	    }
+		}
+		.card-body {
+			padding-bottom: 0;
+		}
+		.icon-novedades {
+			position: absolute;
+			right: -10px;
+			top: -15px;
+			display: block;
+			border-radius: 100%;
+			width: 50px;
+			height: 50px;
+			border: 3px solid;
+			background-color: $white;
+			line-height: 50px;
+			sup {
+				border: 1px solid $white;
+				color: $white;
+				border-radius: 100%;
+				right: 3px;
+				top: 5px;
+				width: 18px;
+				height: 18px;
+				display: inline-block;
+				vertical-align: top;
+				line-height: 16px;
+				position: absolute;
+			}
+			i {
+				font-size: 1.4rem;
+			}
+		}
 	}
 
 	.carousel {
