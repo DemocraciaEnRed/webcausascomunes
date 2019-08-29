@@ -1,7 +1,8 @@
-{% set bgimage = create_img_src(dimgs.get('fondo')).strip() %}
+{% set bg_img_path = 'img/backgrounds/causas/mosaico-halfcolor-' + causa + '.png' %}
+{% set bg_img_url = url_for('home.static', filename=bg_img_path) %}
 
 <section class="portada-seccion jumbotron mt-0 text-center" 
-    style="background-image: url('{{ bgimage }}');">
+    style="background-image: url('{{ bg_img_url }}');">
     <h1 class="my-5">{{dtextos.get('portada')['titulo']}}</h1>
    <!--  <ul id="nav-secondary" class="nav nav-secondary justify-content-center">
         <li class="nav-item">
