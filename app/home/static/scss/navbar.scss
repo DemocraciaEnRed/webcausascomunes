@@ -266,6 +266,9 @@ nav {
 }
 
 @media (min-width: $width-large) {
+    .nav-item.dropdown {
+        order: 1;
+    }
     .navbar.scrolling {
         .btn-novedades {
             &:hover,

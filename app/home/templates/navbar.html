@@ -14,6 +14,41 @@
             <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor_chico.png') }}" alt="Causas Comunes" />
         </a>
 
+        <!-- Novedades -->
+        <div id="dropdown-novedades" class="nav-item dropdown">
+            <button role="button" class="btn btn-novedades nav-link" data-toggle="dropdown" id="novedades-dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span>¡Novedades!</span>
+                <i class="fa fa-bell"></i><sup>3</sup>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="novedades-dropdown">
+                <a class="dropdown-item" href="/trabajo#novedades">
+                    {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
+                    %}
+                    <img src="{{ icon_path }}" />
+                    <span class="title">Titulo de novedad</span>
+                    <br>
+                    <span class="hashtag text-color-trabajo">#Trabajo</span>
+                </a>
+                <a class="dropdown-item" href="/trabajo#novedades">
+                {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
+                %}
+                <img src="{{ icon_path }}" />
+                <span class="title">Titulo de novedad</span>
+                    <br>
+                    <span class="hashtag text-color-trabajo">#Trabajo</span>
+                </a>
+                <a class="dropdown-item" href="/trabajo#novedades">
+                    {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
+                    %}
+                    <img src="{{ icon_path }}" />
+                    <span class="title">Titulo de novedad</span>
+                    <br>
+                    <span class="hashtag text-color-trabajo">#Trabajo</span>
+                </a>
+            </div>
+        </div>
+
         <!-- Links  -->
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ml-md-5">
@@ -43,40 +78,6 @@
             </ul>
         </div>
 
-        <!-- Novedades -->
-        <div class="nav-item dropdown">
-            <button role="button" class="btn btn-novedades nav-link" data-toggle="dropdown" id="novedades-dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <span>¡Novedades!</span>
-                <i class="fa fa-bell"></i><sup>3</sup>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="novedades-dropdown">
-                <a class="dropdown-item" href="/trabajo#novedades">
-                    {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
-                    %}
-                    <img src="{{ icon_path }}" />
-                    <span class="title">Titulo de novedad</span>
-                    <br>
-                    <span class="hashtag text-color-trabajo">#Trabajo</span>
-                </a>
-                <a class="dropdown-item" href="/trabajo#novedades">
-                    {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
-                    %}
-                    <img src="{{ icon_path }}" />
-                    <span class="title">Titulo de novedad</span>
-                    <br>
-                    <span class="hashtag text-color-trabajo">#Trabajo</span>
-                </a>
-                <a class="dropdown-item" href="/trabajo#novedades">
-                    {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
-                    %}
-                    <img src="{{ icon_path }}" />
-                    <span class="title">Titulo de novedad</span>
-                    <br>
-                    <span class="hashtag text-color-trabajo">#Trabajo</span>
-                </a>
-            </div>
-        </div>
         <!-- Buscador de la página -->
         <!-- <img src="{# create_img_src(dimgsnav['busqueda']) #}" alt="Buscar"/> -->
         <!-- <div class="collapse navbar-collapse" id="navbarSearch">
