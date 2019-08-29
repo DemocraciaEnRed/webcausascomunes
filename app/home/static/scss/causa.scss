@@ -95,15 +95,20 @@ body {overflow-x: hidden;}
         }
     }
     .nav-link {
-        color: #764896;
         &:after {
             display: none;
         }
         &:hover,
         &.active {
-            text-shadow: 0 0 .65px $color-principal-azul, 0 0 .65px $color-principal-azul;
+			font-weight: bold;
         }
-    }
+		&.text-color-vivienda:hover { color: $color-vivienda; }		
+		&.text-color-transparencia:hover { color: $color-transparencia; }		
+		&.text-color-trabajo:hover { color: $color-trabajo; }		
+		&.text-color-genero:hover { color: $color-genero; }		
+		&.text-color-drogas:hover { color: $color-drogas; }		
+		&.text-color-ciencia:hover { color: $color-ciencia; }		
+		&.text-color-ambiente:hover { color: $color-ambiente; }    }
     &.position-fixed {
         top: 0;
         margin-left: -1rem;

@@ -71,26 +71,11 @@ body {
     .section:nth-child(odd) {
       background-color: #faf2ff; }
 
-#mai12n {
-  position: relative; }
-
-  #ma12in:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url(/wp-content/uploads/2010/11/tandem.jpg);
-    width: 100%;
-    height: 100%;
-    opacity: 0.2;
-    z-index: -1; }
-
-    .causa-genero .bg-mosaico-blanco {
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
-            255, 0.7) 100%), url("../img/backgrounds/causas/mosaico-transparente-genero.png"); }
-      .causa-genero .bg-color-solido {
-        background-color: #faf2ff; }
+.causa-genero .bg-mosaico-blanco {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
+    255, 0.7) 100%), url("../img/backgrounds/causas/mosaico-transparente-genero.png"); }
+  .causa-genero .bg-color-solido {
+    background-color: #faf2ff; }
 
 .causa-ambiente .bg-mosaico-blanco {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
@@ -161,12 +146,24 @@ body {
           padding-left: 1rem;
           padding-right: 1rem;   }
 }
-  .nav-secondary .nav-link {
-    color: #764896; }
-    .nav-secondary .nav-link:after {
-      display: none; }
-      .nav-secondary .nav-link:hover, .nav-secondary .nav-link.active {
-        text-shadow: 0 0 0.65px #2a4b8c, 0 0 0.65px #2a4b8c; }
+  .nav-secondary .nav-link:after {
+    display: none; }
+    .nav-secondary .nav-link:hover, .nav-secondary .nav-link.active {
+      font-weight: bold; }
+      .nav-secondary .nav-link.text-color-vivienda:hover {
+        color: #194a9a; }
+        .nav-secondary .nav-link.text-color-transparencia:hover {
+          color: #e61937; }
+          .nav-secondary .nav-link.text-color-trabajo:hover {
+            color: #e71869; }
+            .nav-secondary .nav-link.text-color-genero:hover {
+              color: #774997; }
+              .nav-secondary .nav-link.text-color-drogas:hover {
+                color: #f9b112; }
+                .nav-secondary .nav-link.text-color-ciencia:hover {
+                  color: #008daf; }
+                  .nav-secondary .nav-link.text-color-ambiente:hover {
+                    color: #39a95e; }
   .nav-secondary.position-fixed {
     top: 0;
     margin-left: -1rem;
