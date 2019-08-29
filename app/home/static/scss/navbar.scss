@@ -100,11 +100,14 @@ nav {
 @media (min-width: $width-large) {
     .navbar {
         box-shadow: none;
+        justify-content: flex-end;
         .form-control {
             border-color: $white;
         }
     }
     .navbar-brand {
+        position: absolute;
+        left: 20px;
         float: none;
         padding: 10px;
         img {
@@ -152,5 +155,134 @@ nav {
     }
     input::placeholder {
         color: $white;
+    }
+}
+
+.btn-novedades {
+    border: none;
+    background: none;
+    outline: none;
+    border-radius: 2rem;
+    position: relative;
+    padding-right: 0;
+    @media (min-width: $width-large) {
+        top: -6px;
+        padding-right: 1rem;
+    }
+    &:hover,
+    &[aria-expanded=true] {
+        background-color: $white;
+        color: $color-principal-azul;
+        sup {
+            border: 1px solid $white;
+            background-color: $color-principal-azul;
+            color: $white;
+        }
+        &:after {
+            display: none;
+        }
+    }
+    sup {
+        border: 1px solid $white;
+        border-radius: 100%;
+        background-color: $color-principal-azul;
+        left: -5px;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: top;
+        line-height: 16px;
+        color: $white;
+        @media (min-width: $width-large) {
+            border: 1px solid $color-principal-azul;
+            color: $color-principal-azul;
+            background-color: $white;
+        }
+    }
+    &:focus {
+        box-shadow: none;
+    }
+    &:after {
+        display: none;
+    }
+    > span {
+        display: none;
+        @media (min-width: $width-large) {
+            display: inline;
+        }
+    }
+
+    i {
+        font-size: 24px;
+        @media (min-width: $width-large) {
+            font-size: inherit;
+        }
+    }
+}
+
+.dropdown-menu {
+    border-radius: 5px;
+    box-shadow: 0 3px 17px 0 rgba(36, 73, 154, 0.51);
+    border: none;
+    padding: 10px;
+    right: 0;
+    top: 57px;
+    left: -110px;
+    right: -28px;
+    @media (min-width: $width-large) {
+        max-width: 200px;
+        min-width: unset;
+        left: -30px;
+        top: 100%;
+        right: 0;
+    }
+}
+.dropdown-item {
+    padding: 10px 0;
+    width: auto;
+    border-bottom: 1px solid #eee;
+    &:last-child {
+        border-bottom: none;
+    }
+    .title {
+        font-size: $font-size-xsmall;
+        color: #696969;
+    }
+    img {
+        width: 30px;
+        margin-left: 5px;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        background: none;
+        outline: none;
+    }
+    .hashtag {
+        font-size: $font-size-xsmall;
+        margin-left: 35px;
+    }
+}
+
+@media (min-width: $width-large) {
+    .navbar.scrolling {
+        .btn-novedades {
+            &:hover,
+            &[aria-expanded=true] {
+                background-color: $color-principal-azul;
+                color: $white;
+                sup { 
+                    background-color: $white;
+                    color: $color-principal-azul;
+                    border: 1px solid $color-principal-azul;
+                }
+            }
+            sup { 
+                background-color: $color-principal-azul;
+                color: $white;
+                border: 1px solid $white;
+            }
+        }
     }
 }
