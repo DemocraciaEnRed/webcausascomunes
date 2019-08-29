@@ -424,20 +424,25 @@ body {
         font-size: 1.5rem;   }
 }
 
-.eventos .list-group {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+.eventos {
+  background-image: url('/static/img/manifiesto-background.svg');
+  background-repeat: no-repeat;
+  background-size: cover; }
   .eventos .card {
-    height: 100%; }
-    .eventos .twitter-timeline__title {
-      color: #2a4b8c;
-      font-size: 1.25rem;
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      text-align: left; }
-      @media (min-width: 768px) {
-        .eventos .twitter-timeline__title {
-          font-size: 1.5rem;   }
+    height: 100%;
+    justify-content: center; }
+    .eventos .card-body {
+      flex: 0; }
+      .eventos .twitter-timeline__title {
+        color: #2a4b8c;
+        font-size: 1.25rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        text-align: left; }
+        @media (min-width: 768px) {
+          .eventos .twitter-timeline__title {
+            font-size: 1.5rem;   }
 }
 
 .agenda .list-group-item {
