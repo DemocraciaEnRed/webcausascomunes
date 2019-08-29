@@ -1,19 +1,17 @@
 {% from 'index_sections/_itemgaleria.html' import create_item_galeria %}
 
-<section id="galeria" class="section jumbotron jumbotron-fluid">
+<section id="galeria" class="galeria section jumbotron jumbotron-fluid">
     <div class="container">
         <div class="row">
-            <div class="text-center col-md-12">
+            <div class="text-left col-md-12">
                 <h2 class="section__title">{{ dtextos.get('hackaton')['titulo'] }}</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 mb-3">
+        <div class="row my-md-5">
+            <div class="col-md-6">
                 <p class="text-justify">{{ dtextos.get('hackaton')['subtitulo'] | safe }}</p>
             </div>
-        </div>
-        <div class="row mb-2 mb-md-3">
-            <div class="col-lg-10 offset-lg-1 mb-3">
+            <div class="col-md-6">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe width="805" height="453" src="https://www.youtube.com/embed/0mT3zQhB69E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>

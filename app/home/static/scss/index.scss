@@ -522,6 +522,18 @@ label {
 }
 
 /* GALERIA */
+.galeria {
+	p {
+		color: $color-texto-light;
+		font-size: $font-size-xsmall;
+		line-height: $line-height-small;
+		@media (min-width: $width-medium) {
+			font-size: $font-size-base;
+			line-height: $line-height-medium;
+		}
+	}
+}
+
 /* wiki */
 #wikis{
 	position: relative;

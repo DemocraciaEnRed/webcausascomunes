@@ -471,6 +471,16 @@ body {
     .agenda .list-group-item img {
       height: 3rem; }
 
+.galeria p {
+  color: #1d1d1b;
+  font-size: 0.9rem;
+  line-height: 1.3rem; }
+  @media (min-width: 768px) {
+    .galeria p {
+      font-size: 1rem;
+      line-height: 1.75rem;   }
+}
+
 #wikis {
   position: relative;
   background-color: #e4eefa; }
