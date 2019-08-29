@@ -191,6 +191,7 @@ def causas_route():
         'itemscompromisos': itemscompromisos,
 
         'show_wiki_btn': True,
+        'causa': causa,
         'nombre_causa': accepted_causas[causa]}
 
     return render_template('causa.html', **variables)
