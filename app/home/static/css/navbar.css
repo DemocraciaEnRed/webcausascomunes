@@ -166,7 +166,8 @@ nav a.nav-link.active {
   width: 100%;
   top: 0; }
   .navbar.fixed.scrolling {
-    background-color: #ffffff; }
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
     .navbar.fixed.scrolling .nav-link {
       color: #2a4b8c; }
       .navbar.fixed.scrolling .nav-link.active:after,
