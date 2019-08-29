@@ -24,6 +24,34 @@ body {overflow-x: hidden;}
 	}
 }
 
+@mixin bg-mosaico-blanco-trans($causa) {
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url('../img/backgrounds/causas/mosaico-transparente-' + $causa + '.png');
+}
+.causa-genero{
+	.bg-mosaico-blanco{ @include bg-mosaico-blanco-trans('genero');	}
+	.bg-color-solido{ background-color: #faf2ff; }
+}
+.causa-ambiente{
+	.bg-mosaico-blanco{ @include bg-mosaico-blanco-trans('ambiente');	}
+	.bg-color-solido{ background-color: #f2fff6; }
+}
+.causa-trabajo{
+	.bg-mosaico-blanco{ @include bg-mosaico-blanco-trans('trabajo');	}
+	.bg-color-solido{ background-color: #fff2f4; }
+}
+.causa-transparencia{
+	.bg-mosaico-blanco{ @include bg-mosaico-blanco-trans('transparencia');	}
+	.bg-color-solido{ background-color: #fff2f5; }
+}
+.causa-vivienda{
+	.bg-mosaico-blanco{ @include bg-mosaico-blanco-trans('vivienda');	}
+	.bg-color-solido{ background-color: #f2f4ff; }
+}
+.causa-drogas{
+	.bg-mosaico-blanco{ @include bg-mosaico-blanco-trans('drogas');	}
+	.bg-color-solido{ background-color: #fffcf2; }
+}
+
 /*####################################################*/
 /*################## PORTADA/LANDING */
 .portada-seccion {
