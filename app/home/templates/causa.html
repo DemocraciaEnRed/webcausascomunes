@@ -6,7 +6,7 @@
     <title>Causas comunes</title>
     <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
     <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
-    <link href="{{url_for('home.static', filename='css/section.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/causa.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -22,6 +22,9 @@
     <!-- WIKI -->
     {% include 'causa_sections/causa_wiki.html' %}
 
+    <!-- ACTIVÁ -->
+    {% include 'causa_sections/causa_activa.html' %}
+
     <!-- TEMAS -->
 <!--    {# include 'causa_sections/causa_temas.html' #}-->
 
@@ -36,5 +39,5 @@
 {% block scripts %}
     <script src="{{url_for('home.static', filename='js/flickity.pkgd.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/navsecondary.js')}}"></script>
-    <script src="{{url_for('home.static', filename='js/section.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/causa.js')}}"></script>
 {% endblock %}

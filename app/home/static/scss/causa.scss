@@ -1,0 +1,221 @@
+@import 'vars';
+
+$bg-alt-col:#faf2ff;
+$subnav-col:#f8eeff;
+
+/* hacksito para la imagen banner de fondo */
+body {overflow-x: hidden;}
+
+/*####################################################*/
+/*################## GENERALES */
+.section {
+    &.jumbotron-fluid {
+		@media (min-width: $width-medium) {
+			padding-top: 3rem;
+		    padding-bottom: 3rem;
+		}
+	}
+	/* intercalar colores de fondo */
+	&:nth-child(even) {
+        background-color: $white;
+	}
+	&:nth-child(odd) {
+	    background-color: $bg-alt-col;
+	}
+}
+
+/*####################################################*/
+/*################## PORTADA/LANDING */
+.portada-seccion {
+    background-color: transparent;
+    margin-top: 4rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-right:0;
+    padding-left:0;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    h1 {
+        padding: 6rem 0;
+        color: black;
+        font-weight: 600;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.34);
+    }
+ }
+
+/* Menu Seccion */
+.nav-secondary {
+    background-color: $subnav-col;
+    position: relative;
+    margin-left: -2rem;
+    right: -1rem;
+    z-index: 1;
+    @media(min-width: $width-medium){
+        margin-left: -4rem;
+        right: -2rem;
+    }
+    li {
+        padding-left:0;
+        padding-right:0;
+        @media (min-width: $width-medium) {
+            padding-left:1rem;
+            padding-right:1rem;
+        }
+    }
+    .nav-link {
+        color: #764896;
+        &:after {
+            display: none;
+        }
+        &:hover,
+        &.active {
+            text-shadow: 0 0 .65px $color-principal-azul, 0 0 .65px $color-principal-azul;
+        }
+    }
+    &.position-fixed {
+        top: 0;
+        margin-left: -1rem;
+        left: 0;
+    }
+}
+
+#definicion {
+    padding-bottom: 5rem;
+}
+
+
+/*####################################################*/
+/*################## TEMAS */
+.tema-principal {
+    img {
+        width: 100%;
+        @media (min-width: $width-medium){
+            width: 40%;
+            float: left;
+            margin-right: 3rem;
+        }
+    }
+    .title {
+        color: $color-principal-azul;
+        font-size: $font-size-medium;
+        margin-top: 1.5rem;
+        @media (min-width: $width-medium){
+            margin-top: 0;
+            font-size: $font-size-large;
+        }
+    }
+}
+
+.tema-secundario {
+    img {
+        width: 50%;
+        float: left;
+        margin-right: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .title {
+        color: $color-principal-azul;
+        font-size: $font-size-small;
+        @media (min-width: $width-medium){
+            font-size: $font-size-medium;
+        }
+    }
+    .text {
+        font-size: $font-size-xsmall;
+        @media (min-width: $width-medium){
+            font-size: $font-size-base;
+        }
+    }
+}
+
+
+/*####################################################*/
+/*################## SEGUIDORES/ORGANIZACION */
+.seguidores {
+    .carousel-cell {
+        height: auto;
+        .title {
+            color: $color-principal-azul;
+            font-size: $font-size-small;
+        }
+    }
+}
+
+
+/*####################################################*/
+/*################## ACTIVIDADES/AGENDA */
+.agenda__title {
+    color: $color-principal-azul;
+    font-size: $font-size-medium;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: left;
+    @media (min-width: $width-medium){
+        font-size: $font-size-large;
+    }
+}
+
+
+/*####################################################*/
+/*################## ACTIVA */
+.activa{
+    color: $color-principal-azul;
+    font-size: $font-size-small !important;
+    @media (min-width: $width-medium){
+		font-size: $font-size-medium !important;
+    }
+	
+	.img-megafono-wrapper{
+		display: inline-block;
+		img{
+			position: relative;
+			top: -2px;
+			height: 55px;
+		    @media (min-width: $width-medium){
+				height: 75px;
+		    }
+		}
+	}
+
+	.col-paso {
+		padding: 0 0.6rem;
+	    @media (min-width: $width-large){
+			padding: 0 3rem;
+	    }
+		text-align: center;
+	    @media (min-width: $width-medium){
+	        text-align: left;
+	    }
+	}
+	
+	.row-carita{
+		@include border-radius(35px);
+		background-color: #E4EDFF;
+		.carita-wrapper{
+			margin: 0 auto;
+			font-weight: bold;
+			img{
+				height: 45px;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+	
+	.row-boton > div{
+		margin: 0 auto;
+		a { 
+			font-weight: 600;			
+		    font-size: $font-size-small !important;
+		    @media (min-width: $width-medium){
+				font-size: $font-size-medium !important;
+		    }
+		}
+	}
+}
+
