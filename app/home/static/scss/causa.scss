@@ -79,19 +79,23 @@ body {overflow-x: hidden;}
 .nav-secondary {
     background-color: $subnav-col;
     position: relative;
-    margin-left: -2rem;
-    right: -1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     z-index: 1;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     @media(min-width: $width-medium){
-        margin-left: -4rem;
-        right: -2rem;
+        flex-wrap: nowrap;
+        overflow-x: initial;
     }
     li {
         padding-left:0;
         padding-right:0;
+        flex: 0 0 auto;
         @media (min-width: $width-medium) {
             padding-left:1rem;
             padding-right:1rem;
+            flex: unset;
         }
     }
     .nav-link {
@@ -102,17 +106,23 @@ body {overflow-x: hidden;}
         &.active {
 			font-weight: bold;
         }
-		&.text-color-vivienda:hover { color: $color-vivienda; }		
-		&.text-color-transparencia:hover { color: $color-transparencia; }		
-		&.text-color-trabajo:hover { color: $color-trabajo; }		
-		&.text-color-genero:hover { color: $color-genero; }		
-		&.text-color-drogas:hover { color: $color-drogas; }		
-		&.text-color-ciencia:hover { color: $color-ciencia; }		
-		&.text-color-ambiente:hover { color: $color-ambiente; }    }
+		&.text-color-vivienda:hover, &.text-color-vivienda.active { color: $color-vivienda; }		
+		&.text-color-transparencia:hover, &.text-color-transparencia.active { color: $color-transparencia; }		
+		&.text-color-trabajo:hover, &.text-color-trabajo.active { color: $color-trabajo; }		
+		&.text-color-genero:hover, &.text-color-genero.active { color: $color-genero; }		
+		&.text-color-drogas:hover, &.text-color-drogas.active { color: $color-drogas; }		
+		&.text-color-ciencia:hover, &.text-color-ciencia.active { color: $color-ciencia; }		
+        &.text-color-ambiente:hover, &.text-color-ambiente.active { color: $color-ambiente; }    
+    }
     &.position-fixed {
-        top: 0;
-        margin-left: -1rem;
+        top: 75px;
+/*         margin-left: -1rem;
+        left: 0; */
         left: 0;
+        right: 0;
+        @media (min-width: $width-medium) {
+            top: 80px;
+        }
     }
 }
 

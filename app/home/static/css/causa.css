@@ -130,44 +130,59 @@ body {
 .nav-secondary {
   background-color: #f8eeff;
   position: relative;
-  margin-left: -2rem;
-  right: -1rem;
-  z-index: 1; }
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  z-index: 1;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14); }
   @media (min-width: 768px) {
     .nav-secondary {
-      margin-left: -4rem;
-      right: -2rem;   }
+      flex-wrap: nowrap;
+      overflow-x: initial;   }
 }
     .nav-secondary li {
       padding-left: 0;
-      padding-right: 0; }
+      padding-right: 0;
+      flex: 0 0 auto; }
       @media (min-width: 768px) {
         .nav-secondary li {
           padding-left: 1rem;
-          padding-right: 1rem;   }
+          padding-right: 1rem;
+          flex: unset;   }
 }
   .nav-secondary .nav-link:after {
     display: none; }
     .nav-secondary .nav-link:hover, .nav-secondary .nav-link.active {
       font-weight: bold; }
-      .nav-secondary .nav-link.text-color-vivienda:hover {
+      .nav-secondary .nav-link.text-color-vivienda:hover,
+      .nav-secondary .nav-link.text-color-vivienda.active {
         color: #194a9a; }
-        .nav-secondary .nav-link.text-color-transparencia:hover {
+        .nav-secondary .nav-link.text-color-transparencia:hover,
+        .nav-secondary .nav-link.text-color-transparencia.active {
           color: #e61937; }
-          .nav-secondary .nav-link.text-color-trabajo:hover {
+          .nav-secondary .nav-link.text-color-trabajo:hover,
+          .nav-secondary .nav-link.text-color-trabajo.active {
             color: #e71869; }
-            .nav-secondary .nav-link.text-color-genero:hover {
+            .nav-secondary .nav-link.text-color-genero:hover,
+            .nav-secondary .nav-link.text-color-genero.active {
               color: #774997; }
-              .nav-secondary .nav-link.text-color-drogas:hover {
+              .nav-secondary .nav-link.text-color-drogas:hover,
+              .nav-secondary .nav-link.text-color-drogas.active {
                 color: #f9b112; }
-                .nav-secondary .nav-link.text-color-ciencia:hover {
+                .nav-secondary .nav-link.text-color-ciencia:hover,
+                .nav-secondary .nav-link.text-color-ciencia.active {
                   color: #008daf; }
-                  .nav-secondary .nav-link.text-color-ambiente:hover {
+                  .nav-secondary .nav-link.text-color-ambiente:hover,
+                  .nav-secondary .nav-link.text-color-ambiente.active {
                     color: #39a95e; }
   .nav-secondary.position-fixed {
-    top: 0;
-    margin-left: -1rem;
-    left: 0; }
+    top: 75px;
+    left: 0;
+    right: 0; }
+    @media (min-width: 768px) {
+      .nav-secondary.position-fixed {
+        top: 80px;   }
+}
 
 #definicion {
   padding-bottom: 5rem; }
