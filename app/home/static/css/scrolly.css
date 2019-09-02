@@ -62,7 +62,19 @@
                                 font-size: 10px !important;   }
 }
 
+.row.vertical-align.scrolly-row.main .col-lg-4 {
+    display: none;
+}
 
+.row.vertical-align.scrolly-row.main .col-lg-8 
+{
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.row.vertical-align.scrolly-row.main {
+    padding: 53px 0;
+}
  
             
    .causa-genero .causa {
@@ -124,7 +136,7 @@
                   }
 
                   .scrolly-row {
-                    padding: 26vh 0rem;
+                    padding: 20vh 0rem;
                     }
 
                       .scrolly-row.causa {
@@ -152,6 +164,17 @@
                         h1, h2 {
                             text-align: left;
                         }
+
+                        .main .col-lg-8 h1 {
+                              font-size: 60px;
+                              line-height: 59px;
+                          }
+
+                          .row.vertical-align.scrolly-row.main {
+                              /* height: 28vh; */
+                              margin-top: 30px;
+                              padding: 0 4rem;
+                          }
                     }
                       .scrolly-row:nth-child(odd) {
                         background-color: #ffffff;
