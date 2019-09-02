@@ -11,7 +11,7 @@
 		<div class="row row-pasos mt-3">
             {% for i in range(4) %}
 			{% set j = (i+1)|string %}
-	            <div class="col-md-3 col-paso mb-5">
+	            <div class="col-3 col-paso mb-5">
 	                <div class="img-wrapper text-center mb-3">
 						<img src="{{ url_for('home.static', filename='img/activa-num-'+j+'.png') }}" alt="" />
 	                </div>
