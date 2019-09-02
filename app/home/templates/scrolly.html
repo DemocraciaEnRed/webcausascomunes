@@ -26,12 +26,12 @@
     {% endif %}
 
     <div class="row vertical-align scrolly-row {{css_class}}">
-        <div class="col-lg-4 {{col_img_order_class}}">
+        <div class="col-lg-6 {{col_img_order_class}}">
             <div>
                 <img src="{{ create_img_src(imagen) }}" class="img-fluid scrolly-img" alt="{{ titulo  }}">
              </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-6">
             <h1>{{ titulo  }}</h1>
             <div>{{ texto | safe }}</div>
         </div>
