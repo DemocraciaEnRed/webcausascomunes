@@ -299,3 +299,14 @@ body {
         .activa .row-boton > div a {
           font-size: 1.25rem !important;   }
 }
+
+.colaborar .card {
+  height: 100%; }
+  .colaborar ol {
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem; }
+    .colaborar ol li {
+      padding-top: 0.5rem; }
+.colaborar p {
+  font-size: 0.9rem; }
