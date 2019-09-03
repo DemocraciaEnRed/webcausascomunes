@@ -79,8 +79,11 @@
 .row.vertical-align.scrolly-row.contexto {
     background-image: linear-gradient(45deg, #ffffff 41.67%, #e8e8e8 41.67%, #e8e8e8 50%, #ffffff 50%, #ffffff 91.67%, #e8e8e8 91.67%, #e8e8e8 100%);
     background-size: 8.49px 8.49px;
+    
 }
-
+.row.vertical-align.scrolly-row.contexto p{
+  font-weight: 500;
+}
 .imgMain {
     order: 13;
     -ms-flex-order: 13;
