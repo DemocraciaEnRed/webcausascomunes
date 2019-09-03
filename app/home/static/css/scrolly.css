@@ -213,15 +213,15 @@
                     @media (min-width: 992px) {
                       .scrolly-row {
                         padding: 0 4rem;
-                        height: 49vh;
+                        min-height: 49vh;
                         max-width: 1050px;
                         margin: auto;
                         }
                       .scrolly-row.causa, .scrolly-row.remate {
                             margin: 50px auto;
-                            height: 33vh;
+                            min-height: 33vh;
                             padding: 0vh 4rem;
-                            width: 60%;
+                            width: 70%;
                         }
                         .imgMain.order-last {
                               order: 0;
@@ -239,7 +239,6 @@
                           }
 
                           .row.vertical-align.scrolly-row.main {
-                              /* height: 28vh; */
                               margin-top: 30px;
                               padding: 0 4rem;
                           }
