@@ -75,7 +75,15 @@
 .row.vertical-align.scrolly-row.main {
     padding: 53px 0;
 }
- 
+
+.imgMain {
+    order: 13;
+    -ms-flex-order: 13;
+}
+
+.imgContainer {
+    text-align: center;
+}
             
    .causa-genero .causa {
      color: #774997; 
@@ -159,6 +167,10 @@
                             height: 33vh;
                             padding: 0vh 4rem;
                             width: 60%;
+                        }
+                        .imgMain .order-last{
+                            order: 0;
+                            -ms-flex-order: 0;
                         }
 
                         h1, h2 {
