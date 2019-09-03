@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'Barlow';
   src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
-  font-weight: 400; }
-
-  @font-face {
-    font-family: 'Barlow';
-    src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
-    font-weight: 500; }
+  font-weight: 500; }
 
     @font-face {
       font-family: 'Barlow';
       src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
       font-weight: 600; }
-
+    
+      @font-face {
+      font-family: 'Barlow';
+      src: url("../webfonts/Barlow-Black.ttf") format('truetype');
+      font-weight: 900; }
+    
       h1, h2 {
       text-align: center;
 
@@ -37,6 +37,28 @@
 
                   .text-color-trabajo ,.causa-trabajo h2 {
                     color: #e71869; }
+
+      .causa-genero .main h1 {
+        text-shadow:1px 2px #c478f8 }
+
+        .causa-ambiente .main h1 {
+          text-shadow:1px 2px #39a95e; }
+
+          .causa-ciencia .main h1 {
+            text-shadow:1px 2px #008daf; }
+
+            .causa-vivienda .main h1 {
+              text-shadow:1px 2px #4284ee; }
+
+              .causa-transparencia .main h1 {
+                text-shadow:1px 2px #e61937; }
+
+                .causa-drogas .main h1 {
+                  text-shadow:1px 2px #9e700e; }
+
+                  .causa-trabajo .main h1 {
+                    text-shadow:1px 2px #e71869; }
+
 
                     .vertical-align {
                       display: flex;
@@ -76,6 +98,7 @@
     padding: 53px 0;
 }
 
+
 .row.vertical-align.scrolly-row.contexto {
     background-image: linear-gradient(45deg, #ffffff 41.67%, #e8e8e8 41.67%, #e8e8e8 50%, #ffffff 50%, #ffffff 91.67%, #e8e8e8 91.67%, #e8e8e8 100%);
     background-size: 8.49px 8.49px;
@@ -98,49 +121,49 @@
   -webkit-box-shadow: 17px 18px 0px 0px #774997;
                             -moz-box-shadow: 17px 18px 0px 0px #774997;
                             box-shadow: 17px 18px 0px 0px #774997;
-                            : ; }
+                            }
 
   .causa-ambiente .causa {
     color: #39a95e; 
     -webkit-box-shadow: 17px 18px 0px 0px #39a95e;
                             -moz-box-shadow: 17px 18px 0px 0px #39a95e;
                             box-shadow: 17px 18px 0px 0px #39a95e;
-                            : ; }
+                            }
 
     .causa-ciencia .causa {
       color: #008daf; 
       -webkit-box-shadow: 17px 18px 0px 0px #008daf;
                             -moz-box-shadow: 17px 18px 0px 0px #008daf;
                             box-shadow: 17px 18px 0px 0px #008daf;
-                            : ; }
+                            }
 
       .causa-vivienda .causa {
         color: #194a9a; 
         -webkit-box-shadow: 17px 18px 0px 0px #194a9a;
                             -moz-box-shadow: 17px 18px 0px 0px #194a9a;
                             box-shadow: 17px 18px 0px 0px #194a9a;
-                            : ; }
+                            }
 
         .causa-transparencia .causa {
           color: #e61937; 
           -webkit-box-shadow: 17px 18px 0px 0px #e61937;
                             -moz-box-shadow: 17px 18px 0px 0px #e61937;
                             box-shadow: 17px 18px 0px 0px #e61937;
-                            : ; }
+                            }
 
           .causa-drogas .causa {
             color: #9e700e; 
             -webkit-box-shadow: 17px 18px 0px 0px #f9b112;
                             -moz-box-shadow: 17px 18px 0px 0px #f9b112;
                             box-shadow: 17px 18px 0px 0px #f9b112;
-                            : ; }
+                            }
 
             .causa-trabajo .causa {
               color: #e71869; 
               -webkit-box-shadow: 17px 18px 0px 0px #e71869;
                             -moz-box-shadow: 17px 18px 0px 0px #e71869;
                             box-shadow: 17px 18px 0px 0px #e71869;
-                            : ; }
+                            }
             
 
               body {
@@ -151,6 +174,7 @@
                   margin-bottom: 5px;
                   }
 
+                
                   .scrolly-row {
                     padding: 20vh 0rem;
                     }
@@ -188,6 +212,7 @@
                         .main h1 {
                               font-size: 60px;
                               line-height: 59px;
+                              font-weight: 900;
                           }
 
                           .row.vertical-align.scrolly-row.main {
