@@ -4,6 +4,11 @@
 
 {% block head %}
     <title>Causas comunes</title>
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.14/release/featherlight.min.css" type="text/css"
+        rel="stylesheet" />
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.14/release/featherlight.min.js" type="text/javascript"
+    charset="utf-8"></script>
+
     <link href="{{url_for('home.static', filename='css/scrolly.css')}}" rel="stylesheet">
 {% endblock %}
 
@@ -28,7 +33,7 @@
     <div class="row vertical-align scrolly-row {{css_class}}">
         <div class="col-lg-6 {{col_img_order_class}} imgMain">
             <div class="imgContainer">
-                <img src="{{ create_img_src(imagen) }}" class="img-fluid scrolly-img" alt="{{ titulo  }}">
+                <a href="#" data-featherlight="{{ create_img_src(imagen) }}"></a><img src="{{ create_img_src(imagen) }}" class="img-fluid scrolly-img" alt="{{ titulo  }}"></a>
              </div>
         </div>
         <div class="col-lg-6">

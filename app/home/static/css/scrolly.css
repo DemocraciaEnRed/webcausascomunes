@@ -62,7 +62,7 @@
                                 font-size: 10px !important;   }
 }
 
-.row.vertical-align.scrolly-row.main .col-lg-6 .imgMain {
+.main .imgMain {
     display: none;
 }
 
@@ -132,7 +132,7 @@
 
                 h1 {
                   font-weight: 700;
-                  margin-bottom: 0px;
+                  margin-bottom: 5px;
                   }
 
                   .scrolly-row {
