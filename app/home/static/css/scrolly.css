@@ -62,11 +62,11 @@
                                 font-size: 10px !important;   }
 }
 
-.row.vertical-align.scrolly-row.main .col-lg-4 {
+.row.vertical-align.scrolly-row.main .col-lg-6 .imgMain {
     display: none;
 }
 
-.row.vertical-align.scrolly-row.main .col-lg-8 
+.row.vertical-align.scrolly-row.main .col-lg-6 
 {
   flex: 0 0 100%;
   max-width: 100%;
@@ -150,7 +150,7 @@
                     @media (min-width: 992px) {
                       .scrolly-row {
                         padding: 0 4rem;
-                        height: 46vh;
+                        height: 49vh;
                         max-width: 1050px;
                         margin: auto;
                         }
@@ -183,5 +183,6 @@
                           background-color: #e5e5e5;
                           }
                           .scrolly-row .scrolly-img {
-                            max-height: 50vh;
+                            padding: 10px 0px;
+                            max-height: -webkit-fill-available;
                             }
