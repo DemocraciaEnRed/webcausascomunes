@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Barlow';
   src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
-  font-weight: 500; }
+  font-weight: 400; }
 
     @font-face {
       font-family: 'Barlow';
@@ -104,7 +104,18 @@
 
 .callToAction{
       margin-top: 100px;
+      text-align: center
 }
+
+.callToAction h1{
+      text-align: center;
+}
+
+.callToAction .btn{
+  margin-top: 5px;
+}
+
+
 
 .row.vertical-align.scrolly-row.contexto {
     background-image: linear-gradient(45deg, #ffffff 41.67%, #e8e8e8 41.67%, #e8e8e8 50%, #ffffff 50%, #ffffff 91.67%, #e8e8e8 91.67%, #e8e8e8 100%);
@@ -121,6 +132,10 @@
 
 .imgContainer {
     text-align: center;
+}
+
+.btn-group{
+      display: inline-flex;
 }
             
    .causa-genero .causa {
@@ -174,7 +189,9 @@
             
 
               body {
-                font: 100% 'Barlow', sans-serif; }
+                font: 100% 'Barlow', sans-serif;
+                font-weight:500 
+                }
 
                 h1 {
                   font-weight: 700;
@@ -186,10 +203,9 @@
                     padding: 20vh 0rem;
                     }
 
-                      .scrolly-row.causa {
+                      .scrolly-row.causa, .scrolly-row.remate  {
                             
                             border: 5px solid black;
-                            /* height: 33vh; */
                             padding: 7vh 2rem;
                             margin: 43px 0px;
                         }
@@ -201,7 +217,7 @@
                         max-width: 1050px;
                         margin: auto;
                         }
-                      .scrolly-row.causa {
+                      .scrolly-row.causa, .scrolly-row.remate {
                             margin: 50px auto;
                             height: 33vh;
                             padding: 0vh 4rem;
@@ -227,6 +243,11 @@
                               margin-top: 30px;
                               padding: 0 4rem;
                           }
+
+                              .btn-group{
+                                  display: inline-flex;
+                            }
+
                     }
                       .scrolly-row:nth-child(odd) {
                         background-color: #ffffff;
@@ -238,3 +259,38 @@
                             padding: 10px 0px;
                             max-height: -webkit-fill-available;
                             }
+
+
+.scrolly-row.remate {
+    background-image: linear-gradient(45deg, #ffffff 41.67%, #e8e8e8 41.67%, #e8e8e8 50%, #ffffff 50%, #ffffff 91.67%, #e8e8e8 91.67%, #e8e8e8 100%);
+    background-size: 8.49px 8.49px;
+    border: solid 6px blue;
+    height: 50vh;
+}
+
+.causa-genero .remate {
+        border-color: #c478f8 }
+
+        .causa-ambiente .remate {
+          border-color: #39a95e; }
+
+          .causa-ciencia .remate {
+            border-color: #008daf; }
+
+            .causa-vivienda .remate {
+              border-color: #4284ee; }
+
+              .causa-transparencia .remate {
+                border-color: #e61937; }
+
+                .causa-drogas .remate {
+                  border-color: #9e700e; }
+
+                  .causa-trabajo .remate {
+                    border-color: #e71869; }
+
+.row.vertical-align.scrolly-row.callToAction {
+    background-color: #e5e5e5;
+    margin-top: 80px;
+    height: 39vh;
+}
