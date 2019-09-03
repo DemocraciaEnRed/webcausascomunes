@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.13/featherlight.min.css" type="text/css"
         rel="stylesheet" />
 
+<script src="https://kit.fontawesome.com/3752b7310b.js"></script>
 
     <link href="{{url_for('home.static', filename='css/scrolly.css')}}" rel="stylesheet">
 {% endblock %}
@@ -49,14 +50,13 @@
                 <div>
                     <p>Desde <b>Causas Comunes</b> te invitamos a que te sumes a mostrar la importancia de esta Causa, construir
                         propuestas y exigir compromisos por parte de les candidates.. </p>
-                        <button class='btn btn-lg ' style='background-color:transparent;'>
-                            <i class="fa fa-pencil"></i> Edit
-                        </button>
-                       <a href="https://diagnostico.causascomunes.org/index.php/{{causa}}" class="btn btn-success btn-block" role="button" target="_blank">Formulario de Diagnóstico:{{causa}}</a>
-                    <a href="https://www.instagram.com/causascomunes/" class="btn btn-success btn-block" role="button" target="_blank">@Causascomunes</a>
-                    <a href="https://www.facebook.com/Causas-Comunes-449280685874685/" class="btn btn-success btn-block" role="button" target="_blank">/Causascomunes</a>
-                    <a href="https://twitter.com/causas_comunes" class="btn btn-success btn-block" role="button" target="_blank">@Causascomunes</a>
-                    <a href="mailto:causascomunesx@gmail.com" class="btn btn-success btn-block" role="button" target="_blank">Mandar mail</a>
+                    <a href="https://diagnostico.causascomunes.org/index.php/{{causa}}" class="btn btn-success btn-block" role="button" target="_blank"><i class="fas fa-edit"></i>Formulario de Diagnóstico:{{causa}}</a>
+                    <div class="btn-group btn-block" role="group" aria-label="call to action">
+                        <a href="https://www.instagram.com/causascomunes/" class="btn btn-secondary" role="button" target="_blank"><i class="fab fa--square"></i>@Causascomunes</a>
+                        <a href="https://www.facebook.com/Causas-Comunes-449280685874685/" class="btn btn-secondary" role="button" target="_blank"><i class="fab fa-facebook-square"></i>/Causascomunes</a>
+                        <a href="https://twitter.com/causas_comunes" class="btn btn-secondary" role="button" target="_blank"><i class="fab fa-twitter-square"></i>@Causascomunes</a>
+                        <a href="mailto:causascomunesx@gmail.com" class="btn btn-secondary" role="button" target="_blank"><i class="fas fa-envelope-square"></i>Mandar mail</a>
+                    </div>
                 </div>
             </div>
         </div>

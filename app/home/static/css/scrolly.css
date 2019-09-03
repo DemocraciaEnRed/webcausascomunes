@@ -98,6 +98,9 @@
     padding: 53px 0;
 }
 
+.callToAction h1{ text-transform: uppercase}
+
+.callToAction .btn {text-transform: capitalize}
 
 .row.vertical-align.scrolly-row.contexto {
     background-image: linear-gradient(45deg, #ffffff 41.67%, #e8e8e8 41.67%, #e8e8e8 50%, #ffffff 50%, #ffffff 91.67%, #e8e8e8 91.67%, #e8e8e8 100%);
