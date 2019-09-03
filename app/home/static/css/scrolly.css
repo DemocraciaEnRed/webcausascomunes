@@ -168,10 +168,10 @@
                             padding: 0vh 4rem;
                             width: 60%;
                         }
-                        .imgMain .order-last{
-                            order: 0;
-                            -ms-flex-order: 0;
-                        }
+                        .imgMain.order-last {
+                              order: 0;
+                                -ms-flex-order: 13;
+                          }
 
                         h1, h2 {
                             text-align: left;
