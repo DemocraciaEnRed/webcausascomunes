@@ -265,7 +265,7 @@
     background-image: linear-gradient(45deg, #ffffff 41.67%, #e8e8e8 41.67%, #e8e8e8 50%, #ffffff 50%, #ffffff 91.67%, #e8e8e8 91.67%, #e8e8e8 100%);
     background-size: 8.49px 8.49px;
     border: solid 6px blue;
-    height: 50vh;
+    min-height: 50vh;
 }
 
 .causa-genero .remate {
@@ -292,5 +292,5 @@
 .row.vertical-align.scrolly-row.callToAction {
     background-color: #e5e5e5;
     margin-top: 80px;
-    height: 39vh;
+    min-height: 39vh;
 }
