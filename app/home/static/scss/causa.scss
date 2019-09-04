@@ -115,7 +115,7 @@ body {overflow-x: hidden;}
         &.text-color-ambiente:hover, &.text-color-ambiente.active { color: $color-ambiente; }    
     }
     &.position-fixed {
-        top: 75px;
+        top: 72px;
 /*         margin-left: -1rem;
         left: 0; */
         left: 0;
@@ -294,7 +294,10 @@ body {overflow-x: hidden;}
             padding-top: 0.5rem;
         }
     }
-    p {
+    > p {
+        font-size: $font-size-small;
+    }
+    .row p {
         font-size: $font-size-xsmall;
     }
     .img svg{

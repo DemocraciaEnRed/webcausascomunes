@@ -1,16 +1,15 @@
 <!-- TODO: agregar textos a directus -->
-<section id="colaborar" class="colaborar bg-mosaico-blanco section jumbotron jumbotron-fluid">
+<section id="colaborar" class="colaborar bg-color-solido section jumbotron jumbotron-fluid">
     <div class="container">
         <h2 class="section__title text-center text-md-left">¿Cómo colaborar con esta Causa?</h2>
-        <p class="section__subtitle mb-5">Informate y colaborá entre todos con esta Causa. Nam libero tempore, cum
-            soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-            omnis voluptas assumenda est, omnis dolor repellendus. </p>
+        <p class="section__subtitle mb-5">Te proponemos sumarte a compartir datos, fuentes y escribir sobre 
+			cada causa. Queremos generar diagnósticos, referencias y propuestas para mejores políticas públicas. </p>
         <div class="row mt-5">
-            <div class="col-lg-6 mb-5 mb-md-0">
+            <div class="col-lg-12 mb-5 mb-md-0">
                 <div class="card card-with-shadow p-4 p-md-5">
                     <div class="card-body p-0">
                         <h5 class="card-title text-center text-md-left">Colaborá con la Wiki de Género</h5>
-                        <p>¿Qué es una Wiki? Nam libero tempore, cum soluta nobis est eligendi.</p>
+                        <p>{{ dtextoscausas.get('texto')['wiki'] | safe }}</p>
                         <div class="row justify-content-center align-items-md-center my-4">
                             <div class="text-center col-md-6">
                                 <div class="img mb-4 mb-md-0">
@@ -71,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <!--<div class="col-lg-6">
                 <div class="card card-with-shadow p-4 p-md-5">
                     <div class="card-body p-0">
                         <h5 class="card-title text-center text-md-left">Sumá tu propuesta a Género</h5>
@@ -119,7 +118,7 @@
                     <div class="row justify-content-center">
                         <a href="#" class="wiki-btn btn btn-primary">WIKI: Sumate a construir</a>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
 </section>
