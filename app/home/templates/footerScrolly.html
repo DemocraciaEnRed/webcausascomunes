@@ -1,0 +1,48 @@
+<footer class="text-center py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Logo Causas Comunes  -->
+            <div class="col-md-12 mt-3">
+                <img class="logo-foot-cc" src="{{ url_for('home.static', filename='img/logos/CC_LogoNegro_mediano.png') }}" alt="Causas Comunes"/>
+            </div>
+            <div class="col-md-12 mt-3">
+                    <h2>SUMATE A ESTA CAUSA:</h2>
+                    <p>Desde <b>Causas Comunes</b> te invitamos a que te sumes a mostrar la importancia de esta Causa, construir
+                        propuestas y exigir compromisos por parte de les candidates.. </p>
+                                        <a href="https://diagnostico.causascomunes.org/index.php/{{causa}}" class="btn btn-success" role="button"
+                                            target="_blank">
+                                            Formulario de Diagnóstico: {{causa}}</a>
+            </div>
+
+            <!-- Social links  -->
+            <div class="col-md-12 my-2 py-4">
+                <!--Instagram-->
+                <a target="_blank" rel="noopener noreferrer" class="ins-ic" href="https://www.instagram.com/causascomunes/" target="_blank">
+                    <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_instagram_icon.png') }}"></a>
+                <!-- Facebook -->
+                <a target="_blank" rel="noopener noreferrer" class="fb-ic" href="https://www.facebook.com/Causas-Comunes-449280685874685/" target="_blank">
+                    <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_facebook_icon.png') }}"></a>
+                <!-- Twitter -->
+                <a target="_blank" rel="noopener noreferrer" class="tw-ic" href="https://twitter.com/causas_comunes" target="_blank">
+                    <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_twitter_icon.png') }}"></a>
+                <!-- Email -->
+                <a class="mail-ic" href="mailto:causascomunesx@gmail.com" target="_blank">
+                    <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_mail_icon.png') }}"></a>
+            </div>
+            
+            <!-- Copyleft  -->
+            <div class="col-md-12 mb-3">
+                <span class="footer__copyright">
+                    Un proyecto convocado por 
+                    <a href="https://democraciaenred.org/" target="_blank">Democracia en Red</a> 
+                    y 
+                    <a href="https://activaelcongreso.org/" target="_blank">Activá el congreso</a> 
+                    con el apoyo de 
+                    <a href="https://luminategroup.com/" target="_blank">
+                        <img src="{{ url_for('home.static', filename='img/logos/luminate_logo.png') }}" alt="Luminate Group" />
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
