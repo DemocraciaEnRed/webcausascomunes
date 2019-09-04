@@ -205,6 +205,7 @@ def causas_scrolly_route():
         'scrolly.html',
         navs=get_menu_navs(),
         causa=causa,
+        nombre_causa= accepted_causas[causa],
         itemsscrolly=itemsscrolly)
 
 

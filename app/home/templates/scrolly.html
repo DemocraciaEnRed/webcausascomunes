@@ -40,6 +40,16 @@
     </div>
 {% endfor %}
 
+<div class="footer-scrollys row">
+    <div class="col-md-8 offset-md-2 mt-3 text-center mb-2 mt-5">
+            <h2>SUMATE A ESTA CAUSA:</h2>
+            <p>Desde <b>Causas Comunes</b> te invitamos a que te sumes a mostrar la importancia de esta Causa, construir
+                propuestas y exigir compromisos por parte de les candidates.. </p>
+                                <a href="https://diagnostico.causascomunes.org/index.php/{{causa}}" class="btn btn-success" role="button"
+                                    target="_blank">
+                                    Formulario de Diagnóstico: {{nombre_causa}}</a>
+    </div>
+</div>
      <!--    <div class="row vertical-align scrolly-row callToAction">
 
             <div class="col-lg-10 offset-lg-1">
@@ -62,6 +72,7 @@
         </div> -->
 
 </div>
+{##### include "footerScrolly.html"  ###}
 
 <!-- Los íconos que se ven son del footer -->
 {% endblock %}
