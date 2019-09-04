@@ -24,7 +24,7 @@ accepted_causas = {
 
 
 def get_menu_navs():
-    navs = {'index': '', 'causas': '', 'agenda': '', 'contacto': ''}
+    navs = {'index': '', 'causas': '', 'sumate': '', 'contacto': ''}
     if request.endpoint:
         endpoint = request.endpoint.split('.')[1] if '.' in request.endpoint else request.endpoint
         if endpoint in accepted_causas.keys():
