@@ -213,9 +213,9 @@
                     @media (min-width: 992px) {
                       .scrolly-row {
                         padding: 0 4rem;
-                        min-height: 49vh;
+                        min-height: 79vh;
                         max-width: 1050px;
-                        margin: auto;
+                        margin: 110px auto;
                         }
                       .scrolly-row.causa, .scrolly-row.remate {
                             margin: 50px auto;
@@ -239,8 +239,9 @@
                           }
 
                           .row.vertical-align.scrolly-row.main {
-                              margin-top: 30px;
+                              margin: 40px auto 0px auto;
                               padding: 0 4rem;
+                              min-height: 32vh;
                           }
 
                               .btn-group{
@@ -292,4 +293,8 @@
     background-color: #e5e5e5;
     margin-top: 80px;
     min-height: 39vh;
+}
+
+img.ondita-azul {
+    max-width: 700px;
 }
