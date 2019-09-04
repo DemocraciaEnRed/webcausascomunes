@@ -1,0 +1,26 @@
+{% from 'causa_sections/_itemtema.html' import create_item_tema %}
+<!-- TODO: modificar textos en directus-->
+<section id="tema" class="section bg-color-solido jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row text-center text-md-left">
+            <div class="col-md-12">
+                <h2 class="section__title">{{dtextos.get('temas')['titulo']}}</h2>
+                <p class="section__subtitle mb-4 mb-md-5">{{dtextos.get('temas')['subtitulo']}}</p>
+            </div>
+        </div>
+        <div class="row">
+            {{ create_item_tema(itemstemas.0.get('imagen'), itemstemas.0.get('titulo'), 'Subtitulo del tema', itemstemas.0.get('texto'), 'principal') }}
+        </div>
+
+        <!-- <div class="row">
+            {# for itm in itemstemas #}
+                {# if loop.index == 1 #}
+                    {# set type = 'principal' #}
+                {# else #}
+                    {# set type = 'secundario' #}
+                {# endif #}
+                {# create_item_tema(itm.get('imagen'), itm.get('titulo'), itm.get('texto'), type) #}
+            {# endfor #}
+        </div> -->
+    </div>
+</section>

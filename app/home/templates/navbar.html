@@ -1,18 +1,57 @@
 <header>
-    <nav class="navbar navbar-expand-lg py-3 px-4">
-        <!-- Ondita azul de background -->
-        <img class="ondita-azul" src="{{ url_for('home.static', filename='img/home-background.svg') }}">
+    <!-- Ondita azul de background -->
+    <img class="ondita-azul" src="{{ url_for('home.static', filename='img/home-background.svg') }}">
+    <nav id="navbar" class="navbar fixed navbar-expand-lg py-3 px-4">
 
         <!-- Menú hamburguesa mobile (solo en vista mobile) -->
-        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <img class="nav-menu-mobile" src="{{ url_for('home.static', filename='img/icons/menu_mobile.svg') }}" alt="Menu"/>
+        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <img class="nav-menu-mobile" src="{{ url_for('home.static', filename='img/icons/menu_mobile.svg') }}" alt="Menu" />
         </button>
 
         <!-- Loguito de la esquina -->
         <a class="navbar-brand" href="{{ url_for('home.index') }}">
-            <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor_chico.png') }}" alt="Causas Comunes"/>
+            <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor_chico.png') }}" alt="Causas Comunes" />
         </a>
 
+		{% set novedades =  false %}
+		{% if novedades %}
+        <!-- Novedades -->
+        <div id="dropdown-novedades" class="nav-item dropdown">
+            <button role="button" class="btn btn-novedades nav-link" data-toggle="dropdown" id="novedades-dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span>¡Novedades!</span>
+                <i class="fa fa-bell"></i><sup>3</sup>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="novedades-dropdown">
+                <a class="dropdown-item" href="/trabajo#novedades">
+                    {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
+                    %}
+                    <img src="{{ icon_path }}" />
+                    <span class="title">Titulo de novedad</span>
+                    <br>
+                    <span class="hashtag text-color-trabajo">#Trabajo</span>
+                </a>
+                <a class="dropdown-item" href="/trabajo#novedades">
+                {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
+                %}
+                <img src="{{ icon_path }}" />
+                <span class="title">Titulo de novedad</span>
+                    <br>
+                    <span class="hashtag text-color-trabajo">#Trabajo</span>
+                </a>
+                <a class="dropdown-item" href="/trabajo#novedades">
+                    {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ 'trabajo' +'_icon_color.png')
+                    %}
+                    <img src="{{ icon_path }}" />
+                    <span class="title">Titulo de novedad</span>
+                    <br>
+                    <span class="hashtag text-color-trabajo">#Trabajo</span>
+                </a>
+            </div>
+        </div>
+		{% endif %}
+		
         <!-- Links  -->
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ml-md-5">

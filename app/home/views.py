@@ -94,7 +94,7 @@ def index():
         dtextos = directus.dapi.get_textos_pagina('Home')
         dimgs = directus.dapi.get_imgs_pagina('Home')
         itemspropuestas = directus.dapi.get_items_propuestas()
-        # itemsnovedades = directus.dapi.get_items_novedades('Home')
+        itemsnovedades = directus.dapi.get_items_novedades('Home')
         itemsagenda = directus.dapi.get_items_agenda('Home')
         galeriahackaton = directus.dapi.get_items_hackaton()
     else:
@@ -104,6 +104,7 @@ def index():
         itemspropuestas = content.items_propuestas()
         itemsagenda = {}
         galeriahackaton = content.items_hackaton()
+        itemsnovedades = {}
 
 
     return render_template(
@@ -113,10 +114,12 @@ def index():
         # dimgsfooter=dimgsfooter,
         dtextos=dtextos,
         dimgs=dimgs,
-        # itemsnovedades=itemsnovedades,
+        
+        itemsnovedades=itemsnovedades,
         itemsagenda=itemsagenda,
         itemspropuestas=itemspropuestas,
         galeriahackaton=galeriahackaton,
+        
         index_de_testeo='indexDeTesteo' in request.endpoint)
 
 
@@ -188,6 +191,7 @@ def causas_route():
         'itemscompromisos': itemscompromisos,
 
         'show_wiki_btn': True,
+        'causa': causa,
         'nombre_causa': accepted_causas[causa]}
 
     return render_template('causa.html', **variables)
