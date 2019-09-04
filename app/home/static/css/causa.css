@@ -197,7 +197,7 @@ body {
                   .nav-secondary .nav-link.text-color-ambiente.active {
                     color: #39a95e; }
   .nav-secondary.position-fixed {
-    top: 75px;
+    top: 72px;
     left: 0;
     right: 0; }
     @media (min-width: 768px) {
@@ -334,10 +334,12 @@ body {
   margin-bottom: 1.5rem; }
   .colaborar ol li {
     padding-top: 0.5rem; }
-.colaborar p {
-  font-size: 0.9rem; }
-  @media (max-width: 576px) {
-    .colaborar .img svg {
-      max-width: 100px;
-      max-height: 100px;   }
+.colaborar > p {
+  font-size: 1.15rem; }
+  .colaborar .row p {
+    font-size: 0.9rem; }
+    @media (max-width: 576px) {
+      .colaborar .img svg {
+        max-width: 100px;
+        max-height: 100px;   }
 }
