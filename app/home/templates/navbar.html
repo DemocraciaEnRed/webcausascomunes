@@ -14,6 +14,8 @@
             <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor_chico.png') }}" alt="Causas Comunes" />
         </a>
 
+		{% set novedades =  false %}
+		{% if novedades %}
         <!-- Novedades -->
         <div id="dropdown-novedades" class="nav-item dropdown">
             <button role="button" class="btn btn-novedades nav-link" data-toggle="dropdown" id="novedades-dropdown" aria-haspopup="true"
@@ -48,7 +50,8 @@
                 </a>
             </div>
         </div>
-
+		{% endif %}
+		
         <!-- Links  -->
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ml-md-5">
