@@ -23,16 +23,17 @@
                 <div class="card card-with-shadow text-center">
                     <div class="card-body p-4 p-md-5">
                         <h5 class="card-title">{{dtextos.get('correo')['titulo']}}</h5>
-                        <form class="mt-5 px-md-4">
+                        <form class="mt-5 px-md-4" action="https://causascomunes.us3.list-manage.com/subscribe/post?u=a2ed796c70f5a1770cbcb80ba&amp;id=885233fed6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" >
                             <div class="form-group text-left mb-5">
                                 <label for="email">{{dtextos.get('correo')['email']}}</label>
-                                <input type="email" class="form-control" id="email" placeholder="{{dtextos.get('correo')['emailsub']}}">
+                                <input type="email" class="form-control" id="email" placeholder="{{dtextos.get('correo')['emailsub']}}" name="EMAIL">
                             </div>
    <!--                          <div class="form-group text-left mb-5">
                                 <label for="ubicacion">{{dtextos.get('correo')['ubicacion']}}</label>
                                 <input type="text" class="form-control" id="ubicacion" placeholder="{{dtextos.get('correo')['ubicacionsub']}}">
                             </div> -->
-                            <button type="submit" class="btn btn-primary btn-shadow btn-md">{{dtextos.get('correo')['boton']}}</button>
+        					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a2ed796c70f5a1770cbcb80ba_885233fed6" tabindex="-1" value=""></div>
+                            <button type="submit" class="btn btn-primary btn-shadow btn-md" value="Subscribe" name="subscribe">{{dtextos.get('correo')['boton']}}</button>
                         </form>
                     </div>
                 </div>
