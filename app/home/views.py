@@ -69,13 +69,13 @@ def not_found(e):
 @blueprint.before_request
 def before_request():
     # si no está activo directus cancelamos la request, pero si es a un recurso estático la dejamos pasar
-    if request.endpoint != 'home.index':
-        if not current_app.config['_using_directus'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
-            log_err(current_app, 'Directus in error state.', None, True)
+    #if request.endpoint != 'home.index':
+    if not current_app.config['_using_directus'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
+        log_err(current_app, 'Directus in error state.', None, True)
 
-            msg = "La página se encuentra en mantenimiento<br>"\
-                  "Por favor, vuelva más tarde"
-            return render_error(msg)
+        msg = "La página se encuentra en mantenimiento<br>"\
+              "Por favor, vuelva en otro momento"
+        return render_error(msg)
 
 
 @blueprint.after_request
@@ -94,14 +94,14 @@ def index():
         dimgs = directus.dapi.get_imgs_pagina('Home')
         itemspropuestas = directus.dapi.get_items_propuestas()
         itemsnovedades = directus.dapi.get_items_novedades('Home')
-        itemsagenda = directus.dapi.get_items_agenda('Home')
+        #itemsagenda = directus.dapi.get_items_agenda('Home')
         galeriahackaton = directus.dapi.get_items_hackaton()
     else:
         import app.content as content
         dtextos = content.textos_home()
         dimgs = {}
         itemspropuestas = content.items_propuestas()
-        itemsagenda = {}
+        #itemsagenda = {}
         galeriahackaton = content.items_hackaton()
         itemsnovedades = {}
 
@@ -112,7 +112,7 @@ def index():
         dtextos = dtextos,
         dimgs = dimgs,        
         itemsnovedades = itemsnovedades,
-        itemsagenda = itemsagenda,
+        #itemsagenda = itemsagenda,
         itemspropuestas = itemspropuestas,
         galeriahackaton = galeriahackaton,        
         index_de_testeo='indexDeTesteo' in request.endpoint)
