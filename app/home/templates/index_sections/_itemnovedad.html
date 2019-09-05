@@ -9,7 +9,7 @@
 <div class="col-12 col-md-{{ cols or '' }} pb-3 mb-4">
     <div class="card card--novedades">
 		<div class="card-img-top">
-        	<img src="{{ create_img_src(imgpath or '') }}" alt="{{ title or '' }}">
+        	<a href="{{url}}"><img src="{{ create_img_src(imgpath or '') }}" alt="{{ title or '' }}"></a>
 		</div>
         <div class="card-body px-md-4 text-left">
             <span class="ml-3 card-hashtag text-color-{{htag_lower}}">#{{ hashtag or '' }}</span>

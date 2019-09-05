@@ -40,12 +40,12 @@ img {
 		}
 	}
 	/* intercalar colores de fondo, seguro terminemos hardcodeandolo */
-	&:nth-child(odd) {
+	/* &:nth-child(odd) {
 		background-color: $color-fondo-1;
 	}
 	&:nth-child(even) {
 		background-color: $color-fondo-2;
-	}
+	} */
 }
 
 .section__title {
@@ -130,6 +130,7 @@ img {
 /* Manifiesto */
 
 .manifiesto {
+	background-color: $sectionBgColorWhite;
 	position: relative;
 	p {
 		color: $color-texto-light;
@@ -469,14 +470,14 @@ img {
 		box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
 		border-radius: 0;
 		background: $white;
-		@media(min-width: $width-medium) {
+		/*@media(min-width: $width-medium) {
 			height: 500px;
-		}
+		}*/
 		
 		img {  }
 		
 		.card-body { 
-			margin-top: -40px;	
+			/*margin-top: -40px;*/
 			overflow-y: hidden;
 			
 			.card-hashtag {
@@ -505,6 +506,7 @@ img {
 				}
 				a span {
 					display: inline-block;
+					text-decoration: underline;
 				}
 			}
 			
@@ -604,6 +606,7 @@ img {
 
 /* GALERIA */
 .galeria {
+	background-color: $sectionBgColorBlue;
 	p {
 		color: $color-texto-light;
 		font-size: $font-size-xsmall;

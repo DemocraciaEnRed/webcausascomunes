@@ -158,10 +158,6 @@ img {
         padding-top: 6rem;
         padding-bottom: 6rem;   }
 }
-  .section:nth-child(odd) {
-    background-color: #ffffff; }
-    .section:nth-child(even) {
-      background-color: #fbfcfd; }
 
 .section__title {
   color: #2a4b8c;
@@ -233,6 +229,7 @@ img {
 }
 
 .manifiesto {
+  background-color: #f4f9ff;
   position: relative; }
   .manifiesto p {
     color: #1d1d1b;
@@ -493,47 +490,43 @@ img {
     box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
     border-radius: 0;
     background: #ffffff; }
-    @media (min-width: 768px) {
-      .novedades .card--novedades {
-        height: 500px;   }
-}
-      .novedades .card--novedades .card-body {
-        margin-top: -40px;
-        overflow-y: hidden; }
-        .novedades .card--novedades .card-body .card-hashtag {
-          font-size: 0.9rem;
-          display: inline-block;
-          background-color: #eff1f4;
-          padding: 0 1rem;
-          border-radius: 1rem;
-          line-height: 1.8;
-          margin-bottom: 0.5rem;
-          text-transform: capitalize; }
-          .novedades .card--novedades .card-body .card-title {
-            font-family: Barlow;
-            font-size: 20px;
-            font-weight: 600;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.3;
-            letter-spacing: normal;
-            text-align: left; }
-            @media (min-width: 768px) {
-              .novedades .card--novedades .card-body .card-title {
-                font-size: 1.25rem;   }
-}
-              .novedades .card--novedades .card-body .card-title a span {
-                display: inline-block; }
-        .novedades .card--novedades .card-body .text {
+    .novedades .card--novedades .card-body {
+      overflow-y: hidden; }
+      .novedades .card--novedades .card-body .card-hashtag {
+        font-size: 0.9rem;
+        display: inline-block;
+        background-color: #eff1f4;
+        padding: 0 1rem;
+        border-radius: 1rem;
+        line-height: 1.8;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize; }
+        .novedades .card--novedades .card-body .card-title {
           font-family: Barlow;
-          font-size: 14px;
-          font-weight: normal;
+          font-size: 20px;
+          font-weight: 600;
           font-style: normal;
           font-stretch: normal;
-          line-height: 1.29;
+          line-height: 1.3;
           letter-spacing: normal;
-          text-align: left;
-          color: #696969; }
+          text-align: left; }
+          @media (min-width: 768px) {
+            .novedades .card--novedades .card-body .card-title {
+              font-size: 1.25rem;   }
+}
+            .novedades .card--novedades .card-body .card-title a span {
+              display: inline-block;
+              text-decoration: underline; }
+      .novedades .card--novedades .card-body .text {
+        font-family: Barlow;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.29;
+        letter-spacing: normal;
+        text-align: left;
+        color: #696969; }
   .novedades .twitter-timeline__title {
     color: #2a4b8c;
     font-size: 1.25rem;
@@ -597,14 +590,16 @@ img {
     .agenda .list-group-item img {
       height: 3rem; }
 
-.galeria p {
-  color: #1d1d1b;
-  font-size: 0.9rem;
-  line-height: 1.3rem; }
-  @media (min-width: 768px) {
-    .galeria p {
-      font-size: 1rem;
-      line-height: 1.75rem;   }
+.galeria {
+  background-color: #e4eefa; }
+  .galeria p {
+    color: #1d1d1b;
+    font-size: 0.9rem;
+    line-height: 1.3rem; }
+    @media (min-width: 768px) {
+      .galeria p {
+        font-size: 1rem;
+        line-height: 1.75rem;   }
 }
 
 #wikis {

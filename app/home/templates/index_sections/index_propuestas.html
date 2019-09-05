@@ -9,7 +9,7 @@
           <div class="row justify-content-center">
 	          	<!-- Flickity HTML init -->
 	            {% for itm in itemspropuestas %}
-	                {{ create_item_propuesta(itm.get('pagina'), itm.get('titulo'), itm.get('texto')) }}
+	                {{ create_item_propuesta(itm.get('pagina'), itm.get('titulo'), itm.get('texto'), dtextos.get('notificaciones')[itm.get('pagina')|lower]) }}
 	            {% endfor %}
           </div>  
       </div>
