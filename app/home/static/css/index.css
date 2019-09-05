@@ -158,10 +158,6 @@ img {
         padding-top: 6rem;
         padding-bottom: 6rem;   }
 }
-  .section:nth-child(odd) {
-    background-color: #ffffff; }
-    .section:nth-child(even) {
-      background-color: #fbfcfd; }
 
 .section__title {
   color: #2a4b8c;
@@ -233,6 +229,7 @@ img {
 }
 
 .manifiesto {
+  background-color: #f4f9ff;
   position: relative; }
   .manifiesto p {
     color: #1d1d1b;
@@ -518,7 +515,8 @@ img {
               font-size: 1.25rem;   }
 }
             .novedades .card--novedades .card-body .card-title a span {
-              display: inline-block; }
+              display: inline-block;
+              text-decoration: underline; }
       .novedades .card--novedades .card-body .text {
         font-family: Barlow;
         font-size: 14px;
@@ -592,14 +590,16 @@ img {
     .agenda .list-group-item img {
       height: 3rem; }
 
-.galeria p {
-  color: #1d1d1b;
-  font-size: 0.9rem;
-  line-height: 1.3rem; }
-  @media (min-width: 768px) {
-    .galeria p {
-      font-size: 1rem;
-      line-height: 1.75rem;   }
+.galeria {
+  background-color: #e4eefa; }
+  .galeria p {
+    color: #1d1d1b;
+    font-size: 0.9rem;
+    line-height: 1.3rem; }
+    @media (min-width: 768px) {
+      .galeria p {
+        font-size: 1rem;
+        line-height: 1.75rem;   }
 }
 
 #wikis {

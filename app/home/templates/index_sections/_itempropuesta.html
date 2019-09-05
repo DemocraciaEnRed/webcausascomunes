@@ -16,10 +16,13 @@
 	{% set cant_novedades =  false %}
 {% endif %}
 
+{# desactivar por ahora, pero ya anda #}
+{% set cant_novedades =  false %}
+
 <div class="card card-{{pagina|lower}} px-0 py-2 m-1 px-md-2 py-md-4 m-md-3">
     <div class="card-body">
         <a href="{{ url_anchor }}"><img class="mb-3 mb-md-5" src="{{ icon_path }}" /></a>
-        <a href="{{ url_anchor }}"><h4 class="title">{{ title or '' }}{{notis}}</h4></a>
+        <a href="{{ url_anchor }}"><h4 class="title">{{ title or '' }}</h4></a>
         <p class="text">{{ text or '' }}</p>
     </div>
     {% if cant_novedades %}
