@@ -204,6 +204,34 @@ class DirectusApi:
                 'texto': DirectusApi.RowTypes.TEXT
             }, pagina=pagina)
 
+    def get_items_propuestas(self):
+        return self.get_items('items_propuestas', {
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'texto': DirectusApi.RowTypes.TEXT,
+                'pagina': DirectusApi.RowTypes.REL_NOMBRE
+            })
+        
+    def get_items_hackaton(self):
+        return self.get_items('galeria_hackaton', {
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'descripcion': DirectusApi.RowTypes.TEXT,
+                'imagen_archivo': DirectusApi.RowTypes.TEXT
+            })
+    
+    def get_items_scrolly(self, causa):
+        return self.get_items('scrollytelling', {
+                'imagen': DirectusApi.RowTypes.IMG,
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'texto': DirectusApi.RowTypes.TEXT,
+            }, causa=causa)
+
+    '''
+    def get_items_compromisos(self, causa):
+        return self.get_items('imagenes_compromisos', {
+                'imagen': DirectusApi.RowTypes.TEXT,
+                'descripcion': DirectusApi.RowTypes.TEXT
+            }, causa=causa)
+            
     def get_items_agenda(self, pagina):
         return self.get_items('items_agenda', {
                 'fechahora': DirectusApi.RowTypes.DATETIME,
@@ -211,14 +239,7 @@ class DirectusApi:
                 'hashtag': DirectusApi.RowTypes.TEXT,
                 'icono': DirectusApi.RowTypes.IMG
             }, pagina=pagina)
-
-    def get_items_propuestas(self):
-        return self.get_items('items_propuestas', {
-                'titulo': DirectusApi.RowTypes.TEXT,
-                'texto': DirectusApi.RowTypes.TEXT,
-                'pagina': DirectusApi.RowTypes.REL_NOMBRE
-            })
-
+            
     def get_items_seguidor(self, pagina):
         return self.get_items('items_seguidor', {
                 'titulo': DirectusApi.RowTypes.TEXT,
@@ -231,28 +252,7 @@ class DirectusApi:
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
                 'imagen': DirectusApi.RowTypes.IMG
-            }, pagina=pagina)
-
-    def get_items_hackaton(self):
-        return self.get_items('galeria_hackaton', {
-                'titulo': DirectusApi.RowTypes.TEXT,
-                'descripcion': DirectusApi.RowTypes.TEXT,
-                'imagen_archivo': DirectusApi.RowTypes.TEXT
-            })
-
-    def get_items_compromisos(self, causa):
-        return self.get_items('imagenes_compromisos', {
-                'imagen': DirectusApi.RowTypes.TEXT,
-                'descripcion': DirectusApi.RowTypes.TEXT
-            }, causa=causa)
-
-    def get_items_scrolly(self, causa):
-        return self.get_items('scrollytelling', {
-                'imagen': DirectusApi.RowTypes.IMG,
-                'titulo': DirectusApi.RowTypes.TEXT,
-                'texto': DirectusApi.RowTypes.TEXT,
-            }, causa=causa)
-
+            }, pagina=pagina)'''
 
 dapi = DirectusApi()
 

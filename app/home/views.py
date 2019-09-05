@@ -1,6 +1,7 @@
 from flask import current_app, request, render_template, redirect, url_for, Blueprint
 from datetime import datetime
 from app.logger import log_err
+import app.directus as directus
 
 blueprint = Blueprint(
     'home',
@@ -89,8 +90,6 @@ def after_request(response):
 def index():
     if current_app.config['_using_directus']:
         import app.directus as directus
-        # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-        # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
         dtextos = directus.dapi.get_textos_pagina('Home')
         dimgs = directus.dapi.get_imgs_pagina('Home')
         itemspropuestas = directus.dapi.get_items_propuestas()
@@ -109,36 +108,23 @@ def index():
 
     return render_template(
         'index.html',
-        navs=get_menu_navs(),
-        # dimgsnav=dimgsnav,
-        # dimgsfooter=dimgsfooter,
-        dtextos=dtextos,
-        dimgs=dimgs,
-        
-        itemsnovedades=itemsnovedades,
-        itemsagenda=itemsagenda,
-        itemspropuestas=itemspropuestas,
-        galeriahackaton=galeriahackaton,
-        
+        navs = get_menu_navs(),
+        dtextos = dtextos,
+        dimgs = dimgs,        
+        itemsnovedades = itemsnovedades,
+        itemsagenda = itemsagenda,
+        itemspropuestas = itemspropuestas,
+        galeriahackaton = galeriahackaton,        
         index_de_testeo='indexDeTesteo' in request.endpoint)
 
 
 @blueprint.route("/contacto", methods=['GET'])
 def contacto():
-    import app.directus as directus
-    # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-    # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
-
-    dtextos = directus.dapi.get_textos_pagina('Contacto')
-    dimgs = directus.dapi.get_imgs_pagina('Contacto')
-
     return render_template(
         'contacto.html',
-        navs=get_menu_navs(),
-        # dimgsnav=dimgsnav,
-        # dimgsfooter=dimgsfooter,
-        dtextos=dtextos,
-        dimgs=dimgs)
+        navs = get_menu_navs(),
+        dtextos = directus.dapi.get_textos_pagina('Contacto'),
+        dimgs = directus.dapi.get_imgs_pagina('Contacto'))
 
 
 def _get_causa_from_endpoint():
@@ -162,33 +148,26 @@ def causas_route():
 
     import app.directus as directus
 
-    # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-    # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
-
     dtextoscausas = directus.dapi.get_textos_pagina('Causas')
     dtextos = directus.dapi.get_textos_pagina(causa)
     dimgs = directus.dapi.get_imgs_pagina(causa)
 
-    itemstemas = directus.dapi.get_items_tema(causa)
-    itemsseguidores = directus.dapi.get_items_seguidor(causa)
+    #itemstemas = directus.dapi.get_items_tema(causa)
+    #itemsagenda = directus.dapi.get_items_agenda(causa)
+    #itemscompromisos = directus.dapi.get_items_compromisos(causa)
     itemsnovedades = directus.dapi.get_items_novedades(causa)
-    itemsagenda = directus.dapi.get_items_agenda(causa)
-    itemscompromisos = directus.dapi.get_items_compromisos(causa)
 
     variables = {
         'navs': get_menu_navs(),
-        # 'dimgsnav': dimgsnav,
-        # 'dimgsfooter': dimgsfooter,
 
         'dtextoscausas': dtextoscausas,
         'dtextos': dtextos,
         'dimgs': dimgs,
 
-        'itemstemas': itemstemas,
-        'itemsseguidores': itemsseguidores,
+        #'itemstemas': itemstemas,
+        #'itemsagenda': itemsagenda,
+        #'itemscompromisos': itemscompromisos,
         'itemsnovedades': itemsnovedades,
-        'itemsagenda': itemsagenda,
-        'itemscompromisos': itemscompromisos,
 
         'show_wiki_btn': True,
         'causa': causa,
