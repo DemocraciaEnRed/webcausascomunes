@@ -223,6 +223,7 @@ class DirectusApi:
                 'imagen': DirectusApi.RowTypes.IMG,
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
+                'css_class': DirectusApi.RowTypes.TEXT
             }, causa=causa)
 
     '''
