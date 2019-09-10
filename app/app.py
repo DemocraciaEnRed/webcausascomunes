@@ -17,6 +17,8 @@ def _check_config_field(app, field):
 def _config_is_true(env):
     return str(env).lower() not in ['no', 'false', '0']
 
+def _root_dir():  # pragma: no cover
+    return os.path.abspath(os.path.dirname(__file__))
 
 def create_app():
     app = Flask(
@@ -108,6 +110,17 @@ def create_app():
 
     # config blueprints
     create_blueprints(app)
+    
+    @app.context_processor
+    def utility_processor():
+        def print_svg(svg_filename):
+            print(svg_filename, dir(app))
+            
+            svg_cont = ''
+            with open(_root_dir() + '/home/static/' + svg_filename) as f:
+                svg_cont = f.read()
+            return svg_cont
+        return dict(print_svg=print_svg)
 
     return app
 

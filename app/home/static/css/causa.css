@@ -361,10 +361,10 @@ body {
             .activa .col-paso .img-wrapper {
               display: block;   }
 }
-            .activa .col-paso .img-wrapper img {
+            .activa .col-paso .img-wrapper svg {
               height: 50px; }
               @media (min-width: 768px) {
-                .activa .col-paso .img-wrapper img {
+                .activa .col-paso .img-wrapper svg {
                   height: 100px;   }
 }
     .activa .col-paso .span-wrapper span {
@@ -403,6 +403,40 @@ body {
         .activa .row-boton > div a {
           font-size: 1.25rem !important;   }
 }
+
+.svg-vivienda svg #_1, .svg-vivienda svg #_2, .svg-vivienda svg #_3,
+.svg-vivienda svg #_4 {
+  fill: #194a9a; }
+  .svg-transparencia svg #_1, .svg-transparencia svg #_2, .svg-transparencia svg #_3,
+  .svg-transparencia svg #_4 {
+    fill: #e61937; }
+    .svg-trabajo svg #_1, .svg-trabajo svg #_2, .svg-trabajo svg #_3,
+    .svg-trabajo svg #_4 {
+      fill: #e71869; }
+      .svg-genero svg #_1, .svg-genero svg #_2, .svg-genero svg #_3, .svg-genero svg #_4 {
+        fill: #774997; }
+        .svg-drogas svg #_1, .svg-drogas svg #_2, .svg-drogas svg #_3, .svg-drogas svg #_4 {
+          fill: #f9b112; }
+          .svg-ciencia svg #_1, .svg-ciencia svg #_2, .svg-ciencia svg #_3,
+          .svg-ciencia svg #_4 {
+            fill: #008daf; }
+            .svg-ambiente svg #_1, .svg-ambiente svg #_2, .svg-ambiente svg #_3,
+            .svg-ambiente svg #_4 {
+              fill: #39a95e; }
+.svg-vivienda svg #Elipse_343 {
+  stroke: #194a9a; }
+  .svg-transparencia svg #Elipse_343 {
+    stroke: #e61937; }
+    .svg-trabajo svg #Elipse_343 {
+      stroke: #e71869; }
+      .svg-genero svg #Elipse_343 {
+        stroke: #774997; }
+        .svg-drogas svg #Elipse_343 {
+          stroke: #f9b112; }
+          .svg-ciencia svg #Elipse_343 {
+            stroke: #008daf; }
+            .svg-ambiente svg #Elipse_343 {
+              stroke: #39a95e; }
 
 .colaborar .card {
   height: 100%; }

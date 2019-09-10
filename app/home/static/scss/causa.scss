@@ -249,11 +249,12 @@ body {overflow-x: hidden;}
 		    @media (min-width: $width-medium){
 		       display: block;
 		    }
-			img {
+			svg {
 				height: 50px;
 			    @media (min-width: $width-medium){
 			        height: 100px;
 			    }
+				/* LOS COLORES SE DEFINEN MÁS ABAJO */
 			}
 		}
 		.span-wrapper{
@@ -295,6 +296,20 @@ body {overflow-x: hidden;}
 		    }
 		}
 	}
+}
+
+svg {
+	$causa: transparencia;
+	#_1, #_2, #_3, #_4 {
+		 @each $causa, $color in $colors-causas{
+	 		.svg-#{$causa} & {fill: $color;}
+		}
+	}
+	#Elipse_343 {
+		 @each $causa, $color in $colors-causas{
+	 		.svg-#{$causa} & {stroke: $color;}
+		}
+	}	
 }
 
 /*####################################################*/

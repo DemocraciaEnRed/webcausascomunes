@@ -13,8 +13,8 @@
 			{% set j = (i+1)|string %}
 	            <div class="col-md-3 col-paso mb-5">
 					<div class="row">
-		                <div class="col-3 col-md-12 img-wrapper mb-0 mb-md-3 text-right text-md-center">
-							<img src="{{ url_for('home.static', filename='img/activa-num-'+j+'.png') }}" alt="" />
+		                <div class="col-3 col-md-12 img-wrapper mb-0 mb-md-3 text-right text-md-center svg-{{causa}}">
+							{{ print_svg('img/activa-num-'+j+'.svg') | safe }}
 		                </div>
 		                <div class="col-9 col-md-12 span-wrapper text-left text-md-center">
 			                <span>
