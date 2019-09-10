@@ -11,17 +11,21 @@
 		<div class="row row-pasos mt-3">
             {% for i in range(4) %}
 			{% set j = (i+1)|string %}
-	            <div class="col-3 col-paso mb-5">
-	                <div class="img-wrapper text-center mb-3">
-						<img src="{{ url_for('home.static', filename='img/activa-num-'+j+'.png') }}" alt="" />
-	                </div>
-	                <span>
-						{{ dtextoscausas.get('activa')['paso' + j]}}
-	                </span>
+	            <div class="col-md-3 col-paso mb-5">
+					<div class="row">
+		                <div class="col-3 col-md-12 img-wrapper mb-0 mb-md-3 text-right text-md-center">
+							<img src="{{ url_for('home.static', filename='img/activa-num-'+j+'.png') }}" alt="" />
+		                </div>
+		                <div class="col-9 col-md-12 span-wrapper text-left text-md-center">
+			                <span>
+								{{ dtextoscausas.get('activa')['paso' + j]}}
+			                </span>
+						</div>
+					</div>
 	            </div>
             {% endfor %}
         </div>
-		<div class="row row-carita py-3 mx-1 mx-md-0">
+		<div class="row row-carita py-3 px-3 px-md-0 mx-1 mx-md-0">
 			<div class="carita-wrapper text-center">
 				<img class="mr-2" src="{{ url_for('home.static', filename='img/activa-carita.svg') }}" alt="" />
 				<span>{{ dtextoscausas.get('activa')['mensaje']}}</span>

@@ -237,25 +237,50 @@ body {overflow-x: hidden;}
 	.col-paso {
 		padding: 0 0.6rem;
 	    @media (min-width: $width-large){
-			padding: 0 3rem;
+			padding: 0 2rem;
 	    }
 		text-align: center;
 	    @media (min-width: $width-medium){
 	        text-align: left;
 	    }
+		
+		.img-wrapper {
+			display: inline;
+		    @media (min-width: $width-medium){
+		       display: block;
+		    }
+			img {
+				height: 50px;
+			    @media (min-width: $width-medium){
+			        height: 100px;
+			    }
+			}
+		}
+		.span-wrapper{
+			span {
+				@include vertical-align();				
+			}
+		}
 	}
 	
 	.row-carita{
-		@include border-radius(35px);
+		@include border-radius(57px);
 		background-color: #E4EDFF;
 		.carita-wrapper{
 			margin: 0 auto;
 			font-weight: bold;
 			img{
 				height: 45px;
-				position: relative;
-				top: 50%;
-				transform: translateY(-50%);
+			    @media (max-width: $width-medium){
+					display: block;	
+					margin: 0 auto !important;
+					margin-bottom: 0.5rem !important;
+			    }
+			    @media (min-width: $width-medium){
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
+			    }
 			}
 		}
 	}
