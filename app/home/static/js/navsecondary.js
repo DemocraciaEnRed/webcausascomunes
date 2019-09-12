@@ -29,14 +29,15 @@ function setMenuItemActive(){
     $('#nav-secondary .nav-link').each(function () {
         var currLink = $(this);
         var refElement = $(currLink.attr("href"));
-        var refElTop = refElement.position().top - navHei - navbarHei;
+        var refElTop = parseInt(refElement.offset().top - navHei - navbarHei);       
         if (refElTop <= scrollPos && refElTop + refElement.outerHeight() > scrollPos) {
+           if (!currLink.hasClass('active')) {
             $('#nav-secondary .nav-link').removeClass("active");
             currLink.addClass("active");
             if (isMobile){
-                //$('#nav-secondary').animate({scrollLeft: currLink.offset().left}, 200);
-                // TODO add auto swipeable 
+                $('#nav-secondary').animate({scrollLeft: currLink.offset().left}, 300);
             }
+           }
         }
         else {
             currLink.removeClass("active");

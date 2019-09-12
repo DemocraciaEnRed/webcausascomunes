@@ -91,6 +91,11 @@ body {overflow-x: hidden;}
     width: 100%;
     margin-top: -86px;
     position: absolute;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar {
+        display: none; 
+    }
     @media(min-width: $width-medium){
         flex-wrap: nowrap;
         overflow-x: initial;
@@ -123,8 +128,6 @@ body {overflow-x: hidden;}
     }
     &.position-fixed {
         top: 72px;
-/*         margin-left: -1rem;
-        left: 0; */
         left: 0;
         right: 0;
         margin-top: 0;
