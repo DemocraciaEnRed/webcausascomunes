@@ -483,6 +483,17 @@ img {
       .candidates .btn {
         order: initial;   }
 }
+  .candidates .img-wrapper {
+    display: flex;
+    justify-items: center;
+    align-items: center; }
+    .candidates .img-wrapper img {
+      border-radius: 20px; }
+      @media (max-width: 768px) {
+        .candidates .img-wrapper img {
+          max-width: 340px;
+          margin: 0 auto;   }
+}
 
 .novedades {
   background-color: #e4eefa !important; }

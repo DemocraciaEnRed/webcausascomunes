@@ -459,6 +459,18 @@ img {
 			order: initial;
 		}
 	}
+	
+	.img-wrapper{
+		@include vertical-align-content();
+		
+		img{
+			border-radius: 20px;
+			@media (max-width: $width-medium) {
+				max-width: 340px;
+				margin: 0 auto;
+			}
+		}
+	}
 }
 
 
