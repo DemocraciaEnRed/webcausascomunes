@@ -301,3 +301,31 @@ img.ondita-azul {
 
 .footer-scrollys h2 {
   text-align: center; }
+
+.btn-sumate{ color:white; }
+.btn-sumate:hover { background-color: white; }
+
+.btn-genero{
+	background-color: #c478f8;
+	border-color: #c478f8;
+}
+.btn-genero:hover { color: #c478f8; }
+
+.btn-vivienda{
+	background-color: #4284ee;
+	border-color: #4284ee;
+}
+.btn-vivienda:hover { color: #4284ee; }
+
+.btn-ambiente{
+	background-color: #39a95e;
+	border-color: #39a95e;
+}
+.btn-ambiente:hover { color: #39a95e; }
+
+.btn-trabajo{
+	background-color: #e71869;
+	border-color: #e71869;
+}
+.btn-trabajo:hover { color: #e71869; }
+

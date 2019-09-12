@@ -4,12 +4,12 @@
     <div class="container">
         <h2 class="section__title text-center text-md-left">Presentación<!--{{dtextos.get('definicion')['titulo']}}--></h2>
         <div class="row mt-3 mt-md-5">
-            <div class="video vertical-align col-md-6 mb-2 mb-md-0 pb-md-3">
+            <div class="video vertical-align col-lg-6 mb-2 mb-md-0 pb-md-3">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe src="{{dtextos.get('video')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
              </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="text-justify">
                     {{ dtextos.get('definicion')['parrafo1'] | safe }}
                     {{ dtextos.get('definicion')['parrafo2'] | safe }}
@@ -17,5 +17,27 @@
                 </div>
             </div>
         </div>
+		{% if dimgs.get('scrolly') %}
+		<div class="row mt-5 scrolly-row">
+            <div class="col-lg-12">
+                <div class="card card-with-shadow">
+                    <div class="card-body p-0">
+						<div class="row">
+				            <div class="col-lg-6 text-center">
+								<img class="img-fluid" src="{{ create_img_src(dimgs.get('scrolly')) }}">
+					        </div>
+				            <div class="col-lg-6">
+								<div class="scrolly-text-wrapper p-4 pl-lg-2">
+									<h4>{{dtextos.get('scrolly')['titulo']}}</h4>
+									<p>{{dtextos.get('scrolly')['texto']}}</p>
+			                        <a href="{{causa}}/scrolly" class="btn btn-primary">{{dtextoscausas.get('scrolly')['boton']}}</a>
+								</div>
+					        </div>
+	            		</div>
+	            	</div>
+	            </div>
+	        </div>
+	    </div>
+		{% endif %}
     </div>
 </section>
