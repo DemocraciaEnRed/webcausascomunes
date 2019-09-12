@@ -5,20 +5,15 @@
         <p class="section__subtitle mb-5">Te proponemos sumarte a compartir datos, fuentes y escribir sobre 
 			cada causa. Queremos generar diagnósticos, referencias y propuestas para mejores políticas públicas. </p>
         <div class="row mt-5">
-            <div class="col-lg-12 mb-5 mb-md-0">
+            <div class="col-lg-6 mb-5 mb-md-0">
                 <div class="card card-with-shadow p-4 p-md-5">
                     <div class="card-body p-0">
-                        <h5 class="card-title text-center text-md-left">Colaborá con la Wiki de Género</h5>
+                        <h5 class="card-title text-center text-md-left">Colaborá con la Wiki de {{dtextos.get('portada')['titulo']}}</h5>
                         <p>{{ dtextoscausas.get('texto')['wiki'] | safe }}</p>
                         <div class="row justify-content-center align-items-md-center my-4">
                             <div class="text-center col-md-6">
                                 <div class="img mb-4 mb-md-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-                                        <!--     <defs>
-                                                        <style>
-                                                            .cls-1{fill:#a353db}.cls-2{fill:#d098f7}.cls-3{fill:#764896}.cls-4{fill:#64519c}
-                                                        </style>
-                                                    </defs> -->
                                         <g id="Grupo_691" data-name="Grupo 691" transform="translate(35.547 82.422)">
                                             <g id="Grupo_690" data-name="Grupo 690">
                                                 <path id="Trazado_1984" d="M214.047 211h-23.438a5.859 5.859 0 1 0 0 11.719h3.591l-15.308 45.924-15.308-45.924h3.589a5.859 5.859 0 0 0 0-11.719h-23.439a5.859 5.859 0 0 0 0 11.719h3.589l-15.308 45.924-15.308-45.924h3.593a5.859 5.859 0 1 0 0-11.719H96.859a5.859 5.859 0 0 0 0 11.719h7.5l22.1 66.306a5.859 5.859 0 0 0 11.118 0l17.879-53.636 17.879 53.636a5.859 5.859 0 0 0 11.117 0l22.1-66.306h7.5a5.859 5.859 0 1 0 0-11.719z"
@@ -66,14 +61,14 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <a href="#" class="wiki-btn btn btn-primary">WIKI: Sumate a construir</a>
+                        <a href="#" class="wiki-btn btn btn-primary btn-shadow">WIKI: Sumate a construir</a>
                     </div>
                 </div>
             </div>
-            <!--<div class="col-lg-6">
+            <div class="col-lg-6">
                 <div class="card card-with-shadow p-4 p-md-5">
                     <div class="card-body p-0">
-                        <h5 class="card-title text-center text-md-left">Sumá tu propuesta a Género</h5>
+                        <h5 class="card-title text-center text-md-left">Sumá tu propuesta a {{dtextos.get('portada')['titulo']}}</h5>
                         <div class="row justify-content-center align-items-md-center my-4">
                             <div class="text-center col-md-6">
                                 <div class="img mb-4 mb-md-0">
@@ -116,9 +111,9 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <a href="#" class="wiki-btn btn btn-primary">WIKI: Sumate a construir</a>
+                        <a href="#" class="wiki-btn btn btn-primary btn-shadow">Propuesta: ¡Sumala!</a>
                     </div>
-                </div>-->
+                </div>
             </div>
         </div>
 </section>
