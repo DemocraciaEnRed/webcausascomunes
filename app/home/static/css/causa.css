@@ -197,13 +197,18 @@ body {
   overflow-y: hidden;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  min-height: 425px; }
   .portada-seccion h1 {
     padding: 6rem 0 3rem 0;
     color: white;
     font-weight: 900;
     font-size: 3.5rem;
     text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.63); }
+    @media (min-width: 768px) {
+      .portada-seccion {
+        min-height: 457px;   }
+}
 
 .nav-secondary {
   background-color: #f8eeff;
@@ -212,7 +217,10 @@ body {
   flex-wrap: nowrap;
   overflow-x: auto;
   z-index: 1;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14); }
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  width: 100%;
+  margin-top: -86px;
+  position: absolute; }
   @media (min-width: 768px) {
     .nav-secondary {
       flex-wrap: nowrap;
@@ -256,7 +264,8 @@ body {
   .nav-secondary.position-fixed {
     top: 72px;
     left: 0;
-    right: 0; }
+    right: 0;
+    margin-top: 0; }
     @media (min-width: 768px) {
       .nav-secondary.position-fixed {
         top: 80px;   }

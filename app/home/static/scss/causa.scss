@@ -66,12 +66,16 @@ body {overflow-x: hidden;}
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
+    min-height: 425px;
     h1 {
         padding: 6rem 0 3rem 0;
         color: white;
         font-weight: 900;
 		font-size: 3.5rem;
         text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.63);
+    }
+    @media (min-width: $width-medium) {
+        min-height: 457px;
     }
  }
 
@@ -84,6 +88,9 @@ body {overflow-x: hidden;}
     overflow-x: auto;
     z-index: 1;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    width: 100%;
+    margin-top: -86px;
+    position: absolute;
     @media(min-width: $width-medium){
         flex-wrap: nowrap;
         overflow-x: initial;
@@ -120,6 +127,7 @@ body {overflow-x: hidden;}
         left: 0; */
         left: 0;
         right: 0;
+        margin-top: 0;
         @media (min-width: $width-medium) {
             top: 80px;
         }

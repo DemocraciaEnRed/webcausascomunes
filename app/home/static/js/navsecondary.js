@@ -19,10 +19,12 @@ $('.scrollTo').click(function() {
 });
 
 var isMobile = false;
-var scroller_anchor = $(".portada-seccion").offset().top + $(".portada-seccion").innerHeight() - $("#navbar").outerHeight();
+var scroller_anchor = $(".portada-seccion").offset().top + $(".portada-seccion").innerHeight() - 2 * $("#navbar").outerHeight();
 var scrollItem = $("#nav-secondary");
 
 function scrollHandler() {
+    console.log('scroller_anchor', scroller_anchor);
+    console.log('$(this).scrollTop()', $(this).scrollTop());
     if ($(this).scrollTop() >= scroller_anchor && !scrollItem.hasClass('position-fixed') ) {    
         scrollItem.addClass('position-fixed');
     } else if ($(this).scrollTop() < scroller_anchor && scrollItem.hasClass('position-fixed')) {   
