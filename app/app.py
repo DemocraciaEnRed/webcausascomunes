@@ -114,7 +114,7 @@ def create_app():
     @app.context_processor
     def utility_processor():
         def print_svg(svg_filename):
-            print(svg_filename, dir(app))
+            #print(svg_filename, dir(app))
             
             svg_cont = ''
             with open(_root_dir() + '/home/static/' + svg_filename) as f:
