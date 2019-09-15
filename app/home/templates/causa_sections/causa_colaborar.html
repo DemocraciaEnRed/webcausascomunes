@@ -5,12 +5,12 @@
         <p class="section__subtitle mb-5">Te proponemos sumarte a compartir datos, fuentes y escribir sobre 
 			cada causa. Queremos generar diagnósticos, referencias y propuestas para mejores políticas públicas. </p>
         <div class="row mt-5">
-            <div class="col-lg-6 mb-5 mb-md-0">
+            <div class="col-lg-6 mb-5 mb-lg-0">
                 <div class="card card-with-shadow p-4 p-md-5">
                     <div class="card-body p-0">
                         <h5 class="card-title text-center text-md-left">Colaborá con la Wiki de {{dtextos.get('portada')['titulo']}}</h5>
-                        <p>{{ dtextoscausas.get('texto')['wiki'] | safe }}</p>
-                        <div class="row justify-content-center align-items-md-center my-4">
+                        {{ dtextoscausas.get('texto')['wiki'] | safe }}
+                        <div class="row justify-content-center align-items-md-top my-3 my-md-4">
                             <div class="text-center col-md-6">
                                 <div class="img mb-4 mb-md-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
@@ -60,16 +60,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center mt-3">
                         <a href="{{ dtextos.get('definicion')['linkwiki'] }}" class="wiki-btn btn btn-primary btn-shadow">WIKI: Sumate a construir</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-sumate">
                 <div class="card card-with-shadow p-4 p-md-5">
                     <div class="card-body p-0">
                         <h5 class="card-title text-center text-md-left">Sumá tu propuesta a {{dtextos.get('portada')['titulo']}}</h5>
-                        <div class="row justify-content-center align-items-md-center my-4">
+                        <div class="row justify-content-center align-items-md-center my-2 my-md-4">
                             <div class="text-center col-md-6">
                                 <div class="img mb-4 mb-md-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="169" height="142.566" viewBox="0 0 169 142.566">
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center mt-3">
                         <a href="{{ dtextos.get('propuesta')['link'] }}" class="wiki-btn btn btn-primary btn-shadow">Propuesta: ¡Sumala!</a>
                     </div>
                 </div>

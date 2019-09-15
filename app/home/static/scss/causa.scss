@@ -350,11 +350,21 @@ svg {
     }
     .row p {
         font-size: $font-size-xsmall;
+        margin-bottom: 0;
     }
-    .img svg{
+    .img svg {
+        max-width: 200px;
+        width: 100%;
         @media (max-width: $width-small) {
             max-width: 100px;
             max-height: 100px;
+        }
+    }
+    .col-sumate {
+        .img {
+            @media (min-width: $width-medium) {
+                margin-top: -15px;
+            }
         }
     }
 }
