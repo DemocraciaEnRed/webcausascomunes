@@ -136,6 +136,17 @@
                 font-size: 10px !important;   }
 }
 
+.newsletter {
+  background-image: url('/static/img/manifiesto-background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ffffff; }
+  .newsletter .card {
+    height: 100%;
+    justify-content: center; }
+    .newsletter .card-body {
+      flex: 0; }
+
 footer a img {
   height: 46px; }
 
