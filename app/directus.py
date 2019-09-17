@@ -21,6 +21,8 @@ class DirectusApi:
         IMG = 1
         DATETIME = 2
         REL_NOMBRE = 3
+        BOOL = 4
+        TOGGLE = 4
 
     def __init__(self):
         self.logger = None
@@ -31,6 +33,16 @@ class DirectusApi:
         self.auth_header = None
         self.textosregx = re.compile('^[^<>]*$')
         self.markdowner = Markdown()
+        self._items_novedades_schema = {
+            'ancho_columnas': DirectusApi.RowTypes.TEXT,
+            'imagen': DirectusApi.RowTypes.IMG,
+            'titulo': DirectusApi.RowTypes.TEXT,
+            'hashtag': DirectusApi.RowTypes.TEXT,
+            'url': DirectusApi.RowTypes.TEXT,
+            'texto': DirectusApi.RowTypes.TEXT,
+            'es_nueva': DirectusApi.RowTypes.TOGGLE,
+            'es_destacada': DirectusApi.RowTypes.TOGGLE
+        }
 
     def init_api(self, logger, ser_url, ser_ext_url, api_path, token):
         # chequear parámetros
@@ -169,11 +181,13 @@ class DirectusApi:
                     imgs[ubic_arr[0]][ubic_arr[1]] = imgurl
         return imgs
 
-    def get_items(self, table, keys_types, pagina=None, causa=None):
+    def get_items(self, table, keys_types, pagina=None, causa=None, filter=None):
         if pagina:
             rows = self.get_table_rows(table, filter='filters[pagina.nombre][eq]={}'.format(pagina.title()))
         elif causa:
             rows = self.get_table_rows(table, filter='filters[causa.nombre][eq]={}'.format(causa.title()))
+        elif filter:
+            rows = self.get_table_rows(table, filter=filter)
         else:
             rows = self.get_table_rows(table)
         items = []
@@ -188,21 +202,32 @@ class DirectusApi:
                     item[key] = datetime.datetime.strptime(row[key], "%Y-%m-%d %H:%M:%S") if row[key] else datetime.datetime(1,1,1)
                 elif type == DirectusApi.RowTypes.REL_NOMBRE:
                     item[key] = row[key]['data']['nombre'] if row[key] and row[key]['data'] else ''
+                elif type == DirectusApi.RowTypes.BOOL:
+                    item[key] = True if row[key] and row[key] != '0' else False
                 else:
                     self.logger.error('Tipo de dato inválido para columna {} (tabla={}, pagina={})'.format(key, table, pagina))
                     continue
             items.append(item)
         return items
-
+    
     def get_items_novedades(self, pagina):
-        return self.get_items('items_novedades', {
-                'ancho_columnas': DirectusApi.RowTypes.TEXT,
-                'titulo': DirectusApi.RowTypes.TEXT,
-                'hashtag': DirectusApi.RowTypes.TEXT,
-                'imagen': DirectusApi.RowTypes.IMG,
-                'url': DirectusApi.RowTypes.TEXT,
-                'texto': DirectusApi.RowTypes.TEXT
-            }, pagina=pagina)
+        return self.get_items(
+            'items_novedades', 
+            self._items_novedades_schema, 
+            pagina=pagina)
+
+    def get_items_novedades_index(self):
+        novedades_nuevas = self.get_items(
+            'items_novedades', 
+            self._items_novedades_schema, 
+            filter='filters[es_nueva][eq]=1')
+        
+        novedades_destacadas = self.get_items(
+            'items_novedades', 
+            self._items_novedades_schema, 
+            filter='filters[es_destacada][eq]=1')
+        
+        return (novedades_nuevas, novedades_destacadas)
 
     def get_items_propuestas(self):
         return self.get_items('items_propuestas', {
