@@ -264,37 +264,40 @@ nav a.nav-link.active {
 
 .btn-novedades {
   border: none;
-  background: none;
   outline: none;
   border-radius: 2rem;
   position: relative;
-  padding-right: 0; }
+  padding-right: 0;
+  background-color: #ffffff;
+  color: #2a4b8c;
+  border: 1px solid #2a4b8c; }
   @media (min-width: 992px) {
     .btn-novedades {
       top: -6px;
       padding-right: 1rem;   }
 }
     .btn-novedades:hover, .btn-novedades[aria-expanded=true] {
-      background-color: #ffffff;
-      color: #2a4b8c; }
+      background: none;
+      color: #ffffff;
+      border: 1px solid #ffffff; }
       .btn-novedades:hover sup, .btn-novedades[aria-expanded=true] sup {
-        border: 1px solid #ffffff;
+        color: #ffffff;
         background-color: #2a4b8c;
-        color: #ffffff; }
+        border: 1px solid #ffffff; }
         .btn-novedades:hover:after, .btn-novedades[aria-expanded=true]:after {
           display: none; }
   .btn-novedades sup {
+    color: #ffffff;
+    background-color: #2a4b8c;
     border: 1px solid #ffffff;
     border-radius: 100%;
-    background-color: #2a4b8c;
     left: -5px;
     top: 0;
     width: 18px;
     height: 18px;
     display: inline-block;
     vertical-align: top;
-    line-height: 16px;
-    color: #ffffff; }
+    line-height: 16px; }
     @media (min-width: 992px) {
       .btn-novedades sup {
         border: 1px solid #2a4b8c;
