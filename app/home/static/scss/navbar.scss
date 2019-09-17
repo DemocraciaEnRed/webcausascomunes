@@ -160,7 +160,6 @@ nav {
 
 .btn-novedades {
     border: none;
-    background: none;
     outline: none;
     border-radius: 2rem;
     position: relative;
@@ -169,23 +168,28 @@ nav {
         top: -6px;
         padding-right: 1rem;
     }
+    background-color: $white;
+    color: $color-principal-azul;
+    border: 1px solid $color-principal-azul;
     &:hover,
     &[aria-expanded=true] {
-        background-color: $white;
-        color: $color-principal-azul;
+	    background: none;
+		color: $white;
+    	border: 1px solid $white;
         sup {
-            border: 1px solid $white;
-            background-color: $color-principal-azul;
             color: $white;
+            background-color: $color-principal-azul;
+            border: 1px solid $white;
         }
         &:after {
             display: none;
         }
     }
     sup {
+        color: $white;
+        background-color: $color-principal-azul;
         border: 1px solid $white;
         border-radius: 100%;
-        background-color: $color-principal-azul;
         left: -5px;
         top: 0;
         width: 18px;
@@ -193,7 +197,6 @@ nav {
         display: inline-block;
         vertical-align: top;
         line-height: 16px;
-        color: $white;
         @media (min-width: $width-large) {
             border: 1px solid $color-principal-azul;
             color: $color-principal-azul;
