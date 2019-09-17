@@ -1,6 +1,14 @@
 {% from '_imghelper.html' import create_img_src %}
 
-{% macro create_item_novedad(cols, imgpath, title, hashtag, url, texto) -%}
+{% macro create_item_novedad(itm) -%}
+
+{% set cols = itm.get('ancho_columnas') %}
+{% set imgpath = itm.get('imagen') %}
+{% set title = itm.get('titulo') %}
+{% set hashtag = itm.get('hashtag') %}
+{% set url = itm.get('url') %}
+{% set texto = itm.get('texto') %}
+
 {% if hashtag %}
     {% set htag_lower =  hashtag.lower() %}
 {% else %}
