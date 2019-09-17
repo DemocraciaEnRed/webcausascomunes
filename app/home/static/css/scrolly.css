@@ -257,7 +257,7 @@
                           }
                           .scrolly-row .scrolly-img {
                             padding: 10px 0px;
-                            max-height: -webkit-fill-available;
+                            max-height: inherit;
                             }
 
 
