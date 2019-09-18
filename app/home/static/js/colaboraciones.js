@@ -119,6 +119,16 @@ function strArrToTitle(arr){
     return arr;
 }
 
+function tooltipInt2Horas(tooltipItem, data) {
+    horas = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
+    var horasString;
+	if (horas == '1')
+		horasString = horas + ' hora';
+	else
+		horasString = horas + ' horas';
+    return horasString;
+}
+
 function createGraficoDestinoTiempos(){
 	//me da fiaca cambiar los nombres de las variables =)
     cates = dtApi.column('Destino:name').data()
@@ -152,7 +162,12 @@ function createGraficoDestinoTiempos(){
             labels: catesLabels
         },
         options: {
-            legend: {position:'left'}
+            legend: {position:'left'},
+            tooltips: {
+                callbacks: {
+                    label: tooltipInt2Horas
+                }
+            }
         }
     });
     return chart
@@ -200,7 +215,13 @@ function createGraficoMesesTiempo(){
 		                beginAtZero: true
 		            }
 		        }]
-		    }
+		    },
+
+            tooltips: {
+                callbacks: {
+                    label: tooltipInt2Horas
+                }
+            }
         }
     });
     return chart
