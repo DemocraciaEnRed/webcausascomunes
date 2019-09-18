@@ -66,9 +66,9 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="{{url_for('home.static', filename='js/chart.js')}}"></script>
-    <script src="{{url_for('home.static', filename='js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{url_for('home.static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/lib/chart.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/lib/jquery.dataTables.min.js')}}"></script>
+    <script src="{{url_for('home.static', filename='js/lib/dataTables.bootstrap4.min.js')}}"></script>
     <script>
         _datatable_headers = [ {% for h in presu_heads %} '{{h}}', {% endfor %} ]
         _datatable_spa_json_url = "{{ url_for('home.static', filename='Spanish.json') }}"
