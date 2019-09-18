@@ -5,7 +5,7 @@ class Dataset:
         rendered_headers = [h for h in self.csv_headers if h not in self.exclude_headers]
         return rendered_headers    
     
-    def get_rows_from_csv():
+    def get_rows_from_csv(self):
         csvfile = open(self.csv_path, 'r')
         reader = csv.reader(csvfile, delimiter=',')
     
@@ -15,15 +15,16 @@ class Dataset:
         return self._exclude_columns(reader)
     
     
-    def get_rows_from_gsheet(gsheet_api):
+    def get_rows_from_gsheet(self, gsheet_api):
         if not gsheet_api.authenticated:
             gsheet_api.authenticate()
     
         raw_rows = gsheet_api.get_rows()
     
-        return self._exclude_columns(raw_rows)
+        
+        return self._exclude_columns(raw_rows) if len(self.exclude_headers) else raw_rows
 
-    def _exclude_columns(rows_iterable):
+    def _exclude_columns(self, rows_iterable):
         rows = []
     
         # sorteado en reverse así deleteamos desde el último al primero
@@ -54,8 +55,8 @@ class Colaboraciones(Dataset):
     def __init__(self, csv_path):
         # csv original - https://docs.google.com/spreadsheets/d/1zVvDW0PCRWkcYpLbfqYD8O_kWklgFPvIxU5JMSoPe0k/edit#gid=0
         self.csv_path = csv_path
-        self.csv_headers = ('',)
-        self.exclude_headers = {'',}
+        self.csv_headers = ('fecha', 'aportante', 'tipo', 'tiempo', 'destino', 'descripcion')
+        self.exclude_headers = set()
 
 
 
