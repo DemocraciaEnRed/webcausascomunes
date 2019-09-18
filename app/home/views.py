@@ -253,18 +253,33 @@ def colaboraciones():
     else:
         # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
         dataset_rows = dataset_colaboraciones.get_rows_from_csv()
-
+        
+    # me guardo los aportantes y formateo las fechas
+    aportantes = []
+    aportantes_i = dataset_headers.index('aportante')
     fechas_epoch = []
     fecha_i = dataset_headers.index('fecha')
     for row in dataset_rows:
+        if row[aportantes_i] and row[aportantes_i] not in aportantes:
+            aportantes.append(row[aportantes_i])
+            
         try:
             date = datetime.strptime(row[fecha_i], '%d/%m/%Y')
             date = date.strftime('%s')
         except:
             date = ''
-        fechas_epoch.append(date)
-
-    dataset_headers = [h.capitalize() for h in dataset_headers]
+        fechas_epoch.append(date)   
+    
+    # capitalizo los headers
+    dataset_headers = [h.capitalize() for h in dataset_headers if h != 'aportante']
+    
+    # saco los aportantes del dataset
+    dataset_rows_anon = []
+    for row in dataset_rows:
+        if aportantes_i < len(row):
+            del row[aportantes_i]
+        dataset_rows_anon.append(row)
+    dataset_rows = None
 
     return render_template(
         'colaboraciones.html',
@@ -272,8 +287,9 @@ def colaboraciones():
         dimgsnav=dimgsnav,
         dimgsfooter=dimgsfooter,
         dtextos=dtextos,
+        aportantes=aportantes,
         presu_heads=dataset_headers,
-        presu_data=dataset_rows,
+        presu_data=dataset_rows_anon,
         fechas_epoch=fechas_epoch)
 
 
