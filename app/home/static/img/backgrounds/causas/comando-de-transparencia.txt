@@ -1,0 +1,3 @@
+convert IMAGEN -fill white -colorize 40% IMAGEN_OUT
+find mosaico-full* -exec convert {}  -fill white -colorize 70% asd{} \;
+rename -v -f s/asdmosaico-fullcolor-(.*)/mosaico-halfcolor-$1/ asd*

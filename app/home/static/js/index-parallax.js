@@ -51,7 +51,11 @@ $(function(){
 			new Mancha('mani4', 'group-14.svg', 0.57, 3)]},
 		{sectionEleJq: $('#wikis'), manchas: [
 			new Mancha('wiki2', 'group-31.svg', 0.32),
-			new Mancha('wiki1', 'group-32.svg', 0.60, 2)]}
+			new Mancha('wiki1', 'group-32.svg', 0.80)]},
+		{sectionEleJq: $('.novedades'), manchas: [
+			new Mancha('nove1', 'group-41.svg', 0.62),
+			new Mancha('nove2', 'group-42.svg', 0.80),
+			new Mancha('nove3', 'group-43.svg', 1.30)]}
 	]
 	
 	for (i in sectionManchas){

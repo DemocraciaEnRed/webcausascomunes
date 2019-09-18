@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="smile" width="49.248" height="49.248" viewBox="0 0 49.248 49.248">
+    <defs>
+        <style>
+            .cls-1{fill:#2a4b8c}
+        </style>
+    </defs>
+    <g id="Grupo_786" data-name="Grupo 786">
+        <g id="Grupo_785" data-name="Grupo 785">
+            <path id="Trazado_2082" d="M125.056 224.273a1.07 1.07 0 0 0-1.512.084 11.911 11.911 0 0 1-17.676 0 1.071 1.071 0 1 0-1.6 1.428 14.052 14.052 0 0 0 20.866 0 1.071 1.071 0 0 0-.078-1.512z" class="cls-1" data-name="Trazado 2082" transform="translate(-90.082 -194.023)"/>
+            <path id="Trazado_2083" d="M24.624 0a24.624 24.624 0 1 0 24.624 24.624A24.652 24.652 0 0 0 24.624 0zm0 47.107a22.483 22.483 0 1 1 22.483-22.483 22.507 22.507 0 0 1-22.483 22.483z" class="cls-1" data-name="Trazado 2083"/>
+            <path id="Trazado_2084" d="M213.353 128a5.359 5.359 0 0 0-5.353 5.353 1.071 1.071 0 1 0 2.141 0 3.212 3.212 0 1 1 6.424 0 1.071 1.071 0 1 0 2.141 0 5.359 5.359 0 0 0-5.353-5.353z" class="cls-1" data-name="Trazado 2084" transform="translate(-180.164 -110.87)"/>
+            <path id="Trazado_2085" d="M88.565 133.353a1.071 1.071 0 0 0 2.141 0 5.353 5.353 0 1 0-10.706 0 1.071 1.071 0 0 0 2.141 0 3.212 3.212 0 1 1 6.424 0z" class="cls-1" data-name="Trazado 2085" transform="translate(-69.294 -110.87)"/>
+        </g>
+    </g>
+</svg>

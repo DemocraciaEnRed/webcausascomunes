@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="wikipedia" width="200" height="200" viewBox="0 0 200 200">
+    <defs>
+        <style>
+            .cls-1{fill:#a353db}.cls-2{fill:#d098f7}.cls-3{fill:#764896}.cls-4{fill:#64519c}
+        </style>
+    </defs>
+    <g id="Grupo_691" data-name="Grupo 691" transform="translate(35.547 82.422)">
+        <g id="Grupo_690" data-name="Grupo 690">
+            <path id="Trazado_1984" d="M214.047 211h-23.438a5.859 5.859 0 1 0 0 11.719h3.591l-15.308 45.924-15.308-45.924h3.589a5.859 5.859 0 0 0 0-11.719h-23.439a5.859 5.859 0 0 0 0 11.719h3.589l-15.308 45.924-15.308-45.924h3.593a5.859 5.859 0 1 0 0-11.719H96.859a5.859 5.859 0 0 0 0 11.719h7.5l22.1 66.306a5.859 5.859 0 0 0 11.118 0l17.879-53.636 17.879 53.636a5.859 5.859 0 0 0 11.117 0l22.1-66.306h7.5a5.859 5.859 0 1 0 0-11.719z" class="cls-1" data-name="Trazado 1984" transform="translate(-91 -211)"/>
+        </g>
+    </g>
+    <g id="Grupo_693" data-name="Grupo 693">
+        <g id="Grupo_692" data-name="Grupo 692">
+            <path id="Trazado_1985" d="M182.422 0H17.578A17.6 17.6 0 0 0 0 17.578v164.844A17.6 17.6 0 0 0 17.578 200h164.844A17.6 17.6 0 0 0 200 182.422V17.578A17.6 17.6 0 0 0 182.422 0zM11.719 17.578a5.866 5.866 0 0 1 5.859-5.859H129.3v35.156H11.719zm176.562 164.844a5.866 5.866 0 0 1-5.859 5.859H17.578a5.866 5.866 0 0 1-5.859-5.859V58.594h176.562zm0-135.547h-47.265V11.719h41.406a5.866 5.866 0 0 1 5.859 5.859z" class="cls-2" data-name="Trazado 1985"/>
+        </g>
+    </g>
+    <g id="Grupo_695" data-name="Grupo 695" transform="translate(23.438 23.438)">
+        <g id="Grupo_694" data-name="Grupo 694">
+            <path id="Trazado_1986" d="M77.969 60h-12.11a5.859 5.859 0 0 0 0 11.719h12.11a5.859 5.859 0 0 0 0-11.719z" class="cls-3" data-name="Trazado 1986" transform="translate(-60 -60)"/>
+        </g>
+    </g>
+    <g id="Grupo_697" data-name="Grupo 697" transform="translate(58.984 23.438)">
+        <g id="Grupo_696" data-name="Grupo 696">
+            <path id="Trazado_1987" d="M168.578 60h-11.719a5.859 5.859 0 0 0 0 11.719h11.719a5.859 5.859 0 0 0 0-11.719z" class="cls-3" data-name="Trazado 1987" transform="translate(-151 -60)"/>
+        </g>
+    </g>
+    <g id="Grupo_699" data-name="Grupo 699" transform="translate(94.141 23.438)">
+        <g id="Grupo_698" data-name="Grupo 698">
+            <path id="Trazado_1988" d="M258.578 60h-11.719a5.859 5.859 0 0 0 0 11.719h11.719a5.859 5.859 0 0 0 0-11.719z" class="cls-4" data-name="Trazado 1988" transform="translate(-241 -60)"/>
+        </g>
+    </g>
+</svg>

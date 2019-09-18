@@ -1,6 +1,7 @@
 from flask import current_app, request, render_template, redirect, url_for, Blueprint
 from datetime import datetime
 from app.logger import log_err
+import app.directus as directus
 
 blueprint = Blueprint(
     'home',
@@ -24,7 +25,7 @@ accepted_causas = {
 
 
 def get_menu_navs():
-    navs = {'index': '', 'causas': '', 'agenda': '', 'contacto': ''}
+    navs = {'index': '', 'causas': '', 'sumate': '', 'contacto': ''}
     if request.endpoint:
         endpoint = request.endpoint.split('.')[1] if '.' in request.endpoint else request.endpoint
         if endpoint in accepted_causas.keys():
@@ -68,13 +69,13 @@ def not_found(e):
 @blueprint.before_request
 def before_request():
     # si no está activo directus cancelamos la request, pero si es a un recurso estático la dejamos pasar
-    if request.endpoint != 'home.index':
-        if not current_app.config['_using_directus'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
-            log_err(current_app, 'Directus in error state.', None, True)
+    #if request.endpoint != 'home.index':
+    if not current_app.config['_using_directus'] and 'static' not in request.endpoint and 'home.' in request.endpoint:
+        log_err(current_app, 'Directus in error state.', None, True)
 
-            msg = "La página se encuentra en mantenimiento<br>"\
-                  "Por favor, vuelva más tarde"
-            return render_error(msg)
+        msg = "La página se encuentra en mantenimiento<br>"\
+              "Por favor, vuelva en otro momento"
+        return render_error(msg)
 
 
 @blueprint.after_request
@@ -89,53 +90,41 @@ def after_request(response):
 def index():
     if current_app.config['_using_directus']:
         import app.directus as directus
-        # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-        # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
         dtextos = directus.dapi.get_textos_pagina('Home')
         dimgs = directus.dapi.get_imgs_pagina('Home')
         itemspropuestas = directus.dapi.get_items_propuestas()
-        # itemsnovedades = directus.dapi.get_items_novedades('Home')
-        itemsagenda = directus.dapi.get_items_agenda('Home')
+        itemsnovedades = directus.dapi.get_items_novedades('Home')
+        #itemsagenda = directus.dapi.get_items_agenda('Home')
         galeriahackaton = directus.dapi.get_items_hackaton()
     else:
         import app.content as content
         dtextos = content.textos_home()
         dimgs = {}
         itemspropuestas = content.items_propuestas()
-        itemsagenda = {}
+        #itemsagenda = {}
         galeriahackaton = content.items_hackaton()
+        itemsnovedades = {}
 
 
     return render_template(
         'index.html',
-        navs=get_menu_navs(),
-        # dimgsnav=dimgsnav,
-        # dimgsfooter=dimgsfooter,
-        dtextos=dtextos,
-        dimgs=dimgs,
-        # itemsnovedades=itemsnovedades,
-        itemsagenda=itemsagenda,
-        itemspropuestas=itemspropuestas,
-        galeriahackaton=galeriahackaton,
+        navs = get_menu_navs(),
+        dtextos = dtextos,
+        dimgs = dimgs,        
+        itemsnovedades = itemsnovedades,
+        #itemsagenda = itemsagenda,
+        itemspropuestas = itemspropuestas,
+        galeriahackaton = galeriahackaton,        
         index_de_testeo='indexDeTesteo' in request.endpoint)
 
 
 @blueprint.route("/contacto", methods=['GET'])
 def contacto():
-    import app.directus as directus
-    # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-    # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
-
-    dtextos = directus.dapi.get_textos_pagina('Contacto')
-    dimgs = directus.dapi.get_imgs_pagina('Contacto')
-
     return render_template(
         'contacto.html',
-        navs=get_menu_navs(),
-        # dimgsnav=dimgsnav,
-        # dimgsfooter=dimgsfooter,
-        dtextos=dtextos,
-        dimgs=dimgs)
+        navs = get_menu_navs(),
+        dtextos = directus.dapi.get_textos_pagina('Contacto'),
+        dimgs = directus.dapi.get_imgs_pagina('Contacto'))
 
 
 def _get_causa_from_endpoint():
@@ -159,35 +148,29 @@ def causas_route():
 
     import app.directus as directus
 
-    # dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
-    # dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
-
     dtextoscausas = directus.dapi.get_textos_pagina('Causas')
     dtextos = directus.dapi.get_textos_pagina(causa)
     dimgs = directus.dapi.get_imgs_pagina(causa)
 
-    itemstemas = directus.dapi.get_items_tema(causa)
-    itemsseguidores = directus.dapi.get_items_seguidor(causa)
+    #itemstemas = directus.dapi.get_items_tema(causa)
+    #itemsagenda = directus.dapi.get_items_agenda(causa)
+    #itemscompromisos = directus.dapi.get_items_compromisos(causa)
     itemsnovedades = directus.dapi.get_items_novedades(causa)
-    itemsagenda = directus.dapi.get_items_agenda(causa)
-    itemscompromisos = directus.dapi.get_items_compromisos(causa)
 
     variables = {
         'navs': get_menu_navs(),
-        # 'dimgsnav': dimgsnav,
-        # 'dimgsfooter': dimgsfooter,
 
         'dtextoscausas': dtextoscausas,
         'dtextos': dtextos,
         'dimgs': dimgs,
 
-        'itemstemas': itemstemas,
-        'itemsseguidores': itemsseguidores,
+        #'itemstemas': itemstemas,
+        #'itemsagenda': itemsagenda,
+        #'itemscompromisos': itemscompromisos,
         'itemsnovedades': itemsnovedades,
-        'itemsagenda': itemsagenda,
-        'itemscompromisos': itemscompromisos,
 
         'show_wiki_btn': True,
+        'causa': causa,
         'nombre_causa': accepted_causas[causa]}
 
     return render_template('causa.html', **variables)
@@ -205,6 +188,7 @@ def causas_scrolly_route():
         'scrolly.html',
         navs=get_menu_navs(),
         causa=causa,
+        nombre_causa= accepted_causas[causa],
         itemsscrolly=itemsscrolly)
 
 

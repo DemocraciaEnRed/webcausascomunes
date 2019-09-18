@@ -2,7 +2,7 @@
 
 <section class="novedades section jumbotron jumbotron-fluid">
     <div class="container text-center">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-4">
             <div class="col-md-8">
                 <h2 class="section__title">{{dtextos.get('novedades')['titulo']}}</h2>
                 <p class="section__subtitle">{{dtextos.get('novedades')['subtitulo']}}</p>
@@ -20,11 +20,11 @@
                 {% endif %}
             {% endif %}
 
-                {{ create_item_novedad(itm.get('ancho_columnas'), itm.get('imagen'), itm.get('titulo'), itm.get('hashtag')) }}
+                {{ create_item_novedad(itm.get('ancho_columnas'), itm.get('imagen'), itm.get('titulo'), itm.get('hashtag'), itm.get('url'), itm.get('texto')) }}
                 {% if loop.last %}
-                <div class="col-12 col-md-6 pb-3">
+                <div class="col-12 col-md-4 pb-3">
                     <h4 class="twitter-timeline__title">¡Seguinos!</h4>
-                    <a class="twitter-timeline" data-lang="es" data-height="400" href="https://twitter.com/causas_comunes?ref_src=twsrc%5Etfw">Tweets by causas_comunes</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <a class="twitter-timeline" data-lang="es" data-height="445" href="https://twitter.com/causas_comunes?ref_src=twsrc%5Etfw">Tweets by causas_comunes</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 {% endif %}
             {% set ns.acumcols=ns.acumcols+itm.get('ancho_columnas') %}

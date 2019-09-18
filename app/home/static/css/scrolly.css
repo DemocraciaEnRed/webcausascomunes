@@ -3,36 +3,62 @@
   src: url("../webfonts/Barlow-Regular.ttf") format('truetype');
   font-weight: 400; }
 
-  @font-face {
-    font-family: 'Barlow';
-    src: url("../webfonts/Barlow-Medium.ttf") format('truetype');
-    font-weight: 500; }
-
     @font-face {
       font-family: 'Barlow';
       src: url("../webfonts/Barlow-SemiBold.ttf") format('truetype');
       font-weight: 600; }
+    
+      @font-face {
+      font-family: 'Barlow';
+      src: url("../webfonts/Barlow-Black.ttf") format('truetype');
+      font-weight: 900; }
+    
+      h1, h2 {
+      text-align: center;
 
-      .text-color-vivienda {
-        color: #194a9a; }
+    }
+      .text-color-genero ,.causa-genero h2 {
+        color:  #774997; }
 
-        .text-color-transparencia {
-          color: #e61937; }
+        .text-color-ambiente ,.causa-ambiente h2 {
+          color: #39a95e; }
 
-          .text-color-trabajo {
-            color: #e71869; }
+          .text-color-ciencia ,.causa-ciencia h2 {
+            color: #008daf; }
 
-            .text-color-genero {
-              color: #774997; }
+            .text-color-vivienda ,.causa-vivienda h2 {
+              color: #194a9a; }
 
-              .text-color-drogas {
-                color: #f9b112; }
+              .text-color-transparencia ,.causa-transparencia h2 {
+                color: #e61937; }
 
-                .text-color-ciencia {
-                  color: #008daf; }
+                .text-color-drogas ,.causa-drogas h2 {
+                  color: #9e700e; }
 
-                  .text-color-ambiente {
-                    color: #39a95e; }
+                  .text-color-trabajo ,.causa-trabajo h2 {
+                    color: #e71869; }
+
+      .causa-genero .main h1 {
+        text-shadow:1px 2px #c478f8 }
+
+        .causa-ambiente .main h1 {
+          text-shadow:1px 2px #39a95e; }
+
+          .causa-ciencia .main h1 {
+            text-shadow:1px 2px #008daf; }
+
+            .causa-vivienda .main h1 {
+              text-shadow:1px 2px #4284ee; }
+
+              .causa-transparencia .main h1 {
+                text-shadow:1px 2px #e61937; }
+
+                .causa-drogas .main h1 {
+                  text-shadow:1px 2px #9e700e; }
+
+                  .causa-trabajo .main h1 {
+                    text-shadow:1px 2px #e71869; }
+
 
                     .vertical-align {
                       display: flex;
@@ -58,35 +84,248 @@
                                 font-size: 10px !important;   }
 }
 
-.causa-genero .scrolly-row:nth-child(even) {
-  background-color: #d5ffe8; }
-
-.causa-ambiente .scrolly-row:nth-child(even) {
-  background-color: #d5ffe8; }
-
-.causa-ciencia .scrolly-row:nth-child(even) {
-  background-color: #d5ffe8; }
-
-.causa-vivienda .scrolly-row:nth-child(even) {
-  background-color: #d5ffe8; }
-
-.causa-transparencia .scrolly-row:nth-child(even) {
-  background-color: #d5ffe8; }
-
-.causa-drogas .scrolly-row:nth-child(even) {
-  background-color: #d5ffe8; }
-
-.causa-trabajo .scrolly-row:nth-child(even) {
-  background-color: #ffd8e7; }
-
-.scrolly-row {
-  padding: 50vh 2rem; }
-  @media (min-width: 992px) {
-    .scrolly-row {
-      padding: 0 10rem;
-      height: 100vh;   }
+.main .imgMain {
+    display: none;
 }
-    .scrolly-row:nth-child(odd) {
-      background-color: #ffffff; }
-      .scrolly-row .scrolly-img {
-        max-height: 70vh; }
+
+.row.vertical-align.scrolly-row.main .col-lg-6 
+{
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.row.vertical-align.scrolly-row.main {
+    padding: 53px 0;
+}
+
+.callToAction h1{ text-transform: uppercase}
+
+.callToAction .btn {text-transform: capitalize}
+
+.callToAction{
+      margin-top: 100px;
+      text-align: center
+}
+
+.callToAction h1{
+      text-align: center;
+}
+
+.callToAction .btn{
+  margin-top: 5px;
+}
+
+
+
+.row.vertical-align.scrolly-row.contexto {
+    background-image: linear-gradient(45deg, #ffffff 41.67%, #e8e8e8 41.67%, #e8e8e8 50%, #ffffff 50%, #ffffff 91.67%, #e8e8e8 91.67%, #e8e8e8 100%);
+    background-size: 8.49px 8.49px;
+    
+}
+.row.vertical-align.scrolly-row.contexto p{
+  font-weight: 500;
+}
+.imgMain {
+    order: 13;
+    -ms-flex-order: 13;
+}
+
+.imgContainer {
+    text-align: center;
+}
+
+.btn-group{
+      display: inline-flex;
+}
+            
+   .causa-genero .causa {
+     color: #774997; 
+  -webkit-box-shadow: 17px 18px 0px 0px #774997;
+                            -moz-box-shadow: 17px 18px 0px 0px #774997;
+                            box-shadow: 17px 18px 0px 0px #774997;
+                            }
+
+  .causa-ambiente .causa {
+    color: #39a95e; 
+    -webkit-box-shadow: 17px 18px 0px 0px #39a95e;
+                            -moz-box-shadow: 17px 18px 0px 0px #39a95e;
+                            box-shadow: 17px 18px 0px 0px #39a95e;
+                            }
+
+    .causa-ciencia .causa {
+      color: #008daf; 
+      -webkit-box-shadow: 17px 18px 0px 0px #008daf;
+                            -moz-box-shadow: 17px 18px 0px 0px #008daf;
+                            box-shadow: 17px 18px 0px 0px #008daf;
+                            }
+
+      .causa-vivienda .causa {
+        color: #194a9a; 
+        -webkit-box-shadow: 17px 18px 0px 0px #194a9a;
+                            -moz-box-shadow: 17px 18px 0px 0px #194a9a;
+                            box-shadow: 17px 18px 0px 0px #194a9a;
+                            }
+
+        .causa-transparencia .causa {
+          color: #e61937; 
+          -webkit-box-shadow: 17px 18px 0px 0px #e61937;
+                            -moz-box-shadow: 17px 18px 0px 0px #e61937;
+                            box-shadow: 17px 18px 0px 0px #e61937;
+                            }
+
+          .causa-drogas .causa {
+            color: #9e700e; 
+            -webkit-box-shadow: 17px 18px 0px 0px #f9b112;
+                            -moz-box-shadow: 17px 18px 0px 0px #f9b112;
+                            box-shadow: 17px 18px 0px 0px #f9b112;
+                            }
+
+            .causa-trabajo .causa {
+              color: #e71869; 
+              -webkit-box-shadow: 17px 18px 0px 0px #e71869;
+                            -moz-box-shadow: 17px 18px 0px 0px #e71869;
+                            box-shadow: 17px 18px 0px 0px #e71869;
+                            }
+            
+
+              body {
+                font: 100% 'Barlow', sans-serif;
+                font-weight:500 
+                }
+
+                h1 {
+                  font-weight: 700;
+                  margin-bottom: 5px;
+                  }
+
+                
+                  .scrolly-row {
+                    padding: 20vh 0rem;
+                    }
+
+                      .scrolly-row.causa, .scrolly-row.remate  {
+                            
+                            border: 5px solid black;
+                            padding: 7vh 2rem;
+                            margin: 43px 0px;
+                        }
+                    
+                    @media (min-width: 992px) {
+                      .scrolly-row {
+                        padding: 0 4rem;
+                        min-height: 79vh;
+                        max-width: 1050px;
+                        margin: 110px auto;
+                        }
+                      .scrolly-row.causa, .scrolly-row.remate {
+                            margin: 50px auto;
+                            min-height: 33vh;
+                            padding: 0vh 4rem;
+                            width: 70%;
+                        }
+                        .imgMain.order-last {
+                              order: 0;
+                                -ms-flex-order: 13;
+                          }
+
+                        h1, h2 {
+                            text-align: left;
+                        }
+
+                        .main h1 {
+                              font-size: 60px;
+                              line-height: 59px;
+                              font-weight: 900;
+                          }
+
+                          .row.vertical-align.scrolly-row.main {
+                              margin: 40px auto 0px auto;
+                              padding: 0 4rem;
+                              min-height: 32vh;
+                          }
+
+                              .btn-group{
+                                  display: inline-flex;
+                            }
+
+                    }
+                      .scrolly-row:nth-child(odd) {
+                        background-color: #ffffff;
+                        }
+                        .scrolly-row:nth-child(even) {
+                          background-color: #e5e5e5;
+                          }
+                          .scrolly-row .scrolly-img {
+                            padding: 10px 0px;
+                            max-height: inherit;
+                            }
+
+
+.scrolly-row.remate {
+    background-image: linear-gradient(45deg, #ffffff 41.67%, #e8e8e8 41.67%, #e8e8e8 50%, #ffffff 50%, #ffffff 91.67%, #e8e8e8 91.67%, #e8e8e8 100%);
+    background-size: 8.49px 8.49px;
+    border: solid 6px blue;
+    min-height: 50vh;
+}
+
+.causa-genero .remate {
+        border-color: #c478f8 }
+
+        .causa-ambiente .remate {
+          border-color: #39a95e; }
+
+          .causa-ciencia .remate {
+            border-color: #008daf; }
+
+            .causa-vivienda .remate {
+              border-color: #4284ee; }
+
+              .causa-transparencia .remate {
+                border-color: #e61937; }
+
+                .causa-drogas .remate {
+                  border-color: #9e700e; }
+
+                  .causa-trabajo .remate {
+                    border-color: #e71869; }
+
+.row.vertical-align.scrolly-row.callToAction {
+    background-color: #e5e5e5;
+    margin-top: 80px;
+    min-height: 39vh;
+}
+
+img.ondita-azul {
+    max-width: 700px;
+}
+
+.footer-scrollys h2 {
+  text-align: center; }
+
+.btn-sumate{ color:white; }
+.btn-sumate:hover { background-color: white; }
+
+.btn-genero{
+	background-color: #c478f8;
+	border-color: #c478f8;
+}
+.btn-genero:hover { color: #c478f8; }
+
+.btn-vivienda{
+	background-color: #4284ee;
+	border-color: #4284ee;
+}
+.btn-vivienda:hover { color: #4284ee; }
+
+.btn-ambiente{
+	background-color: #39a95e;
+	border-color: #39a95e;
+}
+.btn-ambiente:hover { color: #39a95e; }
+
+.btn-trabajo{
+	background-color: #e71869;
+	border-color: #e71869;
+}
+.btn-trabajo:hover { color: #e71869; }
+

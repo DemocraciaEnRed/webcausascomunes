@@ -1,9 +1,12 @@
-/*$(window).resize(function(){
-    header_hei = $('header').outerHeight(true)
-    section_hei = $('.portada-seccion').outerHeight(true)
-    $('.bgimg').height(header_hei + section_hei)
-})*/
+// to top right away
+if ( window.location.hash ) scroll(0,0);
+// void some browsers issue
+setTimeout( function() { scroll(0,0); }, 1);
 
-$(function(){
-    $(window).resize()
+$(document).ready(function(){
+    if(window.location.hash) {
+        $('html, body').animate({
+          scrollTop: $(window.location.hash).offset().top - $("#navbar").innerHeight()
+        }, 1000);
+    }
 })

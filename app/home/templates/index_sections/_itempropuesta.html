@@ -1,15 +1,33 @@
 {% from '_imghelper.html' import create_img_src %}
 
-{% macro create_item_propuesta(bgimg, icon, title, text, pagina) -%}
+{% macro create_item_propuesta(pagina, title, text, notis) -%}
 {% if pagina %}
     {% set url_anchor =  url_for('home.' + (pagina|string).lower()) %}
+    {% set icon_path =  url_for('home.static', filename='img/icons/causas/'+pagina|lower+'_icon.png') %}
 {% else %}
     {% set url_anchor =  '#' %}
+    {% set icon_path =  '' %}
     {% set pagina =  '' %}
 {% endif %}
-<div class="carousel-cell text-left px-4 py-5 p-lg-5">
-    <a href="{{ url_anchor }}"><img class="mb-5" src="{{ url_for('home.static', filename='img/icons/causas/'+pagina|lower+'_icon_color_fill.png') }}" /></a>
-    <a href="{{ url_anchor }}"><h4 class="title">{{ title or '' }}</h4></a>
-    <p class="text">{{ text or '' }}</p>
+
+{% if notis and notis != '0' %}
+	{% set cant_novedades =  notis %}
+{% else %}
+	{% set cant_novedades =  false %}
+{% endif %}
+
+{# desactivar por ahora, pero ya anda #}
+{% set cant_novedades =  false %}
+
+<div class="card card-{{pagina|lower}} px-0 py-2 m-1 px-md-2 py-md-4 m-md-3">
+    <div class="card-body">
+        <a href="{{ url_anchor }}"><img class="mb-3 mb-md-5" src="{{ icon_path }}" /></a>
+        <a href="{{ url_anchor }}"><h4 class="title">{{ title or '' }}</h4></a>
+        <p class="text">{{ text or '' }}</p>
+    </div>
+    {% if cant_novedades %}
+        <a class="btn" href="{{ url_anchor }}#novedades">Ver novedades</a>
+        <span class="icon-novedades"><i class="fa fa-bell"></i><sup>{{cant_novedades}}</sup></span>
+    {% endif %}
 </div>
 {%- endmacro %}
