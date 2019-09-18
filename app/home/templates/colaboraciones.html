@@ -12,20 +12,16 @@
 {% block body %}
 
     <div class="container">
-        <h2 class="section__title mb-3 mb-lg-4">Cuentas claras</h2>
-        <div class="disclaimer mb-4">{{dtextos.get('disclaimer', '')}}</div>
+        <h2 class="section__title mb-3 mb-lg-4">Agradecimientos</h2>
+        <div class="disclaimer mb-4">{{dtextos.get('agradecimiento', '')}} {{ ', '.join(aportantes[:-1]) }} y {{aportantes[-1]}}.</div>
         <div class="row">
             <div class="col-lg-6">
-                <h2 class="section__subtitle">Gastos por categoría</h2>
-                <canvas id="chart-importe-categoria"></canvas>
-            </div>
-            <div class="col-lg-6 order-lg-last mt-4 mt-lg-0">
-                <h2 class="section__subtitle">Gastos por concepto</h2>
-                <canvas id="chart-importe-concepto"></canvas>
+                <h2 class="section__subtitle">Tiempos por destino</h2>
+                <canvas id="chart-tiempos-destino"></canvas>
             </div>
             <div class="col-lg-6 mt-4 mt-lg-0">
-                <h2 class="section__subtitle">Egresos por mes</h2>
-                <canvas id="chart-bars-gastos"></canvas>
+                <h2 class="section__subtitle">Tiempos por mes</h2>
+                <canvas id="chart-bars-tiempos"></canvas>
             </div>
         </div>
         <h2 class="section__title my-4 my-lg-5">Datos</h2>
