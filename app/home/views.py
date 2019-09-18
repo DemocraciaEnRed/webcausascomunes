@@ -241,7 +241,7 @@ def colaboraciones():
     dimgsnav = directus.dapi.get_imgs_pagina('Navegacion')
     dimgsfooter = directus.dapi.get_imgs_pagina('Footer')
 
-    dtextos = directus.dapi.get_textos_pagina('Cuentas')
+    dtextos = directus.dapi.get_textos_pagina('Colaboraciones')
 
     from app.datos import Colaboraciones
     dataset_colaboraciones = Colaboraciones(blueprint.static_folder + '/CC_contabilidad_tiempo - Sheet1.csv')
@@ -264,7 +264,7 @@ def colaboraciones():
             aportantes.append(row[aportantes_i])
             
         try:
-            date = datetime.strptime(row[fecha_i], '%d/%m/%Y')
+            date = datetime.strptime(row[fecha_i], '%B')
             date = date.strftime('%s')
         except:
             date = ''
