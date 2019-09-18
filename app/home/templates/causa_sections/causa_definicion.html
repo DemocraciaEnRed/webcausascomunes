@@ -22,15 +22,15 @@
             <div class="col-lg-12">
                 <div class="card card-with-shadow">
                     <div class="card-body p-0">
-						<div class="row">
-				            <div class="col-lg-6 text-center">
+						<div class="row text-center">
+				            <div class="col-lg-6 order-lg-last">
 								<img class="img-fluid" src="{{ create_img_src(dimgs.get('scrolly')) }}">
 					        </div>
 				            <div class="col-lg-6">
-								<div class="scrolly-text-wrapper p-4 pl-lg-2">
+								<div class="scrolly-text-wrapper p-4">
 									<h4>{{dtextos.get('scrolly')['titulo']}}</h4>
 									<p>{{dtextos.get('scrolly')['texto']}}</p>
-			                        <a href="{{causa}}/scrolly" class="btn btn-primary">{{dtextoscausas.get('scrolly')['boton']}}</a>
+			                        <a href="{{causa}}/scrolly" class="btn btn-primary mt-md-2">{{dtextoscausas.get('scrolly')['boton']}}</a>
 								</div>
 					        </div>
 	            		</div>

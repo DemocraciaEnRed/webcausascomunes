@@ -136,11 +136,12 @@ body {overflow-x: hidden;}
 				border-radius: 0;
 	        }
 	        @media (min-width: $width-large){
-				border-radius: 20px 0 0 20px;
+				border-radius: 0 20px 20px 0;
 	        }
 		}
 		
 		.scrolly-text-wrapper{
+			width: 100%;
 	        @media (min-width: $width-large){
 				@include vertical-align-transform();
 	        }

@@ -272,13 +272,15 @@ body {
 }
       @media (min-width: 992px) {
         #definicion .scrolly-row img {
-          border-radius: 20px 0 0 20px;   }
+          border-radius: 0 20px 20px 0;   }
 }
-  @media (min-width: 992px) {
-    #definicion .scrolly-row .scrolly-text-wrapper {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);   }
+  #definicion .scrolly-row .scrolly-text-wrapper {
+    width: 100%; }
+    @media (min-width: 992px) {
+      #definicion .scrolly-row .scrolly-text-wrapper {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);   }
 }
 
 @media (min-width: 768px) {
