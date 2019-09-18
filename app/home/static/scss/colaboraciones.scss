@@ -1,0 +1,42 @@
+@import 'vars';
+
+main {
+    padding-top: 6rem;
+    @media (min-width: $width-medium) {
+        padding-top: 18vw;
+    }
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    background: none !important;
+    border: none !important;
+}
+
+.section__title {
+	color: $color-principal-azul;
+	font-size: $font-size-medium;
+	font-weight: 600;
+	@media (min-width: $width-medium) {
+		font-size: $font-size-xlarge;
+	}
+}
+.section__subtitle {
+    font-size: $font-size-xsmall;
+    color: $color-principal-azul;
+    margin-bottom: 1.5rem;
+    @media (min-width: $width-medium) {
+        font-size: $font-size-medium;
+    }
+}
+
+#data-csv_wrapper {
+    .row{
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.disclaimer {
+    font-style: italic;
+    text-align: justify;
+}
