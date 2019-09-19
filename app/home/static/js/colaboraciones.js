@@ -51,6 +51,9 @@ $(document).ready(function() {
         // que arranque ordenado por fecha, los más recientes primero
         "order": [[ 0, 'desc' ]],
 
+        // habilitamos es scroll horizontal
+        "scrollX": true,
+
         // esta función se ejecuta al terminar de cargar/renderear la DataTable
         "initComplete": function(settings, json) {
             // fix bug de que se pisan los textos del paginador con el msj de 'mostrando X registros...'
