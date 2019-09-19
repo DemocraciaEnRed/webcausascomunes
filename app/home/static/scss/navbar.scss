@@ -282,21 +282,23 @@ nav {
         order: 1;
     }
     .navbar.scrolling {
-        .btn-novedades {
-            &:hover,
-            &[aria-expanded=true] {
-                background-color: $color-principal-azul;
-                color: $white;
-                sup { 
-                    background-color: $white;
-                    color: $color-principal-azul;
-                    border: 1px solid $color-principal-azul;
-                }
-            }
-            sup { 
-                background-color: $color-principal-azul;
-                color: $white;
-                border: 1px solid $white;
+		#dropdown-novedades {
+	        .btn-novedades {
+	            &:hover,
+	            &[aria-expanded=true] {
+	                background-color: $color-principal-azul;
+	                color: $white;
+	                sup { 
+	                    background-color: $white;
+	                    color: $color-principal-azul;
+	                    border: 1px solid $color-principal-azul;
+	                }
+	            }
+	            sup { 
+	                background-color: $color-principal-azul;
+	                color: $white;
+	                border: 1px solid $white;
+	            }
             }
         }
     }

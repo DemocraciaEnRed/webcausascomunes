@@ -373,16 +373,16 @@ nav a.nav-link.active {
 @media (min-width: 992px) {
   .nav-item.dropdown {
     order: 1;   }
-    .navbar.scrolling .btn-novedades:hover,
-    .navbar.scrolling .btn-novedades[aria-expanded=true] {
+    .navbar.scrolling #dropdown-novedades .btn-novedades:hover,
+    .navbar.scrolling #dropdown-novedades .btn-novedades[aria-expanded=true] {
       background-color: #2a4b8c;
       color: #ffffff;   }
-      .navbar.scrolling .btn-novedades:hover sup,
-      .navbar.scrolling .btn-novedades[aria-expanded=true] sup {
+      .navbar.scrolling #dropdown-novedades .btn-novedades:hover sup,
+      .navbar.scrolling #dropdown-novedades .btn-novedades[aria-expanded=true] sup {
         background-color: #ffffff;
         color: #2a4b8c;
         border: 1px solid #2a4b8c;   }
-    .navbar.scrolling .btn-novedades sup {
+    .navbar.scrolling #dropdown-novedades .btn-novedades sup {
       background-color: #2a4b8c;
       color: #ffffff;
       border: 1px solid #ffffff;   }
