@@ -1,32 +1,27 @@
 {% from '_imghelper.html' import create_img_src %}
 
-{% macro create_item_novedad(itm) -%}
+{% macro create_item_novedad(itm, css_classes='') -%}
 
-{% set cols = itm.get('ancho_columnas') %}
-{% set imgpath = itm.get('imagen') %}
-{% set title = itm.get('titulo') %}
-{% set hashtag = itm.get('hashtag') %}
-{% set url = itm.get('url') %}
-{% set texto = itm.get('texto') %}
+{% set pagina = itm.get('pagina', '') %}
 
-{% if hashtag %}
-    {% set htag_lower =  hashtag.lower() %}
-{% else %}
-    {% set htag_lower =  '' %}
-{% endif %}
-<div class="col-12 col-md-{{ cols or '' }} pb-3 mb-4">
+{% set imgpath = itm.get('imagen', '') %}
+{% set title = itm.get('titulo', '') %}
+{% set texto = itm.get('texto', '') %}
+{% set url = itm.get('url', '') %}
+
+<div class="col-12 col-md-6 pb-3 mb-4 {{css_classes}}">
     <div class="card card--novedades">
 		<div class="card-img-top">
-        	<a href="{{url}}"><img src="{{ create_img_src(imgpath or '') }}" alt="{{ title or '' }}"></a>
+        	<a href="{{ url }}"><img src="{{ create_img_src(imgpath) }}" alt="{{ title }}"></a>
 		</div>
         <div class="card-body px-md-4 text-left">
-            <span class="ml-3 card-hashtag text-color-{{htag_lower}}">#{{ hashtag or '' }}</span>
+            <span class="ml-3 card-hashtag text-color-{{ pagina|lower }}">#{{ pagina }}</span>
             <h5 class="card-title">
-                <a href="{{url}}" class="text-color-{{htag_lower}}">
-                    <span class="mb-2">{{ title or '' }}</span>
+                <a href="{{ url }}" class="text-color-{{ pagina|lower }}">
+                    <span class="mb-2">{{ title }}</span>
                 </a>
             </h5>
-			<span class="card-text text">{{texto|safe}}</span>
+			<span class="card-text text">{{ texto|safe }}</span>
         </div>
     </div>
 </div>

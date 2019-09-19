@@ -34,12 +34,11 @@ class DirectusApi:
         self.textosregx = re.compile('^[^<>]*$')
         self.markdowner = Markdown()
         self._items_novedades_schema = {
-            'ancho_columnas': DirectusApi.RowTypes.TEXT,
+            'pagina': DirectusApi.RowTypes.REL_NOMBRE,
             'imagen': DirectusApi.RowTypes.IMG,
             'titulo': DirectusApi.RowTypes.TEXT,
-            'hashtag': DirectusApi.RowTypes.TEXT,
-            'url': DirectusApi.RowTypes.TEXT,
             'texto': DirectusApi.RowTypes.TEXT,
+            'url': DirectusApi.RowTypes.TEXT,
             'es_nueva': DirectusApi.RowTypes.TOGGLE,
             'es_destacada': DirectusApi.RowTypes.TOGGLE
         }

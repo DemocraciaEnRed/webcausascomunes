@@ -1,5 +1,6 @@
 {% from 'index_sections/_itemnovedad.html' import create_item_novedad %}
 
+{% if itemsnovedades %}
 <section id="novedades" class="novedades bg-color-solido section jumbotron jumbotron-fluid">
     <div class="container text-center">
         <div class="row justify-content-center mb-4">
@@ -13,26 +14,25 @@
         {% for itm in itemsnovedades %}
 
             {% if ns.acumcols == 0 %}
-                {% if loop.revindex == 1 %}
-                    <div class="row flex-md-row-reverse">
-                {% else %}
-                    <div class="row">
-                {% endif %}
+            	<div class="row">
             {% endif %}
 
-                {{ create_item_novedad(itm) }}
-                {% if loop.last %}
-                <div class="col-12 col-md-4 pb-3">
-                    <h4 class="twitter-timeline__title">¡Seguinos!</h4>
-                    <a class="twitter-timeline" data-lang="es" data-height="445" href="https://twitter.com/causas_comunes?ref_src=twsrc%5Etfw">Tweets by causas_comunes</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-                {% endif %}
-            {% set ns.acumcols=ns.acumcols+itm.get('ancho_columnas') %}
-            {% if ns.acumcols >= 12 %}
-                </div>
-                {% set ns.acumcols=0 %}
-            {% endif %}
+				{% if loop.last and ns.acumcols == 0 %}
+					{% set offset_class = 'offset-md-3' %}
+                {% else %}
+					{% set offset_class = '' %}
+            	{% endif %}
+
+                {{ create_item_novedad(itm, css_classes=offset_class) }}
+
+            	{% set ns.acumcols=ns.acumcols+6 %}
+
+	        {% if ns.acumcols >= 12 or loop.last %}
+	            </div>
+	            {% set ns.acumcols=0 %}
+	        {% endif %}
 
         {% endfor %}
     </div>
 </section>
+{% endif %}
