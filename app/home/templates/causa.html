@@ -23,8 +23,11 @@
     <!-- ACTIVÁ -->
     {% include 'causa_sections/causa_activa.html' %}
 
-    <!-- NOVEDADES -->
-    {% include 'causa_sections/causa_novedades.html' %}
+	{% if itemsnovedades %}
+	    <!-- NOVEDADES -->
+	    {% include 'causa_sections/causa_novedades.html' %}
+	{% endif %}
+
 </div>
 {% endblock %}
 
