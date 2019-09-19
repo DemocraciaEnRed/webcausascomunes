@@ -112,6 +112,7 @@ def index():
         dtextos = dtextos,
         dimgs = dimgs,        
         itemsnovedades = novedades_destacadas,
+        novedades_nuevas = novedades_nuevas,
         #itemsagenda = itemsagenda,
         itemspropuestas = itemspropuestas,
         galeriahackaton = galeriahackaton,        
