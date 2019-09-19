@@ -144,10 +144,6 @@ body {
       padding-top: 3rem;
       padding-bottom: 3rem;   }
 }
-  .section:nth-child(even) {
-    background-color: #ffffff; }
-    .section:nth-child(odd) {
-      background-color: #faf2ff; }
 
 .causa-genero .bg-mosaico-blanco {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
@@ -481,3 +477,6 @@ body {
   .colaborar .col-sumate .img {
     margin-top: -15px;   }
 }
+
+.newsletter {
+  background-image: unset; }

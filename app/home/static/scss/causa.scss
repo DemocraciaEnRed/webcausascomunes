@@ -16,12 +16,12 @@ body {overflow-x: hidden;}
 		}
 	}
 	/* intercalar colores de fondo */
-	&:nth-child(even) {
+	/* &:nth-child(even) {
         background-color: $white;
 	}
 	&:nth-child(odd) {
 	    background-color: $bg-alt-col;
-	}
+	} */
 }
 
 @mixin bg-mosaico-blanco-trans($causa) {
@@ -367,4 +367,8 @@ svg {
             }
         }
     }
+}
+
+.newsletter {
+	background-image: unset;
 }
