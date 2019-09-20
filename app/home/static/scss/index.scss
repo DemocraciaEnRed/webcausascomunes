@@ -477,7 +477,7 @@ img {
 /* Novedades */
 
 .novedades {
-	background-color: $sectionBgColorBlue;
+	background-color:$sectionBgColorWhite;
 	.card--novedades {
 		box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
 		border-radius: 0;
@@ -618,7 +618,7 @@ img {
 
 /* GALERIA */
 .galeria {
-	background-color:$sectionBgColorWhite;
+	background-color: $sectionBgColorBlue;
 	p {
 		color: $color-texto-light;
 		font-size: $font-size-xsmall;
