@@ -439,7 +439,7 @@ img {
 
 .candidates {
     color: $color-principal-azul;
-	background-color: $sectionBgColorBlue !important;
+	background-color:$sectionBgColorWhite !important;
 	.section__title {
 		font-size: $font-size-large;
 		@media (min-width: $width-medium) {
@@ -459,13 +459,25 @@ img {
 			order: initial;
 		}
 	}
+	
+	.img-wrapper{
+		@include vertical-align-content();
+		
+		img{
+			border-radius: 20px;
+			@media (max-width: $width-medium) {
+				max-width: 340px;
+				margin: 0 auto;
+			}
+		}
+	}
 }
 
 
 /* Novedades */
 
 .novedades {
-	background-color:$sectionBgColorWhite !important;
+	background-color:$sectionBgColorWhite;
 	.card--novedades {
 		box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
 		border-radius: 0;

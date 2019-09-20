@@ -16,12 +16,12 @@ body {overflow-x: hidden;}
 		}
 	}
 	/* intercalar colores de fondo */
-	&:nth-child(even) {
+	/* &:nth-child(even) {
         background-color: $white;
 	}
 	&:nth-child(odd) {
 	    background-color: $bg-alt-col;
-	}
+	} */
 }
 
 @mixin bg-mosaico-blanco-trans($causa) {
@@ -66,12 +66,16 @@ body {overflow-x: hidden;}
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
+    min-height: 425px;
     h1 {
         padding: 6rem 0 3rem 0;
         color: white;
         font-weight: 900;
 		font-size: 3.5rem;
         text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.63);
+    }
+    @media (min-width: $width-medium) {
+        min-height: 457px;
     }
  }
 
@@ -84,6 +88,14 @@ body {overflow-x: hidden;}
     overflow-x: auto;
     z-index: 1;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    width: 100%;
+    margin-top: -86px;
+    position: absolute;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar {
+        display: none; 
+    }
     @media(min-width: $width-medium){
         flex-wrap: nowrap;
         overflow-x: initial;
@@ -116,11 +128,10 @@ body {overflow-x: hidden;}
     }
     &.position-fixed {
         top: 72px;
-/*         margin-left: -1rem;
-        left: 0; */
         left: 0;
         right: 0;
-        @media (min-width: $width-medium) {
+        margin-top: 0;
+        @media (min-width: $width-large) {
             top: 80px;
         }
     }
@@ -256,25 +267,51 @@ body {overflow-x: hidden;}
 	.col-paso {
 		padding: 0 0.6rem;
 	    @media (min-width: $width-large){
-			padding: 0 3rem;
+			padding: 0 2rem;
 	    }
 		text-align: center;
 	    @media (min-width: $width-medium){
 	        text-align: left;
 	    }
+		
+		.img-wrapper {
+			display: inline;
+		    @media (min-width: $width-medium){
+		       display: block;
+		    }
+			svg {
+				height: 50px;
+			    @media (min-width: $width-medium){
+			        height: 100px;
+			    }
+				/* LOS COLORES SE DEFINEN MÁS ABAJO */
+			}
+		}
+		.span-wrapper{
+			span {
+				@include vertical-align();				
+			}
+		}
 	}
 	
 	.row-carita{
-		@include border-radius(35px);
+		@include border-radius(57px);
 		background-color: #E4EDFF;
 		.carita-wrapper{
 			margin: 0 auto;
 			font-weight: bold;
 			img{
 				height: 45px;
-				position: relative;
-				top: 50%;
-				transform: translateY(-50%);
+			    @media (max-width: $width-medium){
+					display: block;	
+					margin: 0 auto !important;
+					margin-bottom: 0.5rem !important;
+			    }
+			    @media (min-width: $width-medium){
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
+			    }
 			}
 		}
 	}
@@ -289,6 +326,20 @@ body {overflow-x: hidden;}
 		    }
 		}
 	}
+}
+
+svg {
+	$causa: transparencia;
+	#_1, #_2, #_3, #_4 {
+		 @each $causa, $color in $colors-causas{
+	 		.svg-#{$causa} & {fill: $color;}
+		}
+	}
+	#Elipse_343 {
+		 @each $causa, $color in $colors-causas{
+	 		.svg-#{$causa} & {stroke: $color;}
+		}
+	}	
 }
 
 /*####################################################*/
@@ -318,11 +369,25 @@ body {overflow-x: hidden;}
     }
     .row p {
         font-size: $font-size-xsmall;
+        margin-bottom: 0;
     }
-    .img svg{
+    .img svg {
+        max-width: 200px;
+        width: 100%;
         @media (max-width: $width-small) {
             max-width: 100px;
             max-height: 100px;
         }
     }
+    .col-sumate {
+        .img {
+            @media (min-width: $width-medium) {
+                margin-top: -15px;
+            }
+        }
+    }
+}
+
+.newsletter {
+	background-image: unset;
 }

@@ -52,6 +52,19 @@ $color-texto-light: #1d1d1b;
 	transform: translateY(-50%);
 }
 
+@mixin vertical-align() {
+	display: block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin vertical-align-content(){
+	display: flex;
+	justify-items: center;
+	align-items: center;
+}
+
 // navbar
 $logo-height-mobile: 30px;
 $logo-height-desktop: 54px;
@@ -65,6 +78,15 @@ $color-genero: #774997;
 $color-drogas: #f9b112;
 $color-ciencia: #008daf;
 $color-ambiente: #39a95e;
+$colors-causas: (
+	'vivienda': #194a9a,
+	'transparencia': #e61937,
+	'trabajo': #e71869,
+	'genero': #774997,
+	'drogas': #f9b112,
+	'ciencia': #008daf,
+	'ambiente': #39a95e
+);
 
 $parallaxZIndexOnTop: 1;
 

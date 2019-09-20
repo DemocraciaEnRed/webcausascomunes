@@ -144,10 +144,6 @@ body {
       padding-top: 3rem;
       padding-bottom: 3rem;   }
 }
-  .section:nth-child(even) {
-    background-color: #ffffff; }
-    .section:nth-child(odd) {
-      background-color: #faf2ff; }
 
 .causa-genero .bg-mosaico-blanco {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
@@ -197,13 +193,18 @@ body {
   overflow-y: hidden;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  min-height: 425px; }
   .portada-seccion h1 {
     padding: 6rem 0 3rem 0;
     color: white;
     font-weight: 900;
     font-size: 3.5rem;
     text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.63); }
+    @media (min-width: 768px) {
+      .portada-seccion {
+        min-height: 457px;   }
+}
 
 .nav-secondary {
   background-color: #f8eeff;
@@ -212,21 +213,28 @@ body {
   flex-wrap: nowrap;
   overflow-x: auto;
   z-index: 1;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14); }
-  @media (min-width: 768px) {
-    .nav-secondary {
-      flex-wrap: nowrap;
-      overflow-x: initial;   }
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  width: 100%;
+  margin-top: -86px;
+  position: absolute;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
+  .nav-secondary::-webkit-scrollbar {
+    display: none; }
+    @media (min-width: 768px) {
+      .nav-secondary {
+        flex-wrap: nowrap;
+        overflow-x: initial;   }
 }
-    .nav-secondary li {
-      padding-left: 0;
-      padding-right: 0;
-      flex: 0 0 auto; }
-      @media (min-width: 768px) {
-        .nav-secondary li {
-          padding-left: 1rem;
-          padding-right: 1rem;
-          flex: unset;   }
+      .nav-secondary li {
+        padding-left: 0;
+        padding-right: 0;
+        flex: 0 0 auto; }
+        @media (min-width: 768px) {
+          .nav-secondary li {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            flex: unset;   }
 }
   .nav-secondary .nav-link:after {
     display: none; }
@@ -256,8 +264,9 @@ body {
   .nav-secondary.position-fixed {
     top: 72px;
     left: 0;
-    right: 0; }
-    @media (min-width: 768px) {
+    right: 0;
+    margin-top: 0; }
+    @media (min-width: 992px) {
       .nav-secondary.position-fixed {
         top: 80px;   }
 }
@@ -367,25 +376,51 @@ body {
     text-align: center; }
     @media (min-width: 992px) {
       .activa .col-paso {
-        padding: 0 3rem;   }
+        padding: 0 2rem;   }
 }
       @media (min-width: 768px) {
         .activa .col-paso {
           text-align: left;   }
 }
+        .activa .col-paso .img-wrapper {
+          display: inline; }
+          @media (min-width: 768px) {
+            .activa .col-paso .img-wrapper {
+              display: block;   }
+}
+            .activa .col-paso .img-wrapper svg {
+              height: 50px; }
+              @media (min-width: 768px) {
+                .activa .col-paso .img-wrapper svg {
+                  height: 100px;   }
+}
+    .activa .col-paso .span-wrapper span {
+      display: block;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
   .activa .row-carita {
-    -webkit-border-radius: 35px;
-    -moz-border-radius: 35px;
-    border-radius: 35px;
+    -webkit-border-radius: 57px;
+    -moz-border-radius: 57px;
+    border-radius: 57px;
     background-color: #E4EDFF; }
     .activa .row-carita .carita-wrapper {
       margin: 0 auto;
       font-weight: bold; }
       .activa .row-carita .carita-wrapper img {
-        height: 45px;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%); }
+        height: 45px; }
+        @media (max-width: 768px) {
+          .activa .row-carita .carita-wrapper img {
+            display: block;
+            margin: 0 auto !important;
+            margin-bottom: 0.5rem !important;   }
+}
+          @media (min-width: 768px) {
+            .activa .row-carita .carita-wrapper img {
+              position: relative;
+              top: 50%;
+              transform: translateY(-50%);   }
+}
   .activa .row-boton > div {
     margin: 0 auto; }
     .activa .row-boton > div a {
@@ -395,6 +430,40 @@ body {
         .activa .row-boton > div a {
           font-size: 1.25rem !important;   }
 }
+
+.svg-vivienda svg #_1, .svg-vivienda svg #_2, .svg-vivienda svg #_3,
+.svg-vivienda svg #_4 {
+  fill: #194a9a; }
+  .svg-transparencia svg #_1, .svg-transparencia svg #_2, .svg-transparencia svg #_3,
+  .svg-transparencia svg #_4 {
+    fill: #e61937; }
+    .svg-trabajo svg #_1, .svg-trabajo svg #_2, .svg-trabajo svg #_3,
+    .svg-trabajo svg #_4 {
+      fill: #e71869; }
+      .svg-genero svg #_1, .svg-genero svg #_2, .svg-genero svg #_3, .svg-genero svg #_4 {
+        fill: #774997; }
+        .svg-drogas svg #_1, .svg-drogas svg #_2, .svg-drogas svg #_3, .svg-drogas svg #_4 {
+          fill: #f9b112; }
+          .svg-ciencia svg #_1, .svg-ciencia svg #_2, .svg-ciencia svg #_3,
+          .svg-ciencia svg #_4 {
+            fill: #008daf; }
+            .svg-ambiente svg #_1, .svg-ambiente svg #_2, .svg-ambiente svg #_3,
+            .svg-ambiente svg #_4 {
+              fill: #39a95e; }
+.svg-vivienda svg #Elipse_343 {
+  stroke: #194a9a; }
+  .svg-transparencia svg #Elipse_343 {
+    stroke: #e61937; }
+    .svg-trabajo svg #Elipse_343 {
+      stroke: #e71869; }
+      .svg-genero svg #Elipse_343 {
+        stroke: #774997; }
+        .svg-drogas svg #Elipse_343 {
+          stroke: #f9b112; }
+          .svg-ciencia svg #Elipse_343 {
+            stroke: #008daf; }
+            .svg-ambiente svg #Elipse_343 {
+              stroke: #39a95e; }
 
 .colaborar .card {
   height: 100%; }
@@ -412,9 +481,20 @@ body {
 .colaborar > p {
   font-size: 1.15rem; }
   .colaborar .row p {
-    font-size: 0.9rem; }
-    @media (max-width: 576px) {
-      .colaborar .img svg {
-        max-width: 100px;
-        max-height: 100px;   }
+    font-size: 0.9rem;
+    margin-bottom: 0; }
+    .colaborar .img svg {
+      max-width: 200px;
+      width: 100%; }
+      @media (max-width: 576px) {
+        .colaborar .img svg {
+          max-width: 100px;
+          max-height: 100px;   }
 }
+@media (min-width: 768px) {
+  .colaborar .col-sumate .img {
+    margin-top: -15px;   }
+}
+
+.newsletter {
+  background-image: unset; }

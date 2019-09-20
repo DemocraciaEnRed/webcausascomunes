@@ -5,7 +5,8 @@ venv/
 .env
 .env.prod
 
-git-branches*.sh
+git-branches.sh
+git-branches-sort.sh
 
 gsheetsapi-test.py
 credentials.json

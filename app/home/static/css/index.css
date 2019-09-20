@@ -463,7 +463,7 @@ img {
 
 .candidates {
   color: #2a4b8c;
-  background-color: #e4eefa !important; }
+  background-color: #f4f9ff !important; }
   .candidates .section__title {
     font-size: 1.5rem; }
     @media (min-width: 768px) {
@@ -483,9 +483,20 @@ img {
       .candidates .btn {
         order: initial;   }
 }
+  .candidates .img-wrapper {
+    display: flex;
+    justify-items: center;
+    align-items: center; }
+    .candidates .img-wrapper img {
+      border-radius: 20px; }
+      @media (max-width: 768px) {
+        .candidates .img-wrapper img {
+          max-width: 340px;
+          margin: 0 auto;   }
+}
 
 .novedades {
-  background-color: #f4f9ff !important; }
+  background-color: #f4f9ff; }
   .novedades .card--novedades {
     box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
     border-radius: 0;
