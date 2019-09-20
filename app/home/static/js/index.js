@@ -31,4 +31,12 @@ $(document).ready(function(){
         }, 1000);
     });
     
+	var widthMedium = 768;
+	var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	var waitForIframe = setInterval(function(){
+		if ($('.twitter-timeline-rendered').length){
+			$('.twitter-timeline-rendered').css('height', viewportWidth < widthMedium ? '500px' : '90%')
+			clearInterval(waitForIframe)
+		}
+	}, 700);
 })
