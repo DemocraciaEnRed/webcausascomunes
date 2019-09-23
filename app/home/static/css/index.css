@@ -634,3 +634,85 @@ img {
             display: none; }
             #wikis .blueimp-gallery-controls > .description {
               display: block; }
+
+.activa {
+  background-color: #f4f9ff;
+  color: #2a4b8c;
+  font-size: 1.15rem !important; }
+  @media (min-width: 768px) {
+    .activa {
+      font-size: 1.25rem !important;   }
+}
+    .activa .img-megafono-wrapper {
+      display: inline-block; }
+      .activa .img-megafono-wrapper img {
+        position: relative;
+        top: -2px;
+        height: 55px; }
+        @media (min-width: 768px) {
+          .activa .img-megafono-wrapper img {
+            height: 75px;   }
+}
+  .activa .col-paso {
+    padding: 0 0.6rem;
+    text-align: center; }
+    @media (min-width: 992px) {
+      .activa .col-paso {
+        padding: 0 2rem;   }
+}
+      @media (min-width: 768px) {
+        .activa .col-paso {
+          text-align: left;   }
+}
+        .activa .col-paso .img-wrapper {
+          display: inline; }
+          @media (min-width: 768px) {
+            .activa .col-paso .img-wrapper {
+              display: block;   }
+}
+            .activa .col-paso .img-wrapper svg {
+              height: 50px; }
+              @media (min-width: 768px) {
+                .activa .col-paso .img-wrapper svg {
+                  height: 100px;   }
+}
+    .activa .col-paso .span-wrapper span {
+      display: block;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
+  .activa .row-carita {
+    -webkit-border-radius: 57px;
+    -moz-border-radius: 57px;
+    border-radius: 57px;
+    background-color: #E4EDFF; }
+    .activa .row-carita .carita-wrapper {
+      margin: 0 auto;
+      font-weight: bold; }
+      .activa .row-carita .carita-wrapper img {
+        height: 45px; }
+        @media (max-width: 768px) {
+          .activa .row-carita .carita-wrapper img {
+            display: block;
+            margin: 0 auto !important;
+            margin-bottom: 0.5rem !important;   }
+}
+          @media (min-width: 768px) {
+            .activa .row-carita .carita-wrapper img {
+              position: relative;
+              top: 50%;
+              transform: translateY(-50%);   }
+}
+  .activa .row-boton > div {
+    margin: 0 auto; }
+    .activa .row-boton > div a {
+      font-weight: 600;
+      font-size: 1.15rem !important; }
+      @media (min-width: 768px) {
+        .activa .row-boton > div a {
+          font-size: 1.25rem !important;   }
+}
+  .activa svg #_1, .activa svg #_2, .activa svg #_3, .activa svg #_4 {
+    fill: #2a4b8c; }
+    .activa svg #Elipse_343 {
+      stroke: #2a4b8c; }
