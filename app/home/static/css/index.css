@@ -496,7 +496,7 @@ img {
 }
 
 .novedades {
-  background-color: #f4f9ff; }
+  background-color: #e4eefa; }
   .novedades .card--novedades {
     box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15);
     border-radius: 0;
@@ -602,7 +602,7 @@ img {
       height: 3rem; }
 
 .galeria {
-  background-color: #e4eefa; }
+  background-color: #f4f9ff; }
   .galeria p {
     color: #1d1d1b;
     font-size: 0.9rem;
