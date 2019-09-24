@@ -636,7 +636,9 @@ img {
               display: block; }
 
 .activa {
-  background-color: #f4f9ff;
+  background-image: url('/static/img/manifiesto-background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #2a4b8c;
   font-size: 1.15rem !important; }
   @media (min-width: 768px) {

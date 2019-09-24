@@ -665,7 +665,10 @@ img {
 
 
 .activa{
-	background-color:$sectionBgColorWhite;
+	background-image: url('/static/img/manifiesto-background.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+
     color: $color-principal-azul;
     font-size: $font-size-small !important;
     @media (min-width: $width-medium){
