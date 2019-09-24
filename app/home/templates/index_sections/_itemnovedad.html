@@ -12,15 +12,19 @@
 <div class="col-12 col-md-6 pb-3 mb-4 {{css_classes}}">
     <div class="card card--novedades">
 		<div class="card-img-top">
-        	<a href="{{ url }}"><img src="{{ create_img_src(imgpath) }}" alt="{{ title }}"></a>
+        	{% if url %}<a href="{{ url }}">{% endif %}
+				<img src="{{ create_img_src(imgpath) }}" alt="{{ title }}">
+			{% if url %}</a>{% endif %}
 		</div>
         <div class="card-body px-md-4 text-left">
             <span class="ml-3 card-hashtag text-color-{{ pagina|lower }}">#{{ pagina }}</span>
-            <h5 class="card-title">
+            {% if title %}
+			<h5 class="card-title">
                 <a href="{{ url }}" class="text-color-{{ pagina|lower }}">
                     <span class="mb-2">{{ title }}</span>
                 </a>
             </h5>
+			{% endif %}
 			<span class="card-text text">{{ texto|safe }}</span>
         </div>
     </div>
