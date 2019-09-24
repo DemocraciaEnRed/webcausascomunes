@@ -155,8 +155,9 @@ footer a img {
     font-size: 0.9rem; }
     .footer__copyright a {
       color: #2a4b8c; }
-      .footer__copyright img {
-        max-width: 100px; }
 
 .logo-foot-cc {
   height: 90px; }
+
+  .luminate-logo {
+    height: 38px; }
