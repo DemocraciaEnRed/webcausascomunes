@@ -21,4 +21,6 @@ function hashScroll() {
 $(function(){
     $(window).resize()
 	setTimeout(hashScroll, 500)
+	// a veces 500ms no alcanza a esperar cargar
+	setTimeout(hashScroll, 1000)
 })
