@@ -27,14 +27,16 @@
 				{% for novedad in novedades_nuevas %}
 				{% set pagina_lower = novedad.get('pagina', '')|lower %}
 				
+				{% if novedad.get('titulo') %}
                 <a class="dropdown-item" href="/{{ pagina_lower }}#novedades">
                     {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ pagina_lower +'_icon_color.png')
                     %}
                     <img src="{{ icon_path }}" />
                     <span class="hashtag text-color-{{ pagina_lower }} ml-3">#{{ novedad.get('pagina', '') }}</span>
-                    <span class="title d-block ml-1 mt-2 text-justify">{{ novedad.get('titulo', '') }}</span>
+                    <span class="title d-block ml-1 mt-2 text-justify">{{ novedad.get('titulo') }}</span>
                 </a>
-
+				{% endif %}
+				
 				{% endfor %}
 				
             </div>
