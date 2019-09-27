@@ -19,14 +19,14 @@
 		</div>
         <div class="card-body px-md-4 text-left">
             <span class="ml-3 card-hashtag text-color-{{ pagina|lower }}">#{{ pagina }}</span>
-            {% if title %}
+            {% if texto %}
 			<h5 class="card-title">
                 <a href="{{ url }}" class="text-color-{{ pagina|lower }}">
                     <span class="mb-2">{{ title }}</span>
                 </a>
             </h5>
-			{% endif %}
 			<span class="card-text text">{{ texto|safe }}</span>
+			{% endif %}
         </div>
     </div>
 </div>
