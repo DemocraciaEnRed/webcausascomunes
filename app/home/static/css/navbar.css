@@ -339,15 +339,17 @@ nav a.nav-link.active {
   box-shadow: 0 3px 17px 0 rgba(36, 73, 154, 0.51);
   border: none;
   padding: 10px;
+  max-height: 80vh;
+  overflow-y: scroll;
   right: 0;
   top: 52px;
   left: -123px;
   right: -15px; }
   @media (min-width: 992px) {
     #dropdown-novedades .dropdown-menu {
-      max-width: 230px;
+      max-width: 270px;
       min-width: unset;
-      left: -60px;
+      left: -100px;
       top: 100%;
       right: 0;   }
 }
