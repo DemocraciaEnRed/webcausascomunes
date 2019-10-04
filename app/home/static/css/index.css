@@ -59,32 +59,35 @@
                                     display: flex;
                                     align-items: center; }
 
-                                    body {
-                                      font: 100% 'Barlow', sans-serif;
-                                      color: black; }
+                                    .text-color-primario {
+                                      color: #2a4b8c; }
 
-                                      .padding-onditaazul {
-                                        padding-top: 12vw; }
+                                      body {
+                                        font: 100% 'Barlow', sans-serif;
+                                        color: black; }
 
-                                        .card {
-                                          border-radius: 20px;
-                                          border: none; }
+                                        .padding-onditaazul {
+                                          padding-top: 12vw; }
 
-                                          .card-with-shadow {
-                                            box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15); }
+                                          .card {
+                                            border-radius: 20px;
+                                            border: none; }
 
-                                            .card-title {
-                                              font-size: 1.15rem; }
+                                            .card-with-shadow {
+                                              box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15); }
 
-                                              .btn-primary {
-                                                border-radius: 2rem;
-                                                background-color: #2a4b8c;
-                                                border-color: #2a4b8c;
-                                                color: #ffffff;
-                                                border-width: 3px; }
-                                                .btn-primary:hover {
-                                                  background-color: #ffffff;
-                                                  color: #2a4b8c; }
+                                              .card-title {
+                                                font-size: 1.15rem; }
+
+                                                .btn-primary {
+                                                  border-radius: 2rem;
+                                                  background-color: #2a4b8c;
+                                                  border-color: #2a4b8c;
+                                                  color: #ffffff;
+                                                  border-width: 3px; }
+                                                  .btn-primary:hover {
+                                                    background-color: #ffffff;
+                                                    color: #2a4b8c; }
 
 .btn-primary-inverted {
   background-color: #ffffff;
@@ -262,15 +265,15 @@ img {
               opacity: 0.5;   }
 }
 
-.propuestas {
+.causas {
   background-image: url('/static/img/manifiesto-background.svg');
   background-repeat: no-repeat;
   background-size: cover; }
   @media (min-width: 1200px) {
-    .propuestas .container-fluid {
+    .causas .container-fluid {
       padding: 0 12rem;   }
 }
-  .propuestas .card {
+  .causas .card {
     color: white;
     text-align: center;
     height: auto;
@@ -279,116 +282,116 @@ img {
     max-width: 11rem;
     align-items: center; }
     @media (min-width: 768px) {
-      .propuestas .card {
+      .causas .card {
         flex-basis: calc(100% / 4);
         max-width: 280px;   }
 }
-      .propuestas .card.card-trabajo {
+      .causas .card.card-trabajo {
         background-color: #e0427b; }
-        .propuestas .card.card-trabajo .btn {
+        .causas .card.card-trabajo .btn {
           color: #e0427b; }
-          .propuestas .card.card-trabajo .btn:hover {
+          .causas .card.card-trabajo .btn:hover {
             background-color: #e0427b;
             color: #ffffff; }
-        .propuestas .card.card-trabajo .icon-novedades {
+        .causas .card.card-trabajo .icon-novedades {
           border-color: #e0427b; }
-          .propuestas .card.card-trabajo .icon-novedades i {
+          .causas .card.card-trabajo .icon-novedades i {
             color: #e0427b; }
-            .propuestas .card.card-trabajo .icon-novedades sup {
+            .causas .card.card-trabajo .icon-novedades sup {
               background-color: #e0427b; }
-    .propuestas .card.card-ambiente {
+    .causas .card.card-ambiente {
       background-color: #2eac67; }
-      .propuestas .card.card-ambiente .btn {
+      .causas .card.card-ambiente .btn {
         color: #2eac67; }
-        .propuestas .card.card-ambiente .btn:hover {
+        .causas .card.card-ambiente .btn:hover {
           background-color: #2eac67;
           color: #ffffff; }
-      .propuestas .card.card-ambiente .icon-novedades {
+      .causas .card.card-ambiente .icon-novedades {
         border-color: #2eac67; }
-        .propuestas .card.card-ambiente .icon-novedades i {
+        .causas .card.card-ambiente .icon-novedades i {
           color: #2eac67; }
-          .propuestas .card.card-ambiente .icon-novedades sup {
+          .causas .card.card-ambiente .icon-novedades sup {
             background-color: #2eac67; }
-    .propuestas .card.card-genero {
+    .causas .card.card-genero {
       background-color: #764896; }
-      .propuestas .card.card-genero .btn {
+      .causas .card.card-genero .btn {
         color: #764896; }
-        .propuestas .card.card-genero .btn:hover {
+        .causas .card.card-genero .btn:hover {
           background-color: #764896;
           color: #ffffff; }
-      .propuestas .card.card-genero .icon-novedades {
+      .causas .card.card-genero .icon-novedades {
         border-color: #764896; }
-        .propuestas .card.card-genero .icon-novedades i {
+        .causas .card.card-genero .icon-novedades i {
           color: #764896; }
-          .propuestas .card.card-genero .icon-novedades sup {
+          .causas .card.card-genero .icon-novedades sup {
             background-color: #764896; }
-    .propuestas .card.card-vivienda {
+    .causas .card.card-vivienda {
       background-color: #1955a6; }
-      .propuestas .card.card-vivienda .btn {
+      .causas .card.card-vivienda .btn {
         color: #1955a6; }
-        .propuestas .card.card-vivienda .btn:hover {
+        .causas .card.card-vivienda .btn:hover {
           background-color: #1955a6;
           color: #ffffff; }
-      .propuestas .card.card-vivienda .icon-novedades {
+      .causas .card.card-vivienda .icon-novedades {
         border-color: #1955a6; }
-        .propuestas .card.card-vivienda .icon-novedades i {
+        .causas .card.card-vivienda .icon-novedades i {
           color: #1955a6; }
-          .propuestas .card.card-vivienda .icon-novedades sup {
+          .causas .card.card-vivienda .icon-novedades sup {
             background-color: #1955a6; }
-    .propuestas .card.card-drogas {
+    .causas .card.card-drogas {
       background-color: #f0a316; }
-      .propuestas .card.card-drogas .btn {
+      .causas .card.card-drogas .btn {
         color: #f0a316; }
-        .propuestas .card.card-drogas .btn:hover {
+        .causas .card.card-drogas .btn:hover {
           background-color: #f0a316;
           color: #ffffff; }
-      .propuestas .card.card-drogas .icon-novedades {
+      .causas .card.card-drogas .icon-novedades {
         border-color: #f0a316; }
-        .propuestas .card.card-drogas .icon-novedades i {
+        .causas .card.card-drogas .icon-novedades i {
           color: #f0a316; }
-          .propuestas .card.card-drogas .icon-novedades sup {
+          .causas .card.card-drogas .icon-novedades sup {
             background-color: #f0a316; }
-    .propuestas .card.card-transparencia {
+    .causas .card.card-transparencia {
       background-color: #e2404f; }
-      .propuestas .card.card-transparencia .btn {
+      .causas .card.card-transparencia .btn {
         color: #e2404f; }
-        .propuestas .card.card-transparencia .btn:hover {
+        .causas .card.card-transparencia .btn:hover {
           background-color: #e2404f;
           color: #ffffff; }
-      .propuestas .card.card-transparencia .icon-novedades {
+      .causas .card.card-transparencia .icon-novedades {
         border-color: #e2404f; }
-        .propuestas .card.card-transparencia .icon-novedades i {
+        .causas .card.card-transparencia .icon-novedades i {
           color: #e2404f; }
-          .propuestas .card.card-transparencia .icon-novedades sup {
+          .causas .card.card-transparencia .icon-novedades sup {
             background-color: #e2404f; }
-    .propuestas .card .btn {
+    .causas .card .btn {
       background-color: #ffffff;
       border: 1px solid #ffffff;
       border-radius: 2rem;
       cursor: pointer; }
-      .propuestas .card .title {
+      .causas .card .title {
         text-align: left;
         font-size: 1.15rem;
         font-weight: 600;
         margin-bottom: 1rem; }
         @media (min-width: 768px) {
-          .propuestas .card .title {
+          .causas .card .title {
             font-size: 1.5rem;   }
 }
-    .propuestas .card a:target, .propuestas .card a:hover, .propuestas .card a {
+    .causas .card a:target, .causas .card a:hover, .causas .card a {
       color: white; }
-      .propuestas .card .text {
+      .causas .card .text {
         text-align: left;
         font-size: 0.9rem; }
         @media (min-width: 768px) {
-          .propuestas .card .text {
+          .causas .card .text {
             font-size: 1rem;   }
 }
-    .propuestas .card img {
+    .causas .card img {
       height: 6rem; }
-      .propuestas .card .card-body {
+      .causas .card .card-body {
         padding-bottom: 0; }
-        .propuestas .card .icon-novedades {
+        .causas .card .icon-novedades {
           position: absolute;
           right: -10px;
           top: -15px;
@@ -399,7 +402,7 @@ img {
           border: 3px solid;
           background-color: #ffffff;
           line-height: 50px; }
-          .propuestas .card .icon-novedades sup {
+          .causas .card .icon-novedades sup {
             border: 1px solid #ffffff;
             color: #ffffff;
             border-radius: 100%;
@@ -411,11 +414,11 @@ img {
             vertical-align: top;
             line-height: 16px;
             position: absolute; }
-            .propuestas .card .icon-novedades i {
+            .causas .card .icon-novedades i {
               font-size: 1.4rem; }
-  .propuestas .carousel {
+  .causas .carousel {
     background: transparent; }
-    .propuestas .carousel-cell {
+    .causas .carousel-cell {
       width: 80%;
       height: 340px;
       margin-right: 2rem;
@@ -424,41 +427,41 @@ img {
       counter-increment: carousel-cell;
       color: black; }
       @media (min-width: 992px) {
-        .propuestas .carousel-cell {
+        .causas .carousel-cell {
           width: 30%;
           height: 400px;
           margin-left: 0;   }
 }
-  .propuestas .flickity-button {
+  .causas .flickity-button {
     display: none;
     box-shadow: 0 15px 15px 0 rgba(119, 119, 119, 0.15);
     transition: box-shadow ease-in 0.1s; }
-    .propuestas .flickity-button[disabled] {
+    .causas .flickity-button[disabled] {
       visibility: hidden; }
       @media (min-width: 768px) {
-        .propuestas .flickity-button {
+        .causas .flickity-button {
           display: block;   }
 }
-        .propuestas .flickity-button:focus, .propuestas .flickity-button:hover {
+        .causas .flickity-button:focus, .causas .flickity-button:hover {
           box-shadow: 0 15px 15px 0 rgba(42, 75, 140, 0.5); }
-  .propuestas button.flickity-prev-next-button.previous {
+  .causas button.flickity-prev-next-button.previous {
     left: -70px; }
-    .propuestas button.flickity-prev-next-button.next {
+    .causas button.flickity-prev-next-button.next {
       right: -70px; }
-  .propuestas .flickity-page-dots {
+  .causas .flickity-page-dots {
     position: relative; }
     @media (min-width: 768px) {
-      .propuestas .flickity-page-dots {
+      .causas .flickity-page-dots {
         visibility: hidden;   }
 }
-      .propuestas .flickity-page-dots .dot {
+      .causas .flickity-page-dots .dot {
         width: 19px;
         height: 19px;
         border: solid 1px #2a4b8c;
         background-color: #ffffff; }
-  .propuestas .flickity-button-icon path {
+  .causas .flickity-button-icon path {
     fill: #2a4b8c; }
-  .propuestas .flickity-enabled.is-draggable .flickity-viewport {
+  .causas .flickity-enabled.is-draggable .flickity-viewport {
     cursor: auto; }
 
 .candidates {

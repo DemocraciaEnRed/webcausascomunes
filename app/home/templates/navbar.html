@@ -51,9 +51,9 @@
                 </li>
                 <li class="nav-item">
                     {% if request.endpoint in ['home.index'] %}
-                    <a class="nav-link px-4 scrollTo {{navs['causas']}}" href="#propuestas">Causas</a>
+                    <a class="nav-link px-4 scrollTo {{navs['causas']}}" href="#causas">Causas</a>
                     {% else %}
-                    <a class="nav-link px-4 {{navs['causas']}}" href="{{ url_for('home.index') }}#propuestas">Causas</a>
+                    <a class="nav-link px-4 {{navs['causas']}}" href="{{ url_for('home.index') }}#causas">Causas</a>
                     {% endif %}
                 </li>
                 <li class="nav-item">
