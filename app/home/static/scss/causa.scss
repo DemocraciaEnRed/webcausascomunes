@@ -349,6 +349,9 @@ svg {
     .card {
         height: 100%;
     }
+	.card-with-shadow{
+		box-shadow: 0 25px 30px 0 rgba(119, 119, 119, 0.15);
+	}
     .card-body {
         display: flex;
         flex-direction: column;
