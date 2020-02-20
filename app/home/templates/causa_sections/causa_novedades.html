@@ -1,13 +1,13 @@
 {% from 'index_sections/_itemnovedad.html' import create_item_novedad %}
 
-<section id="novedades" class="novedades bg-color-solido section jumbotron jumbotron-fluid">
+<section id="novedades" class="novedades bg-mosaico-blanco section jumbotron jumbotron-fluid">
     <div class="container text-center text-md-left">
         <div class="row justify-content-center mb-4">
             <div class="col">
                 <h2 class="section__title">Novedades {# dtextos.get('novedades')['titulo'] #}</h2>
                 <p class="section__subtitle">Todas las acciones, actividades y agenda sobre {{nombre_causa}}.{# dtextos.get('novedades')['subtitulo'] #}</p>
-            </div>   
-        </div>    
+            </div>
+        </div>
         {% set ns = namespace(acumcols=0) %}
 
         {% for itm in itemsnovedades %}

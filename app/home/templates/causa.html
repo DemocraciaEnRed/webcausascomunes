@@ -21,20 +21,17 @@
     {% include 'causa_sections/causa_colaborar.html' %}
 
     <!-- FLYER -->
-	{% if dimgs.get('flyer')['activa'] %}
-    	{% include 'causa_sections/causa_flyer.html' %}
+    {% if dimgs.get('flyer')['activa'] %}
+      {% include 'causa_sections/causa_flyer.html' %}
     {% endif %}
 
     <!-- PROPUESTAS -->
     {% include 'causa_sections/causa_propuestas.html' %}
 
-    <!-- ACTIVÁ -->
-    {% include 'causa_sections/causa_activa.html' %}
-
-	{% if itemsnovedades %}
-	    <!-- NOVEDADES -->
-	    {% include 'causa_sections/causa_novedades.html' %}
-	{% endif %}
+    {% if itemsnovedades %}
+      <!-- NOVEDADES -->
+      {% include 'causa_sections/causa_novedades.html' %}
+    {% endif %}
 
 </div>
 {% endblock %}
