@@ -1,7 +1,7 @@
 __pycache__/
-.idea/
 venv/
-.DS_Store
+*.pyc
+
 .env
 .env.prod
 
@@ -11,5 +11,8 @@ git-branches-sort.sh
 gsheetsapi-test.py
 credentials.json
 token.pickle
+
+.idea/
+.DS_Store
 .pydevproject
 .project
