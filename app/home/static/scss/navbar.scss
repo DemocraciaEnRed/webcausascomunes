@@ -9,13 +9,13 @@ header {
         display:none;
         top: 0;
         right: 0;
-        width: 75%;
+        width: 80%;
         z-index: -1;
         @media (min-width: $width-large) {
             display: block;
         }
         @media (min-width: $width-xlarge) {
-        width: 70%;
+        width: 75%;
         }
     }
 }
@@ -79,7 +79,7 @@ nav {
         height: 5px;
         display: none;
     }
-    &.active, 
+    &.active,
     &:hover {
         border: none;
         &:after {
@@ -113,7 +113,7 @@ nav {
         img {
             height: $logo-height-desktop;
         }
-    }  
+    }
     .nav-link {
         color: $white;
         &:after {
@@ -224,7 +224,7 @@ nav {
 	            display: inline;
 	        }
 	    }
-	
+
 	    i {
 	        font-size: 24px;
 	        @media (min-width: $width-large) {
@@ -232,7 +232,7 @@ nav {
 	        }
 	    }
 	}
-	
+
 	.dropdown-menu {
 	    border-radius: 5px;
 	    box-shadow: 0 3px 17px 0 rgba(36, 73, 154, 0.51);
@@ -290,13 +290,13 @@ nav {
 	            &[aria-expanded=true] {
 	                background-color: $color-principal-azul;
 	                color: $white;
-	                sup { 
+	                sup {
 	                    background-color: $white;
 	                    color: $color-principal-azul;
 	                    border: 1px solid $color-principal-azul;
 	                }
 	            }
-	            sup { 
+	            sup {
 	                background-color: $color-principal-azul;
 	                color: $white;
 	                border: 1px solid $white;

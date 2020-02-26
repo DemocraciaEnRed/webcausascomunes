@@ -25,7 +25,7 @@ accepted_causas = {
 
 
 def get_menu_navs():
-    navs = {'index': '', 'causas': '', 'sumate': '', 'cuentas': '', 'colaboraciones': '', 'contacto': ''}
+    navs = {'index': '', 'causas': '', 'cuentas': '', 'colaboraciones': '', 'contacto': ''}
     if request.endpoint:
         endpoint = request.endpoint.split('.')[1] if '.' in request.endpoint else request.endpoint
         if endpoint in accepted_causas.keys():
@@ -110,12 +110,12 @@ def index():
         'index.html',
         navs = get_menu_navs(),
         dtextos = dtextos,
-        dimgs = dimgs,        
+        dimgs = dimgs,
         itemsnovedades = novedades_destacadas,
         novedades_nuevas = novedades_nuevas,
         #itemsagenda = itemsagenda,
         itemspropuestas = itemspropuestas,
-        galeriahackaton = galeriahackaton,        
+        galeriahackaton = galeriahackaton,
         index_de_testeo='indexDeTesteo' in request.endpoint)
 
 
@@ -254,7 +254,7 @@ def colaboraciones():
     else:
         # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
         dataset_rows = dataset_colaboraciones.get_rows_from_csv()
-        
+
     # me guardo los aportantes y formateo las fechas
     aportantes = []
     aportantes_i = dataset_headers.index('aportante')
@@ -263,17 +263,17 @@ def colaboraciones():
     for row in dataset_rows:
         if row[aportantes_i] and row[aportantes_i] not in aportantes:
             aportantes.append(row[aportantes_i])
-            
+
         try:
             date = datetime.strptime(row[fecha_i], '%B')
             date = date.strftime('%s')
         except:
             date = ''
-        fechas_epoch.append(date)   
-    
+        fechas_epoch.append(date)
+
     # capitalizo los headers
     dataset_headers = [h.capitalize() for h in dataset_headers if h != 'aportante']
-    
+
     # saco los aportantes del dataset
     dataset_rows_anon = []
     for row in dataset_rows:
