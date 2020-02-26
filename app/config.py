@@ -26,7 +26,8 @@ class BaseConfig(object):
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@ PROD CONFIGS
 class ProductionConfig(BaseConfig):
-    DEBUG = False
+    #no anda debug así, settear la var de entorno FLASK_ENV=production
+    #DEBUG = False
     SECRET_KEY = os.environ.get('FLASK_SECRET_KEY')
 
     USE_SCSS = False
@@ -35,7 +36,8 @@ class ProductionConfig(BaseConfig):
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@ DEBUG CONFIGS
 class DevelopmentConfig(BaseConfig):
-    DEBUG = True
+    #no anda debug así, settear la var de entorno FLASK_ENV=development
+    #DEBUG = True
     SECRET_KEY = os.environ.get('FLASK_SECRET_KEY') or 'dummy secret key'
 
     USE_SCSS = True

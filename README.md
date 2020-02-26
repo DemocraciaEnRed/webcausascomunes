@@ -8,6 +8,7 @@ Para correrlo primero hay que crear el entorno de python:
 
 Ya que el programa depende del contenido de Directus, debe crear el archivo `.env` en la carpeta `app` con las mismas variables que el `.env.example` que está en esa carpeta. Deberá conseguir el `DIRECTUS_TOKEN` del Directus que use. Una vez definido esto puede correr el servidor de la siguiente forma:
 - crear la variable de entorno `export LOAD_ENV=True` para que el servidor busque y cargue el `.env`
+- en desarrollo activar modo debug `export FLASK_ENV=development`
 - ejectuar `flask run`
 - debería haber hosteado en [http://localhost:5000]()
 
