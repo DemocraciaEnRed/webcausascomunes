@@ -7,7 +7,9 @@
 
 {% if pagina %}
     {% set url_anchor =  url_for('home.' + (pagina|string).lower()) %}
-    {% set icon_path =  url_for('home.static', filename = 'img/icons/causas/' + pagina|lower + '_icon.png') %}
+    {# set icon_path =  url_for('home.static', filename = 'img/icons/causas/' + pagina|lower + '_icon.png') #}
+    {% set icon_path =  url_for('home.static', filename = 'img/index-causas-imgs/' + pagina|lower + '.jpg') %}
+    {% set icon_path =  url_for('home.static', filename = 'img/index-causas-imgs/ambiente.jpg') %}
 {% else %}
     {% set url_anchor =  '#' %}
     {% set icon_path =  '' %}
@@ -16,12 +18,12 @@
 <div class="card card-{{ pagina|lower }} px-0 py-2 m-1 px-md-2 py-md-4 m-md-3">
     <div class="card-body">
         <a href="{{ url_anchor }}"><img class="mb-3 mb-md-5" src="{{ icon_path }}" /></a>
-        <a href="{{ url_anchor }}"><h4 class="title">{{ title }}</h4></a>
-        <p class="text">{{ text }}</p>
+        <a href="{{ url_anchor }}"><h4 class="title text-center">{{ title }}</h4></a>
+        <!-- <p class="text">{{ text }}</p> -->
     </div>
-    {% if cant_novedades %}
+    <!-- {% if cant_novedades %}
         <a class="btn" href="{{ url_anchor }}#novedades">Ver novedades</a>
         <span class="icon-novedades"><i class="fa fa-bell"></i><sup>{{ cant_novedades }}</sup></span>
-    {% endif %}
+    {% endif %} -->
 </div>
 {%- endmacro %}

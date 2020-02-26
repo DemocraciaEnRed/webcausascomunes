@@ -11,7 +11,7 @@
 	            {% for itm in itemspropuestas %}
 
         			{% set ns = namespace(cant_novedades=0) %}
-					
+
 					{% if novedades_nuevas and itm.get('pagina') %}
 						{% for novedad in novedades_nuevas %}
 							{% if novedad.get('pagina') and novedad.get('pagina')|lower == itm.get('pagina')|lower %}
@@ -23,7 +23,7 @@
 	                {{ create_item_propuesta(itm, ns.cant_novedades) }}
 
 	            {% endfor %}
-          </div>  
+          </div>
       </div>
     </div>
   </div>

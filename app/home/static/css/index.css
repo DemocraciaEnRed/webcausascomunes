@@ -290,8 +290,8 @@ img {
     align-items: center; }
     @media (min-width: 768px) {
       .causas .card {
-        flex-basis: calc(100% / 4);
-        max-width: 280px;   }
+        flex-basis: calc(100% / 3);
+        max-width: 440px;   }
 }
       .causas .card.card-trabajo {
         background-color: #e0427b; }
