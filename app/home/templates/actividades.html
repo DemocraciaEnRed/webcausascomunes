@@ -1,5 +1,16 @@
-{% from 'index_sections/_itemgaleria.html' import create_item_galeria %}
+{% extends '_base.html' %}
 
+{% from '_imghelper.html' import create_img_src %}
+
+{% block head %}
+    <title>Causas comunes</title>
+    <link href="{{url_for('home.static', filename='css/actividades.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/blueimp-gallery.min.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+{% from 'index_sections/_itemgaleria.html' import create_item_galeria %}
 <section id="galeria" class="galeria section jumbotron jumbotron-fluid">
     <div class="container">
         <div class="row">
@@ -36,18 +47,9 @@
     </div>
 </section>
 
-<!-- <div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
-  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg')}}" title="Apple" data-description="This is a banana.">
-    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg')}}" alt="Apple" />
-  </a>
-</div>
-<div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
-  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg')}}" title="Orange" data-description="This is a banana.">
-    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-04-09.jpg')}}" alt="Orange" />
-  </a>
-</div>
-<div class="col-6 col-md-3 mb-2 mb-md-0 px-1 px-md-4">
-  <a href="{{create_img_src('/static/img/photo_2019-07-16_18-07-12.jpg')}}" title="Orange" data-description="This is a banana.">
-    <img src="{{create_img_src('/static/img/photo_2019-07-16_18-07-12.jpg')}}" alt="Orange" />
-  </a>
-</div> -->
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('home.static', filename='js/lib/blueimp-gallery.min.js')}}"></script>
+<script src="{{url_for('home.static', filename='js/actividades.js')}}"></script>
+{% endblock %}

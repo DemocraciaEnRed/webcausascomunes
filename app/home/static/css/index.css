@@ -620,18 +620,6 @@ img {
     .agenda .list-group-item img {
       height: 3rem; }
 
-.galeria {
-  background-color: #f4f9ff; }
-  .galeria p {
-    color: #1d1d1b;
-    font-size: 0.9rem;
-    line-height: 1.3rem; }
-    @media (min-width: 768px) {
-      .galeria p {
-        font-size: 1rem;
-        line-height: 1.75rem;   }
-}
-
 .activa {
   background-image: url('/static/img/manifiesto-background.svg');
   background-repeat: no-repeat;

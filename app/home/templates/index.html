@@ -9,7 +9,6 @@
     <link href="{{url_for('home.static', filename='css/index-parallax.css')}}" rel="stylesheet">
     {% endif %}
 	<link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
-    <link href="{{url_for('home.static', filename='css/blueimp-gallery.min.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -27,9 +26,6 @@
 
     <!-- NOVEDADES -->
     {# include 'index_sections/index_novedades.html' #}
-
-    <!-- HACKATON -->
-    {% include 'index_sections/index_hackaton.html' %}
 
     <!-- NEWSLETTER -->
     {# include 'index_sections/index_newsletter.html' #}

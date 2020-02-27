@@ -95,14 +95,12 @@ def index():
         itemspropuestas = directus.dapi.get_items_propuestas()
         novedades_nuevas, novedades_destacadas = directus.dapi.get_items_novedades_index()
         #itemsagenda = directus.dapi.get_items_agenda('Home')
-        galeriahackaton = directus.dapi.get_items_hackaton()
     else:
         import app.content as content
         dtextos = content.textos_home()
         dimgs = {}
         itemspropuestas = content.items_propuestas()
         #itemsagenda = {}
-        galeriahackaton = content.items_hackaton()
         novedades_nuevas, novedades_destacadas = {}, {}
 
 
@@ -115,7 +113,6 @@ def index():
         novedades_nuevas = novedades_nuevas,
         #itemsagenda = itemsagenda,
         itemspropuestas = itemspropuestas,
-        galeriahackaton = galeriahackaton,
         index_de_testeo='indexDeTesteo' in request.endpoint)
 
 
@@ -292,6 +289,23 @@ def colaboraciones():
         presu_heads=dataset_headers,
         presu_data=dataset_rows_anon,
         fechas_epoch=fechas_epoch)
+
+
+@blueprint.route("/acciones", methods=['GET'])
+def actividades():
+    if current_app.config['_using_directus']:
+        import app.directus as directus
+        galeriahackaton = directus.dapi.get_items_hackaton()
+    else:
+        import app.content as content
+        galeriahackaton = content.items_hackaton()
+    return render_template(
+        'actividades.html',
+        navs = get_menu_navs(),
+        galeriahackaton = galeriahackaton,
+        dtextos = directus.dapi.get_textos_pagina('Home'),
+        dimgs = directus.dapi.get_imgs_pagina('Home'))
+
 
 
 for causa in accepted_causas.keys():
