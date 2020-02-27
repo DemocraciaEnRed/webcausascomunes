@@ -12,6 +12,8 @@ Ya que el programa depende del contenido de Directus, debe crear el archivo `.en
 - ejectuar `flask run`
 - debería haber hosteado en [http://localhost:5000]()
 
+También hay un script para ejecutar todo esto de una haciendo `source run.sh` 
+
 ---
 
 ### Documentación vieja 
