@@ -442,6 +442,27 @@ img {
 	}
 }
 
+
+/* Acciones */
+#acciones {
+	background-color: $sectionBgColorBlue;
+
+	.column-content{
+		.column-img {
+			height: 180px;
+		}
+
+		.column-title {
+			font-size: 3.3rem;
+		}
+
+		.btn{
+			padding: 0.65rem 1.8rem;
+		}
+	}
+}
+
+
 /* Candidates */
 
 .candidates {
@@ -586,6 +607,7 @@ img {
 	}
 }
 
+
 .agenda {
 	.list-group-item {
 		padding-left: 0;
@@ -634,39 +656,6 @@ img {
 			font-size: $font-size-base;
 			line-height: $line-height-medium;
 		}
-	}
-}
-
-/* wiki */
-#wikis {
-	position: relative;
-	background-color: $sectionBgColorBlue;
-
-    .wiki-btn {
-        display: block;
-        width: 190px;
-        margin-top: 1rem;
-	}
-
-	.section__subtitle {
-		color: $color-principal-azul;
-	}
-
-	/* para el parallax */
-	.text-center{z-index: $parallaxZIndexOnTop;}
-
-	#blueimp-gallery {
-	    color:white;
-	}
-	.blueimp-gallery > .description {
-	  position: absolute;
-	  top: 45px;
-	  left: 15px;
-	  color: #fff;
-	  display: none;
-	}
-	.blueimp-gallery-controls > .description {
-	  display: block;
 	}
 }
 

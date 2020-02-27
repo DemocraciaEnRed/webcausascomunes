@@ -471,6 +471,15 @@ img {
   .causas .flickity-enabled.is-draggable .flickity-viewport {
     cursor: auto; }
 
+#acciones {
+  background-color: #e4eefa; }
+  #acciones .column-content .column-img {
+    height: 180px; }
+    #acciones .column-content .column-title {
+      font-size: 3.3rem; }
+      #acciones .column-content .btn {
+        padding: 0.65rem 1.8rem; }
+
 .candidates {
   color: #2a4b8c;
   background-color: #f4f9ff !important; }
@@ -622,28 +631,6 @@ img {
         font-size: 1rem;
         line-height: 1.75rem;   }
 }
-
-#wikis {
-  position: relative;
-  background-color: #e4eefa; }
-  #wikis .wiki-btn {
-    display: block;
-    width: 190px;
-    margin-top: 1rem; }
-    #wikis .section__subtitle {
-      color: #2a4b8c; }
-      #wikis .text-center {
-        z-index: 1; }
-        #wikis #blueimp-gallery {
-          color: white; }
-          #wikis .blueimp-gallery > .description {
-            position: absolute;
-            top: 45px;
-            left: 15px;
-            color: #fff;
-            display: none; }
-            #wikis .blueimp-gallery-controls > .description {
-              display: block; }
 
 .activa {
   background-image: url('/static/img/manifiesto-background.svg');
