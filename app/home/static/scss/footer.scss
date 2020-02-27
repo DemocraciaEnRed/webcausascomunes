@@ -15,6 +15,17 @@ $color-copyright: #696969;
 	.card-body {
 		flex: 0;
     }
+
+  .card-title {
+		font-size: 1.45rem;
+		@media (min-width: $width-medium) {
+	    font-size: 1.85rem;
+		}
+  }
+
+	.submsg {
+		font-weight: bold;
+	}
 }
 
 footer a img {
