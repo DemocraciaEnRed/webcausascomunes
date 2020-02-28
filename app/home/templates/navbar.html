@@ -1,7 +1,7 @@
 <header>
     <!-- Ondita azul de background -->
     <img class="ondita-azul" src="{{ url_for('home.static', filename='img/home-background.svg') }}">
-    <nav id="navbar" class="navbar fixed navbar-expand-lg py-3 px-4">
+    <nav id="navbar" class="navbar fixed navbar-expand-lg py-3 px-3 px-lg-4">
 
         <!-- Menú hamburguesa mobile (solo en vista mobile) -->
         <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu"
@@ -9,81 +9,49 @@
             <img class="nav-menu-mobile" src="{{ url_for('home.static', filename='img/icons/menu_mobile.svg') }}" alt="Menu" />
         </button>
 
-        <!-- Loguito de la esquina -->
-        <a class="navbar-brand" href="{{ url_for('home.index') }}">
-            <img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor_chico.png') }}" alt="Causas Comunes" />
-        </a>
-
-		{% if novedades_nuevas %}
-        <!-- Novedades -->
-        <div id="dropdown-novedades" class="nav-item dropdown">
-            <button role="button" class="btn btn-novedades nav-link" data-toggle="dropdown" id="novedades-dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <span>¡Novedades!</span>
-                <i class="fa fa-bell"></i><sup>{{ novedades_nuevas|length }}</sup>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="novedades-dropdown">
-
-				{% for novedad in novedades_nuevas %}
-				{% set pagina_lower = novedad.get('pagina', '')|lower %}
-				
-				{% if novedad.get('titulo') %}
-                <a class="dropdown-item" href="/{{ pagina_lower }}#novedades">
-                    {% set icon_path = url_for('home.static', filename='img/icons/causas/'+ pagina_lower +'_icon_color.png')
-                    %}
-                    <img src="{{ icon_path }}" />
-                    <span class="hashtag text-color-{{ pagina_lower }} ml-3">#{{ novedad.get('pagina', '') }}</span>
-                    <span class="title d-block ml-1 mt-2 text-justify">{{ novedad.get('titulo') }}</span>
-                </a>
-				{% endif %}
-				
-				{% endfor %}
-				
-            </div>
+        <div class="navbar-brand">
+          <!-- Loguito de la esquina -->
+          <a href="{{ url_for('home.index') }}" class="mr-1 mr-md-3 ml-3 ml-md-0"><img src="{{ url_for('home.static', filename='img/logos/CC_LogoColor_chico.png') }}" alt="Causas Comunes" /></a>
+          <!--Instagram-->
+          <a target="_blank" rel="noopener noreferrer" class="ins-ic" href="https://www.instagram.com/causascomunes/" target="_blank">
+              <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_instagram_icon.png') }}"></a>
+          <!-- Facebook -->
+          <a target="_blank" rel="noopener noreferrer" class="fb-ic" href="https://www.facebook.com/Causas-Comunes-449280685874685/" target="_blank">
+              <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_facebook_icon.png') }}"></a>
+          <!-- Twitter -->
+          <a target="_blank" rel="noopener noreferrer" class="tw-ic" href="https://twitter.com/causas_comunes" target="_blank">
+              <img class="md-5 mx-2" src="{{ url_for('home.static', filename='img/icons/social_twitter_icon.png') }}"></a>
         </div>
-		{% endif %}
-		
-        <!-- Links  -->
+
+        <!-- Menú de navegación  -->
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ml-md-5">
                 <li class="nav-item">
-                    <a class="nav-link px-4 {{navs['index']}}" href="{{ url_for('home.index') }}">Inicio</a>
+                    <a class="nav-link px-3 px-lg-4 {{navs['index']}}" href="{{ url_for('home.index') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     {% if request.endpoint in ['home.index'] %}
-                    <a class="nav-link px-4 scrollTo {{navs['causas']}}" href="#causas">Causas</a>
+                    <a class="nav-link px-3 px-lg-4 scrollTo {{navs['causas']}}" href="#causas">Causas</a>
                     {% else %}
-                    <a class="nav-link px-4 {{navs['causas']}}" href="{{ url_for('home.index') }}#causas">Causas</a>
+                    <a class="nav-link px-3 px-lg-4 {{navs['causas']}}" href="{{ url_for('home.index') }}#causas">Causas</a>
                     {% endif %}
                 </li>
                 <li class="nav-item">
-                    {% if request.endpoint in ['home.index'] %}
-                    <a class="nav-link px-4 scrollTo {{navs['sumate']}}" href="#wikis">Sumate</a>
-                    {% else %}
-                    <a class="nav-link px-4 {{navs['sumate']}}" href="{{ url_for('home.index') }}#wikis">Sumate</a>
-                    {% endif %}
+                    <a class="nav-link px-3 px-lg-4" href="https://propuestas.causascomunes.org/">Propuestas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-4 {{navs['cuentas']}}" href="{{ url_for('home.cuentas') }}">Cuentas</a>
+                    <a class="nav-link px-3 px-lg-4" href="https://diagnostico.causascomunes.org/">Wikis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 px-lg-4 {{navs['cuentas']}}" href="{{ url_for('home.cuentas') }}">Cuentas claras</a>
                 </li>
                 <!--<li class="nav-item">
-                    <a class="nav-link px-4 {{navs['colaboraciones']}}" href="{{ url_for('home.colaboraciones') }}">Colaboraciones</a>
+                    <a class="nav-link px-3 px-lg-4 {{navs['colaboraciones']}}" href="{{ url_for('home.colaboraciones') }}">Colaboraciones</a>
                 </li>-->
                 <li class="nav-item">
-                    <a class="nav-link px-4 {{navs['contacto']}}" href="{{ url_for('home.contacto') }}">Contacto</a>
+                    <a class="nav-link px-3 px-lg-4 {{navs['contacto']}}" href="{{ url_for('home.contacto') }}">Contacto</a>
                 </li>
             </ul>
         </div>
-
-        <!-- Buscador de la página -->
-        <!-- <img src="{# create_img_src(dimgsnav['busqueda']) #}" alt="Buscar"/> -->
-        <!-- <div class="collapse navbar-collapse" id="navbarSearch">
-            <form class="form-inline my-2 my-lg-0">
-                <div class="form-group">
-                    <input class="form-control pr-4" type="text" placeholder="Buscar">
-                    <span class="fa fa-search form-control-icon"></span>
-                </div>
-            </form>
-        </div> -->
     </nav>
 </header>
