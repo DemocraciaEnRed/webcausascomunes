@@ -198,7 +198,7 @@ nav a.nav-link.active {
           float: right;
           background-color: white;
           border-radius: 1.25rem;
-          margin-right: 0; }
+          margin: 0 auto; }
           .navbar .navbar-brand img {
             height: 30px; }
 
