@@ -65,14 +65,22 @@ body {overflow-x: hidden;}
     overflow-y:hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
     min-height: 425px;
-    h1 {
-        padding: 6rem 0 3rem 0;
+    h1, h4 {
         color: white;
         font-weight: 900;
-		font-size: 3.5rem;
         text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.63);
+    }
+    h1 {
+      font-size: 3.5rem;
+      padding: 6rem 0 3rem 0;
+    }
+    h4 {
+      font-size: 1.4rem;
+      @media (min-width: $width-medium) {
+        font-size: 1.7rem;
+      }
     }
     @media (min-width: $width-medium) {
         min-height: 457px;
@@ -94,7 +102,7 @@ body {overflow-x: hidden;}
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     &::-webkit-scrollbar {
-        display: none; 
+        display: none;
     }
     @media(min-width: $width-medium){
         flex-wrap: nowrap;
@@ -118,13 +126,13 @@ body {overflow-x: hidden;}
         &.active {
 			font-weight: bold;
         }
-		&.text-color-vivienda:hover, &.text-color-vivienda.active { color: $color-vivienda; }		
-		&.text-color-transparencia:hover, &.text-color-transparencia.active { color: $color-transparencia; }		
-		&.text-color-trabajo:hover, &.text-color-trabajo.active { color: $color-trabajo; }		
-		&.text-color-genero:hover, &.text-color-genero.active { color: $color-genero; }		
-		&.text-color-drogas:hover, &.text-color-drogas.active { color: $color-drogas; }		
-		&.text-color-ciencia:hover, &.text-color-ciencia.active { color: $color-ciencia; }		
-        &.text-color-ambiente:hover, &.text-color-ambiente.active { color: $color-ambiente; }    
+		&.text-color-vivienda:hover, &.text-color-vivienda.active { color: $color-vivienda; }
+		&.text-color-transparencia:hover, &.text-color-transparencia.active { color: $color-transparencia; }
+		&.text-color-trabajo:hover, &.text-color-trabajo.active { color: $color-trabajo; }
+		&.text-color-genero:hover, &.text-color-genero.active { color: $color-genero; }
+		&.text-color-drogas:hover, &.text-color-drogas.active { color: $color-drogas; }
+		&.text-color-ciencia:hover, &.text-color-ciencia.active { color: $color-ciencia; }
+        &.text-color-ambiente:hover, &.text-color-ambiente.active { color: $color-ambiente; }
     }
     &.position-fixed {
         top: 72px;
@@ -139,7 +147,7 @@ body {overflow-x: hidden;}
 
 #definicion {
     padding-bottom: 5rem;
-	
+
 	.scrolly-row{
 		img {
 			border-radius: 20px 20px 0 0;
@@ -150,7 +158,7 @@ body {overflow-x: hidden;}
 				border-radius: 0 20px 20px 0;
 	        }
 		}
-		
+
 		.scrolly-text-wrapper{
 			width: 100%;
 	        @media (min-width: $width-large){
@@ -186,7 +194,7 @@ body {overflow-x: hidden;}
         }
     }
     .text {
-       font-size: $font-size-xsmall; 
+       font-size: $font-size-xsmall;
        color: #1d1d1d;
        margin-top: 1rem;
     }
@@ -251,7 +259,7 @@ body {overflow-x: hidden;}
     @media (min-width: $width-medium){
 		font-size: $font-size-medium !important;
     }
-	
+
 	.img-megafono-wrapper{
 		display: inline-block;
 		img{
@@ -273,7 +281,7 @@ body {overflow-x: hidden;}
 	    @media (min-width: $width-medium){
 	        text-align: left;
 	    }
-		
+
 		.img-wrapper {
 			display: inline;
 		    @media (min-width: $width-medium){
@@ -289,11 +297,11 @@ body {overflow-x: hidden;}
 		}
 		.span-wrapper{
 			span {
-				@include vertical-align();				
+				@include vertical-align();
 			}
 		}
 	}
-	
+
 	.row-carita{
 		@include border-radius(57px);
 		background-color: #E4EDFF;
@@ -303,7 +311,7 @@ body {overflow-x: hidden;}
 			img{
 				height: 45px;
 			    @media (max-width: $width-medium){
-					display: block;	
+					display: block;
 					margin: 0 auto !important;
 					margin-bottom: 0.5rem !important;
 			    }
@@ -315,11 +323,11 @@ body {overflow-x: hidden;}
 			}
 		}
 	}
-	
+
 	.row-boton > div{
 		margin: 0 auto;
-		a { 
-			font-weight: 600;			
+		a {
+			font-weight: 600;
 		    font-size: $font-size-small !important;
 		    @media (min-width: $width-medium){
 				font-size: $font-size-medium !important;
@@ -339,7 +347,7 @@ svg {
 		 @each $causa, $color in $colors-causas{
 	 		.svg-#{$causa} & {stroke: $color;}
 		}
-	}	
+	}
 }
 
 /*####################################################*/
