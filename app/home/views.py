@@ -93,7 +93,6 @@ def index():
         dtextos = directus.dapi.get_textos_pagina('Home')
         dimgs = directus.dapi.get_imgs_pagina('Home')
         itemspropuestas = directus.dapi.get_items_propuestas()
-        novedades_nuevas, novedades_destacadas = directus.dapi.get_items_novedades_index()
         #itemsagenda = directus.dapi.get_items_agenda('Home')
     else:
         import app.content as content
@@ -101,7 +100,6 @@ def index():
         dimgs = {}
         itemspropuestas = content.items_propuestas()
         #itemsagenda = {}
-        novedades_nuevas, novedades_destacadas = {}, {}
 
 
     return render_template(
@@ -109,8 +107,6 @@ def index():
         navs = get_menu_navs(),
         dtextos = dtextos,
         dimgs = dimgs,
-        itemsnovedades = novedades_destacadas,
-        novedades_nuevas = novedades_nuevas,
         #itemsagenda = itemsagenda,
         itemspropuestas = itemspropuestas,
         index_de_testeo='indexDeTesteo' in request.endpoint)
@@ -154,7 +150,6 @@ def causas_route():
     #itemstemas = directus.dapi.get_items_tema(causa)
     #itemsagenda = directus.dapi.get_items_agenda(causa)
     #itemscompromisos = directus.dapi.get_items_compromisos(causa)
-    itemsnovedades = directus.dapi.get_items_novedades(causa)
 
     variables = {
         'navs': get_menu_navs(),
@@ -166,7 +161,6 @@ def causas_route():
         #'itemstemas': itemstemas,
         #'itemsagenda': itemsagenda,
         #'itemscompromisos': itemscompromisos,
-        'itemsnovedades': itemsnovedades,
 
         'show_wiki_btn': True,
         'causa': causa,

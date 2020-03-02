@@ -1,6 +1,6 @@
 {% from '_imghelper.html' import create_img_src %}
 
-{% macro create_item_propuesta(itm, cant_novedades) -%}
+{% macro create_item_propuesta(itm) -%}
 {% set pagina = itm.get('pagina', '') | lower %}
 {% set title = itm.get('titulo', '') %}
 {% set text = itm.get('texto', '') %}
