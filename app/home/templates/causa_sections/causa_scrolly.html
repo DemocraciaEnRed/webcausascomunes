@@ -26,14 +26,12 @@
     </div>
 {% endfor %}
 
-<div class="footer-scrollys row">
+<div id="colaborar" class="footer-scrollys row">
     <div class="col-md-8 offset-md-2 text-center">
-            <h2>SUMATE A ESTA CAUSA:</h2>
-            <p class="my-4">Desde <b>Causas Comunes</b> te invitamos a que te sumes a mostrar la importancia de esta Causa, construir
-                propuestas y exigir compromisos por parte de les candidates.</p>
-            <a href="{{ dtextos.get('propuesta')['link'] }}" class="btn btn-lg btn-sumate btn-{{causa}}" role="button"
-                target="_blank">
-                Propuesta de ley</a>
+            <h2>SUMATE A ESTA CAUSA</h2>
+            <a class="btn btn-primary btn-lg btn-shadow text-center mt-3" href="{{ dtextos.get('propuesta')['link'] }}" target="_blank" rel="noopener noreferrer">
+                Leé más de este proyecto
+            </a>
     </div>
 </div>
 </div>
