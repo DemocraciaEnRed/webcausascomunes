@@ -7,21 +7,21 @@
             {% set columns = [
               {
               	"title":"PROYECTOS",
-              	"img":"img/checking.svg",
+              	"img":"img/icono-proyectos.svg",
               	"btn":"Sumá tu aporte",
               	"link":"https://propuestas.causascomunes.org/"
 
               },
               {
               	"title":"WIKIS",
-              	"img":"img/wikipedia.svg",
+              	"img":"img/icono-wikipedia.svg",
               	"btn":"Construí con nosotres",
               	"link":"https://diagnostico.causascomunes.org/"
 
               },
               {
               	"title":"ACCIONES",
-              	"img":"img/checking.svg",
+              	"img":"img/icono-acciones.svg",
               	"btn":"Sé parte",
               	"link":"/acciones"
 
@@ -31,7 +31,7 @@
               <div class="col-md-4">
                 <div class="column-content">
                     <img class="column-img img-fluid" src="{{ url_for('home.static', filename = col.img) }}">
-                    <span class="column-title d-block my-4">{{ col.title }}</span>
+                    <span class="column-title d-block mt-2 mb-4">{{ col.title }}</span>
                     <a href="{{ col.link }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
                       {{ col.btn }}
                     </a>
