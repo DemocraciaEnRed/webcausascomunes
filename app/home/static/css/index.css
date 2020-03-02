@@ -246,6 +246,7 @@ img {
   .manifiesto .video, .manifiesto .col-lg-6 {
     z-index: 1; }
     .manifiesto .manifiesto-frase {
+      color: #2a4b8c;
       z-index: 1;
       font-size: 40px; }
       @media (min-width: 768px) {

@@ -145,6 +145,7 @@ img {
 	/* para el parallax */
 	.video, .col-lg-6{z-index: $parallaxZIndexOnTop;}
 	.manifiesto-frase {
+		color: $color-principal-azul;
 		z-index: $parallaxZIndexOnTop;
 		font-size: 40px;
 		@media (min-width: $width-medium) {
