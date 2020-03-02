@@ -1,29 +1,25 @@
 {% from '_imghelper.html' import create_img_src %}
 
 {% macro create_item_propuesta(itm, cant_novedades) -%}
-{% set pagina = itm.get('pagina', '') %}
+{% set pagina = itm.get('pagina', '') | lower %}
 {% set title = itm.get('titulo', '') %}
 {% set text = itm.get('texto', '') %}
 
 {% if pagina %}
-    {% set url_anchor =  url_for('home.' + (pagina|string).lower()) %}
-    {# set icon_path =  url_for('home.static', filename = 'img/icons/causas/' + pagina|lower + '_icon.png') #}
-    {% set icon_path =  url_for('home.static', filename = 'img/index-causas-imgs/' + pagina|lower + '.jpg') %}
-    {% set icon_path =  url_for('home.static', filename = 'img/index-causas-imgs/ambiente.jpg') %}
+    {% set url_anchor =  url_for('home.' + pagina) %}
+    {# set icon_path =  url_for('home.static', filename = 'img/icons/causas/' + pagina + '_icon.png') #}
+    {% set icon_path =  url_for('home.static', filename = 'img/index-causas-imgs/scrolli-' + pagina + '.gif') %}
 {% else %}
     {% set url_anchor =  '#' %}
     {% set icon_path =  '' %}
 {% endif %}
 
-<div class="card card-{{ pagina|lower }} px-0 py-1 m-1 px-md-2 py-md-2 m-md-3">
-    <div class="card-body">
-        <a href="{{ url_anchor }}"><img class="mb-1 mb-md-3" src="{{ icon_path }}" /></a>
-        <a href="{{ url_anchor }}"><h4 class="title text-center">{{ title }}</h4></a>
-        <!-- <p class="text">{{ text }}</p> -->
-    </div>
-    <!-- {% if cant_novedades %}
-        <a class="btn" href="{{ url_anchor }}#novedades">Ver novedades</a>
-        <span class="icon-novedades"><i class="fa fa-bell"></i><sup>{{ cant_novedades }}</sup></span>
-    {% endif %} -->
+<div class="caja-causa col-12 col-md-6 p-4">
+    <a href="{{ url_anchor }}">
+      <div class="inner inner-{{ pagina }}">
+        <img class="scrolli" src="{{ icon_path }}" />
+        <h4 class="title title-{{ pagina }} px-2 py-1">{{ title }}</h4>
+      </div>
+    </a>
 </div>
 {%- endmacro %}
