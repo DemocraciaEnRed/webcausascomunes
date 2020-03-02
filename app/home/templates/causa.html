@@ -7,6 +7,8 @@
     <link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
     <link href="{{url_for('home.static', filename='css/index.css')}}" rel="stylesheet">
     <link href="{{url_for('home.static', filename='css/causa.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/scrolly.css')}}" rel="stylesheet">
+    <link href="{{url_for('home.static', filename='css/featherlight.min.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -16,6 +18,8 @@
 
     <!-- DEFINICION -->
     {% include 'causa_sections/causa_definicion.html' %}
+
+    {% include 'scrolly.html' %}
 
     <!-- COLABORAR -->
     {% include 'causa_sections/causa_colaborar.html' %}
@@ -40,4 +44,5 @@
     <script src="{{url_for('home.static', filename='js/lib/flickity.pkgd.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/navsecondary.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/causa.js')}}"></script>
+  	<script src="{{url_for('home.static', filename='js/lib/featherlight.min.js')}}"></script>
 {% endblock %}

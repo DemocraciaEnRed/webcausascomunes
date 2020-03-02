@@ -149,6 +149,7 @@ def causas_route():
     dtextoscausas = directus.dapi.get_textos_pagina('Causas')
     dtextos = directus.dapi.get_textos_pagina(causa)
     dimgs = directus.dapi.get_imgs_pagina(causa)
+    itemsscrolly = directus.dapi.get_items_scrolly(causa)
 
     #itemstemas = directus.dapi.get_items_tema(causa)
     #itemsagenda = directus.dapi.get_items_agenda(causa)
@@ -169,25 +170,11 @@ def causas_route():
 
         'show_wiki_btn': True,
         'causa': causa,
-        'nombre_causa': accepted_causas[causa]}
+        'nombre_causa': accepted_causas[causa],
+        'itemsscrolly': itemsscrolly}
 
     return render_template('causa.html', **variables)
 
-
-def causas_scrolly_route():
-    causa = _get_causa_from_endpoint()
-    if causa is None:
-        return redirect(url_for('home.index'))
-
-    import app.directus as directus
-    itemsscrolly = directus.dapi.get_items_scrolly(causa)
-
-    return render_template(
-        'scrolly.html',
-        navs=get_menu_navs(),
-        causa=causa,
-        nombre_causa= accepted_causas[causa],
-        itemsscrolly=itemsscrolly)
 
 
 @blueprint.route("/cuentas", methods=['GET'])
@@ -310,6 +297,5 @@ def actividades():
 
 for causa in accepted_causas.keys():
     blueprint.add_url_rule(f'/{causa}', endpoint=causa, view_func=causas_route)
-    blueprint.add_url_rule(f'/{causa}/scrolly', endpoint=f'{causa}_scrolly', view_func=causas_scrolly_route)
 
 blueprint.add_url_rule(f'/indexDeTesteo', endpoint='indexDeTesteo', view_func=index)

@@ -1,19 +1,5 @@
-{% extends '_base.html' %}
 
-{% from '_imghelper.html' import create_img_src %}
-
-{% block head %}
-    <title>Causas comunes</title>
-
-    <link href="{{url_for('home.static', filename='css/scrolly.css')}}" rel="stylesheet">
-    <link href="{{url_for('home.static', filename='css/featherlight.min.css')}}" rel="stylesheet">
-{% endblock %}
-
-{% block body %}
-
-<div class="padding-onditaazul">&nbsp;</div>
-
-<div class="container-fluid causa-{{causa}}">
+<div class="scrolly-container container-fluid causa-{{causa}}">
 {% for itm in itemsscrolly %}
     {% set imagen =  itm.get('imagen', '') %}
     {% set titulo =  itm.get('titulo', '') %}
@@ -41,42 +27,15 @@
 {% endfor %}
 
 <div class="footer-scrollys row">
-    <div class="col-md-8 offset-md-2 mt-3 text-center mb-2 mt-5">
+    <div class="col-md-8 offset-md-2 text-center">
             <h2>SUMATE A ESTA CAUSA:</h2>
-            <p>Desde <b>Causas Comunes</b> te invitamos a que te sumes a mostrar la importancia de esta Causa, construir
-                propuestas y exigir compromisos por parte de les candidates.. </p>
-                                <a href="https://diagnostico.causascomunes.org/index.php/{{causa}}" class="btn btn-sumate btn-{{causa}}" role="button"
-                                    target="_blank">
-                                    Formulario de Diagnóstico: {{nombre_causa}}</a>
+            <p class="my-4">Desde <b>Causas Comunes</b> te invitamos a que te sumes a mostrar la importancia de esta Causa, construir
+                propuestas y exigir compromisos por parte de les candidates.</p>
+            <a href="{{ dtextos.get('propuesta')['link'] }}" class="btn btn-lg btn-sumate btn-{{causa}}" role="button"
+                target="_blank">
+                Propuesta de ley</a>
     </div>
 </div>
-     <!--    <div class="row vertical-align scrolly-row callToAction">
-
-            <div class="col-lg-10 offset-lg-1">
-                <h1>SUMATE A ESTA CAUSA: {{causa}}</h1>
-                <div>
-                    <p>Desde <b>Causas Comunes</b> te invitamos a que te sumes a mostrar la importancia de esta Causa, construir
-                        propuestas y exigir compromisos por parte de les candidates.. </p>
-                    <a href="https://diagnostico.causascomunes.org/index.php/{{causa}}" class="btn btn-success btn-block" role="button" target="_blank">
-                        <i class="fas fa-edit"></i> Formulario de Diagnóstico: {{causa}}</a>
-                    <a href="https://www.instagram.com/causascomunes/" class="btn btn-secondary" role="button" target="_blank">
-                        <i class="fab fa-instagram"></i> @Causascomunes</a>
-                    <a href="https://www.facebook.com/Causas-Comunes-449280685874685/" class="btn btn-secondary" role="button" target="_blank">
-                        <i class="fab fa-facebook-f"></i> /Causascomunes</a>
-                    <a href="https://twitter.com/causas_comunes" class="btn btn-secondary" role="button" target="_blank">
-                        <i class="fab fa-twitter"></i> @Causascomunes</a>
-                    <a href="mailto:causascomunesx@gmail.com" class="btn btn-secondary" role="button" target="_blank">
-                        <i class="fas fa-envelope-square"></i> Mandar mail</a>
-                </div>
-            </div>
-        </div> -->
-
 </div>
-{##### include "footerScrolly.html"  ###}
 
 <!-- Los íconos que se ven son del footer -->
-{% endblock %}
-
-{% block scripts %}
-	<script src="{{url_for('home.static', filename='js/lib/featherlight.min.js')}}"></script>
-{% endblock %}
