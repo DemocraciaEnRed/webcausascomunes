@@ -283,10 +283,8 @@ img {
 }
   .causas .caja-causa .inner {
     border-radius: 20px; }
-    .causas .caja-causa .inner:hover h4 {
-      font-weight: bold; }
-      .causas .caja-causa .inner:hover img {
-        opacity: 0.3; }
+    .causas .caja-causa .inner:hover img {
+      opacity: 0.3; }
     .causas .caja-causa .inner.inner-vivienda {
       background-color: #194a9a; }
       .causas .caja-causa .inner.inner-transparencia {
@@ -311,23 +309,10 @@ img {
                       transform: translate(50%, -50%);
                       top: 50%;
                       right: 50%;
-                      background-color: white;
-                      border-radius: 10px;
-                      font-size: 1.5rem; }
-                      .causas .caja-causa .inner h4.title-vivienda {
-                        color: #194a9a; }
-                        .causas .caja-causa .inner h4.title-transparencia {
-                          color: #e61937; }
-                          .causas .caja-causa .inner h4.title-trabajo {
-                            color: #e71869; }
-                            .causas .caja-causa .inner h4.title-genero {
-                              color: #774997; }
-                              .causas .caja-causa .inner h4.title-drogas {
-                                color: #f9b112; }
-                                .causas .caja-causa .inner h4.title-ciencia {
-                                  color: #008daf; }
-                                  .causas .caja-causa .inner h4.title-ambiente {
-                                    color: #39a95e; }
+                      font-size: 2rem;
+                      color: white;
+                      font-weight: bolder;
+                      text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.63); }
 
 #acciones {
   background-color: #e4eefa; }

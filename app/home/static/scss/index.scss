@@ -194,7 +194,6 @@ img {
 
 			border-radius: $border-rad;
 			&:hover {
-				h4{	font-weight: bold; }
 				img{	opacity: 0.3; }
 			}
 
@@ -214,14 +213,10 @@ img {
 				transform: translate(50%,-50%);
 				top: 50%;
 				right: 50%;
-
-				background-color:white;
-				border-radius: 10px;
-				font-size: 1.5rem;
-
-			 	@each $causa, $color in $colors-causas{
-			 		&.title-#{$causa} {color: $color;}
-				}
+				font-size: 2rem;
+				color: white;
+				font-weight: bolder;
+				text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.63);
 			}
 		}
 	}
