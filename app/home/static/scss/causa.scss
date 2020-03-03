@@ -398,3 +398,32 @@ svg {
         }
     }
 }
+
+.floating-arrow{
+    position: fixed;
+    bottom: 0;
+    border-radius: 20px;
+    color:white;
+    opacity: 0.8;
+    @each $causa, $color in $colors-causas{
+       &.to-causa-#{$causa} {
+        background-color:$color;
+      }
+		}
+    font-size: 1.2rem;
+    @media (min-width: $width-medium) {
+      font-size: 1.5rem;
+    }
+
+    &:hover,&:focus,&:active{
+      opacity: 1;
+    }
+
+    &.floating-arrow-left{
+      left: 0;
+    }
+
+    &.floating-arrow-right{
+      right: 0;
+    }
+}

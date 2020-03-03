@@ -151,6 +151,22 @@ def causas_route():
     #itemsagenda = directus.dapi.get_items_agenda(causa)
     #itemscompromisos = directus.dapi.get_items_compromisos(causa)
 
+    causas_names = list(accepted_causas.keys())
+    current_causa_i = causas_names.index(causa)
+
+    if current_causa_i == 0:
+        causa_prev = causas_names[-1]
+        causa_next = causas_names[current_causa_i + 1]
+    elif current_causa_i == len(causas_names) - 1:
+        causa_prev = causas_names[current_causa_i - 1]
+        causa_next = causas_names[0]
+    else:
+        causa_prev = causas_names[current_causa_i - 1]
+        causa_next = causas_names[current_causa_i + 1]
+
+    causa_prev_tit = accepted_causas[causa_prev]
+    causa_next_tit = accepted_causas[causa_next]
+
     variables = {
         'navs': get_menu_navs(),
 
@@ -164,11 +180,14 @@ def causas_route():
 
         'show_wiki_btn': True,
         'causa': causa,
+        'causa_prev': causa_prev,
+        'causa_prev_tit': causa_prev_tit,
+        'causa_next': causa_next,
+        'causa_next_tit': causa_next_tit,
         'nombre_causa': accepted_causas[causa],
         'itemsscrolly': itemsscrolly}
 
     return render_template('causa.html', **variables)
-
 
 
 @blueprint.route("/cuentas", methods=['GET'])

@@ -507,3 +507,35 @@ body {
   .colaborar .col-sumate .img {
     margin-top: -15px;   }
 }
+
+.floating-arrow {
+  position: fixed;
+  bottom: 0;
+  border-radius: 20px;
+  color: white;
+  opacity: 0.8;
+  font-size: 1.2rem; }
+  .floating-arrow.to-causa-vivienda {
+    background-color: #194a9a; }
+    .floating-arrow.to-causa-transparencia {
+      background-color: #e61937; }
+      .floating-arrow.to-causa-trabajo {
+        background-color: #e71869; }
+        .floating-arrow.to-causa-genero {
+          background-color: #774997; }
+          .floating-arrow.to-causa-drogas {
+            background-color: #f9b112; }
+            .floating-arrow.to-causa-ciencia {
+              background-color: #008daf; }
+              .floating-arrow.to-causa-ambiente {
+                background-color: #39a95e; }
+                @media (min-width: 768px) {
+                  .floating-arrow {
+                    font-size: 1.5rem;   }
+}
+                  .floating-arrow:hover, .floating-arrow:focus, .floating-arrow:active {
+                    opacity: 1; }
+                    .floating-arrow.floating-arrow-left {
+                      left: 0; }
+                      .floating-arrow.floating-arrow-right {
+                        right: 0; }

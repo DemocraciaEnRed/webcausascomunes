@@ -42,7 +42,7 @@ class DevelopmentConfig(BaseConfig):
 
     USE_SCSS = True
 
-    SERVER_HOST = 'localhost'
+    SERVER_HOST = '0.0.0.0'
     SERVER_PORT = 5000
 
 
