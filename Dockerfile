@@ -3,8 +3,9 @@ FROM alpine:3.9
 RUN apk add --no-cache uwsgi-python3
 
 RUN pip3 install --no-cache-dir flask flask-scss requests markdown2 python-dotenv
-RUN pip3 install --no-cache-dir google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
+# paquetes viejos usados para google sheets api
+#RUN pip3 install --no-cache-dir google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
 COPY . /app
 
