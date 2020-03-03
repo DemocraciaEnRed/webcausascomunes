@@ -516,19 +516,19 @@ body {
   opacity: 0.8;
   font-size: 1.2rem; }
   .floating-arrow.to-causa-vivienda {
-    background-color: #194a9a; }
+    color: #194a9a; }
     .floating-arrow.to-causa-transparencia {
-      background-color: #e61937; }
+      color: #e61937; }
       .floating-arrow.to-causa-trabajo {
-        background-color: #e71869; }
+        color: #e71869; }
         .floating-arrow.to-causa-genero {
-          background-color: #774997; }
+          color: #774997; }
           .floating-arrow.to-causa-drogas {
-            background-color: #f9b112; }
+            color: #f9b112; }
             .floating-arrow.to-causa-ciencia {
-              background-color: #008daf; }
+              color: #008daf; }
               .floating-arrow.to-causa-ambiente {
-                background-color: #39a95e; }
+                color: #39a95e; }
                 @media (min-width: 768px) {
                   .floating-arrow {
                     font-size: 1.5rem;   }
@@ -539,3 +539,9 @@ body {
                       left: 0; }
                       .floating-arrow.floating-arrow-right {
                         right: 0; }
+                        .floating-arrow img {
+                          width: 60px; }
+                          @media (min-width: 768px) {
+                            .floating-arrow img {
+                              width: 70px;   }
+}

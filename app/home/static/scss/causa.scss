@@ -407,7 +407,7 @@ svg {
     opacity: 0.8;
     @each $causa, $color in $colors-causas{
        &.to-causa-#{$causa} {
-        background-color:$color;
+        color:$color;
       }
 		}
     font-size: 1.2rem;
@@ -425,5 +425,12 @@ svg {
 
     &.floating-arrow-right{
       right: 0;
+    }
+
+    img {
+      width: 60px;
+      @media (min-width: $width-medium) {
+        width: 70px;
+      }
     }
 }
