@@ -9,13 +9,13 @@ header {
         display:none;
         top: 0;
         right: 0;
-        width: 75%;
+        width: 80%;
         z-index: -1;
         @media (min-width: $width-large) {
             display: block;
         }
         @media (min-width: $width-xlarge) {
-        width: 70%;
+        width: 75%;
         }
     }
 }

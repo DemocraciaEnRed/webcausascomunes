@@ -8,8 +8,6 @@
 	{% if index_de_testeo %}
     <link href="{{url_for('home.static', filename='css/index-parallax.css')}}" rel="stylesheet">
     {% endif %}
-	<link href="{{url_for('home.static', filename='css/flickity.css')}}" rel="stylesheet">
-    <link href="{{url_for('home.static', filename='css/blueimp-gallery.min.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -22,17 +20,8 @@
     <!-- CAUSAS -->
     {% include 'index_sections/index_causas.html' %}
 
-    <!-- WIKI -->
-    {% include 'index_sections/index_wiki.html' %}
-
-    <!-- PROPUESTAS -->
-    {% include 'index_sections/index_propuestas.html' %}
-
-    <!-- NOVEDADES -->
-    {# include 'index_sections/index_novedades.html' #}
-
-    <!-- HACKATON -->
-    {% include 'index_sections/index_hackaton.html' %}
+    <!-- ACCIONES -->
+    {% include 'index_sections/index_acciones.html' %}
 
     <!-- NEWSLETTER -->
     {# include 'index_sections/index_newsletter.html' #}
@@ -44,8 +33,6 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="{{url_for('home.static', filename='js/lib/flickity.pkgd.min.js')}}"></script>
-    <script src="{{url_for('home.static', filename='js/lib/blueimp-gallery.min.js')}}"></script>
     <script src="{{url_for('home.static', filename='js/index.js')}}"></script>
 	{% if index_de_testeo %}
     <script src="{{url_for('home.static', filename='js/lib/rellax.min.js')}}"></script>

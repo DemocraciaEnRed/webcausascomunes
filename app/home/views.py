@@ -25,7 +25,7 @@ accepted_causas = {
 
 
 def get_menu_navs():
-    navs = {'index': '', 'causas': '', 'sumate': '', 'cuentas': '', 'colaboraciones': '', 'contacto': ''}
+    navs = {'index': '', 'causas': '', 'cuentas': '', 'colaboraciones': '', 'contacto': ''}
     if request.endpoint:
         endpoint = request.endpoint.split('.')[1] if '.' in request.endpoint else request.endpoint
         if endpoint in accepted_causas.keys():
@@ -93,29 +93,22 @@ def index():
         dtextos = directus.dapi.get_textos_pagina('Home')
         dimgs = directus.dapi.get_imgs_pagina('Home')
         itemspropuestas = directus.dapi.get_items_propuestas()
-        novedades_nuevas, novedades_destacadas = directus.dapi.get_items_novedades_index()
         #itemsagenda = directus.dapi.get_items_agenda('Home')
-        galeriahackaton = directus.dapi.get_items_hackaton()
     else:
         import app.content as content
         dtextos = content.textos_home()
         dimgs = {}
         itemspropuestas = content.items_propuestas()
         #itemsagenda = {}
-        galeriahackaton = content.items_hackaton()
-        novedades_nuevas, novedades_destacadas = {}, {}
 
 
     return render_template(
         'index.html',
         navs = get_menu_navs(),
         dtextos = dtextos,
-        dimgs = dimgs,        
-        itemsnovedades = novedades_destacadas,
-        novedades_nuevas = novedades_nuevas,
+        dimgs = dimgs,
         #itemsagenda = itemsagenda,
         itemspropuestas = itemspropuestas,
-        galeriahackaton = galeriahackaton,        
         index_de_testeo='indexDeTesteo' in request.endpoint)
 
 
@@ -152,11 +145,27 @@ def causas_route():
     dtextoscausas = directus.dapi.get_textos_pagina('Causas')
     dtextos = directus.dapi.get_textos_pagina(causa)
     dimgs = directus.dapi.get_imgs_pagina(causa)
+    itemsscrolly = directus.dapi.get_items_scrolly(causa)
 
     #itemstemas = directus.dapi.get_items_tema(causa)
     #itemsagenda = directus.dapi.get_items_agenda(causa)
     #itemscompromisos = directus.dapi.get_items_compromisos(causa)
-    itemsnovedades = directus.dapi.get_items_novedades(causa)
+
+    causas_names = list(accepted_causas.keys())
+    current_causa_i = causas_names.index(causa)
+
+    if current_causa_i == 0:
+        causa_prev = causas_names[-1]
+        causa_next = causas_names[current_causa_i + 1]
+    elif current_causa_i == len(causas_names) - 1:
+        causa_prev = causas_names[current_causa_i - 1]
+        causa_next = causas_names[0]
+    else:
+        causa_prev = causas_names[current_causa_i - 1]
+        causa_next = causas_names[current_causa_i + 1]
+
+    causa_prev_tit = accepted_causas[causa_prev]
+    causa_next_tit = accepted_causas[causa_next]
 
     variables = {
         'navs': get_menu_navs(),
@@ -168,29 +177,17 @@ def causas_route():
         #'itemstemas': itemstemas,
         #'itemsagenda': itemsagenda,
         #'itemscompromisos': itemscompromisos,
-        'itemsnovedades': itemsnovedades,
 
         'show_wiki_btn': True,
         'causa': causa,
-        'nombre_causa': accepted_causas[causa]}
+        'causa_prev': causa_prev,
+        'causa_prev_tit': causa_prev_tit,
+        'causa_next': causa_next,
+        'causa_next_tit': causa_next_tit,
+        'nombre_causa': accepted_causas[causa],
+        'itemsscrolly': itemsscrolly}
 
     return render_template('causa.html', **variables)
-
-
-def causas_scrolly_route():
-    causa = _get_causa_from_endpoint()
-    if causa is None:
-        return redirect(url_for('home.index'))
-
-    import app.directus as directus
-    itemsscrolly = directus.dapi.get_items_scrolly(causa)
-
-    return render_template(
-        'scrolly.html',
-        navs=get_menu_navs(),
-        causa=causa,
-        nombre_causa= accepted_causas[causa],
-        itemsscrolly=itemsscrolly)
 
 
 @blueprint.route("/cuentas", methods=['GET'])
@@ -254,7 +251,7 @@ def colaboraciones():
     else:
         # cols = datos.get_cols_from_csv(blueprint.static_folder + '/datos-presupuesto.csv')
         dataset_rows = dataset_colaboraciones.get_rows_from_csv()
-        
+
     # me guardo los aportantes y formateo las fechas
     aportantes = []
     aportantes_i = dataset_headers.index('aportante')
@@ -263,17 +260,17 @@ def colaboraciones():
     for row in dataset_rows:
         if row[aportantes_i] and row[aportantes_i] not in aportantes:
             aportantes.append(row[aportantes_i])
-            
+
         try:
             date = datetime.strptime(row[fecha_i], '%B')
             date = date.strftime('%s')
         except:
             date = ''
-        fechas_epoch.append(date)   
-    
+        fechas_epoch.append(date)
+
     # capitalizo los headers
     dataset_headers = [h.capitalize() for h in dataset_headers if h != 'aportante']
-    
+
     # saco los aportantes del dataset
     dataset_rows_anon = []
     for row in dataset_rows:
@@ -294,8 +291,24 @@ def colaboraciones():
         fechas_epoch=fechas_epoch)
 
 
+@blueprint.route("/acciones", methods=['GET'])
+def actividades():
+    if current_app.config['_using_directus']:
+        import app.directus as directus
+        galeriahackaton = directus.dapi.get_items_hackaton()
+    else:
+        import app.content as content
+        galeriahackaton = content.items_hackaton()
+    return render_template(
+        'actividades.html',
+        navs = get_menu_navs(),
+        galeriahackaton = galeriahackaton,
+        dtextos = directus.dapi.get_textos_pagina('Home'),
+        dimgs = directus.dapi.get_imgs_pagina('Home'))
+
+
+
 for causa in accepted_causas.keys():
     blueprint.add_url_rule(f'/{causa}', endpoint=causa, view_func=causas_route)
-    blueprint.add_url_rule(f'/{causa}/scrolly', endpoint=f'{causa}_scrolly', view_func=causas_scrolly_route)
 
 blueprint.add_url_rule(f'/indexDeTesteo', endpoint='indexDeTesteo', view_func=index)

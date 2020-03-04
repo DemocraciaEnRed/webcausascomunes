@@ -1,0 +1,39 @@
+
+<div class="scrolly-container container-fluid causa-{{causa}}">
+{% for itm in itemsscrolly %}
+    {% set imagen =  itm.get('imagen', '') %}
+    {% set titulo =  itm.get('titulo', '') %}
+    {% set texto =  itm.get('texto', '') %}
+    {% set css_class =  itm.get('css_class', '') %}
+
+    {# loop.index arranca en 1 #}
+    {% if loop.index % 2 == 0 %}
+        {% set col_img_order_class = 'order-last' %}
+    {% else %}
+        {% set col_img_order_class = '' %}
+    {% endif %}
+
+    <div class="row vertical-align scrolly-row {{css_class}}">
+        <div class="col-lg-6 imgMain {{col_img_order_class}} ">
+            <div class="imgContainer">
+                <a href="{{ create_img_src(imagen) }}" data-featherlight="image"><img src="{{ create_img_src(imagen) }}" class="img-fluid scrolly-img" alt="{{ titulo  }}"></a>
+             </div>
+        </div>
+        <div class="col-lg-6">
+            <h1>{{ titulo  }}</h1>
+            <div>{{ texto | safe }}</div>
+        </div>
+    </div>
+{% endfor %}
+
+<div id="colaborar" class="footer-scrollys row">
+    <div class="col-md-8 offset-md-2 text-center">
+            <h2>SUMATE A ESTA CAUSA</h2>
+            <a class="btn btn-primary btn-lg btn-shadow text-center mt-3" href="{{ dtextos.get('propuesta')['link'] }}" target="_blank" rel="noopener noreferrer">
+                Leé más de este proyecto
+            </a>
+    </div>
+</div>
+</div>
+
+<!-- Los íconos que se ven son del footer -->

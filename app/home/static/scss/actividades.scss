@@ -1,0 +1,30 @@
+
+@import 'vars';
+
+/* GALERIA */
+.galeria {
+  padding-top: 90px;
+  @media (min-width: $width-medium) {
+    padding-top: 210px;
+  }
+  @media (min-width: $width-large) {
+    padding-top: 260px;
+  }
+  margin-bottom: 0;
+
+  /*background-color: $white;
+  background-image: url('/static/img/manifiesto-background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  background-color: #f4f9ff;
+
+	p {
+		color: $color-texto-light;
+		font-size: $font-size-xsmall;
+		line-height: $line-height-small;
+		@media (min-width: $width-medium) {
+			font-size: $font-size-base;
+			line-height: $line-height-medium;
+		}
+	}
+}

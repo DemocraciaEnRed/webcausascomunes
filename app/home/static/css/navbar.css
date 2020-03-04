@@ -148,7 +148,7 @@ header {
     display: none;
     top: 0;
     right: 0;
-    width: 75%;
+    width: 80%;
     z-index: -1; }
     @media (min-width: 992px) {
       header .ondita-azul {
@@ -156,7 +156,7 @@ header {
 }
       @media (min-width: 1200px) {
         header .ondita-azul {
-          width: 70%;   }
+          width: 75%;   }
 }
 
 nav a.nav-link.active {

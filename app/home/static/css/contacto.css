@@ -59,32 +59,35 @@
                                     display: flex;
                                     align-items: center; }
 
-                                    body {
-                                      font: 100% 'Barlow', sans-serif;
-                                      color: black; }
+                                    .text-color-primario {
+                                      color: #2a4b8c; }
 
-                                      .padding-onditaazul {
-                                        padding-top: 12vw; }
+                                      body {
+                                        font: 100% 'Barlow', sans-serif;
+                                        color: black; }
 
-                                        .card {
-                                          border-radius: 20px;
-                                          border: none; }
+                                        .padding-onditaazul {
+                                          padding-top: 12vw; }
 
-                                          .card-with-shadow {
-                                            box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15); }
+                                          .card {
+                                            border-radius: 20px;
+                                            border: none; }
 
-                                            .card-title {
-                                              font-size: 1.15rem; }
+                                            .card-with-shadow {
+                                              box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15); }
 
-                                              .btn-primary {
-                                                border-radius: 2rem;
-                                                background-color: #2a4b8c;
-                                                border-color: #2a4b8c;
-                                                color: #ffffff;
-                                                border-width: 3px; }
-                                                .btn-primary:hover {
-                                                  background-color: #ffffff;
-                                                  color: #2a4b8c; }
+                                              .card-title {
+                                                font-size: 1.15rem; }
+
+                                                .btn-primary {
+                                                  border-radius: 2rem;
+                                                  background-color: #2a4b8c;
+                                                  border-color: #2a4b8c;
+                                                  color: #ffffff;
+                                                  border-width: 3px; }
+                                                  .btn-primary:hover {
+                                                    background-color: #ffffff;
+                                                    color: #2a4b8c; }
 
 .btn-primary-inverted {
   background-color: #ffffff;

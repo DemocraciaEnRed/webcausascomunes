@@ -1,0 +1,43 @@
+<section id="acciones" class="section jumbotron jumbotron-fluid">
+    <div class="container">
+        <!--<div class="row justify-content-center ">
+            <h2 class="section__title">Proyectos de Causas Comunes</h2>
+        </div>-->
+        <div class="row text-center">
+            {% set columns = [
+              {
+              	"title":"PROYECTOS",
+              	"img":"img/icono-proyectos.svg",
+              	"btn":"Sumá tu aporte",
+              	"link":"https://propuestas.causascomunes.org/"
+
+              },
+              {
+              	"title":"WIKIS",
+              	"img":"img/icono-wikipedia.svg",
+              	"btn":"Construí con nosotres",
+              	"link":"https://diagnostico.causascomunes.org/"
+
+              },
+              {
+              	"title":"ACCIONES",
+              	"img":"img/icono-acciones.svg",
+              	"btn":"Sé parte",
+              	"link":"/acciones"
+
+              }
+            ] %}
+            {% for col in columns %}
+              <div class="col-md-4 my-5">
+                <div class="column-content">
+                    <img class="column-img img-fluid" src="{{ url_for('home.static', filename = col.img) }}">
+                    <span class="column-title d-block mt-2 mb-4">{{ col.title }}</span>
+                    <a href="{{ col.link }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+                      {{ col.btn }}
+                    </a>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

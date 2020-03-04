@@ -1,0 +1,17 @@
+<a href="{{ url_for('home.' + causa_prev) }}">
+  <div class="floating-arrow floating-arrow-left to-causa-{{ causa_prev }} text-center m-0 m-md-3 py-2 px-2">
+    <div class="px-2">
+      <
+      <img src="{{ url_for('home.static', filename='img/icons/causas/' + causa_prev + '_icon_color_fill.png') }}" alt="">
+    </div>
+  </div>
+</a>
+
+<a href="{{ url_for('home.' + causa_next) }}">
+  <div class="floating-arrow floating-arrow-right to-causa-{{ causa_next }} text-center m-0 m-md-3 py-2 px-2">
+    <div class="px-2">
+      <img src="{{ url_for('home.static', filename='img/icons/causas/' + causa_next + '_icon_color_fill.png') }}" alt="">
+      >
+    </div>
+  </div>
+</a>

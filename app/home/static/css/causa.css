@@ -198,15 +198,22 @@ body {
   background-size: cover;
   background-position: center;
   min-height: 425px; }
-  .portada-seccion h1 {
-    padding: 6rem 0 3rem 0;
+  .portada-seccion h1, .portada-seccion h4 {
     color: white;
     font-weight: 900;
-    font-size: 3.5rem;
     text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.63); }
-    @media (min-width: 768px) {
-      .portada-seccion {
-        min-height: 457px;   }
+    .portada-seccion h1 {
+      font-size: 3.5rem;
+      padding: 6rem 0 3rem 0; }
+      .portada-seccion h4 {
+        font-size: 1.4rem; }
+        @media (min-width: 768px) {
+          .portada-seccion h4 {
+            font-size: 1.7rem;   }
+}
+  @media (min-width: 768px) {
+    .portada-seccion {
+      min-height: 457px;   }
 }
 
 .nav-secondary {
@@ -501,5 +508,40 @@ body {
     margin-top: -15px;   }
 }
 
-.newsletter {
-  background-image: unset; }
+.floating-arrow {
+  position: fixed;
+  bottom: 0;
+  border-radius: 20px;
+  color: white;
+  opacity: 0.8;
+  font-size: 1.2rem; }
+  .floating-arrow.to-causa-vivienda {
+    color: #194a9a; }
+    .floating-arrow.to-causa-transparencia {
+      color: #e61937; }
+      .floating-arrow.to-causa-trabajo {
+        color: #e71869; }
+        .floating-arrow.to-causa-genero {
+          color: #774997; }
+          .floating-arrow.to-causa-drogas {
+            color: #f9b112; }
+            .floating-arrow.to-causa-ciencia {
+              color: #008daf; }
+              .floating-arrow.to-causa-ambiente {
+                color: #39a95e; }
+                @media (min-width: 768px) {
+                  .floating-arrow {
+                    font-size: 1.5rem;   }
+}
+                  .floating-arrow:hover, .floating-arrow:focus, .floating-arrow:active {
+                    opacity: 1; }
+                    .floating-arrow.floating-arrow-left {
+                      left: 0; }
+                      .floating-arrow.floating-arrow-right {
+                        right: 0; }
+                        .floating-arrow img {
+                          width: 60px; }
+                          @media (min-width: 768px) {
+                            .floating-arrow img {
+                              width: 70px;   }
+}

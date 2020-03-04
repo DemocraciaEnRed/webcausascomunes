@@ -161,13 +161,13 @@ class Cmds:
         #for c in causas_ids_no_trabaj:
         #    print(c, api_txt_add(c, 'Compromisos - Texto', link, 1))
         print(api_txt_add(12, 'Compromisos - Texto', '''En la última semana hubo intercambios en torno al sistema mediante el cual se realizará el escrutinio en las PASO. Es que el gobierno mostró a los partidos un tutorial sobre cómo funciona el software de SmartMatic, pero no entregó el código fuente, ya que pertenece a una empresa privada. A partir de esto, se generó un conflicto en torno a dejar el acto electoral en manos de empresas y acerca de la transparencia del proceso.
-    El candidato a presidente Alberto Fernández (Frente de Todos) presentó un amparo para apartar a SmartMatic de la elección y volver al método anterior. Sostienen que si el gobierno no entregó a revisión este software hace un mes cuando debía hacerlo, es porque sabe que es vulnerable. Por su parte, el Ministro del Interior Rogelio Frigerio (Cambiemos) rápidamente desmintió que haya posibilidad de fraude con este sistema. Más allá del fraude, se advierte que puede haber errores en el conteo provisorio. 
+    El candidato a presidente Alberto Fernández (Frente de Todos) presentó un amparo para apartar a SmartMatic de la elección y volver al método anterior. Sostienen que si el gobierno no entregó a revisión este software hace un mes cuando debía hacerlo, es porque sabe que es vulnerable. Por su parte, el Ministro del Interior Rogelio Frigerio (Cambiemos) rápidamente desmintió que haya posibilidad de fraude con este sistema. Más allá del fraude, se advierte que puede haber errores en el conteo provisorio.
     Podés leer el informe completo de la Fundación Vía Libre en donde se detallan las vulnerabilidades del sistema y se solicita a las autoridades electorales que se comprometan a resguardar la seguridad del escrutinio.''', 1))
-        print(api_txt_add(4, 'Compromisos - Texto', '''Hoy se cumple un año del rechazo al proyecto de Ley de Interrupción Voluntaria del Embarazo en el Senado. Podés ver cómo votaron les senadores el año pasado en la página de Activá el Congreso. También podés dejarles mensajes por esa vía. 
+        print(api_txt_add(4, 'Compromisos - Texto', '''Hoy se cumple un año del rechazo al proyecto de Ley de Interrupción Voluntaria del Embarazo en el Senado. Podés ver cómo votaron les senadores el año pasado en la página de Activá el Congreso. También podés dejarles mensajes por esa vía.
     Cuando repasamos el posicionamiento de lxs candidatxs a presidente encontramos que solo tres de ellxs están a favor del aborto legal, seguro y gratuito: Alberto Fernández, Nicolás del Caño (FIT - Unidad) y Manuela Castañeira (Nuevo MAS). Los demás candidatos están en contra. Biondini (Frente Patriota) y Gómez Centurión (Frente Nos) incluso centraron su spots de campaña en su posición “pro-vida”. El único dudoso es José Luis Espert (Despertar), que en varias entrevistas se manifestó a favor, pero a la vez se opone a que sea gratuito, uno de los ejes de la Campaña. Además señala que le parece un tema “menor”.
     Si querés más información, en FeminIndex encontrás la posición y compromisos actuales con los derechos sexuales y reproductivos de unes 80 candidates. ''', 1))
         print(api_txt_add(7, 'Compromisos - Texto', '''El sábado pasado, activistas de Greenpeace aprovecharon un acto oficial en La Rural, al que asistieron Macri y Vidal, entre otres, para llamar la atención sobre la desforestación. Desplegaron carteles justo enfrente del Presidente que decían Basta de Desmontes. Desde la ONG aseguraron que la ganadería intensiva está destruyendo los bosques a gran velocidad y que esto redunda en situaciones como la del yaguareté, que está en extinción y solo quedan 20 especímenes en el Gran Chaco.
-    La agenda ambiental empezó a cobrar visibilidad gracias a manifestaciones cada vez más recurrentes. En esta nota de La Nación lxs candidatxs responden cuál es el lugar que ocupa este tema en sus plataformas. 
+    La agenda ambiental empezó a cobrar visibilidad gracias a manifestaciones cada vez más recurrentes. En esta nota de La Nación lxs candidatxs responden cuál es el lugar que ocupa este tema en sus plataformas.
     En general, todes hablan de la importancia del tema para el futuro con excepción de José Luis Espert, quien dice que no son muy "obsesivos con eso" y que se puede conjugar fácilmente desarrollo y medio ambiente. Alberto Fernández expresa su preocupación "porque es nuestra casa". Roberto Lavagna (Consenso Federal) plantea que para la juventud es una cuestión de gran importancia así como para su partido. Sin embargo, les únicxs candidatxs que hablan del desmonte, el fracking, la megaminería y el uso de agrotóxicos son Nicolás Del Caño (ver SPOT) y Manuela Castañeira. Vaca Muerta es parte del programa económico de todos los partidos, sin embargo sigue abierta la incógnita de cómo se puede pensar en este camino en el marco de una Crisis Climática.''', 1))
         print(api_txt_add(11, 'Compromisos - Texto', '''La marihuana entró también al debate de campaña. Nicolás del Caño, Manuela Castañeira, José Luis Espert y Alberto Fernández  se muestran a favor de la despenalización. Roberto Lavagna mantiene una posición abierta: "Yo creo que es un debate que vale la pena. Me gustaría que cuando tengamos que decidir, por lo menos tengamos un poco más de información".
     María Eugenia Vidal, candidata a gobernadora de la Provincia de Buenos Aires por Juntos por el Cambio, dijo en una entrevista reciente: "Entiendo que puede haber sectores que tengan libertad de decidir, en el caso de la marihuana, fumarse un porro. En algún nivel socioeconómico distinto. Ahora, cuando yo voy a los barrios más pobres de la provincia, el mensaje tiene que ser uno solo porque la marihuana, al igual que el alcohol y el paco, son drogas de inicio". Desde su perspectiva no es momento de dar ese debate. Por su parte, Cristian Ritondo (Juntos por el Cambio) dijo que está de acuerdo en la penalización. ''', 1))
@@ -175,7 +175,7 @@ class Cmds:
         '''for a in sys.argv:
             if a == '-':
                 ret_err('El argumento de ubicación debe estar entre comillas si tiene guión "-", o con las palabras pegadas')
-    
+
         pag_arg = sys.argv[2]
         if pag_arg.isnumeric():
             pag_id = int(pag_arg)
@@ -192,28 +192,25 @@ class Cmds:
         ubi_arg = sys.argv[3].title()
         if '-' in ubi_arg and ' - ' not in ubi_arg:
             ubi_arg = ubi_arg.replace('-', ' - ')
-    
+
         print(api_img_add(pag_id, ubi_arg))'''
 
     @staticmethod
     def txtcausasadd():
         # comentar esta línea y reescribir el código para usar este comando
-        ret_err('Este comando fue usado en el pasado, se debe reescribir darle un significado')
+        #ret_err('Este comando fue usado en el pasado, se debe reescribir darle un significado')
         load_pags()
         causas = [
-            'genero',
-            'ambiente',
-            'ciencia',
-            'vivienda',
-            'transparencia',
-            'drogas',
-            'trabajo']
-        for c in causas:
-            if c == 'genero':
-                link = 'https://diagnostico.causascomunes.org/index.php/Género'
-            else:
-                link = 'https://diagnostico.causascomunes.org/index.php/' + c.title()
-            print(c, api_txt_add(pags[c], 'Definicion - LinkWiki', link, 0))
+            { 'nombre': 'genero', 'data': 'Que los cuerpos no sean factores de desigualdad.'},
+            { 'nombre': 'ambiente', 'data': 'El cuidado del ambiente no es un lujo ni se puede postergar, es una necesidad urgente.'},
+            #{ 'nombre': 'ciencia', 'data': ''},
+            { 'nombre': 'vivienda', 'data': 'La vivienda es un derecho, no una inversión para especular.'},
+            { 'nombre': 'transparencia', 'data': 'Transformemos las relaciones de poder.'},
+            { 'nombre': 'drogas', 'data': 'Por una reforma profunda en las políticas de drogas.'},
+            { 'nombre': 'trabajo', 'data': 'Los derechos laborales y las nuevas tecnologías, un conflicto abierto en un país precarizado.'}
+        ]
+        for causa in causas:
+            print(causa['nombre'], api_txt_add(pags[causa['nombre']], 'Portada - Subtitulo', causa['data'], 0))
 
     @staticmethod
     def scrollyadd():
