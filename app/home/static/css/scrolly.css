@@ -432,3 +432,10 @@
                                                 border-color: #e71869; }
                                                 .scrolly-container .btn-trabajo:hover {
                                                   color: #e71869; }
+
+.scrolly-row h1 {
+  font-size: 2rem; }
+  @media (min-width: 768px) {
+    .scrolly-row h1 {
+      font-size: 2.5rem;   }
+}

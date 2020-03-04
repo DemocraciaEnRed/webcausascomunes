@@ -392,3 +392,10 @@
   	color: #e71869;
   }
 }
+
+.scrolly-row h1 {
+	font-size: 2rem;
+	@media (min-width: $width-medium){
+	    font-size: 2.5rem;
+	}
+}
