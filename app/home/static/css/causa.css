@@ -546,3 +546,6 @@ body {
                             .floating-arrow img {
                               width: 70px;   }
 }
+
+.change .btn {
+  margin: 0 auto; }

@@ -1,0 +1,23 @@
+{% from '_imghelper.html' import create_img_src %}
+
+{% set links = {
+    'genero': 'https://www.change.org/menstruarsiniva',
+    'trabajo': 'https://www.change.org/derechoslaborales',
+    'vivienda': 'https://www.change.org/alquileresmasjustos',
+    'ambiente': 'https://www.change.org/agrotoxicos',
+    'transparencia': 'https://www.change.org/leydelobby',
+    'drogas': ''
+} %}
+{% set link = links[causa] %}
+{% if link %}
+<section class="change bg-color-solido section jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h2 class="section__title">Firmá la petición en Change.org</h2>
+        <div class="row">
+          <a class="btn btn-primary btn-lg btn-shadow mt-3" href="{{ link }}" target="_blank" rel="noopener noreferrer">
+              Entrar
+          </a>
+        </div>
+    </div>
+</section>
+{% endif %}
