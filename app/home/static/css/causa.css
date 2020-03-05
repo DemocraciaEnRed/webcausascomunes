@@ -514,6 +514,7 @@ body {
   border-radius: 20px;
   color: white;
   opacity: 0.8;
+  z-index: 2;
   font-size: 1.2rem; }
   .floating-arrow.to-causa-vivienda {
     color: #194a9a; }

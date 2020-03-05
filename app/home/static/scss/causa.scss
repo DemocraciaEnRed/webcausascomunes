@@ -405,6 +405,7 @@ svg {
     border-radius: 20px;
     color:white;
     opacity: 0.8;
+    z-index: 2;
     @each $causa, $color in $colors-causas{
        &.to-causa-#{$causa} {
         color:$color;
