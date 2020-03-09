@@ -4,9 +4,9 @@
         <div class="row mt-5">
             <div class="col-lg-12 mb-5 mb-lg-0">
                 <div class="card card-with-shadow p-4 p-md-5">
-                    <div class="card-body p-0">
-                        <h5 class="card-title text-center text-md-left">Colaborá con la Wiki de {{nombre_causa}}</h5>
-                        <p>{{ dtextoscausas.get('texto')['wiki'] | safe }}</p>
+                    <div class="card-body p-0 text-center">
+                        <h5 class="card-title">Colaborá con la Wiki de {{nombre_causa}}</h5>
+                        <p>El conocimiento es una construcción social.</p>
                         <div class="row justify-content-center align-items-md-top my-3 my-md-4">
                             <div class="text-center col-md-6">
                                 <div class="img mb-4 mb-md-0">
@@ -44,21 +44,20 @@
                                     </svg>
                                 </div>
                             </div>
-                            <div class="col-md-6 align-self-end">
-                                <h6 class="card-subtitle">¿Cómo podes hacer? </h6>
+                            <div class="col-md-6 align-self-end text-left">
+                                <h6 class="card-subtitle">¿Qué podés hacer?</h6>
                                 <ol>
-                                    <li>Créate una cuenta en Wiki.</li>
-                                    <li>Luego, ir a la opción “Editar”.</li>
+                                    <li>Create una cuenta en la Wiki.</li>
+                                    <li>Luego, andá a la opción “Editar”.</li>
                                     <li>Agregá, modificá el contenido.</li>
                                     <li>Guardá los cambios realizados.</li>
                                 </ol>
-                                <p>Te dejamos un instructivo para conocer más en detalle <a href="https://docs.google.com/presentation/d/e/2PACX-1vSYZdl1l2ACw5U4J3XUNLipx0STx0OkkoV4MUeSRPPQqFPeQgYhIGh0hiCd3Oh30Ru06ra6XqcrltRJ/pub?start=true&loop=false&delayms=7000">qué podes hacer en la
-                                        Wiki.</a></p>
+                                <p>Te dejamos un instructivo para conocer más en detalle <a href="https://docs.google.com/presentation/d/e/2PACX-1vSYZdl1l2ACw5U4J3XUNLipx0STx0OkkoV4MUeSRPPQqFPeQgYhIGh0hiCd3Oh30Ru06ra6XqcrltRJ/pub?start=true&loop=false&delayms=7000">qué podes hacer en la Wiki.</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="row justify-content-center mt-3">
-                        <a href="{{ dtextos.get('definicion')['linkwiki'] }}" target="_blank" rel="noopener noreferrer" class="wiki-btn btn btn-primary btn-shadow">WIKI: Sumate a construir</a>
+                        <a href="{{ dtextos.get('definicion')['linkwiki'] }}" target="_blank" rel="noopener noreferrer" class="wiki-btn btn btn-primary btn-shadow">Construí con nosotres</a>
                     </div>
                 </div>
             </div>
