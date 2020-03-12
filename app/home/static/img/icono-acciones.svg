@@ -35,17 +35,17 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1676"
-     inkscape:window-height="999"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
      id="namedview22"
      showgrid="false"
      inkscape:zoom="1.1240022"
-     inkscape:cx="-207.29497"
+     inkscape:cx="142.49676"
      inkscape:cy="104.982"
      inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="Grupo_690" />
+     inkscape:current-layer="text4539" />
   <defs
      id="defs4">
     <style
@@ -60,17 +60,15 @@
     <g
        id="Grupo_690"
        data-name="Grupo 690">
-      <text
-         xml:space="preserve"
+      <g
+         aria-label="!"
          style="font-style:normal;font-weight:normal;font-size:136.3286438px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e3296f;fill-opacity:1;stroke:none;stroke-width:3.40821648"
-         x="26.695835"
-         y="80.163269"
-         id="text4539"><tspan
-           sodipodi:role="line"
-           id="tspan4537"
-           x="26.695835"
-           y="80.163269"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:136.33332825px;font-family:'Nimbus Mono PS';-inkscape-font-specification:'Nimbus Mono PS, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:3.40821648">!</tspan></text>
+         id="text4539">
+        <path
+           d="m 78.9115,11.451272 c 0.136333,-1.7723337 0.272666,-3.5446669 0.272666,-4.6353336 0,-5.9986664 -5.044333,-10.7703329 -11.451999,-10.7703329 -6.544,0 -11.588333,4.7716665 -11.588333,10.7703329 0,1.0906667 0.136333,2.8629999 0.272667,4.6353336 l 3.953666,38.582332 c 0.409,4.226333 3.135667,6.816666 7.362,6.816666 4.09,0 6.816666,-2.590333 7.225666,-6.816666 z M 68.822834,82.071936 c 5.453333,0 9.679666,-3.953667 9.679666,-9.134333 0,-5.044333 -4.226333,-9.134333 -9.679666,-9.134333 h -2.317667 c -5.317,0 -9.543333,4.09 -9.543333,9.134333 0,5.044333 4.226333,9.134333 9.543333,9.134333 z"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:136.33332825px;font-family:'Nimbus Mono PS';-inkscape-font-specification:'Nimbus Mono PS, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:3.40821648"
+           id="path831" />
+      </g>
     </g>
   </g>
   <g
