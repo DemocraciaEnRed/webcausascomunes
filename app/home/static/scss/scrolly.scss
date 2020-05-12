@@ -249,6 +249,9 @@
 		min-height: 79vh;
 		max-width: 1050px;
 		margin: 110px auto;
+		.causa-genero & {
+			margin: 30px auto;
+		}
 	}
 	.scrolly-row.causa,
 	.scrolly-row.remate {

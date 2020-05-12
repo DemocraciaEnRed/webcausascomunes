@@ -333,26 +333,28 @@
                                                     min-height: 79vh;
                                                     max-width: 1050px;
                                                     margin: 110px auto;   }
-                                                    .scrolly-row.causa, .scrolly-row.remate {
-                                                      margin: 50px auto;
-                                                      min-height: 33vh;
-                                                      padding: 0vh 4rem;
-                                                      width: 70%;   }
-                                                      .imgMain.order-last {
-                                                        order: 0;
-                                                        -ms-flex-order: 13;   }
-                                                        .scrolly-container h1, .scrolly-container h2 {
-                                                          text-align: left;   }
-                                                          .main .scrolly-container h1 {
-                                                            font-size: 60px;
-                                                            line-height: 59px;
-                                                            font-weight: 900;   }
-                                                            .row.vertical-align.scrolly-row.main {
-                                                              margin: 40px auto 0px auto;
-                                                              padding: 0 4rem;
-                                                              min-height: 32vh;   }
-                                                              .scrolly-container .btn-group {
-                                                                display: inline-flex;   }
+                                                    .causa-genero .scrolly-row {
+                                                      margin: 30px auto;   }
+                                                  .scrolly-row.causa, .scrolly-row.remate {
+                                                    margin: 50px auto;
+                                                    min-height: 33vh;
+                                                    padding: 0vh 4rem;
+                                                    width: 70%;   }
+                                                    .imgMain.order-last {
+                                                      order: 0;
+                                                      -ms-flex-order: 13;   }
+                                                      .scrolly-container h1, .scrolly-container h2 {
+                                                        text-align: left;   }
+                                                        .main .scrolly-container h1 {
+                                                          font-size: 60px;
+                                                          line-height: 59px;
+                                                          font-weight: 900;   }
+                                                          .row.vertical-align.scrolly-row.main {
+                                                            margin: 40px auto 0px auto;
+                                                            padding: 0 4rem;
+                                                            min-height: 32vh;   }
+                                                            .scrolly-container .btn-group {
+                                                              display: inline-flex;   }
 }
 
 .scrolly-row:nth-child(odd) {
