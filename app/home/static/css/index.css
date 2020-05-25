@@ -199,17 +199,17 @@ img {
 }
     @media (min-width: 992px) {
       .portada .container {
-        max-width: 35%;   }
+        max-width: 40%;   }
 }
   @media (min-width: 992px) {
     .portada {
       background-color: transparent;   }
 }
     .portada h1 img {
-      width: 204px; }
+      width: 304px; }
       @media (min-width: 576px) {
         .portada h1 img {
-          max-width: 375px;
+          max-width: 455px;
           width: 100%;   }
 }
         @media (min-width: 992px) {

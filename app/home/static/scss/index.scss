@@ -93,16 +93,16 @@ img {
 	}
 	.container {
 		@media (min-width: $width-large) {
-			max-width: 35%;
+			max-width: 40%;
 		}
 	}
 	@media (min-width: $width-large) {
 		background-color: transparent;
 	}
 	h1 img {
-		width: 204px;
+		width: 304px;
 		@media (min-width: $width-small) {
-			max-width: 375px;
+			max-width: 455px;
 			width: 100%;
 		}
 		@media (min-width: $width-large) {
