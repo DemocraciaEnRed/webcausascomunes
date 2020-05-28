@@ -85,19 +85,22 @@ img {
 	background-image: url('/static/img/manifiesto-background.png');
 	background-repeat: no-repeat;
 	background-size: cover;
-    padding-top: 12rem;
+  padding-top: 9rem;
+	padding-bottom: 4rem;
+	margin-bottom: 0;
 	@media (min-width: $width-medium) {
 		flex-wrap: nowrap;
 		justify-content: center;
 		align-items: end;
 	}
+	@media (min-width: $width-large) {
+  	padding-top: 12rem;
+		background-color: transparent;
+	}
 	.container {
 		@media (min-width: $width-large) {
 			max-width: 40%;
 		}
-	}
-	@media (min-width: $width-large) {
-		background-color: transparent;
 	}
 	h1 img {
 		width: 304px;

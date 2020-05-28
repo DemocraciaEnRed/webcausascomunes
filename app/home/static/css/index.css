@@ -190,7 +190,9 @@ img {
   background-image: url('/static/img/manifiesto-background.png');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 12rem; }
+  padding-top: 9rem;
+  padding-bottom: 4rem;
+  margin-bottom: 0; }
   @media (min-width: 768px) {
     .portada {
       flex-wrap: nowrap;
@@ -198,24 +200,25 @@ img {
       align-items: end;   }
 }
     @media (min-width: 992px) {
-      .portada .container {
-        max-width: 40%;   }
+      .portada {
+        padding-top: 12rem;
+        background-color: transparent;   }
 }
-  @media (min-width: 992px) {
-    .portada {
-      background-color: transparent;   }
+      @media (min-width: 992px) {
+        .portada .container {
+          max-width: 40%;   }
 }
-    .portada h1 img {
-      width: 304px; }
-      @media (min-width: 576px) {
+  .portada h1 img {
+    width: 304px; }
+    @media (min-width: 576px) {
+      .portada h1 img {
+        max-width: 455px;
+        width: 100%;   }
+}
+      @media (min-width: 992px) {
         .portada h1 img {
-          max-width: 455px;
+          max-width: 525px;
           width: 100%;   }
-}
-        @media (min-width: 992px) {
-          .portada h1 img {
-            max-width: 525px;
-            width: 100%;   }
 }
   @media (min-width: 768px) {
     .portada p {
