@@ -151,49 +151,49 @@ body {
 .causa-genero .portada-seccion {
   background-color: rgba(119, 73, 146, 0.56); }
   .causa-genero .bg-mosaico-blanco {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
-        255, 0.7) 100%), url("../img/backgrounds/causas/mosaico-transparente-genero.png"); }
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255,
+        255, 0.93) 100%), url("../img/backgrounds/causas/mosaico-halfcolor-genero.png"); }
     .causa-genero .bg-color-solido {
       background-color: #faf2ff; }
 
 .causa-ambiente .portada-seccion {
   background-color: rgba(77, 208, 135, 0.839216); }
   .causa-ambiente .bg-mosaico-blanco {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
-        255, 0.7) 100%), url("../img/backgrounds/causas/mosaico-transparente-ambiente.png"); }
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255,
+        255, 0.93) 100%), url("../img/backgrounds/causas/mosaico-halfcolor-ambiente.png"); }
     .causa-ambiente .bg-color-solido {
       background-color: #f2fff6; }
 
 .causa-trabajo .portada-seccion {
   background-color: rgba(225, 33, 105, 0.56); }
   .causa-trabajo .bg-mosaico-blanco {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
-        255, 0.7) 100%), url("../img/backgrounds/causas/mosaico-transparente-trabajo.png"); }
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255,
+        255, 0.93) 100%), url("../img/backgrounds/causas/mosaico-halfcolor-trabajo.png"); }
     .causa-trabajo .bg-color-solido {
       background-color: #fff2f4; }
 
 .causa-transparencia .portada-seccion {
   background-color: rgba(223, 33, 54, 0.56); }
   .causa-transparencia .bg-mosaico-blanco {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
-        255, 0.7) 100%),
-        url("../img/backgrounds/causas/mosaico-transparente-transparencia.png"); }
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255,
+        255, 0.93) 100%),
+        url("../img/backgrounds/causas/mosaico-halfcolor-transparencia.png"); }
     .causa-transparencia .bg-color-solido {
       background-color: #fff2f5; }
 
 .causa-vivienda .portada-seccion {
   background-color: rgba(62, 106, 178, 0.631373); }
   .causa-vivienda .bg-mosaico-blanco {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
-        255, 0.7) 100%), url("../img/backgrounds/causas/mosaico-transparente-vivienda.png"); }
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255,
+        255, 0.93) 100%), url("../img/backgrounds/causas/mosaico-halfcolor-vivienda.png"); }
     .causa-vivienda .bg-color-solido {
       background-color: #f2f4ff; }
 
 .causa-drogas .portada-seccion {
   background-color: rgba(242, 173, 28, 0.56); }
   .causa-drogas .bg-mosaico-blanco {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255,
-        255, 0.7) 100%), url("../img/backgrounds/causas/mosaico-transparente-drogas.png"); }
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255,
+        255, 0.93) 100%), url("../img/backgrounds/causas/mosaico-halfcolor-drogas.png"); }
     .causa-drogas .bg-color-solido {
       background-color: #fffcf2; }
 
