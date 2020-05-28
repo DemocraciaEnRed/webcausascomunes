@@ -78,6 +78,7 @@ $color-genero: #774997;
 $color-drogas: #f9b112;
 $color-ciencia: #008daf;
 $color-ambiente: #39a95e;
+$color-derechos-digitales: #f15b28;
 $colors-causas: (
 	'vivienda': #194a9a,
 	'transparencia': #e61937,
@@ -85,7 +86,8 @@ $colors-causas: (
 	'genero': #774997,
 	'drogas': #f9b112,
 	'ciencia': #008daf,
-	'ambiente': #39a95e
+	'ambiente': #39a95e,
+	'derechos-digitales': #f15b28
 );
 
 $parallaxZIndexOnTop: 1;
@@ -123,6 +125,10 @@ $sectionBgColorBlue: #e4eefa;
   color: $color-ambiente;
 }
 
+.text-color-derechos-digitales {
+  color: $color-derechos-digitales;
+}
+
 .fill-color-vivienda {
   fill: $color-vivienda;
 }
@@ -149,6 +155,10 @@ $sectionBgColorBlue: #e4eefa;
 
 .fill-color-ambiente {
   fill: $color-ambiente;
+}
+
+.fill-color-derechos-digitales {
+  fill: $color-derechos-digitales;
 }
 
 .vertical-align {
@@ -241,7 +251,7 @@ label {
 	color: $white;
 	background-color: rgba(0, 0, 0, 0.3);
 	font-size: 12px;
-	padding: 1em; 
+	padding: 1em;
   display: none;
   &:hover {
     color: $white;

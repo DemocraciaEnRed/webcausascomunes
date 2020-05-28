@@ -69,6 +69,11 @@ class DirectusApi:
         self.token = token
         self.auth_header = {'Authorization': 'Bearer ' + self.token}
 
+    def parse_pagina_name(self, pagina):
+        pagina_parsed = pagina if pagina.find('-') == -1 else pagina.replace('-', ' ')
+        pagina_parsed = pagina_parsed.capitalize()
+        return pagina_parsed
+
     def get(self, api_cmd, **kwargs):
         if 'headers' in kwargs:
             kwargs['headers'].update(self.auth_header)
@@ -130,11 +135,12 @@ class DirectusApi:
 
     def get_textos_pagina(self, pagina):
         pagina = str(pagina)
+        pagina_parsed = self.parse_pagina_name(pagina)
         if str.isnumeric(pagina):
             filter_by = 'id'
         else:
             filter_by = 'nombre'
-        rows = self.get_table_rows('textos', 'filters[pagina.{}][eq]={}'.format(filter_by, pagina))
+        rows = self.get_table_rows('textos', 'filters[pagina.{}][eq]={}'.format(filter_by, pagina_parsed))
         # if not rows:
         #     raise Exception('No se han encontrado textos para la página ' + pagina)
         textos = {}
@@ -160,11 +166,12 @@ class DirectusApi:
 
     def get_imgs_pagina(self, pagina):
         pagina = str(pagina)
+        pagina_parsed = self.parse_pagina_name(pagina)
         if str.isnumeric(pagina):
             filter_by = 'id'
         else:
             filter_by = 'nombre'
-        rows = self.get_table_rows('imagenes', 'filters[pagina.{}][eq]={}'.format(filter_by, pagina))
+        rows = self.get_table_rows('imagenes', 'filters[pagina.{}][eq]={}'.format(filter_by, pagina_parsed))
         # if not rows:
         #     raise Exception('No se han encontrado imágenes para la página ' + pagina)
         imgs = {}
@@ -184,7 +191,8 @@ class DirectusApi:
         if pagina:
             rows = self.get_table_rows(table, filter='filters[pagina.nombre][eq]={}'.format(pagina.title()))
         elif causa:
-            rows = self.get_table_rows(table, filter='filters[causa.nombre][eq]={}'.format(causa.title()))
+            causa_parsed = self.parse_pagina_name(causa)
+            rows = self.get_table_rows(table, filter='filters[causa.nombre][eq]={}'.format(causa_parsed))
         elif filter:
             rows = self.get_table_rows(table, filter=filter)
         else:
@@ -208,24 +216,24 @@ class DirectusApi:
                     continue
             items.append(item)
         return items
-    
+
     def get_items_novedades(self, pagina):
         return self.get_items(
-            'items_novedades', 
-            self._items_novedades_schema, 
+            'items_novedades',
+            self._items_novedades_schema,
             pagina=pagina)
 
     def get_items_novedades_index(self):
         novedades_nuevas = self.get_items(
-            'items_novedades', 
-            self._items_novedades_schema, 
+            'items_novedades',
+            self._items_novedades_schema,
             filter='filters[es_nueva][eq]=1')
-        
+
         novedades_destacadas = self.get_items(
-            'items_novedades', 
-            self._items_novedades_schema, 
+            'items_novedades',
+            self._items_novedades_schema,
             filter='filters[es_destacada][eq]=1')
-        
+
         return (novedades_nuevas, novedades_destacadas)
 
     def get_items_propuestas(self):
@@ -234,14 +242,14 @@ class DirectusApi:
                 'texto': DirectusApi.RowTypes.TEXT,
                 'pagina': DirectusApi.RowTypes.REL_NOMBRE
             })
-        
+
     def get_items_hackaton(self):
         return self.get_items('galeria_hackaton', {
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'descripcion': DirectusApi.RowTypes.TEXT,
                 'imagen_archivo': DirectusApi.RowTypes.TEXT
             })
-    
+
     def get_items_scrolly(self, causa):
         return self.get_items('scrollytelling', {
                 'imagen': DirectusApi.RowTypes.IMG,
@@ -256,7 +264,7 @@ class DirectusApi:
                 'imagen': DirectusApi.RowTypes.TEXT,
                 'descripcion': DirectusApi.RowTypes.TEXT
             }, causa=causa)
-            
+
     def get_items_agenda(self, pagina):
         return self.get_items('items_agenda', {
                 'fechahora': DirectusApi.RowTypes.DATETIME,
@@ -264,7 +272,7 @@ class DirectusApi:
                 'hashtag': DirectusApi.RowTypes.TEXT,
                 'icono': DirectusApi.RowTypes.IMG
             }, pagina=pagina)
-            
+
     def get_items_seguidor(self, pagina):
         return self.get_items('items_seguidor', {
                 'titulo': DirectusApi.RowTypes.TEXT,

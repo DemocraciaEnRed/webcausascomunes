@@ -20,7 +20,8 @@ accepted_causas = {
     'vivienda': 'Vivienda',
     'transparencia': 'Transparencia',
     'drogas': 'Drogas',
-    'trabajo': 'Trabajo'
+    'trabajo': 'Trabajo',
+    'derechos-digitales': 'Derechos digitales'
 }
 
 

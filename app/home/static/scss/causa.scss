@@ -57,6 +57,11 @@ body {overflow-x: hidden;}
 	.bg-mosaico-blanco{ @include bg-mosaico-blanco-trans('drogas');	}
 	.bg-color-solido{ background-color: #fffcf2; }
 }
+.causa-derechos-digitales{
+  .portada-seccion{ background-color: rgba(240, 90, 38, 0.56); }
+	.bg-mosaico-blanco{ @include bg-mosaico-blanco-trans('derechos-digitales');	}
+	.bg-color-solido{ background-color: #fff7f2; }
+}
 
 /*####################################################*/
 /*################## PORTADA/LANDING */

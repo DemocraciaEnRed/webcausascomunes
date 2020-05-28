@@ -1,15 +1,18 @@
 {% from '_imghelper.html' import create_img_src %}
 
+{% set has_video = 'video' in dtextos %}
 <section id="definicion" class="definicion bg-mosaico-blanco section jumbotron jumbotron-fluid">
     <div class="container">
         <h2 class="section__title text-center text-md-left"><!--Presentación{{dtextos.get('definicion')['titulo']}}--></h2>
         <div class="row mt-3 mt-md-5">
+            {% if has_video %}
             <div class="video vertical-align col-lg-6 mb-2 mb-md-0 pb-md-3">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe src="{{dtextos.get('video')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
              </div>
-            <div class="col-lg-6">
+             {% endif %}
+            <div class="{{ 'col-lg-6' if has_video else 'col-lg-8 offset-lg-2' }}">
                 <div class="text-justify">
                     {{ dtextos.get('definicion')['parrafo1'] | safe }}
                     {{ dtextos.get('definicion')['parrafo2'] | safe }}
