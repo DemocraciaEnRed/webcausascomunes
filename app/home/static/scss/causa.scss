@@ -81,6 +81,12 @@ body {overflow-x: hidden;}
     h1 {
       font-size: 3.5rem;
       padding: 6rem 0 3rem 0;
+      @media (min-width: $width-medium) {
+        padding: 4rem 0 3rem 0;
+      }
+      @media (min-width: $width-large) {
+        padding: 6rem 0 3rem 0;
+      }
     }
     h4 {
       font-size: 1.4rem;
