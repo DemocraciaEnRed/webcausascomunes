@@ -34,60 +34,66 @@
                   .text-color-ambiente {
                     color: #39a95e; }
 
-                    .fill-color-vivienda {
-                      fill: #194a9a; }
+                    .text-color-derechos-digitales {
+                      color: #f15b28; }
 
-                      .fill-color-transparencia {
-                        fill: #e61937; }
+                      .fill-color-vivienda {
+                        fill: #194a9a; }
 
-                        .fill-color-trabajo {
-                          fill: #e71869; }
+                        .fill-color-transparencia {
+                          fill: #e61937; }
 
-                          .fill-color-genero {
-                            fill: #774997; }
+                          .fill-color-trabajo {
+                            fill: #e71869; }
 
-                            .fill-color-drogas {
-                              fill: #f9b112; }
+                            .fill-color-genero {
+                              fill: #774997; }
 
-                              .fill-color-ciencia {
-                                fill: #008daf; }
+                              .fill-color-drogas {
+                                fill: #f9b112; }
 
-                                .fill-color-ambiente {
-                                  fill: #39a95e; }
+                                .fill-color-ciencia {
+                                  fill: #008daf; }
 
-                                  .vertical-align {
-                                    display: flex;
-                                    align-items: center; }
+                                  .fill-color-ambiente {
+                                    fill: #39a95e; }
 
-                                    .text-color-primario {
-                                      color: #2a4b8c; }
+                                    .fill-color-derechos-digitales {
+                                      fill: #f15b28; }
 
-                                      body {
-                                        font: 100% 'Barlow', sans-serif;
-                                        color: black; }
+                                      .vertical-align {
+                                        display: flex;
+                                        align-items: center; }
 
-                                        .padding-onditaazul {
-                                          padding-top: 12vw; }
+                                        .text-color-primario {
+                                          color: #2a4b8c; }
 
-                                          .card {
-                                            border-radius: 20px;
-                                            border: none; }
+                                          body {
+                                            font: 100% 'Barlow', sans-serif;
+                                            color: black; }
 
-                                            .card-with-shadow {
-                                              box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15); }
+                                            .padding-onditaazul {
+                                              padding-top: 12vw; }
 
-                                              .card-title {
-                                                font-size: 1.15rem; }
+                                              .card {
+                                                border-radius: 20px;
+                                                border: none; }
 
-                                                .btn-primary {
-                                                  border-radius: 2rem;
-                                                  background-color: #2a4b8c;
-                                                  border-color: #2a4b8c;
-                                                  color: #ffffff;
-                                                  border-width: 3px; }
-                                                  .btn-primary:hover {
-                                                    background-color: #ffffff;
-                                                    color: #2a4b8c; }
+                                                .card-with-shadow {
+                                                  box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15); }
+
+                                                  .card-title {
+                                                    font-size: 1.15rem; }
+
+                                                    .btn-primary {
+                                                      border-radius: 2rem;
+                                                      background-color: #2a4b8c;
+                                                      border-color: #2a4b8c;
+                                                      color: #ffffff;
+                                                      border-width: 3px; }
+                                                      .btn-primary:hover {
+                                                        background-color: #ffffff;
+                                                        color: #2a4b8c; }
 
 .btn-primary-inverted {
   background-color: #ffffff;

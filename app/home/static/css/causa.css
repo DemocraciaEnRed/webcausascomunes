@@ -34,60 +34,66 @@
                   .text-color-ambiente {
                     color: #39a95e; }
 
-                    .fill-color-vivienda {
-                      fill: #194a9a; }
+                    .text-color-derechos-digitales {
+                      color: #f15b28; }
 
-                      .fill-color-transparencia {
-                        fill: #e61937; }
+                      .fill-color-vivienda {
+                        fill: #194a9a; }
 
-                        .fill-color-trabajo {
-                          fill: #e71869; }
+                        .fill-color-transparencia {
+                          fill: #e61937; }
 
-                          .fill-color-genero {
-                            fill: #774997; }
+                          .fill-color-trabajo {
+                            fill: #e71869; }
 
-                            .fill-color-drogas {
-                              fill: #f9b112; }
+                            .fill-color-genero {
+                              fill: #774997; }
 
-                              .fill-color-ciencia {
-                                fill: #008daf; }
+                              .fill-color-drogas {
+                                fill: #f9b112; }
 
-                                .fill-color-ambiente {
-                                  fill: #39a95e; }
+                                .fill-color-ciencia {
+                                  fill: #008daf; }
 
-                                  .vertical-align {
-                                    display: flex;
-                                    align-items: center; }
+                                  .fill-color-ambiente {
+                                    fill: #39a95e; }
 
-                                    .text-color-primario {
-                                      color: #2a4b8c; }
+                                    .fill-color-derechos-digitales {
+                                      fill: #f15b28; }
 
-                                      body {
-                                        font: 100% 'Barlow', sans-serif;
-                                        color: black; }
+                                      .vertical-align {
+                                        display: flex;
+                                        align-items: center; }
 
-                                        .padding-onditaazul {
-                                          padding-top: 12vw; }
+                                        .text-color-primario {
+                                          color: #2a4b8c; }
 
-                                          .card {
-                                            border-radius: 20px;
-                                            border: none; }
+                                          body {
+                                            font: 100% 'Barlow', sans-serif;
+                                            color: black; }
 
-                                            .card-with-shadow {
-                                              box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15); }
+                                            .padding-onditaazul {
+                                              padding-top: 12vw; }
 
-                                              .card-title {
-                                                font-size: 1.15rem; }
+                                              .card {
+                                                border-radius: 20px;
+                                                border: none; }
 
-                                                .btn-primary {
-                                                  border-radius: 2rem;
-                                                  background-color: #2a4b8c;
-                                                  border-color: #2a4b8c;
-                                                  color: #ffffff;
-                                                  border-width: 3px; }
-                                                  .btn-primary:hover {
-                                                    background-color: #ffffff;
-                                                    color: #2a4b8c; }
+                                                .card-with-shadow {
+                                                  box-shadow: 0 40px 40px 0 rgba(119, 119, 119, 0.15); }
+
+                                                  .card-title {
+                                                    font-size: 1.15rem; }
+
+                                                    .btn-primary {
+                                                      border-radius: 2rem;
+                                                      background-color: #2a4b8c;
+                                                      border-color: #2a4b8c;
+                                                      color: #ffffff;
+                                                      border-width: 3px; }
+                                                      .btn-primary:hover {
+                                                        background-color: #ffffff;
+                                                        color: #2a4b8c; }
 
 .btn-primary-inverted {
   background-color: #ffffff;
@@ -196,6 +202,15 @@ body {
         255, 0.93) 100%), url("../img/backgrounds/causas/mosaico-halfcolor-drogas.png"); }
     .causa-drogas .bg-color-solido {
       background-color: #fffcf2; }
+
+.causa-derechos-digitales .portada-seccion {
+  background-color: rgba(240, 90, 38, 0.56); }
+  .causa-derechos-digitales .bg-mosaico-blanco {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255,
+        255, 0.93) 100%),
+        url("../img/backgrounds/causas/mosaico-halfcolor-derechos-digitales.png"); }
+    .causa-derechos-digitales .bg-color-solido {
+      background-color: #fff7f2; }
 
 .portada-seccion {
   background-color: transparent;
@@ -482,6 +497,9 @@ body {
             .svg-ambiente svg #_1, .svg-ambiente svg #_2, .svg-ambiente svg #_3,
             .svg-ambiente svg #_4 {
               fill: #39a95e; }
+              .svg-derechos-digitales svg #_1, .svg-derechos-digitales svg #_2,
+              .svg-derechos-digitales svg #_3, .svg-derechos-digitales svg #_4 {
+                fill: #f15b28; }
 .svg-vivienda svg #Elipse_343 {
   stroke: #194a9a; }
   .svg-transparencia svg #Elipse_343 {
@@ -496,6 +514,8 @@ body {
             stroke: #008daf; }
             .svg-ambiente svg #Elipse_343 {
               stroke: #39a95e; }
+              .svg-derechos-digitales svg #Elipse_343 {
+                stroke: #f15b28; }
 
 .colaborar .card {
   height: 100%; }
@@ -552,21 +572,23 @@ body {
               color: #008daf; }
               .floating-arrow.to-causa-ambiente {
                 color: #39a95e; }
-                @media (min-width: 768px) {
-                  .floating-arrow {
-                    font-size: 1.5rem;   }
+                .floating-arrow.to-causa-derechos-digitales {
+                  color: #f15b28; }
+                  @media (min-width: 768px) {
+                    .floating-arrow {
+                      font-size: 1.5rem;   }
 }
-                  .floating-arrow:hover, .floating-arrow:focus, .floating-arrow:active {
-                    opacity: 1; }
-                    .floating-arrow.floating-arrow-left {
-                      left: 0; }
-                      .floating-arrow.floating-arrow-right {
-                        right: 0; }
-                        .floating-arrow img {
-                          width: 60px; }
-                          @media (min-width: 768px) {
-                            .floating-arrow img {
-                              width: 70px;   }
+                    .floating-arrow:hover, .floating-arrow:focus, .floating-arrow:active {
+                      opacity: 1; }
+                      .floating-arrow.floating-arrow-left {
+                        left: 0; }
+                        .floating-arrow.floating-arrow-right {
+                          right: 0; }
+                          .floating-arrow img {
+                            width: 60px; }
+                            @media (min-width: 768px) {
+                              .floating-arrow img {
+                                width: 70px;   }
 }
 
 .change .btn {
