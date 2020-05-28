@@ -187,7 +187,7 @@ img {
   align-items: center;
   justify-content: space-around;
   background-color: #ffffff;
-  background-image: url('/static/img/manifiesto-background.svg');
+  background-image: url('/static/img/manifiesto-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 12rem; }
@@ -274,7 +274,7 @@ img {
 }
 
 .causas {
-  background-image: url('/static/img/manifiesto-background.svg');
+  background-image: url('/static/img/manifiesto-background.png');
   background-repeat: no-repeat;
   background-size: cover; }
   @media (min-width: 1200px) {
@@ -359,7 +359,7 @@ img {
 }
 
 .eventos {
-  background-image: url('/static/img/manifiesto-background.svg');
+  background-image: url('/static/img/manifiesto-background.png');
   background-repeat: no-repeat;
   background-size: cover; }
   .eventos .card {
@@ -411,7 +411,7 @@ img {
       height: 3rem; }
 
 .activa {
-  background-image: url('/static/img/manifiesto-background.svg');
+  background-image: url('/static/img/manifiesto-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   color: #2a4b8c;
