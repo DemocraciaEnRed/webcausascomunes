@@ -153,20 +153,28 @@ def causas_route():
     #itemscompromisos = directus.dapi.get_items_compromisos(causa)
 
     causas_names = list(accepted_causas.keys())
-    current_causa_i = causas_names.index(causa)
 
-    if current_causa_i == 0:
-        causa_prev = causas_names[-1]
-        causa_next = causas_names[current_causa_i + 1]
-    elif current_causa_i == len(causas_names) - 1:
-        causa_prev = causas_names[current_causa_i - 1]
-        causa_next = causas_names[0]
-    else:
-        causa_prev = causas_names[current_causa_i - 1]
-        causa_next = causas_names[current_causa_i + 1]
+    #########
+    ## SOLO PARA DEMO, SACAR EN PROD
+    causas_names.remove('derechos-digitales')
+    try:
+        current_causa_i = causas_names.index(causa)
 
-    causa_prev_tit = accepted_causas[causa_prev]
-    causa_next_tit = accepted_causas[causa_next]
+        if current_causa_i == 0:
+            causa_prev = causas_names[-1]
+            causa_next = causas_names[current_causa_i + 1]
+        elif current_causa_i == len(causas_names) - 1:
+            causa_prev = causas_names[current_causa_i - 1]
+            causa_next = causas_names[0]
+        else:
+            causa_prev = causas_names[current_causa_i - 1]
+            causa_next = causas_names[current_causa_i + 1]
+
+        causa_prev_tit = accepted_causas[causa_prev]
+        causa_next_tit = accepted_causas[causa_next]
+    except:
+        causa_prev = causa_prev_tit = causa_next = causa_next_tit = 'genero'
+        pass
 
     variables = {
         'navs': get_menu_navs(),
