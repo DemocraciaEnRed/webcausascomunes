@@ -88,7 +88,9 @@ body {overflow-x: hidden;}
 
       padding: 6rem 0 3rem 0;
       /*ambiente tiene un subtítulo largísimo*/
-      .causa-ambiente &{ padding: 3rem 0 3rem 0; }
+      .causa-ambiente & { padding-top: 3rem; }
+      /*derechos-digitales tiene un título largo*/
+      .causa-derechos-digitales & { padding-top: 4rem; }
       @media (min-width: $width-medium) {
         padding: 4rem 0 3rem 0;
       }
