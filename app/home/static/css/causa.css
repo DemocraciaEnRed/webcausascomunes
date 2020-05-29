@@ -308,6 +308,9 @@ body {
                   .nav-secondary .nav-link.text-color-ambiente:hover,
                   .nav-secondary .nav-link.text-color-ambiente.active {
                     color: #39a95e; }
+                    .nav-secondary .nav-link.text-color-derechos-digitales:hover,
+                    .nav-secondary .nav-link.text-color-derechos-digitales.active {
+                      color: #f15b28; }
   .nav-secondary.position-fixed {
     top: 72px;
     left: 0;

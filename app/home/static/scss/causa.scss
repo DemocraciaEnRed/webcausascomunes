@@ -152,7 +152,8 @@ body {overflow-x: hidden;}
 		&.text-color-genero:hover, &.text-color-genero.active { color: $color-genero; }
 		&.text-color-drogas:hover, &.text-color-drogas.active { color: $color-drogas; }
 		&.text-color-ciencia:hover, &.text-color-ciencia.active { color: $color-ciencia; }
-        &.text-color-ambiente:hover, &.text-color-ambiente.active { color: $color-ambiente; }
+    &.text-color-ambiente:hover, &.text-color-ambiente.active { color: $color-ambiente; }
+		&.text-color-derechos-digitales:hover, &.text-color-derechos-digitales.active { color: $color-derechos-digitales; }
     }
     &.position-fixed {
         top: 72px;
