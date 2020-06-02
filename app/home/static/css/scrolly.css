@@ -184,51 +184,54 @@
                     .text-color-trabajo, .causa-trabajo .scrolly-container h2 {
                       color: #e71869; }
 
-                      .causa-genero .main .scrolly-container h1 {
-                        text-shadow: 1px 2px #c478f8; }
+                      .text-color-derechos-digitales, .causa-derechos-digitales .scrolly-container h2 {
+                        color: #f15b28; }
 
-                        .causa-ambiente .main .scrolly-container h1 {
-                          text-shadow: 1px 2px #39a95e; }
+                        .causa-genero .main h1 {
+                          text-shadow: 2px 3px #c478f8; }
 
-                          .causa-ciencia .main .scrolly-container h1 {
-                            text-shadow: 1px 2px #008daf; }
+                          .causa-ambiente .main h1 {
+                            text-shadow: 1px 2px #39a95e; }
 
-                            .causa-vivienda .main .scrolly-container h1 {
+                            .causa-vivienda .main h1 {
                               text-shadow: 1px 2px #4284ee; }
 
-                              .causa-transparencia .main .scrolly-container h1 {
+                              .causa-transparencia .main h1 {
                                 text-shadow: 1px 2px #e61937; }
 
-                                .causa-drogas .main .scrolly-container h1 {
+                                .causa-drogas .main h1 {
                                   text-shadow: 1px 2px #9e700e; }
 
-                                  .causa-trabajo .main .scrolly-container h1 {
+                                  .causa-trabajo .main h1 {
                                     text-shadow: 1px 2px #e71869; }
 
-                                    .vertical-align {
-                                      display: flex;
-                                      align-items: center; }
+                                    .causa-derechos-digitales .main h1 {
+                                      text-shadow: 1px 2px #f15b28; }
 
-                                      .padding-onditaazul {
-                                        padding-top: 12vw; }
+                                      .vertical-align {
+                                        display: flex;
+                                        align-items: center; }
 
-                                        .backtotop {
-                                          position: fixed;
-                                          bottom: 2em;
-                                          right: 2em;
-                                          color: #ffffff;
-                                          background-color: rgba(0, 0, 0, 0.3);
-                                          font-size: 12px;
-                                          padding: 1em;
-                                          display: none; }
+                                        .padding-onditaazul {
+                                          padding-top: 12vw; }
 
-                                          .backtotop:hover {
-                                            color: #ffffff; }
+                                          .backtotop {
+                                            position: fixed;
+                                            bottom: 2em;
+                                            right: 2em;
+                                            color: #ffffff;
+                                            background-color: rgba(0, 0, 0, 0.3);
+                                            font-size: 12px;
+                                            padding: 1em;
+                                            display: none; }
 
-                                            @media (max-width: 576px) {
-                                              .backtotop {
-                                                padding: 0.5rem;
-                                                font-size: 10px !important;   }
+                                            .backtotop:hover {
+                                              color: #ffffff; }
+
+                                              @media (max-width: 576px) {
+                                                .backtotop {
+                                                  padding: 0.5rem;
+                                                  font-size: 10px !important;   }
 }
 
 .main .imgMain {
@@ -351,7 +354,7 @@
                                                       -ms-flex-order: 13;   }
                                                       .scrolly-container h1, .scrolly-container h2 {
                                                         text-align: left;   }
-                                                        .main .scrolly-container h1 {
+                                                        .main h1 {
                                                           font-size: 60px;
                                                           line-height: 59px;
                                                           font-weight: 900;   }
