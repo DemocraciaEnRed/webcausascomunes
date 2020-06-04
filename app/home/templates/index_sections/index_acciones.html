@@ -18,17 +18,10 @@
               	"btn":"Construí con nosotres",
               	"link":"https://diagnostico.causascomunes.org/"
 
-              },
-              {
-              	"title":"ACCIONES",
-              	"img":"img/icono-acciones.svg",
-              	"btn":"Sé parte",
-              	"link":"/acciones"
-
               }
             ] %}
             {% for col in columns %}
-              <div class="col-md-4 my-5">
+              <div class="col-md-6 my-5">
                 <div class="column-content">
                     <img class="column-img img-fluid" src="{{ url_for('home.static', filename = col.img) }}">
                     <span class="column-title d-block mt-2 mb-4">{{ col.title }}</span>
