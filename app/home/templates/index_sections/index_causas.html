@@ -2,25 +2,16 @@
 
 <section id="causas" class="causas section jumbotron jumbotron-fluid">
   <div class="container-fluid text-center">
-    <div class="row justify-content-center mb-4">
-      <div class="col-md-12">
-          <h2 class="section__title">¡Nueva causa!</h2>
-          <div class="row justify-content-center">
-            {{ create_item_propuesta(itemspropuestas[0]) }}
-          </div>
-      </div>
-    </div>
-
     <div class="row justify-content-center">
       <div class="col-md-12">
           <h2 class="section__title">{{dtextos.get('propuestas')['titulo']}}</h2>
           <div class="row justify-content-center">
 	          	<!-- Flickity HTML init -->
-	            {% for itm in itemspropuestas[1:] %}
-
-	                {{ create_item_propuesta(itm) }}
-
-	            {% endfor %}
+            {% for itm in itemspropuestas %}
+              {% if itm.get('pagina', '') | lower  != 'vivienda' %}
+                {{ create_item_propuesta(itm) }}
+              {% endif %}
+            {% endfor %}
           </div>
       </div>
     </div>

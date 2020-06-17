@@ -17,7 +17,7 @@ blueprint = Blueprint(
 accepted_causas = {
     'genero': 'Género',
     'ambiente': 'Ambiente',
-    'vivienda': 'Vivienda',
+    #'vivienda': 'Vivienda',
     'transparencia': 'Transparencia',
     'drogas': 'Drogas',
     'trabajo': 'Trabajo',
