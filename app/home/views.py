@@ -292,22 +292,6 @@ def colaboraciones():
         fechas_epoch=fechas_epoch)
 
 
-@blueprint.route("/acciones", methods=['GET'])
-def actividades():
-    if current_app.config['_using_directus']:
-        import app.directus as directus
-        galeriahackaton = directus.dapi.get_items_hackaton()
-    else:
-        import app.content as content
-        galeriahackaton = content.items_hackaton()
-    return render_template(
-        'actividades.html',
-        navs = get_menu_navs(),
-        galeriahackaton = galeriahackaton,
-        dtextos = directus.dapi.get_textos_pagina('Home'),
-        dimgs = directus.dapi.get_imgs_pagina('Home'))
-
-
 
 for causa in accepted_causas.keys():
     blueprint.add_url_rule(f'/{causa}', endpoint=causa, view_func=causas_route)
