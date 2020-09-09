@@ -1,23 +1,42 @@
 <section id="manifiesto" class="manifiesto section jumbotron jumbotron-fluid">
     <div class="container">
-        <div class="row">
+        <!--<div class="row">
             <div class="offset-lg-6 col-lg-6">
-                <!--<h2 class="section__title mb-3">{{dtextos.get('manifiesto')['titulo']}}</h2>-->
+                <h2 class="section__title mb-3">{{dtextos.get('manifiesto')['titulo']}}</h2>
             </div>
-        </div>
+        </div>-->
         <div class="row">
             <!--<div class="video vertical-align col-lg-6 mb-2 mb-md-0 pb-md-3">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe src="{{dtextos.get('video')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>-->
-            <div class="manifiesto-frase vertical-align col-lg-6 mb-2 mb-md-0 pb-md-3 text-center text-md-left">
+            <div class="manifiesto-frase text-center">
               Porque sólo seremos mejores cuando seamos capaces de soñarnos mejores.
             </div>
-            <div class="col-lg-6">
-                <p class="text-justify">{{ dtextos.get('manifiesto')['parrafo1'] | safe }}</p>
+        </div>
+        <div class="row row-manifiesto-text">
+          <div class="offset-lg-2 col-lg-8">
+            <p class="text-justify">{{ dtextos.get('manifiesto')['parrafo1'] | safe }}</p>
+            <div class="collapse" id="collapseManifiesto">
+              <div class="card card-body">
+                {{ dtextos.get('manifiesto')['parrafo2'] | safe }}
                 <span class="section__signature">{{dtextos.get('manifiesto')['firma']}}</span>
+              </div>
             </div>
+            <button class="btn btn-primary btn-leer-mas" type="button" data-toggle="collapse" data-target="#collapseManifiesto" aria-expanded="false" aria-controls="collapseExample">
+              Leer más
+            </button>
+          </div>
         </div>
     </div>
 </section>
+<script type="text/javascript">
+  window.onload = function(){
+    $('#collapseManifiesto').on('shown.bs.collapse', function () {
+      $('.btn-leer-mas').html('Leer menos')
+    }).on('hidden.bs.collapse', function () {
+      $('.btn-leer-mas').html('Leer más')
+    })
+  }
+</script>

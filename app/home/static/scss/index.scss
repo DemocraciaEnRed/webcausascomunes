@@ -154,6 +154,20 @@ img {
 		@media (min-width: $width-medium) {
 			font-size: 55px;
 		}
+		margin-bottom: 30px;
+	}
+
+	.row-manifiesto-text {
+		text-align: justify;
+	}
+
+	.btn-leer-mas {
+		margin-top: 15px;
+		padding-left: 30px;
+		padding-right: 30px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.section__signature {

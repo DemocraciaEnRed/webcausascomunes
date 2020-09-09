@@ -257,29 +257,39 @@ img {
     .manifiesto .manifiesto-frase {
       color: #2a4b8c;
       z-index: 1;
-      font-size: 40px; }
+      font-size: 40px;
+      margin-bottom: 30px; }
       @media (min-width: 768px) {
         .manifiesto .manifiesto-frase {
           font-size: 55px;   }
 }
-  .manifiesto .section__signature {
-    color: #1d1d1b;
-    font-style: italic; }
-    @media (min-width: 768px) {
+  .manifiesto .row-manifiesto-text {
+    text-align: justify; }
+    .manifiesto .btn-leer-mas {
+      margin-top: 15px;
+      padding-left: 30px;
+      padding-right: 30px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
       .manifiesto .section__signature {
-        font-size: 1.15rem;   }
-}
-      .manifiesto .section__signature:before {
-        content: " ";
-        background-color: #2a4b8c;
-        width: 55px;
-        height: 5px;
-        margin-right: 2rem;
-        display: inline-block;
-        vertical-align: middle; }
+        color: #1d1d1b;
+        font-style: italic; }
         @media (min-width: 768px) {
+          .manifiesto .section__signature {
+            font-size: 1.15rem;   }
+}
           .manifiesto .section__signature:before {
-            opacity: 0.5;   }
+            content: " ";
+            background-color: #2a4b8c;
+            width: 55px;
+            height: 5px;
+            margin-right: 2rem;
+            display: inline-block;
+            vertical-align: middle; }
+            @media (min-width: 768px) {
+              .manifiesto .section__signature:before {
+                opacity: 0.5;   }
 }
 
 .causas {
