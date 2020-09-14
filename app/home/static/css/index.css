@@ -266,7 +266,7 @@ img {
   .manifiesto .row-manifiesto-text {
     text-align: justify; }
     .manifiesto .btn-leer-mas {
-      margin-top: 15px;
+      margin-bottom: 15px;
       padding-left: 30px;
       padding-right: 30px;
       display: block;

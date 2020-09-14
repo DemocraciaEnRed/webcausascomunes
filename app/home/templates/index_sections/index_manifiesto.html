@@ -32,11 +32,11 @@
     </div>
 </section>
 <script type="text/javascript">
-  window.onload = function(){
+  document.addEventListener('DOMContentLoaded', function(){
     $('#collapseManifiesto').on('shown.bs.collapse', function () {
       $('.btn-leer-mas').html('Leer menos')
     }).on('hidden.bs.collapse', function () {
       $('.btn-leer-mas').html('Leer más')
     })
-  }
+  }, false);
 </script>
