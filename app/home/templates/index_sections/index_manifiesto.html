@@ -18,15 +18,15 @@
         <div class="row row-manifiesto-text">
           <div class="offset-lg-2 col-lg-8">
             <p class="text-justify">{{ dtextos.get('manifiesto')['parrafo1'] | safe }}</p>
+            <button class="btn btn-primary btn-leer-mas" type="button" data-toggle="collapse" data-target="#collapseManifiesto" aria-expanded="false" aria-controls="collapseExample">
+              Leer más
+            </button>
             <div class="collapse" id="collapseManifiesto">
               <div class="card card-body">
                 {{ dtextos.get('manifiesto')['parrafo2'] | safe }}
                 <span class="section__signature">{{dtextos.get('manifiesto')['firma']}}</span>
               </div>
             </div>
-            <button class="btn btn-primary btn-leer-mas" type="button" data-toggle="collapse" data-target="#collapseManifiesto" aria-expanded="false" aria-controls="collapseExample">
-              Leer más
-            </button>
           </div>
         </div>
     </div>
