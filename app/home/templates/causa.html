@@ -25,8 +25,9 @@
     <!-- SCROLLY -->
     {% include 'causa_sections/causa_scrolly.html' %}
 
-    {% if causa == 'genero'%}
-      {% include 'causa_sections/causa_genero_mapa.html' %}
+    {% if dmapa %}
+      <!-- MAPA -->
+      {% include 'causa_sections/causa_mapa.html' %}
     {% endif %}
 
     <!-- COLABORAR -->

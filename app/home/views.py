@@ -147,6 +147,7 @@ def causas_route():
     dtextos = directus.dapi.get_textos_pagina(causa)
     dimgs = directus.dapi.get_imgs_pagina(causa)
     itemsscrolly = directus.dapi.get_items_scrolly(causa)
+    dmapa = directus.dapi.get_item_mapa(causa)
 
     #itemstemas = directus.dapi.get_items_tema(causa)
     #itemsagenda = directus.dapi.get_items_agenda(causa)
@@ -186,7 +187,9 @@ def causas_route():
         'causa_next': causa_next,
         'causa_next_tit': causa_next_tit,
         'nombre_causa': accepted_causas[causa],
-        'itemsscrolly': itemsscrolly}
+        'itemsscrolly': itemsscrolly,
+        'dmapa': dmapa
+    }
 
     return render_template('causa.html', **variables)
 

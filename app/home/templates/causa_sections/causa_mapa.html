@@ -1,0 +1,12 @@
+<section class="mapa-{{causa}} bg-color-solido section jumbotron jumbotron-fluid">
+    <div class="container">
+        <div id="{{ dmapa['hashtag'] }}" class="row mt-5">
+            <div class="col-lg-12">
+              <h2 class="section__title text-center">{{ dmapa['titulo'] }}</h2>
+              <h2 class="section__subtitle text-center mb-4">{{ dmapa['subtitulo'] }}</h2>
+              <!-- Embed snippet-->
+              {{ dmapa['codigo_mapa'] | safe }}
+              <!-- End Embed snippet-->
+            </div>
+        </div>
+</section>

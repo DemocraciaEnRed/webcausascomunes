@@ -217,6 +217,10 @@ class DirectusApi:
             items.append(item)
         return items
 
+    def get_item(self, table, keys_types, pagina=None, causa=None, filter=None):
+        items = self.get_items(table, keys_types, pagina, causa, filter)
+        return items[0] if items and len(items) else None
+
     def get_items_novedades(self, pagina):
         return self.get_items(
             'items_novedades',
@@ -256,6 +260,14 @@ class DirectusApi:
                 'titulo': DirectusApi.RowTypes.TEXT,
                 'texto': DirectusApi.RowTypes.TEXT,
                 'css_class': DirectusApi.RowTypes.TEXT
+            }, causa=causa)
+
+    def get_item_mapa(self, causa):
+        return self.get_item('mapas_causas', {
+                'hashtag': DirectusApi.RowTypes.TEXT,
+                'titulo': DirectusApi.RowTypes.TEXT,
+                'subtitulo': DirectusApi.RowTypes.TEXT,
+                'codigo_mapa': DirectusApi.RowTypes.TEXT
             }, causa=causa)
 
     '''
