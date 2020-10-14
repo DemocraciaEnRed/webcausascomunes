@@ -6,17 +6,16 @@ header {
     width: 100%;
     .ondita-azul{
         position: absolute;
-        display:none;
         top: 0;
         right: 0;
-        width: 80%;
         z-index: -1;
+        display:none;
         @media (min-width: $width-large) {
             display: block;
         }
-        @media (min-width: $width-xlarge) {
         width: 75%;
-        }
+        @media (min-width: $width-xlarge) { width: 65%; }
+        @media (min-width: $width-xxlarge) { width: 55%; }
     }
 }
 nav {

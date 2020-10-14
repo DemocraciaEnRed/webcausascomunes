@@ -151,18 +151,22 @@ header {
   width: 100%; }
   header .ondita-azul {
     position: absolute;
-    display: none;
     top: 0;
     right: 0;
-    width: 80%;
-    z-index: -1; }
+    z-index: -1;
+    display: none;
+    width: 75%; }
     @media (min-width: 992px) {
       header .ondita-azul {
         display: block;   }
 }
       @media (min-width: 1200px) {
         header .ondita-azul {
-          width: 75%;   }
+          width: 65%;   }
+}
+        @media (min-width: 1600px) {
+          header .ondita-azul {
+            width: 55%;   }
 }
 
 nav a.nav-link.active {
