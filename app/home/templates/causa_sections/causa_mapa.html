@@ -1,12 +1,44 @@
-<section class="mapa-{{causa}} bg-color-solido section jumbotron jumbotron-fluid">
+<section class="mapa-section mapa-{{causa}} bg-color-solido section jumbotron jumbotron-fluid">
     <div class="container">
         <div id="{{ dmapa['hashtag'] }}" class="row mt-5">
-            <div class="col-lg-12">
+            <!-- Vista normal-->
+            <div class="col-lg-12 d-none d-sm-block">
               <h2 class="section__title text-center">{{ dmapa['titulo'] }}</h2>
               <h2 class="section__subtitle text-center mb-4">{{ dmapa['subtitulo'] }}</h2>
               <!-- Embed snippet-->
               {{ dmapa['codigo_mapa'] | safe }}
               <!-- End Embed snippet-->
+            </div>
+
+            <!-- Vista celus-->
+            <div class="col-lg-12 d-block d-sm-none">
+              <h2 class="section__title text-center">{{ dmapa['titulo'] }}</h2>
+              <h2 class="section__subtitle text-center mb-4">{{ dmapa['subtitulo'] }}</h2>
+              <img class="img-fluid" src="{{ url_for('home.static', filename='img/mapas/mapa-'+causa+'.png') }}">
+              <div class="refes-wrapper">
+                  {% set refes=None %}
+                  {# refes va a ser un set (a,b,c,...) de tuplas (a,b) #}
+                  {% if causa=='genero' %}
+                    {% set refes= (
+                      ( 'rgb(244,147,164)', '12 proyectos de ley (de alcance nacional y local)' ),
+                      ( 'rgb(245,183,107)', 'Provisión gratuita' ),
+                      ( 'rgb(199,213,125)', 'Provisión gratuita y reducción de impuestos' ),
+                      ( 'rgb(172,217,217)', 'Reducción de impuestos' ),
+                    ) %}
+                  {% elif causa=='drogas' %}
+                    {% set refes= (
+                      ( 'rgb(199,213,125)', 'Uso medicinal' ),
+                      ( 'rgb(199,179,195)', 'Uso medicinal y recreativo' ),
+                    ) %}
+                  {% endif %}
+                  {% if refes %}
+                    {% for color, label in refes %}
+                      <div class="refe"style="border-left: 20px solid {{color}}">
+                        {{ label }}
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+              </div>
             </div>
         </div>
 </section>
